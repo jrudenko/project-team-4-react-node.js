@@ -1,11 +1,11 @@
-import { ButnMain, ButtonMainWrap } from "./ButtonMain.styled";
+import { BtnMain, ButtonMainWrap } from "./ButtonMain.styled";
 
 const ButtonMain = () => {
     return (
         <ButtonMainWrap>
-            <ButnMain>
+            <BtnMain>
                 Main button on the page
-            </ButnMain>
+            </BtnMain>
         </ButtonMainWrap>
     );
 };
