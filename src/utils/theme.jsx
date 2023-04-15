@@ -16,6 +16,7 @@ export const colors = {
   grey: `#D9D9D9`,
   white: '#ffffff',
   black: '#000000',
+  titleConteiner: `#001833`,
   
   button: {
     textColorMain: '#FAFAFA',
@@ -39,6 +40,6 @@ export const colors = {
     formAddText: '#7d7d7d',
     formAddIcon: '#333333',
     labelText: '#000000',
-  },
-
+    },
+  
 };
