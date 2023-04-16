@@ -7,7 +7,7 @@ import {
 } from './WelcomSection.styled';
 import React from 'react';
 import ReplaceableButton from 'components/ButtonMain/ButtonMain';
-import logosvg from '../../assets/images/WelcomeSection/WelcomeSectionLogo.svg';
+import logosvg from '../../images/SVG/Logo/WelcomeSectionLogo.svg';
 
 function MyComponent() {
   function handleButtonClick() {
