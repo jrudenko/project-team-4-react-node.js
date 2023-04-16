@@ -1,13 +1,14 @@
-import { ButnMain, ButtonMainWrap } from "./ButtonMain.styled";
+import React from 'react';
+import { BtnMain } from './ButtonMain.styled';
 
-const ButtonMain = () => {
-    return (
-        <ButtonMainWrap>
-            <ButnMain>
-                Main button on the page
-            </ButnMain>
-        </ButtonMainWrap>
-    );
-};
+function ReplaceableButton(props) {
+  const { label, color, onClick } = props;
 
-export default ButtonMain;
+  return (
+    <BtnMain style={{ color: `${color}` }} onClick={onClick}>
+      {label}
+    </BtnMain>
+  );
+}
+
+export default ReplaceableButton;
