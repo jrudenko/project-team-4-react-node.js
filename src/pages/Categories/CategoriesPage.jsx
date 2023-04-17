@@ -41,21 +41,53 @@ const CategoriesPage = () => {
   ];
   const testRecipes = [
     {
-      id: '640cd5ac2d9fecf12e8897f1',
+      id: '640cd5ac2d9fecf12e8897f11',
       name: 'Pad See Ew',
       preview:
         'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560401/nl3ks6ugu4uafh8fp4ot.jpg',
     },
 
     {
-      id: '640cd5ac2d9fecf12e8897f8',
+      id: '640cd5ac2d9fecf12e8897f82',
       name: 'Irish stew',
       preview:
         'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/kknfjaqupiqhufj5kspx.jpg',
     },
 
     {
-      id: '640cd5ac2d9fecf12e8897ee',
+      id: '640cd5ac2d9fecf12e8897ee3',
+      name: 'Bakewell tart',
+      preview:
+        'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/lygbfa7j94dgegmvnpas.jpg',
+    },
+    {
+      id: '640cd5ac2d9fecf12e8897ee4',
+      name: 'Bakewell tart',
+      preview:
+        'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/lygbfa7j94dgegmvnpas.jpg',
+    },
+    {
+      id: '640cd5ac2d9fecf12e8897f15',
+      name: 'Pad See Ew',
+      preview:
+        'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560401/nl3ks6ugu4uafh8fp4ot.jpg',
+    },
+
+    {
+      id: '640cd5ac2d9fecf12e8897f86',
+      name: 'Irish stew',
+      preview:
+        'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/kknfjaqupiqhufj5kspx.jpg',
+    },
+
+    {
+      id: '640cd5ac2d9fecf12e8897ee7',
+      name: 'Bakewell tart',
+      preview:
+        'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/lygbfa7j94dgegmvnpas.jpg',
+    },
+    {
+      id: '640cd5ac2d9fecf12e8897ee8',
       name: 'Bakewell tart',
       preview:
         'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/lygbfa7j94dgegmvnpas.jpg',
@@ -65,7 +97,11 @@ const CategoriesPage = () => {
   useEffect(() => {
     setIsLoading(true);
     try {
-      setCategories(fetchCategoryListFromAPI());
+      fetchCategoryListFromAPI().then((data) => {
+        console.log(data);
+        setCategories(data);
+});
+      
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -92,6 +128,7 @@ const CategoriesPage = () => {
 
   const handleCategoryClick = category => {
     setCurrentCategory(category);
+    console.log(categories);
   };
 
   return (
