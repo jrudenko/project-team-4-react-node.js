@@ -1,6 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from './SharedLayout'
+import FavoritePage from '../pages/FavoritePage'
+
+// import { lazy } from 'react';
+
+// const FavoritePage = lazy(() => import('../pages/FavoritePage'));
 
 export const App = () => {
 
@@ -20,7 +25,7 @@ export const App = () => {
 
     <Route path="add" element={<div>AddRecipePage</div>}/>
 
-    <Route path="favorite" element={<div>Favorites</div>}/>
+    <Route path="favorite" element={<FavoritePage />}/>
 
     <Route path="recipe/:recipeId" element={<div>RecipePage</div>}/>
 
