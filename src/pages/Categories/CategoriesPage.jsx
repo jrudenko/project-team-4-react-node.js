@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Container } from 'components/Container/Container';
+import Container from 'components/Container/Container';
 import fetchCategoryListFromAPI from './Axios/AxiosGetCategories';
 import fetchRecipesFromCategory from './Axios/AxiosGetResieptsFromCategory';
 import { CategoriesList } from './Styled/CategoriesList.styled';
@@ -11,7 +11,7 @@ import {
 } from './Styled/CategoriesTable.styled';
 import ProductCard from '../../components/RecipeCard/Recipecard';
 import { testCategories, testRecipes } from './testVariables';
-import  Title  from 'components/Title';
+import Title from 'components/Title';
 // import { StyledNav, StyledNavMenu } from './Styled/test.styled';
 
 const CategoriesPage = () => {
@@ -25,15 +25,14 @@ const CategoriesPage = () => {
     categoryName || 'Beef'
   );
 
-
   useEffect(() => {
     setIsLoading(true);
     try {
-      fetchCategoryListFromAPI().then((data) => {
+      fetchCategoryListFromAPI().then(data => {
         console.log(data.categoryList);
         setCategories(data.categoryList);
-});
-      
+      });
+
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -66,7 +65,7 @@ const CategoriesPage = () => {
   return (
     <Container>
       <div>
-        {/* <Title>1111</Title> */}
+        <Title>Categories</Title>
         <CategoriesList>
           {isLoading ? (
             <div>Loading...</div>
@@ -86,17 +85,16 @@ const CategoriesPage = () => {
         <h1>Category: {currentCategory}</h1>
         {isLoading && <p>Loading recipes...</p>}
         {/* {!isLoading && recipes.length > 0 && ( )} */}
-           <CategoriesCardSet>
-  {testRecipes.map(recipe => (
-    <CategoriesCardSetItem key={recipe.id}>
-      <Link to={`/recipes/${recipe.id}`}>
-        <ProductCard imageUrl={recipe.preview} name={recipe.name} />
-      </Link>
-    </CategoriesCardSetItem>
-  ))}
-</CategoriesCardSet>
-       
-       
+        <CategoriesCardSet>
+          {testRecipes.map(recipe => (
+            <CategoriesCardSetItem key={recipe.id}>
+              <Link to={`/recipes/${recipe.id}`}>
+                <ProductCard imageUrl={recipe.preview} name={recipe.name} />
+              </Link>
+            </CategoriesCardSetItem>
+          ))}
+        </CategoriesCardSet>
+
         {!isLoading && recipes.length === 0 && (
           <p>No recipes found for this category</p>
         )}
