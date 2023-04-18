@@ -3,6 +3,7 @@ import sq_black_6 from '../../images/Title/sq_black_6.png';
 import sq_black_12 from '../../images/Title/sq_black_12.png';
 import sq_green_8 from '../../images/Title/sq_green_8.png';
 import sq_green_14 from '../../images/Title/sq_green_14.png';
+import { theme } from "../../utils/theme";
 
 export const TitleConteiner = styled.div`
 
@@ -38,7 +39,7 @@ export const TitleConteiner = styled.div`
     line-height: 28px;
     letter-spacing: -0.02em;
     font-feature-settings: 'liga' off;
-    color:#001833;
+    color: ${theme.colors.titleConteiner};
     @media screen and (min-width: 768px) {
       font-size: 32px;
       line-height: 1;
@@ -50,3 +51,4 @@ export const TitleConteiner = styled.div`
   }
 
 `;
+// color:#001833;

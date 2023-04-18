@@ -10,7 +10,8 @@ import 'modern-normalize/modern-normalize.css';
 // import { store, persistor } from 'redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <BrowserRouter basename="/project-team-4-react-node.js">
       {/* <Provider store={store}> */}
       {/* <PersistGate loading={null} persistor={persistor}> */}
@@ -18,5 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {/* </PersistGate> */}
       {/* </Provider> */}
     </BrowserRouter>
-  </React.StrictMode>
+  </ThemeProvider>
+  // </React.StrictMode>
 );
