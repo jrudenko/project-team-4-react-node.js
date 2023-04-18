@@ -5,7 +5,6 @@ import sq_green_8 from '../../images/Title/sq_green_8.png';
 import sq_green_14 from '../../images/Title/sq_green_14.png';
 
 export const TitleConteiner = styled.div`
-
   height: 192px;
   box-sizing: border-box;
   width: 100%;
@@ -19,18 +18,15 @@ export const TitleConteiner = styled.div`
     height: 240px;
     padding-top: 136px;
     background-image: url(${sq_green_14}), url(${sq_black_12}), url(${sq_green_14}); 
-        background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: 18px 18px, 15px 15px, 18px 18px;
-    background-position: top 91px left 187px, top 160px left 405px,
-      top 104px left 682px;
+    background-position: top 91px left 187px, top 160px left 405px, top 104px left 682px;
   }
   @media screen and (min-width: 1440px) {
     height: 308px;
     padding-top: 164px;
-    background-position: top 122px left 228px, top 205px left 707px,
-      top 135px left 1150px;
+    background-position: top 122px left 228px, top 205px left 707px, top 135px left 1150px;
   }
-
   h2 {
     font-style: normal;
     font-weight: 600;
@@ -48,5 +44,4 @@ export const TitleConteiner = styled.div`
       line-height: 1;
     }
   }
-
 `;
