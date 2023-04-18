@@ -10,7 +10,7 @@ import {
   CategoriesCardSetItem,
 } from './Styled/CategoriesTable.styled';
 import ProductCard from '../../components/RecipeCard/Recipecard';
-import { testCategories, testRecipes } from './testVariables';
+import { testRecipes } from './testVariables';
 import Title from 'components/Title';
 // import { StyledNav, StyledNavMenu } from './Styled/test.styled';
 
