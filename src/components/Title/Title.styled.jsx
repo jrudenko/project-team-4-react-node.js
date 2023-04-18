@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TitleConteiner = styled.div`  
+export const TitleConteiner = styled.div`
   box-sizing: border-box;
   width: 100%;
 

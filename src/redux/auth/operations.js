@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
 
 // Utility to add JWT
 const setAuthHeader = token => {
