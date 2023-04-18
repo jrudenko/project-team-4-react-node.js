@@ -39,11 +39,11 @@ export const TitleConteiner = styled.div`
     color: #001833;
     @media screen and (min-width: 768px) {
       font-size: 32px;
-      line-height: 32px;
+      line-height: 1;
     }
     @media screen and (min-width: 1440px) {
       font-size: 44px;
-      line-height: 44px;
+      line-height: 1;
     }
   }
 `;

@@ -3,7 +3,7 @@ import { TitleConteiner } from './Title.styled';
 const Title = ({ children }) => {  
 
   return (
-    <TitleConteiner >
+    <TitleConteiner>
       <h2>{children}</h2>
     </TitleConteiner>
   );
