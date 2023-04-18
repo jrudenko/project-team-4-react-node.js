@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BtnSearch, InputSearch } from './SearchMain.styled';
+import { BtnSearch, InputSearch, Form } from './SearchMain.styled';
 
 function SearchMain() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +11,7 @@ function SearchMain() {
 
   return (
     <div>
-      <form onSubmit={handleSearch}>
+      <Form onSubmit={handleSearch}>
         <InputSearch
           type="text"
           placeholder="Enter the text"
@@ -21,7 +21,7 @@ function SearchMain() {
         <BtnSearch bgColor="black" type="submit">
           Search
         </BtnSearch>
-      </form>
+      </Form>
     </div>
   );
 }
