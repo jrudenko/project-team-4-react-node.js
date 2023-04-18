@@ -2,9 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from './SharedLayout'
 
-export const App = () => {
 
-  return (
+export const App = () => {
+ return (
 <Routes>
   <Route path="/welcome" element={<WelcomSection />} />
 

@@ -4,6 +4,11 @@ const Register = () => {
   return (
     <div>
       <RegisterForm />
+      {/* <nav>
+        <li>
+          <a href="#">Sign In</a>
+        </li>
+      </nav> */}
     </div>
   );
 };
