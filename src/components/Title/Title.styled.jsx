@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
-export const TitleConteiner = styled.div`  
+export const TitleConteiner = styled.div`
   box-sizing: border-box;
   width: 100%;
-
-
   h2 {
     font-style: normal;
     font-weight: 600;
@@ -22,5 +20,4 @@ export const TitleConteiner = styled.div`
       line-height: 1;
     }
   }
-
-  `
+`;
