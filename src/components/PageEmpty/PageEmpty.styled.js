@@ -15,20 +15,20 @@ export const EmptyWrapper = styled.div`
   }
 `;
 
-export const EmptyText = styled.p`
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[1]};
-  letter-spacing: ${p => p.theme.letterSpacings.content};
-  line-height: ${p => p.theme.lineHeights.subheader};
-  font-size: 14px;
-  text-align: center;
-  font-feature-settings: 'liga' off;
-  color: ${p => p.theme.colors.black};
-  opacity: 0.5;
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-  }
-`;
+// export const EmptyText = styled.p`
+//   font-family: ${p => p.theme.fonts.main};
+//   font-weight: ${p => p.theme.fontWeights[1]};
+//   letter-spacing: ${p => p.theme.letterSpacings.content};
+//   line-height: ${p => p.theme.lineHeights.subheader};
+//   font-size: 14px;
+//   text-align: center;
+//   font-feature-settings: 'liga' off;
+//   color: ${p => p.theme.colors.black};
+//   opacity: 0.5;
+//   @media screen and (min-width: 768px) {
+//     font-size: 24px;
+//   }
+// `;
 
 export const EmptyImgWrapper = styled.div`
   width: 208px;

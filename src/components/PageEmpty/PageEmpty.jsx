@@ -8,7 +8,7 @@ import searchDesktop2 from '../../images/search/searchWebp/Search-2x-desc.webp';
 
 import {
   EmptyImgWrapper,
-  EmptyText,
+//   EmptyText,
   EmptyWrapper,
 } from './PageEmpty.styled';
 
@@ -32,7 +32,7 @@ const PageEmpty = ({ text }) => {
           />
         </picture>
       </EmptyImgWrapper>
-      <EmptyText>{text}</EmptyText>
+      {/* <EmptyText>{text}</EmptyText> */}
     </EmptyWrapper>
   );
 };
