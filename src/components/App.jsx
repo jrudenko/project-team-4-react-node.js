@@ -20,7 +20,7 @@ export const App = () => {
 
     <Route path="add" element={<div>AddRecipePage</div>}/>
 
-    <Route path="favorite" element={<div>FavoritePage</div>}/>
+    <Route path="favorite" element={<div>Favorites</div>}/>
 
     <Route path="recipe/:recipeId" element={<div>RecipePage</div>}/>
 
