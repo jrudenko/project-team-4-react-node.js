@@ -40,4 +40,26 @@ export const colors = {
     formAddIcon: '#333333',
     labelText: '#000000',
   },
+  fonts: {
+    main: 'Poppins, sans-serif',
+  },
+
+  fontWeights: [400, 500, 600, 700],
+
+  letterSpacings: {
+    subheader: '-0.24px',
+    content: '-0.02em',
+  },
+
+  lineHeights: {
+    subheader: '1',
+    content: '1.33',
+    extraContent: '1.29',
+    btnText: '1.12',
+    description: '1.25',
+    time: '1.43',
+    headerLinks: '1.6',
+    userLink: '1.7',
+    searchSelect: '1.5',
+  },
 };
