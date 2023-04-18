@@ -1,6 +1,8 @@
 import Container from 'components/Container';
 import Title from 'components/Title';
 
+// import img from '../../images/default.jpg';
+
 import { ContentWrapper, Wrapper } from './FavoritePage.styled';
 
 const FavoritePage = () => {
