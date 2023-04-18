@@ -1,7 +1,6 @@
 import { TitleConteiner } from './Title.styled';
 
-const Title = ({ children }) => {  
-
+const Title = ({ children }) => {
   return (
     <TitleConteiner>
       <h2>{children}</h2>

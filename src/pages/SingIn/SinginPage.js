@@ -1,9 +1,14 @@
-import { SingInForm } from '../../components/SinginForm/SingInForm';
+import { SignInForm } from '../../components/AuthForm.v2/SignInForm';
 
 const SingIn = () => {
   return (
     <div>
-      <SingInForm />
+      <SignInForm />
+      {/* <nav>
+        <li>
+          <a href="#">Registration</a>
+        </li>
+      </nav> */}
     </div>
   );
 };
