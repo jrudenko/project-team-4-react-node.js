@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const CategoriesCardSet = styled.ul`
@@ -21,6 +20,7 @@ export const CategoriesCardSetItem = styled.li`
   @media screen and (min-width: 1440px) {
     flex-basis: calc((100% - 14px * 4) / 4);
     margin: calc(14px / 4);
+    margin-bottom: 100px;
   }
 `;
 export const CardStyled = styled.div`
@@ -33,14 +33,3 @@ export const CardStyled = styled.div`
     margin: calc(32px / 4);
   }
 `;
-
-const ProductCard = ({ imgSrc, name }) => {
-  return (
-    <div className="card">
-      <img src={imgSrc} alt={name} />
-      <h3>{name}</h3>
-    </div>
-  );
-};
-
-export default ProductCard;

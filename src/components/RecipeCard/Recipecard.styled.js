@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
-  position: relative;
-  content: '';
-  width: 343px;
-  height: 323px;
-
+  min-width: 343px;
+  min-height: 323px;
   padding-top: 245px;
+  padding-bottom: 15px;
   background-image: url(${props => props.imageUrl});
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    min-width: 336px;
+    min-height: 323px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: 300px;
+    min-height: 323px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -17,10 +25,16 @@ export const ImageWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 
   border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 268px;
+  }
 `;
 
 export const Name = styled.h3`
@@ -32,4 +46,8 @@ export const Name = styled.h3`
   align-content: center;
   color: #3e4462;
   padding: 16px;
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;

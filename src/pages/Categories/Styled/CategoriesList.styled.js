@@ -14,6 +14,23 @@ export const CategoriesList = styled.div`
   justify-content: flex-start;
   align-items: stretch;
   gap: 28px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: 2px;
+
+  /* Add custom scrollbar */
+  scrollbar-color: transparent;
+  scrollbar-width: 2px;
+
+  /* Style the track */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* Style the thumb */
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 
   .active {
     color: #8baa36;

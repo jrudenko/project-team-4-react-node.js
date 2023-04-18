@@ -26,8 +26,11 @@ const CategoriesPage = () => {
     const getCategories = async () => {
       setIsLoading(true);
       try {
-        const categories = await fetchCategoryListFromAPI();
-        setCategories(categories);
+        await fetchCategoryListFromAPI().then(data => {
+          console.log(data);
+          setCategories(data);
+        });
+
         setIsLoading(false);
       } catch (error) {
         console.error(error);
