@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from './SharedLayout'
 import FavoritePage from '../pages/FavoritePage'
+import CategoriesPage from "pages/Categories/CategoriesPage";
 
 // import { lazy } from 'react';
 
@@ -21,7 +22,7 @@ export const App = () => {
 
     <Route path="main" element={<div>MainPage</div>}/>
 
-    <Route path="categories/:categoryName" element={<div>CategoriesPage</div>}/>
+    <Route path="categories/:categoryName" element={<CategoriesPage/>}/>
 
     <Route path="add" element={<div>AddRecipePage</div>}/>
 
