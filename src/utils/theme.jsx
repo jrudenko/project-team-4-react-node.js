@@ -1,10 +1,10 @@
 export const theme = {
-    breakpoints: ['375px', '768px', '1440px'],
-    colors: {},
-    fonts: {},
-    borders: {},
-    radii: {}
-}
+  breakpoints: ['375px', '768px', '1440px'],
+  colors: {},
+  fonts: {},
+  borders: {},
+  radii: {},
+};
 export const colors = {
   primaryBlack: '#1E1F28',
   colorAccent: '#8BAA36',
@@ -17,7 +17,6 @@ export const colors = {
   white: '#ffffff',
   black: '#000000',
   titleConteiner: `#001833`,
-  
   button: {
     textColorMain: '#FAFAFA',
     hoverTextColorMain: '#22252A',
@@ -40,6 +39,5 @@ export const colors = {
     formAddText: '#7d7d7d',
     formAddIcon: '#333333',
     labelText: '#000000',
-    },
-  
+  },
 };

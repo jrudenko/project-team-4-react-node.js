@@ -7,9 +7,9 @@ import FavoritePage from '../pages/FavoritePage'
 
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
 
-export const App = () => {
 
-  return (
+export const App = () => {
+ return (
 <Routes>
   <Route path="/welcome" element={<WelcomSection />} />
 
