@@ -20,4 +20,5 @@ export const TitleConteiner = styled.div`
       line-height: 1;
     }
   }
+
 `;
