@@ -34,8 +34,8 @@ export const TitleConteiner = styled.div`
     font-size: 28px;
     line-height: 28px;
     letter-spacing: -0.02em;
-    font-feature-settings: 'liga' off;
-    color: #001833; 
+    font-feature-settings: 'liga' off;  
+    color: ${p => p.theme.colors.titleConteiner}; 
   
     
     @media screen and (min-width: 768px) {
@@ -50,4 +50,4 @@ export const TitleConteiner = styled.div`
 `;
 
 
-  // color: ${p => p.theme.colors.titleConteiner};
+  
