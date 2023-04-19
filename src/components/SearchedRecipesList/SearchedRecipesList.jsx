@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import RecipesList from 'components/RecipesList/RecipesList';
+import PageEmpty from 'components/PageEmpty';
+import { NoSearchText } from './SearchedRecipesList.styled';
 
 export default function SearchedRecipesList() {
   const [recipes, setRecipes] = useState(null);
@@ -20,18 +22,12 @@ export default function SearchedRecipesList() {
     setRecipes([]);
   }, [searchQuery, searchType]);
 
-  return (
-    <>
-      {recipes ? (
-        (recipes.length === 0 && <div></div>) ||
-        (recipes.length > 0 && <RecipesList recipes={recipes} />)
-      ) : (
-        <p>Enter your search query</p>
-      )}
-
-      {/* {recipes.length === 0 && <div></div>}
-      {recipes.length > 0 && <RecipesList recipes={recipes} />}
-      {!recipes && <p>Enter your search query</p>} */}
-    </>
+  return recipes ? (
+    (recipes.length === 0 && (
+      <PageEmpty text="Try looking for something else..." />
+    )) ||
+      (recipes.length > 0 && <RecipesList recipes={recipes} />)
+  ) : (
+    <NoSearchText>Enter your search query</NoSearchText>
   );
 }

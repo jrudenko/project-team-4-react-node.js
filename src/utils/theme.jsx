@@ -1,6 +1,8 @@
 export const theme = {
   breakpoints: ['375px', '768px', '1440px'],
   colors: {
+    primaryText: '#3E4462',
+    backgroundMain: '#ECECEC',
     primaryBlack: '#1E1F28',
     colorAccent: '#8BAA36',
     greenSecondary: '#EBF3D4',
