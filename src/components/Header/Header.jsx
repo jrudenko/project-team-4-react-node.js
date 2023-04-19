@@ -1,6 +1,6 @@
 import Logo from 'components/Logo';
 import Navigation from 'components/Navigation';
-import ToggleTheme from 'components/ThemeToggler';
+import ThemeToggle from 'components/ThemeToggler';
 import { HeaderContainer, StyledContainer } from './Header.styled';
 
 
@@ -10,7 +10,7 @@ const Header = () => {
       <StyledContainer>
           <Logo />
           <Navigation />
-          <ToggleTheme />
+          <ThemeToggle />
       </StyledContainer>
     </HeaderContainer>
   );
