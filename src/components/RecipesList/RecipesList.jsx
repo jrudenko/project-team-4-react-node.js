@@ -1,18 +1,30 @@
-import { Thumb, Label, StyledLink, Image } from './RecipesList.styled';
+import {
+  Thumb,
+  Label,
+  StyledLink,
+  Image,
+  List,
+  ListWrapper,
+  TextBox,
+} from './RecipesList.styled';
 
 export default function RecipesList({ recipes }) {
   return (
-    <ul>
-      {recipes.map(({ id, thumb, title }) => (
-        <li key={id}>
-          <StyledLink to={`recipe/${id}`}>
-            <Thumb>
-              <Image src={thumb} alt={title} loading="lazy" />
-              <Label>{title}</Label>
-            </Thumb>
-          </StyledLink>
-        </li>
-      ))}
-    </ul>
+    <ListWrapper>
+      <List>
+        {recipes.map(({ _id, thumb, title }) => (
+          <li key={_id.$oid}>
+            <StyledLink to={`recipe/${_id.$oid}`}>
+              <Thumb>
+                <Image src={thumb} alt={title} loading="lazy" />
+                <TextBox>
+                  <Label>{title}</Label>
+                </TextBox>
+              </Thumb>
+            </StyledLink>
+          </li>
+        ))}
+      </List>
+    </ListWrapper>
   );
 }
