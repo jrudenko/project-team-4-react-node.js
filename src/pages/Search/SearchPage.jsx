@@ -5,7 +5,7 @@ import SearchedRecipesList from 'components/SearchedRecipesList/SearchedRecipesL
 export default function SearchPage() {
   return (
     <>
-      {/* <Title /> */}
+      {/* <Titlee /> */}
       <SearchBar />
       <SearchedRecipesList />
     </>
