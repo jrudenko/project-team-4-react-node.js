@@ -3,6 +3,7 @@ import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from './SharedLayout'
 import FavoritePage from '../pages/FavoritePage'
 import CategoriesPage from "pages/Categories/CategoriesPage";
+// import { Footer }  from "./Footer/Footer";
 
 // import { lazy } from 'react';
 
