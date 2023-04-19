@@ -15,6 +15,7 @@ export const colors = {
   whiteText: '#FAFAFA',
   grey: `#D9D9D9`,
   white: '#ffffff',
+  whiteToggle: '#EFEFEF',
   black: '#000000',
   titleConteiner: `#001833`,
   button: {
