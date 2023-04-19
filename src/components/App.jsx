@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import WelcomSection from 'pages/Welcome/WelcomSection';
+
 import SharedLayout from './SharedLayout';
 import FavoritePage from '../pages/FavoritePage';
 import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
+
 
 // import { lazy } from 'react';
 
