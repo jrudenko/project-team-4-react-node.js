@@ -11,7 +11,6 @@ export default function SearchedRecipesList() {
 
   const searchQuery = searchParams.get('query') ?? '';
   const searchType = searchParams.get('type') ?? '';
-  console.log(searchQuery, searchType);
 
   useEffect(() => {
     if (searchQuery === '' || searchType === '') {

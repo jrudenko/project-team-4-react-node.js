@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ReplaceableButton from 'components/ButtonMain/ButtonMain';
 import { Form, Input } from './SearchForm.styled';
-import { colors } from 'utils/theme';
+import { theme } from 'utils/theme';
 
 export default function SearchForm({ onSubmit, queryParam = '' }) {
   const [query, setQuery] = useState('');
@@ -37,7 +37,7 @@ export default function SearchForm({ onSubmit, queryParam = '' }) {
       <ReplaceableButton
         type="submit"
         label="Search"
-        color={colors.colorAccent}
+        color={theme.colors.colorAccent}
       />
     </Form>
   );

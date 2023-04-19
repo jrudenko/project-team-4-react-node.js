@@ -43,8 +43,8 @@ import { useDispatch } from "react-redux";
 import { logIn } from "redux/auth/operations";
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().min(6, "Must be at least 6 characters. At least one uppercase letter, one lowercase letter and one number")
+  email: Yup.string().email('Invalid email. Use letters, numbers, signs @ and .').required('Required'),
+  password: Yup.string().min(6, "Must be: at least 6 characters, at least one uppercase letter, one lowercase letter and one number")
     .max(16, "Must be less then or equal 16 characters. At least one uppercase letter, one lowercase letter and one number")
     .required('Required'),
 });
@@ -57,15 +57,13 @@ const initialValues = {
 export const SignInForm = () => {
   const dispatch = useDispatch()
 
-  const handleSubmit = e => {
-    e.preventDefalt();
-    const form = e.currentTarget;
+  const handleSubmit = (values, { resetForm }) => {
     dispatch(logIn({
-      email: form.elements.email.value,
-      password: form.elements.password.value,
+      email: values.email,
+      password: values.password,
     })
     )
-    form.reset();
+    resetForm()
   };
 
   return (
