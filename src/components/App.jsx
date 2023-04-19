@@ -6,6 +6,8 @@ import FavoritePage from '../pages/FavoritePage';
 import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
+import RecipePage from '../pages/RecipePage';
+
 
 
 // import { lazy } from 'react';
@@ -22,6 +24,7 @@ export const App = () => {
       <Route path="/signin" element={<div>SigninPage</div>} />
 
       <Route path="/" element={<SharedLayout />}>
+      
         <Route path="main" element={<div>MainPage</div>} />
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
@@ -30,7 +33,7 @@ export const App = () => {
 
         <Route path="favorite" element={<FavoritePage />} />
 
-        <Route path="recipe/:recipeId" element={<div>RecipePage</div>} />
+        <Route path="recipe/:recipeId" element={<RecipePage/>} />
 
         <Route path="my" element={<div>MyRecipesPage</div>} />
 
