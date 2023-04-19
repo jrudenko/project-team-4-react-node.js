@@ -58,4 +58,20 @@ export const theme = {
     userLink: '1.7',
     searchSelect: '1.5',
   },
+  transitions: {
+    main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+};
+
+export const darkTheme = {
+  breakpoints: ['375px', '768px', '1440px'],
+  colors: {
+    btnTextLight: '#FAFAFA',
+    hoverTextColorMain: '#8BAA36',
+    hoverSecondaryText: '#8BAA36',
+    whiteText: '#FAFAFA',
+  },
+    transitions: {
+    main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
 };
