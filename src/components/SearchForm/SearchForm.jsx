@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import ReplaceableButton from 'components/ButtonMain/ButtonMain';
-import { Form, Input } from './SearchForm.styled';
-import { theme } from 'utils/theme';
+import { Form, SearchInput, SearchButton } from './SearchForm.styled';
 
 export default function SearchForm({ onSubmit, queryParam = '' }) {
   const [query, setQuery] = useState('');
@@ -27,18 +25,14 @@ export default function SearchForm({ onSubmit, queryParam = '' }) {
 
   return (
     <Form onSubmit={formSubmit}>
-      <Input
+      <SearchInput
         type="text"
         autocomplete="off"
         value={query}
         placeholder="Enter query"
         onChange={inputChange}
       />
-      <ReplaceableButton
-        type="submit"
-        label="Search"
-        color={theme.colors.colorAccent}
-      />
+      <SearchButton type="submit">Search</SearchButton>
     </Form>
   );
 }
