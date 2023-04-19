@@ -10,7 +10,7 @@ export const TogglContainer = styled.div`
   box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
   background-color: ${props => props.isActive
       ? props.theme.colors.colorAccent
-      : props.theme.colors.whiteToggle};
+      : props.theme.colors.white};
 `;
 
 export const TogglCircle = styled.div`
