@@ -2,7 +2,7 @@ import { useState} from 'react';
 import RecipePageHero from 'components/RecipePageHero';
 
 const RecipePage = () => {
-    const [recipe, setRecipe] = useState({});
+    const [recipe, _] = useState({});
 
     return(
         <>
