@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+// import { getFavoriteAPI } from 'service/API/OwnRecipesAPI';
+
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
 
 // Utility to add JWT
@@ -89,3 +91,18 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+// // ------------- FAVORITE -------------
+
+// export const getFavorite = createAsyncThunk(
+//   'ownRecipes/getFavorite',
+//   async ({ page, per_page }, { rejectWithValue }) => {
+//     try {
+//       const data = await getFavoriteAPI(page ?? null, per_page ?? null);
+
+//       return { recipes: data.meals, total: data.totalHits };
+//     } catch (error) {
+//       return rejectWithValue(error.response.status);
+//     }
+//   }
+// );

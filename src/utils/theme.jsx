@@ -11,6 +11,8 @@ export const theme = {
     grey: `#D9D9D9`,
     white: '#ffffff',
     black: '#000000',
+    mainDark: '#23262A',
+    secondaryDark: '#3E4462',
     titleConteiner: `#001833`,
   },
   button: {
@@ -70,6 +72,20 @@ export const darkTheme = {
     hoverTextColorMain: '#8BAA36',
     hoverSecondaryText: '#8BAA36',
     whiteText: '#FAFAFA',
+    favoriteRecipeBox: '#2A2C36',
+    mainDark: '#FAFAFA',
+    secondaryDark: '#FAFAFA',
+  },
+
+  radius: {
+    btnStandart: '6px',
+    btnIcon: '4px',
+    logo: '12px',
+    image: '8px',
+    switch: '50px',
+    pagination: '26px',
+    modal: '24px',
+    circle: '50%',
   },
     transitions: {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
