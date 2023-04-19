@@ -3,6 +3,7 @@ import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from './SharedLayout'
 import FavoritePage from '../pages/FavoritePage'
 import CategoriesPage from "pages/Categories/CategoriesPage";
+import RecipePage from '../pages/RecipePage';
 
 // import { lazy } from 'react';
 
@@ -28,7 +29,7 @@ export const App = () => {
 
     <Route path="favorite" element={<FavoritePage />}/>
 
-    <Route path="recipe/:recipeId" element={<div>RecipePage</div>}/>
+    <Route path="recipe/:recipeId" element={<RecipePage/>}/>
 
     <Route path="my" element={<div>MyRecipesPage</div>}/>
 
