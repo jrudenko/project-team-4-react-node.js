@@ -1,11 +1,11 @@
-import {Title} from "./AddRecipePage.styled";
+import Title from 'components/Title';
 
 
 const AddRecipePage = () => {
     return (
         <div>
             <Title>
-                <h1>Add recipe</h1>
+                Add recipe
             </Title>
         </div>
         
