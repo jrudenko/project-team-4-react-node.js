@@ -55,17 +55,19 @@ width: 125px;
 height: 43px;
 margin-right: auto;
 margin-left: auto;
-padding: 12px 24px;
 color: #FAFAFA;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
 text-align: left;
-background-color: #8BAA36;
 border-radius: 24px 44px;
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+border: 1px solid;
+padding: 12px 24px;
+:hover {
+  background-color: #8baa36;
+  border-color: #8baa36;
+  }
 @media (min-width: 768px) {
   width: 141px;
   }
