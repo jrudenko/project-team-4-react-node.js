@@ -18,6 +18,7 @@ export const TogglCircle = styled.div`
   width: 21px;
   height: 21px;
   border-radius: 50%;
+  transition: ${p => p.theme.transitions.main};
   filter: drop-shadow(2px 1px 6px rgba(0, 0, 0, 0.25));
   background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
   margin-left: ${({ isActive }) => (isActive ? 'calc(100% - 20px)' : '2px')};
