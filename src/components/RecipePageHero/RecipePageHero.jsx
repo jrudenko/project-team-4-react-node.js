@@ -1,6 +1,6 @@
 import { Wrapper, HeroTitle, HeroText } from './RecipePageHero.styled';
 
-const RecipePageHero = ({ recipe }) => {
+const RecipePageHero = () => {
   return (
     <>
       <Wrapper>
