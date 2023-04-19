@@ -31,11 +31,12 @@ export const NavItem = styled.li`
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
-  color: ${p => p.theme.colors.hoverTextColorMain};
+  color: ${p => p.theme.colors.mainDark};
+  transition: ${p => p.theme.transitions.main};
   &.active,
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.primaryBag};
+    color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 1440px) {
     color: '#23262A';
@@ -47,6 +48,8 @@ export const SearchIcon = styled(FiSearch)`
   width: 24px;
   height: 24px;
   margin-right: 12px;
+  color: '#22252A'; 
+
 `;
 export const Flex = styled.div`
   display: flex;
