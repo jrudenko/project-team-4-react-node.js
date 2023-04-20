@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const RectanBtn = styled.button`
   background-color: ${props => props.bgColor};
-  color: white;
+  color: #3e4462;
   border-radius: 6px;
-  border: 1px solid;
+  border: none;
   padding: 12px 24px;
   width: 192px;
   height: 59px;

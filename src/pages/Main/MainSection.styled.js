@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const MainWrapper = styled.div`
-  border: 3px solid red;
-`;
-
 export const ChooseYourBreakfastWrapper = styled.div``;
 
 export const IMG = styled.div`

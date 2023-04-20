@@ -1,8 +1,7 @@
 import React from 'react';
 import SearchMain from '../Main/Search';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, NavLink } from 'react-router-dom';
 import {
-  MainWrapper,
   ChooseYourBreakfastWrapper,
   IMG,
   Title,
@@ -10,15 +9,18 @@ import {
 } from './MainSection.styled';
 
 import mainPasta from '../../images/kisspngPasta/unsplash-desktop.webp';
-import PreviewCategorie from 'components/PreviewCategorie/PreviewCategorie';
+// import PreviewCategorie from 'components/PreviewCategorie/PreviewCategorie';
 import RectangularButton from 'components/ButtonRectangular/ButtonRectangular';
 import ChooseYourBreakfast from './ChooseYourBreakfast/ChooseYourBreakfast';
-import SearchForm from 'components/SearchForm/SearchForm';
+// import SearchForm from 'components/SearchForm/SearchForm';
+import RecipesList from 'components/RecipesList/RecipesList';
+import recipes from '../../recipes.json';
+import Container from 'components/Container/Container';
 
 function MainPage() {
-  //   function handleButtonClick() {
-  //     console.log('Button clicked!');
-  //   }
+  function handleButtonClick() {
+    console.log('Button clicked!');
+  }
   const [searchParams, setSearchParams] = useSearchParams();
 
   const searchQuery = searchParams.get('query') ?? '';
@@ -31,7 +33,7 @@ function MainPage() {
   };
 
   return (
-    <MainWrapper>
+    <Container>
       <ChooseYourBreakfastWrapper>
         <ChooseYourBreakfast />
         <Title>
@@ -45,12 +47,23 @@ function MainPage() {
         <IMG>
           <img src={mainPasta} alt="mainPasta" />
         </IMG>
-        <SearchMain />
-        <SearchForm onSubmit={updateQuery} queryParam={searchQuery} />
-        <PreviewCategorie />
-        <RectangularButton></RectangularButton>
+        <SearchMain
+          style={{ color: 'black' }}
+          onSubmit={updateQuery}
+          queryParam={searchQuery}
+        />
+        {/* <SearchForm /> */}
+        {/* <PreviewCategorie /> */}
+        <NavLink to={`/categories/:categoryName`}>
+          <RectangularButton
+            onClick={handleButtonClick}
+            label="See recipes ->"
+          />
+        </NavLink>
       </ChooseYourBreakfastWrapper>
-    </MainWrapper>
+
+      <RecipesList recipes={recipes} />
+    </Container>
   );
 }
 
