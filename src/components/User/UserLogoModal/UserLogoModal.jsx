@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { logOut } from '../../redux/auth/operations'
+import { logOut } from '../../../redux/auth/operations'
 
 import { editInput, arrowRight } from '../../images/SVG' //уточнити назви іконок
 import { ModalWrapper, EditProfile,EditInputIcon, LogoutBtn,LogoutIcon } from 'pages/Favorites/Favorites.styled';
