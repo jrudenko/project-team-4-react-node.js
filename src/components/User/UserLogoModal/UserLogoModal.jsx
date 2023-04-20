@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { logOut } from '../../redux/auth/operations'
+import { logOut } from '../../../redux/auth/operations'
 
 
 import arrowRight from '../../images/icon/arrow-right.png' //уточнити назви іконок
