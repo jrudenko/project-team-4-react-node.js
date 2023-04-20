@@ -6,11 +6,10 @@ const SharedLayout = () => {
     return (
       <div>
         <Header />
-          <header>This Header</header>
           <Suspense fallback={<div>Loader...</div>}>
             <Outlet/>
           </Suspense>
-          <footer>This Footer</footer>
+        <footer>This Footer</footer>
         </div>
     )
 }
