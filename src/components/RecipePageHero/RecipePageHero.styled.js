@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ButSkewStyle } from 'components/ButtonSkew';
+import { ReactComponent as Clock } from '../../images/SVG/clock1.svg';
 
 import mob1 from 'images/flatLayAssortment/flat-lay-assortment-vegetables-mobile.jpg';
 import  mob2  from 'images/flatLayAssortment/flat-lay-assortment-vegetables-mobile@2x.jpg';
@@ -57,6 +58,7 @@ ${ButSkewStyle} {
     padding: 10px 18px;
     color: ${p=>p.theme.button.secondaryBag};
     border: 2px solid ${p=>p.theme.button.hoverSecondaryText};
+    margin-bottom: 43px;
 
     @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
       font-size: 16px;
@@ -127,3 +129,33 @@ export const HeroTitle = styled.title`
     margin-bottom: 30px;
   }
   `;
+
+ export const StyledClock = styled(Clock)`
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  color: ${p=>p.theme.colors.mainDark};
+
+  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+   width: 20px;
+   height: 20px;
+   margin-right: 8px;
+  }  
+`;
+
+  export const WrapperTime = styled.div`
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  color: ${p=>p.theme.colors.mainDark};
+  font-weight: ${p => p.theme.fontWeights[1]};
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: ${p => p.theme.letterSpacings.subheader};
+  height: 14px;
+
+  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+    height: 20px;
+    font-size: 14px;
+  }
+`;
