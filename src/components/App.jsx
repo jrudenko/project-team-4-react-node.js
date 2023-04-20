@@ -7,9 +7,12 @@ import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
+
 import RegistrationPage from '../pages/Registration/RegistrationPage';
 import SingIn from 'pages/SingIn/SinginPage';
-// import { Footer } from './Footer/Footer';
+
+import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
+
 
 // import { lazy } from 'react';
 
@@ -30,13 +33,13 @@ export const App = () => {
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
-        <Route path="add" element={<AddRecipePage/>} />
+        <Route path="add" element={<AddRecipePage />} />
 
         <Route path="favorite" element={<FavoritePage />} />
 
-        <Route path="recipe/:recipeId" element={<RecipePage/>} />
+        <Route path="recipe/:recipeId" element={<RecipePage />} />
 
-        <Route path="my" element={<div>MyRecipesPage</div>} />
+        <Route path="my" element={<MyRecipesPage />} />
 
         <Route path="search" element={<SearchPage />} />
 
