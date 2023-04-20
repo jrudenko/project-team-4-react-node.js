@@ -7,8 +7,9 @@ import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
-
-
+import RegistrationPage from '../pages/Registration/RegistrationPage';
+import SingIn from 'pages/SingIn/SinginPage';
+// import { Footer } from './Footer/Footer';
 
 // import { lazy } from 'react';
 
@@ -19,12 +20,12 @@ export const App = () => {
     <Routes>
       <Route path="/welcome" element={<WelcomSection />} />
 
-      <Route path="/register" element={<div>RegisterPage</div>} />
+      <Route path="/register" element={<RegistrationPage/>} />
 
-      <Route path="/signin" element={<div>SigninPage</div>} />
+      <Route path="/signin" element={<SingIn/>} />
 
       <Route path="/" element={<SharedLayout />}>
-      
+
         <Route path="main" element={<div>MainPage</div>} />
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
