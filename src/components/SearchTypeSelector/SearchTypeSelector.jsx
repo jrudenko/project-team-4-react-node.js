@@ -1,15 +1,18 @@
+import { Label, BoxSelector, Select } from './SearchTypeSelector.styled';
+
 export default function SearchTypeSelector({ onHandleChange }) {
   return (
-    <label>
-      Search by:
-      <select
+    <BoxSelector>
+      <Label htmlFor="search">Search by:</Label>
+      <Select
+        id="search"
         name="type"
         defaultValue="title"
         onChange={evt => onHandleChange(evt)}
       >
         <option value="title">Title</option>
         <option value="ingredients">Ingredients</option>
-      </select>
-    </label>
+      </Select>
+    </BoxSelector>
   );
 }
