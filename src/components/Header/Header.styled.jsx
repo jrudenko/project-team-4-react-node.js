@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  position: relative;
+  position: absolute;
+  // position: relative;
   z-index: 10;
   padding-top: 18px;
 `;
@@ -18,4 +19,9 @@ export const StyledContainer = styled.div`
     padding: 0 100px;
     justify-content: start;
   }
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
 `;
