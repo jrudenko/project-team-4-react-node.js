@@ -1,4 +1,5 @@
 import { Wrapper, HeroTitle, HeroText } from './RecipePageHero.styled';
+import ButtonSkew from 'components/ButtonSkew';
 
 const RecipePageHero = () => {
   return (
@@ -10,6 +11,10 @@ const RecipePageHero = () => {
           pan seared salmon is layered on top of spinach, avocado, tomatoes, and
           red onions. Then drizzled with a homemade lemon vinaigrette.
         </HeroText>
+        <ButtonSkew
+          type="button"
+          text="Remove from favorite recipes"
+        />
       </Wrapper>
     </>
   );
