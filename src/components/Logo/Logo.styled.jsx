@@ -12,7 +12,7 @@ export const LogoLink = styled(Link)`
       width: 44px;
       height: 44px;
     }
-    
+
 `;
 
 

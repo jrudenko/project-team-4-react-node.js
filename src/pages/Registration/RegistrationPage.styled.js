@@ -7,3 +7,4 @@ export const Page = styled.div`
   justify-content: flex-end;
   height: 100vh;
 `;
+export const Image = styled.div``;
