@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const ChooseYourBreakfastWrapper = styled.div``;
+export const ContentWrapper = styled.div``;
+
+export const ChooseYourBreakfastWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+`;
 
 export const IMG = styled.div`
   /* transform: translate(231%, -35%); */
@@ -18,9 +24,6 @@ export const Title = styled.h1`
   height: 100px;
   left: 100px;
   top: 226px;
-
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 100px;
   line-height: 100px;
@@ -39,8 +42,6 @@ export const Title2 = styled.p`
   height: 54px;
   left: 38px;
   top: 300px;
-  font-family: 'Poppins';
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
