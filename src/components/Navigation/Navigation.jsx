@@ -4,7 +4,7 @@ import { Flex, NavBar, NavItem, NavLinkStyled, SearchIcon } from './Navigation.s
 
 const Navigation = (props) => {
 
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: 1439 });
   const { onClick } = props;
   return (
     <NavBar mr={props.mr} fd={props.fd}>

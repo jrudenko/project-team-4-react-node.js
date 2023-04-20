@@ -5,7 +5,7 @@ import AddRecipeForm from 'components/AddRecipeForm/RecipeDescriptionFields/AddR
 const AddRecipePage = () => {
     return (
         <div>
-            
+
             <Title>
                 Add recipe
             </Title>

@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { TitleConteiner } from "../Title/Title.styled";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
+import { signUp } from "../../redux/auth/operations";
 
 
 const validationSchema = Yup.object().shape({
@@ -24,7 +24,7 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, {resetForm}) => {
     dispatch(
-      register({
+      signUp({
         name: values.name,
         email: values.email,
         password: values.password,
