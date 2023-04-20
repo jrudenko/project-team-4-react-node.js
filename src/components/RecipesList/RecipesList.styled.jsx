@@ -3,13 +3,32 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.section`
   padding-top: 42px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 90px;
+  }
 `;
 
 export const List = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 28px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 14px;
+  }
 `;
 
 export const Thumb = styled.div`
@@ -19,6 +38,14 @@ export const Thumb = styled.div`
   border-radius: 8px;
   overflow: hidden;
   background-color: ${p => p.theme.colors.white};
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 300px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -44,6 +71,14 @@ export const TextBox = styled.div`
   align-items: center;
   background-color: ${p => p.theme.colors.white};
   border-radius: 8px;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 268px;
+  }
 `;
 
 export const Label = styled.p`
