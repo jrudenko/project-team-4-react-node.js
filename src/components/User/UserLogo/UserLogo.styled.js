@@ -35,7 +35,7 @@ font-weight: 600;
 font-size: 12px;
 line-height: 1,7;
 
-color: #22252A;
+color: '#22252A';
 @media (min-width: 768px) {
     width: 43px;
     height: 24px;
