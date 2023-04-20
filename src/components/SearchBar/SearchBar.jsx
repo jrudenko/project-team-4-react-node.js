@@ -26,7 +26,7 @@ export default function SearchBar() {
       [name]: value,
     });
   };
-  // SearchForm - component from MainPage
+  // SearchForm - compoadanent from MainPage
   return (
     <SearchBarWrapper>
       <SearchForm onSubmit={updateQuery} queryParam={searchQuery} />

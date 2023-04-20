@@ -7,12 +7,12 @@ import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
+import MainPage from 'pages/Main/MainSection';
 
 import RegistrationPage from '../pages/Registration/RegistrationPage';
 import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
-
 
 // import { lazy } from 'react';
 
@@ -23,13 +23,12 @@ export const App = () => {
     <Routes>
       <Route path="/welcome" element={<WelcomSection />} />
 
-      <Route path="/register" element={<RegistrationPage/>} />
+      <Route path="/register" element={<RegistrationPage />} />
 
-      <Route path="/signin" element={<SingIn/>} />
+      <Route path="/signin" element={<SingIn />} />
 
       <Route path="/" element={<SharedLayout />}>
-
-        <Route path="main" element={<div>MainPage</div>} />
+        <Route path="main" element={<MainPage>MainPage</MainPage>} />
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
