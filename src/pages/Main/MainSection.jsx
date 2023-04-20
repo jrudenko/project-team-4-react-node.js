@@ -1,40 +1,55 @@
 import React from 'react';
 import SearchMain from '../Main/Search';
+import { useSearchParams } from 'react-router-dom';
 import {
   MainWrapper,
   ChooseYourBreakfastWrapper,
-  PreviewCategories,
+  IMG,
+  Title,
+  Title2,
 } from './MainSection.styled';
-import { ChooseYourBreakfast } from './ChooseYourBreakfast/ChooseYourBreakfast.styled';
+
 import mainPasta from '../../images/kisspngPasta/unsplash-desktop.webp';
+import PreviewCategorie from 'components/PreviewCategorie/PreviewCategorie';
+import RectangularButton from 'components/ButtonRectangular/ButtonRectangular';
+import ChooseYourBreakfast from './ChooseYourBreakfast/ChooseYourBreakfast';
+import SearchForm from 'components/SearchForm/SearchForm';
 
 function MainPage() {
   //   function handleButtonClick() {
   //     console.log('Button clicked!');
   //   }
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchQuery = searchParams.get('query') ?? '';
+
+  const updateQuery = query => {
+    const normalizedQuery = query.toLowerCase().trim();
+    const nextParams =
+      normalizedQuery !== '' ? { query: normalizedQuery, type: 'title' } : {};
+    setSearchParams(nextParams);
+  };
 
   return (
     <MainWrapper>
       <ChooseYourBreakfastWrapper>
-        <ChooseYourBreakfast>
-          <h2>So Yummy</h2>
-          <p>
-            "What to cook?" is not only a recipe app, it is, in fact, your
-            cookbook. You can add your own recipes to save them for the future.
-          </p>
-          <img src={mainPasta} alt="mainPasta" style={{}} />
-          <SearchMain />
-        </ChooseYourBreakfast>
+        <ChooseYourBreakfast />
+        <Title>
+          So
+          <span>Yummy</span>
+        </Title>
+        <Title2>
+          "What to cook?" is not only a recipe app, it is, in fact, your
+          cookbook. You can add your own recipes to save them for the future.
+        </Title2>
+        <IMG>
+          <img src={mainPasta} alt="mainPasta" />
+        </IMG>
+        <SearchMain />
+        <SearchForm onSubmit={updateQuery} queryParam={searchQuery} />
+        <PreviewCategorie />
+        <RectangularButton></RectangularButton>
       </ChooseYourBreakfastWrapper>
-      <PreviewCategories>
-        <ul>
-          Breakfast
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-      </PreviewCategories>
     </MainWrapper>
   );
 }
