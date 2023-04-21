@@ -1,22 +1,18 @@
 import React from 'react';
-import { useEffect } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../../redux/auth/operations'
 
 
 import arrowRight from '../../images/icon/arrow-right.png' //уточнити назви іконок
 import editInput from '../../images/SVG/editInput.svg'
-import { ModalWrapper, EditProfile,EditInputIcon, EditBtn, LogoutBtn,LogoutIcon } from './UserLogoModal.styled';
+import { ModalWrapper, EditProfile,EditInputIcon, LogoutBtn,LogoutIcon } from './UserLogoModal.styled';
 
 
-export const UserLogoModal = ({ onClose, onLogout, onEdit }) => {
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown)
-    });
-    const handleKeyDown = e => {
-        if (e.code === 'Escape') {
-            onClose();
-        }
+export const UserLogoModal = () => {
+    const dispatch = useDispatch();
+
+const handleBtnLogoutClick = () => {
+        dispatch(logOut());
     };
 
     return (
@@ -24,17 +20,16 @@ export const UserLogoModal = ({ onClose, onLogout, onEdit }) => {
             <EditProfile>
                 <p>
                     Edit profile
-                </p>
-                <EditBtn onClick={onEdit}>
                     <EditInputIcon src={editInput} alt = "edit button"/>
-                </EditBtn>
+                </p>
             </EditProfile>
-            <LogoutBtn onClick={onLogout}>
+            <LogoutBtn onClick={handleBtnLogoutClick}>
                 <p>
                     Logout
                 </p>
                 <LogoutIcon src={arrowRight} alt="Logout button" />
             </LogoutBtn>
+
         </ModalWrapper>
     )
 };

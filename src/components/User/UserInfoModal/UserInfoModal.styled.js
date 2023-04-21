@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 
 
@@ -50,4 +51,5 @@ color: '#22252A'
 export const IconClose = styled.img`
 width: 24px;
 height: 24px;
-`
+`;
+

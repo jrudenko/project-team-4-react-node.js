@@ -5,7 +5,6 @@ import SearchedRecipesList from 'components/SearchedRecipesList/SearchedRecipesL
 
 export default function SearchPage() {
   return (
-    // <Wrapper>
     <Container>
       <Title>Search</Title>
       <SearchBar />

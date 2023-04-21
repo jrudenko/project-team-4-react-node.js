@@ -6,6 +6,7 @@ import { Preferences } from "./BenefitsList";
 import { LogoFooter } from './LogoFooter';
 import { FooterMenu } from './FooterMenu';
 import { Networks } from 'components/SocialMedia/Networks';
+import { SubscribeForm } from 'components/SubscribeForm/SubscribeForm';
 
 export const Footer = () => {
   return (
@@ -14,7 +15,8 @@ export const Footer = () => {
 
       <Preferences/>
       <FooterMenu/>
-      <Networks/>
+      <Networks />
+      <SubscribeForm/>
     </FooterConteiner>
   )
 }
