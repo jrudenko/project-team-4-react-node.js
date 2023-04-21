@@ -48,9 +48,9 @@ export const addOwnRecipe = createAsyncThunk(
 
 export const deleteOwnRecipe = createAsyncThunk(
   'ownRecipes/deleteRecipe',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      const data = await deleteOwnRecipeAPI(id);
+      const data = await deleteOwnRecipeAPI(_id);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
@@ -60,9 +60,9 @@ export const deleteOwnRecipe = createAsyncThunk(
 
 export const getOwnRecipeByID = createAsyncThunk(
   'ownRecipes/singleRecipeByID',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      const data = await getOwnRecipeByIdAPI(id);
+      const data = await getOwnRecipeByIdAPI(_id);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
@@ -72,9 +72,9 @@ export const getOwnRecipeByID = createAsyncThunk(
 
 export const addFavorite = createAsyncThunk(
   'ownRecipes/addFavorite',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      const data = await addFavoriteAPI({ favoriteRecipes: id });
+      const data = await addFavoriteAPI({ favoriteRecipes: _id });
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
@@ -97,9 +97,9 @@ export const getFavorite = createAsyncThunk(
 
 export const deleteFavorite = createAsyncThunk(
   'ownRecipes/deleteFavorite',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      const data = await removeFavoriteAPI(id);
+      const data = await removeFavoriteAPI(_id);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
