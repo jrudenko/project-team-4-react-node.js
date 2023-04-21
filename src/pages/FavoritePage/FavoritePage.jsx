@@ -60,18 +60,18 @@ const FavoritePage = () => {
               <ContentWrapper>
                 {favorites.map(item => {
                   return (
-                    <li key={item.idMeal}>
+                    <li key={item.recipeId}>
                       <FavoriteRecipeBox
                         location="favorite"
-                        id={item.idMeal}
-                        img={item.strMealThumb ?? img}
-                        title={item.strMeal ?? 'No name'}
+                        id={item._id}
+                        img={item.thumb ?? img}
+                        title={item.title ?? 'No name'}
                         text={
                           <span>
-                            {item.strInstructions ?? 'No description'}
+                            {item.instructions?? 'No description'}
                           </span>
                         }
-                        time={item.cookingTime ? `${item.cookingTime} min` : ''}
+                        time={item.time ? `${item.time} min` : ''}
                       />
                     </li>
                   );
