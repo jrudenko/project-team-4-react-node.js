@@ -16,6 +16,7 @@ import img from '../../images/default.jpg';
 
 import { ContentWrapper, Wrapper } from './FavoritePage.styled';
 import { scroll } from 'utils/scroll';
+import { Loader } from 'components/Loader/Loader';
 
 const FavoritePage = () => {
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ const FavoritePage = () => {
       <Container>
         <Title>Favorites</Title>
         {isFetching ? (
-          <div>Loader</div>
+          <Loader />
         ) : (
           <>
             {favorites && favorites.length > 0 ? (
