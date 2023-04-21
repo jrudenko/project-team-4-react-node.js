@@ -91,8 +91,9 @@ export const darkTheme = {
     circle: '50%',
   },
     transitions: {
-    main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-    
+      main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
 };
+
+
 
