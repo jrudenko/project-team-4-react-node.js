@@ -16,6 +16,7 @@ export const theme = {
     mainDark: '#23262A',
     secondaryDark: '#3E4462',
     titleConteiner: `#001833`,
+    darkGrey: '#7E7E7E',
   },
   button: {
     textColorMain: '#FAFAFA',
