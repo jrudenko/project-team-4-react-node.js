@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
+axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
 export const signUpUserAPI = user => {
   return axios.post('/auth/signup', user).then(({ data }) => {
