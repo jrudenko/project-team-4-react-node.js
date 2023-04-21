@@ -3,14 +3,13 @@ import { ReactComponent as LogoSvg } from '../../images/SVG/Logo/logo.svg';
 
 const Logo = () => {
   return (
-    <LogoLink to="/">
+    <LogoLink to="/main">
       <LogoSvg />
     </LogoLink>
   );
-}
+};
 
 export default Logo;
-
 
 // import { useMediaQuery } from 'react-responsive';
 // import { ReactComponent as LogoSvg } from '../../images/SVG/Logo/logo.svg';
@@ -19,11 +18,11 @@ export default Logo;
 // const Logo = (p) => {
 //     const isTabletOrDesktop = useMediaQuery({ minWidth: 769 });
 //     const isMobile = useMediaQuery({ maxWidth: 767 });
-  
+
 //     return (
 //       <LogoLink to="/" mr={p.mr}>
 //             {isTabletOrDesktop && <LogoSvg />}
-//             {isMobile && <LogoSvg width={40} height={40} />}  
+//             {isMobile && <LogoSvg width={40} height={40} />}
 //         </LogoLink>
 //     );
 // };

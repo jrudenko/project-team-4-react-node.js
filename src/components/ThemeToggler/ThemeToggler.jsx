@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TogglContainer, TogglCircle } from './ThemeToggler.styled';
 
-const ThemeToggle = ({ onChange }) => {
+const ThemeToggler = ({ onChange }) => {
   const [isActive, setIsActive] = useState(false);
 
   const toggleTheme = () => {
@@ -16,4 +16,4 @@ const ThemeToggle = ({ onChange }) => {
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggler;
