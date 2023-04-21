@@ -60,7 +60,7 @@ const FavoritePage = () => {
               <ContentWrapper>
                 {favorites.map(item => {
                   return (
-                    <li key={item.recipeId}>
+                    <li key={item.recipe}>
                       <FavoriteRecipeBox
                         location="favorite"
                         id={item._id}
