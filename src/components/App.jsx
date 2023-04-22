@@ -11,6 +11,7 @@ import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
 import MainPage from 'pages/Main/MainSection';
 
+import RegisterPage from '../pages/Registration/RegistrationPage';
 
 // import { getMode } from '../redux/theme/themeSelector';
 // import {
@@ -18,7 +19,6 @@ import MainPage from 'pages/Main/MainSection';
 // } from '../redux/auth/selectors';
 import { getCurrentUser } from '../redux/auth/operations';
 
-import RegistrationPage from '../pages/Registration/RegistrationPage';
 import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
@@ -42,7 +42,7 @@ export const App = () => {
     <Routes>
       <Route path="/welcome" element={<WelcomSection />} />
 
-      <Route path="/register" element={<RegistrationPage />} />
+      <Route path="/register" element={<RegisterPage />} />
 
       <Route path="/signin" element={<SingIn />} />
 
