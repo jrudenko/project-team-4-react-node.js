@@ -13,9 +13,6 @@ const API = axios.create({
 const fetchCategoryListFromAPI = async () => {
   try {
     const response = await API.get('/recipes/category-list');
-    console.log(response);
-    console.log(response.data);
-    console.log(response.data.categoryList);
     return response.data;
   } catch (error) {
     console.log(error.message);
