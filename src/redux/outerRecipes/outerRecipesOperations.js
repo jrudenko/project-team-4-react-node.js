@@ -61,9 +61,9 @@ export const getLimitedRecipesByCategory = createAsyncThunk(
 
 export const getOneRecipeById = createAsyncThunk(
   'outerRecipes/recipe',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      const data = await getOneRecipeByIdAPI(id);
+      const data = await getOneRecipeByIdAPI(_id);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
