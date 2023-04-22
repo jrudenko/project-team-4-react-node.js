@@ -2,6 +2,7 @@ import React from 'react';
 import RectangularButton from 'components/ButtonRectangular/ButtonRectangular';
 import { NavLink } from 'react-router-dom';
 import { Title, Wrapper } from './ChooseYourBreakfast.styled';
+// import BreakfastArrowSvg from 'components/СhooseYourBreakfast/BreakfastArrowSvg';
 
 function ChooseYourBreakfast() {
   function handleButtonClick() {
@@ -18,6 +19,7 @@ function ChooseYourBreakfast() {
       </Title>
       <NavLink to={`/categories/:categoryName`}>
         <RectangularButton onClick={handleButtonClick} label="See recipes ->" />
+        {/* <BreakfastArrowSvg /> */}
       </NavLink>
     </Wrapper>
   );
