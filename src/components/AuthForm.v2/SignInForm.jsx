@@ -1,91 +1,46 @@
-// import { useDispatch } from 'react-redux';
-// import { logIn } from '../../redux/auth/operations';
-// import {TitleConteiner } from "../Title/Title.styled";
+// import React from 'react';
+// import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import * as Yup from 'yup';
 
-// export const SingInForm = () => {
-//   const dispatch = useDispatch();
+// const validationSchema = Yup.object().shape({
+//   email: Yup.string()
+//     .email('Invalid email')
+//     .required('Email is required'),
+//   password: Yup.string()
+//     .min(6, 'Password must be at least 6 characters')
+//     .max(16, 'Password cannot be longer than 16 characters')
+//     .matches(/[a-zA-Z]/, 'Password must contain at least one letter')
+//     .matches(/[0-9]/, 'Password must contain at least one number')
+//     .required('Password is required'),
+// });
 
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     const form = e.currentTarget;
-//     dispatch(
-//       logIn({
-//         email: form.elements.email.value,
-//         password: form.elements.password.value,
-//       })
-//     );
-//     form.reset();
-//   };
-
+// const SignInForm = ({ formType, handleSubmit }) => {
 //   return (
-//     <div >
-//       <form onSubmit={handleSubmit} autoComplete="off">
-//         <TitleConteiner>Sign In</TitleConteiner>
-//         <label >
-//           <input type="email" name="email" placeholder="Email"/>
-//         </label>
-//         <label >
-//           <input type="password" name="password" placeholder="Password"/>
-//         </label>
-//         <button  type="submit">
-//           Sign In
-//         </button>
-//       </form>
+//     <div>
+//       <h2>{formType === 'register' ? 'Sign In': 'Register'}</h2>
+//       <Formik
+//         initialValues={{ email: '', password: '' }}
+//         validationSchema={validationSchema}
+//         onSubmit={handleSubmit}
+//       >
+//         {({ errors, touched }) => (
+//           <Form>
+//             <div>
+//               <label htmlFor="email">Email:</label>
+//               <Field name="email" type="email" />
+//               <ErrorMessage name="email" />
+//             </div>
+//             <div>
+//               <label htmlFor="password">Password:</label>
+//               <Field name="password" type="password" />
+//               <ErrorMessage name="password" />
+//             </div>
+//             <button type="submit">{formType === 'register' ? 'Sign Up' : 'Sign In'}</button>
+//           </Form>
+//         )}
+//       </Formik>
 //     </div>
 //   );
 // };
 
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { TitleConteiner } from "../Title/Title.styled";
-import { useDispatch } from "react-redux";
-import { logIn } from "redux/auth/operations";
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().min(6, "Must be at least 6 characters. At least one uppercase letter, one lowercase letter and one number")
-    .max(16, "Must be less then or equal 16 characters. At least one uppercase letter, one lowercase letter and one number")
-    .required('Required'),
-});
-
-const initialValues = {
-  email: '',
-  password: '',
-};
-
-export const SignInForm = () => {
-  const dispatch = useDispatch()
-
-  const handleSubmit = e => {
-    e.preventDefalt();
-    const form = e.currentTarget;
-    dispatch(logIn({
-      email: form.elements.email.value,
-      password: form.elements.password.value,
-    })
-    )
-    form.reset();
-  };
-
-  return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      <Form autoComplete="off">
-        <TitleConteiner>Sign In</TitleConteiner>
-         <div>
-          <Field name="email" type="text" placeholder="Email" />
-          <ErrorMessage name="email" />
-        </div>
-        <div>
-          <Field name="password" type="text" placeholder="Password" />
-          <ErrorMessage name="password" />
-         </div>
-      </Form>
-      <button type="submit">Sign In</button>
-    </Formik>
-  )
-}
+// export default SignInForm;

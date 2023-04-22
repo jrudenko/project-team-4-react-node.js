@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm/SearchForm';
 import SearchTypeSelector from 'components/SearchTypeSelector/SearchTypeSelector';
+import { SearchBarWrapper } from './SearchBar.styled';
 
 export default function SearchBar() {
   const [type, setType] = useState({
@@ -25,11 +26,11 @@ export default function SearchBar() {
       [name]: value,
     });
   };
-  // SearchForm - component from MainPage
+  // SearchForm - compoadanent from MainPage
   return (
-    <>
+    <SearchBarWrapper>
       <SearchForm onSubmit={updateQuery} queryParam={searchQuery} />
       <SearchTypeSelector onHandleChange={handleChange} />
-    </>
+    </SearchBarWrapper>
   );
 }

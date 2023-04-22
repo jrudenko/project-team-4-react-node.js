@@ -1,47 +1,71 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import WelcomSection from 'pages/Welcome/WelcomSection';
-import SharedLayout from './SharedLayout'
-import FavoritePage from '../pages/FavoritePage'
-import CategoriesPage from "pages/Categories/CategoriesPage";
+
+import SharedLayout from './SharedLayout';
+import FavoritePage from '../pages/FavoritePage';
+import CategoriesPage from 'pages/Categories/CategoriesPage';
+import SearchPage from 'pages/Search/SearchPage';
+import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
+import RecipePage from '../pages/RecipePage';
+import MainPage from 'pages/Main/MainSection';
+
+import RegisterPage from '../pages/Registration/RegistrationPage';
+
+// import { getMode } from '../redux/theme/themeSelector';
+// import {
+//   getAccessToken,
+// } from '../redux/auth/selectors';
+import { getCurrentUser } from '../redux/auth/operations';
+
+import SingIn from 'pages/SingIn/SinginPage';
+
+import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from "pages/AddRecipe/AddRecipe";
 
 // import { lazy } from 'react';
 
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
 
-
 export const App = () => {
- return (
-<Routes>
-  <Route path="/welcome" element={<WelcomSection />} />
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q";
+  // const { mode } = useSelector(getMode);
 
-  <Route path="/register" element={<div>RegisterPage</div>}/>
+  const dispatcher = useDispatch();
 
-  <Route path="/signin" element={<div>SigninPage</div>}/>
+  useEffect(() => {
+    if (token === null) return;
+    dispatcher(getCurrentUser());
+  }, [dispatcher, token]);
 
-  <Route path="/" element={<SharedLayout/>}>
+  return (
+    <Routes>
+      <Route path="/welcome" element={<WelcomSection />} />
 
-    <Route path="main" element={<div>MainPage</div>}/>
+      <Route path="/register" element={<RegisterPage />} />
 
-    <Route path="categories/:categoryName" element={<CategoriesPage/>}/>
+      <Route path="/signin" element={<SingIn />} />
 
-    <Route path="add" element={<AddRecipe/>}/>
+      <Route path="/" element={<SharedLayout />}>
+        <Route path="main" element={<MainPage>MainPage</MainPage>} />
 
-    <Route path="favorite" element={<FavoritePage />}/>
+        <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
-    <Route path="recipe/:recipeId" element={<div>RecipePage</div>}/>
+        <Route path="add" element={<AddRecipePage />} />
 
-    <Route path="my" element={<div>MyRecipesPage</div>}/>
+        <Route path="favorite" element={<FavoritePage />} />
 
-    <Route path="search" element={<div>SearchPage</div>}/>
+        <Route path="recipe/:recipeId" element={<RecipePage />} />
 
-    <Route path="shopping-list" element={<div>ShoppingListPage</div>}/>
+        <Route path="my" element={<MyRecipesPage />} />
 
-    <Route path="*" element={<div>NotFoundPage</div>}/>
+        <Route path="search" element={<SearchPage />} />
 
-  </Route>
+        <Route path="shopping-list" element={<div>ShoppingListPage</div>} />
 
-</Routes>
-    
-  )
+        <Route path="*" element={<div>NotFoundPage</div>} />
+      </Route>
+    </Routes>
+  );
 };
