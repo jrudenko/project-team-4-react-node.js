@@ -6,7 +6,6 @@ import BurgerMenu from 'components/BurgerMenu';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { HeaderContainer, StyledContainer, Wrapper } from './Header.styled';
-import Modal from 'components/Modal';
 
 const Header = () => {
   const [isBurgerMenuShow, setIsBurgerMenuShow] = useState(false);
@@ -31,9 +30,7 @@ const Header = () => {
             </>
           )}
           {isBurgerMenuShow && (
-            <Modal onClose={handleMenuOnClose} isMenu={true}>
-              <BurgerMenu onClose={handleMenuOnClose} />
-            </Modal>
+            <BurgerMenu/>
           )}
           </StyledContainer>
       ) : (
