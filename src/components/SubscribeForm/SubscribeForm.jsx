@@ -103,8 +103,8 @@ export const SubscribeForm = () => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  if (emailRegex.test(email)) {
+  const emailText = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  if (emailText.test(email)) {
     axios
       .patch("/user/subscription", { inputEmail: email })
       .then((response) => {
