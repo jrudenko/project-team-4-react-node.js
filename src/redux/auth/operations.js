@@ -10,7 +10,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
+axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
 // // Utility to add JWT
 // const setAuthHeader = token => {

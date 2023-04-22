@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
+axios.defaults.baseURL = 'https://yummy-rest-api.yurgo/api';
+axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q`;
 
 //  ------------- OWN RECIPE -------------
 
@@ -38,7 +39,7 @@ export const getOwnRecipeByIdAPI = id => {
 // ------------- FAVORITE -------------
 
 export const addFavoriteAPI = body => {
-  return axios.post('/favorite', body).then(({ data }) => {
+  return axios.post('favorite', body).then(({ data }) => {
     return data;
   });
 };
