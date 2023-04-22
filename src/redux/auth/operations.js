@@ -11,20 +11,20 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+// const token =
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
 
-// // Utility to add JWT
-// const setAuthHeader = token => {
-//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-// };
-
-// // Utility to remove JWT
-// const clearAuthHeader = () => {
-//   axios.defaults.headers.common.Authorization = '';
-// };
+//   const API = axios.create({
+//     baseURL: 'https://yummy-rest-api.yurgo.fun/api',
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
 
 export const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  set() {
+    axios.defaults.headers.common.Authorization =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
