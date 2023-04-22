@@ -8,11 +8,8 @@ const ButtonDelete = ({ location, id }) => {
     return (
     <DeleteBtnWrapper
       type="button"     
-      location={location}
-    >
-      <svg>
-        <use/>
-      </svg>
+      location={location}>
+
     </DeleteBtnWrapper>
   );
  }

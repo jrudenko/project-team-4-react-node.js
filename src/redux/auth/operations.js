@@ -12,8 +12,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
-// const token =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
+const token =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
 
 //   const API = axios.create({
 //     baseURL: 'https://yummy-rest-api.yurgo.fun/api',
@@ -22,15 +22,15 @@ axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 //     },
 //   });
 
-export const token = {
-  set() {
-    axios.defaults.headers.common.Authorization =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
+// export const token = {
+//   set() {
+//     axios.defaults.headers.common.Authorization =
+//       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 // /*
 //  * POST @ /users/signup
