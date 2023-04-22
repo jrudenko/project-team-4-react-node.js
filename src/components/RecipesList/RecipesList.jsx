@@ -13,8 +13,8 @@ export default function RecipesList({ recipes }) {
     <ListWrapper>
       <List>
         {recipes.map(({ _id, thumb, title }) => (
-          <li key={_id.$oid}>
-            <StyledLink to={`recipe/${_id.$oid}`}>
+          <li key={_id}>
+            <StyledLink to={`recipe/${_id}`}>
               <Thumb>
                 <Image src={thumb} alt={title} loading="lazy" />
                 <TextBox>
