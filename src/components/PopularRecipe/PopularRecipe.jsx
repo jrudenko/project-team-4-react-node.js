@@ -10,9 +10,24 @@ import {
   ItemTitle,
   ItemDescription,
 } from './PopularRecipe.styled';
+import {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {getPopularRecipes} from '../../redux/outerRecipes/outerRecipesOperations';
+import {getPopular} from '../../redux/outerRecipes/outerRecipesSelectors';
+
 
 
 const PopularRecipe = () => {
+
+  const dispatch = useDispatch();
+  const PopularRecipe = useSelector(getPopular);
+  
+  console.log(`This POPULAR`, PopularRecipe)
+
+  useEffect(() => {
+dispatch(getPopularRecipes())
+  }, [dispatch])
+
   return (
     <WrapperPoular>
       <PopularTitle>Popular recipe</PopularTitle>
