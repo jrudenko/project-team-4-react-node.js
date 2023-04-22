@@ -32,6 +32,12 @@ export const updateUserInfoAPI = body => {
   });
 };
 
+export const updateUserAvatarAPI = body => {
+  return axios.patch('/auth/user-data', body).then(({ data }) => {
+    return data;
+  });
+};
+
 export const getCurrentUserAPI = () => {
   return axios.get('/auth/user-data').then(({ data }) => {
     return data;
