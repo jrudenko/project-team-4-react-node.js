@@ -3,6 +3,7 @@ import {
   logInUserAPI,
   logOutUserAPI,
   updateUserInfoAPI,
+  updateUserAvatarAPI,
   getCurrentUserAPI,
 } from '../../service/API/Auth&UserAPI.js';
 
@@ -157,6 +158,21 @@ export const updateUserInfo = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const data = await updateUserInfoAPI(user);
+      return data;
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const updateUserAvatar = createAsyncThunk(
+  'auth/avatar',
+  async (avatar, { rejectWithValue }) => {
+    try {
+      const data = await updateUserAvatarAPI(avatar);
       return data;
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
