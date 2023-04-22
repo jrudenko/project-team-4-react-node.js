@@ -1,6 +1,6 @@
 
 import Title from 'components/Title';
-import AddRecipeForm from 'components/AddRecipeForm/RecipeDescriptionFields/AddRecipeForm';
+import AddRecipeForm from '../../components/AddRecipe/AddRecipeForm';
 
 const AddRecipePage = () => {
     return (
