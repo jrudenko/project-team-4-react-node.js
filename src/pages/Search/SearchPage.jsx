@@ -10,6 +10,5 @@ export default function SearchPage() {
       <SearchBar />
       <SearchedRecipesList />
     </Container>
-    // </Wrapper>
   );
 }

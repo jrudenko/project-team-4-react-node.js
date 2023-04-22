@@ -14,20 +14,20 @@ import {
   TitleWrapper,
 } from './FavoriteRecipeBox.styled';
 
-const FavoriteRecipeBox = ({ location, id, text, title, img, time }) => {
+const FavoriteRecipeBox = ({ location, _id, text, title, thumb, time }) => {
   const isRowBased = useMediaQuery('(min-width: 768px)');
 
   return (
     <FavoriteRecipeBoxWrapper location={location}>
       {!isRowBased && location === 'favorite' ? (
-        <NavLink to={`/recipe/${id}`}>
+        <NavLink to={`/recipe/${_id}`}>
           <ImageWrapper location={location}>
-            <img src={img} alt={title} />
+            <img src={thumb} alt={title} />
           </ImageWrapper>
         </NavLink>
       ) : (
         <ImageWrapper location={location}>
-          <img src={img} alt={title} />
+          <img src={thumb} alt={title} />
         </ImageWrapper>
       )}
       <DataWrapper location={location}>
@@ -36,27 +36,27 @@ const FavoriteRecipeBox = ({ location, id, text, title, img, time }) => {
             <h3>{title}</h3>
           </SubTitle>
           {isRowBased && location === 'favorite' && (
-            <ButtonDelete location={location} id={id} />
+            <ButtonDelete location={location} id={_id} />
           )}
-          {location === 'recipes' && <ButtonDelete location={location} id={id} />}
+          {location === 'recipes' && <ButtonDelete location={location} id={_id} />}
         </TitleWrapper>
         <BoxWrapper>{text}</BoxWrapper>
         <TimeWrapper>
           <Time>{time}</Time>
           {!isRowBased && location === 'recipes' && (
             <NavLinkSkew
-              navigate={`/recipe/${id}`}
+              navigate={`/recipe/${_id}`}
               location={location}
               text="See recipe"
               styled="olive"
             />
           )}
           {!isRowBased && location === 'favorite' && (
-            <ButtonDelete location={location} id={id} />
+            <ButtonDelete location={location} id={_id} />
           )}
           {isRowBased && (
             <NavLinkSkew
-              navigate={`/recipe/${id}`}
+              navigate={`/recipe/${_id}`}
               location={location}
               text="See recipe"
               styled={location === 'favorite' ? 'black' : 'olive'}

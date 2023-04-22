@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/';
+axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+const token =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q';
 
 //  ------------- OWN RECIPE -------------
 
@@ -44,6 +46,7 @@ export const addFavoriteAPI = body => {
 };
 
 export const getFavoriteAPI = (page, per_page) => {
+  token.set();
   if (page && per_page) {
     return axios
       .get(`/favorite?page=${page}&per_page=${per_page}`)

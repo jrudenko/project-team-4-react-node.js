@@ -1,7 +1,8 @@
 import Logo from '../Logo';
 import Navigation from '../Navigation';
 import ThemeToggler from '../ThemeToggler';
-import { WrapperBurger, CloseBtn, LogoWrapper, ThemeTogglerWrapper} from './BurgerMenu.styled';
+import { WrapperBurger, CloseBtn, LogoWrapper, ThemeTogglerWrapper } from './BurgerMenu.styled';
+
 
 const BurgerMenu = ({ onClose }) => {
   return (
@@ -19,5 +20,4 @@ const BurgerMenu = ({ onClose }) => {
 }
 
 export default BurgerMenu;
-
 
