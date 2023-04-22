@@ -1,26 +1,28 @@
-import { useState, useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import RecipesList from 'components/RecipesList/RecipesList';
 import PageEmpty from 'components/PageEmpty';
+import { getRecipesBySearchQuery } from 'redux/outerRecipes/outerRecipesSelectors';
+import { getRecipesByQuery } from 'redux/outerRecipes/outerRecipesOperations';
 import { NoSearchText } from './SearchedRecipesList.styled';
 
 export default function SearchedRecipesList() {
-  const [recipes, setRecipes] = useState(null);
+  // const [recipes, setRecipes] = useState(null);
   const [searchParams] = useSearchParams();
 
-  // const dispatch = useDispatch();
+  const { recipes } = useSelector(getRecipesBySearchQuery);
+  const dispatch = useDispatch();
 
-  const searchQuery = searchParams.get('query') ?? '';
+  const query = searchParams.get('query') ?? '';
   const searchType = searchParams.get('type') ?? '';
 
   useEffect(() => {
-    if (searchQuery === '' || searchType === '') {
+    if (query === '' || searchType === '') {
       return;
     }
-    // Fetch data from server
-    setRecipes([]);
-  }, [searchQuery, searchType]);
+    dispatch(getRecipesByQuery({ query }));
+  }, [dispatch, query, searchType]);
 
   return recipes ? (
     (recipes.length === 0 && (
