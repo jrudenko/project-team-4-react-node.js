@@ -2,18 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthForm from "../../components/AuthForm/RegistrationForm";
 import { Page, BackgroundImg, Container, Image, Box } from "./RegistrationPage.styled"
-import { useSelector } from "react-redux";
-import { getAccessToken } from '../../redux/auth/selectors';
-import { Loader } from 'components/Loader/Loader';
+// import { useSelector } from "react-redux";
+// import { selectUser } from '../../redux/auth/selectors';
+// import { Loader } from 'components/Loader/Loader';
 
 
 const RegisterPage = () => {
-  const isLoading=useSelector(getAccessToken)
+  // const isLoading=useSelector(selectUser)
   return (
     <Page>
-      {isLoading && <Loader />}
-      {!isLoading && (
-         <Container>
+      {/* {isLoading && <Loader />} */}
+      {/* {!isLoading && (
+
+      )} */}
+      <Container>
           <Image />
           <Box>
             <AuthForm />
@@ -21,7 +23,6 @@ const RegisterPage = () => {
           </Box>
 
        </Container>
-      )}
        <BackgroundImg></BackgroundImg>
     </Page>
   );
