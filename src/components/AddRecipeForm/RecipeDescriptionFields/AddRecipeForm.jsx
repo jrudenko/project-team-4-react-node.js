@@ -1,32 +1,35 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import styled from "styled-components";
+
+
+import React from "react";
+import { Formik, Form, Field,  ErrorMessage } from "formik";
+import img from '../../../images/defaultImage/defaultImage.jpg'
+
 import * as Yup from 'yup';
 
+// import {
+//   Input,
+// } from './AddRecipeForm.styled';
+
+
 const AddRecipeSchema = Yup.object({
-  itemTitle: Yup.string().min(5).required(),
-  aboutRecipe: Yup.string().required(),
-  category: Yup.string().required(),
-  cookingTime: Yup.string().required(),
+  itemTitle: Yup.string(),
+  aboutRecipe: Yup.string(),
+  cookingTime: Yup.number(),
+  categoryName: Yup.string(),
+  
 })
 
 const initialValues = {
   itemTitle: '',
   aboutRecipe: '',
-  category: '',
+  categoryName: '',
   cookingTime: '',
+  
 }
 
-const categories = ['Soup', 'Goat', 'Lamb', 'Beef', 'Miscellaneous', 'Pasta', 'Breakfast',
+const categories = [ 'Soup', 'Goat', 'Lamb', 'Beef', 'Miscellaneous', 'Pasta', 'Breakfast',
 'Pork', 'Seafood', 'Side', 'Starter', 'Vegan', 'Vegetarian', 'Chicken','Dessert']
 
-const cookingTimes = ['5 min', '10 min', '15 min', '20 min', '25 min', '30 min', '35 min', '40 min', '45 min',
-'50 min', '55 min', '60 min', '65 min', '70 min', '75 min', '80 min', '85 min', '90 min', '95 min', '100 min', '105 min',
-'115 min', '120 min']
-
-
-
-const Input = styled(Field)`
-font-size: 40px;`;
 
 const AddRecipeForm = () => {
 
@@ -37,9 +40,15 @@ const AddRecipeForm = () => {
 
   return (
     <Formik initialValues={initialValues} validationSchema={AddRecipeSchema} onSubmit={handleSubmit}>
+
       <Form autoComplete="off">
+
+              <div >
+              <img  src={img} style= {{width: '200px'}} alt="addphoto" />
+              </div>      
+
           <label htmlFor="itemTitle">
-            <Input        
+            <Field        
               type="text"
               name="itemTitle"     
               placeholder="Enter item title"
@@ -47,7 +56,7 @@ const AddRecipeForm = () => {
             <ErrorMessage  name="itemTitle" component="div" />
           </label>
           <label htmlFor="aboutRecipe">
-            <Input       
+            <Field       
               type="text"
               name="aboutRecipe"            
               placeholder="Enter about recipe"
@@ -55,59 +64,47 @@ const AddRecipeForm = () => {
             <ErrorMessage  name="aboutRecipe" component="div"/>
           </label>
 
-                
 
-          <label htmlFor="category">
-            <Input        
-              type="text"
-              name="category"                
-              placeholder="Category"
-            />
-
-            <div>
-                    <label htmlFor="category">Category</label>
-                       <div>
-                        <Field name='categories' as="select">
-                          <option value="">Select a Categories</option>
-                          {categories.map((category, idx) => (
-                            <option value={category} key={idx}>
-                              {category}
-                            </option>
-                          ))}
-
-                        </Field>
-                        <ErrorMessage  name="categories" component="div"/>
-                       </div>
-            </div>
-
-            <ErrorMessage  name="category" component="div"/>
+        <label htmlFor="categoryName">
+          <div>
+             <label htmlFor="categoryName">Category</label>
+             <Field
+              as="select"
+              id="recipeCategory"
+              name="categoryName"
+              size={1}
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </Field>
+            
+            <ErrorMessage name="categories" component="div" />
+          </div>
+        </label>  
+      
+        <label htmlFor="cookingTime">
+        <div>
+             <label htmlFor="cookingTime">Cooking time</label>
+                <Field 
+                as="select" 
+                id="recipeTime" 
+                name="cookingTime"
+                size={1}>
+                    {Array.from({ length: 24 }, (_, index) => (index + 1) * 5).map(
+                      (time) => (
+                        <option key={time} value={time}>
+                          {time} min
+                        </option>
+                      )
+                    )}
+                </Field>
+            <ErrorMessage name="recipeTime" component="div"/>
+          </div>
           </label>
-
-          <label htmlFor="cookingTime">
-            <Input        
-              type="text"
-              name="cookingTime"                  
-              placeholder="Cooking time"
-            />
-
-            <div>
-                    <label htmlFor="cookingTime">CookingTime</label>
-                       <div>
-                        <Field name='cookingTimes' as="select">
-                          <option value="">Select a CookingTime</option>
-                          {cookingTimes.map((cookingTime, idx) => (
-                            <option value={cookingTime} key={idx}>
-                              {cookingTime}
-                            </option>
-                          ))}
-
-                        </Field>
-                        <ErrorMessage  name="categories" component="div"/>
-                       </div>
-            </div>
-
-            <ErrorMessage  name="cookingTime" component="div"/>
-          </label>
+          
           <button >
             Add 
           </button>
