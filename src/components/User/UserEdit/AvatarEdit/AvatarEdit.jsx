@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../../../hooks/useAuth';
 
-import {AvatarWrapper, Label, PlusIcon, AvatarInput} from './AvatarEdit/AvatarEdit.styled'
+import {AvatarWrapper, Label, PlusIcon, AvatarInput} from './AvatarEdit.styled'
 
-import Avatar from '../../../images/SVG/Social/add-avatar.svg';
-import Plus from '../../../images/SVG/Social/plus.png';
+import Avatar from '../../../../images/SVG/add-avatar.svg';
+import Plus from '../../../../images/plus.svg';
 
 export const AvatarEdit = ({ updateAvatar }) => {
     const [avatarPreview, setAvatarPreview] = useState(null);

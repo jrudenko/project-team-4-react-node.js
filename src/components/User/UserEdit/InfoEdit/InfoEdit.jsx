@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../../../hooks/useAuth';
 
-import {InfoWrapper, InputBox, Input, InputIcon} from './InfoEdit/InfoEdit.styled'
+import {InfoWrapper, InputBox, Input, InputIcon} from './InfoEdit.styled'
 
-import editInput from '../../images/SVG/editInput.svg'
+import editInput from '../../../../images/SVG/editInput.svg'
 
 export const InfoEdit = ({ updateInfo }) => {
     const { user: { name } } = useAuth();
