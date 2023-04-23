@@ -1,1 +1,1 @@
-export { default } from './Loader.jsx';
+export { default } from './Loader';
