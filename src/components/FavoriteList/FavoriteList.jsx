@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
 import MyRecipeItem from '../RecipeItem/MyRecipeItem';
-import Loader from '../Loader';
+import Loader from 'components/Loader';
 import EmptyPage  from 'components/EmptyPage';
 
 import { List } from './FavoriteList.styled.js';
