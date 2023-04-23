@@ -5,7 +5,7 @@ import MyRecipeItem from '../RecipeItem/MyRecipeItem';
 import { Loader } from '../Loader/loader';
 import EmptyPage  from 'components/EmptyPage';
 
-import { List, LoaderBox } from './FavoriteList.styled.js';
+import { List } from './FavoriteList.styled.js';
 // import { Paginator } from 'components/Paginator/Paginator';
 
 const FavoriteList = () => {
@@ -44,10 +44,8 @@ const FavoriteList = () => {
   return (
     <>
       <List>
-        {loading && (
-          <LoaderBox>
-            <Loader />
-          </LoaderBox>
+        {loading && (          
+            <Loader />        
         )}
         {currentItems.length !== 0 &&
           !loading &&
