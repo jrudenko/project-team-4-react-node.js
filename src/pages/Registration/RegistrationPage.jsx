@@ -1,28 +1,30 @@
-import { Link } from 'react-router-dom';
-import { RegisterForm } from '../../components/AuthForm/RegisterForm';
-import { Page, Image } from './RegistrationPage.styled';
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthForm from "../../components/AuthForm/RegistrationForm";
+import { Page, BackgroundImg, Container, Image, Box } from "./RegistrationPage.styled"
+import { useSelector } from "react-redux";
+import { getAccessToken } from '../../redux/auth/selectors';
+import { Loader } from 'components/Loader/Loader';
 
-const Register = () => {
+
+const RegisterPage = () => {
+  const isLoading=useSelector(getAccessToken)
   return (
     <Page>
-      <Image/>
-    <div>
-      <RegisterForm />
-      <Link
-        to="/singin"
-        style={{
-          color: 'white',
-          textDecoration: 'underline',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
-        Sign In
-      </Link>
-    </div>
-    </Page>
+      {isLoading && <Loader />}
+      {!isLoading && (
+         <Container>
+          <Image />
+          <Box>
+            <AuthForm />
+            <Link to="/signin" style={{ color: "white", textDecoration: 'underline'}}>Sign in</Link>
+          </Box>
 
+       </Container>
+      )}
+       <BackgroundImg></BackgroundImg>
+    </Page>
   );
 };
 
-export default Register;
+export default RegisterPage;

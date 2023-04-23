@@ -1,17 +1,26 @@
 import styled from 'styled-components';
+// import spinachModile from '../../images/spinach-main-bg/spinach-mobile-1x.webp';
 
 //стилі контейнера Footer
 export const FooterConteiner = styled.div`
-  /* display: flex; */
-  height: 435px;
-  margin-top: 0;
+  background: ${({ theme }) => theme.button.secondaryBag};
+  position: absolute;
   width: 100%;
-  background-color: ${p => p.theme.button.hoverTextColorMain};
+  height: 435px;
+  left: 0px;
+  width: 100%;
+  padding: 85px, 18px, 85px, 28px;
+  margin-bottom: 66px;
   @media (min-width: 768px) {
+    padding: 32px, 50px, 94px, 24px;
     height: 423px;
+    margin-bottom: 78px;
   }
   @media (min-width: 1440px) {
+    /* width: 1440px; */
+    padding-left: 100px, 64px, 100px, 50px;
     height: 414px;
+    margin-bottom: 78px;
   }
 `;
 

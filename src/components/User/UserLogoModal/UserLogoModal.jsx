@@ -1,35 +1,39 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { logOut } from '../../../redux/auth/operations'
+import { useEffect } from 'react';
 
 
-import arrowRight from '../../images/icon/arrow-right.png' //уточнити назви іконок
-import editInput from '../../images/SVG/editInput.svg'
-import { ModalWrapper, EditProfile,EditInputIcon, LogoutBtn,LogoutIcon } from './UserLogoModal.styled';
+import arrowRight from '../../../images/icon/arrow-right.png' //уточнити назви іконок
+import editInput from '../../../images/SVG/editInput.svg'
+import { ModalWrapper, EditProfile,EditInputIcon, EditBtn, LogoutBtn,LogoutIcon } from './UserLogoModal.styled';
 
 
-export const UserLogoModal = () => {
-    const dispatch = useDispatch();
+export const UserLogoModal = ({ onClose, onLogout, onEdit }) => {
+     useEffect(() => {
+         window.addEventListener('keydown', handleKeyDown);
+         return () => window.removeEventListener('keydown', handleKeyDown)
+     });
+     const handleKeyDown = e => {
+         if (e.code === 'Escape') {
+             onClose();
+         }
+     };
 
-const handleBtnLogoutClick = () => {
-        dispatch(logOut());
-    };
-
-    return (
-        <ModalWrapper>
-            <EditProfile>
-                <p>
-                    Edit profile
-                    <EditInputIcon src={editInput} alt = "edit button"/>
-                </p>
-            </EditProfile>
-            <LogoutBtn onClick={handleBtnLogoutClick}>
-                <p>
-                    Logout
-                </p>
-                <LogoutIcon src={arrowRight} alt="Logout button" />
-            </LogoutBtn>
-
-        </ModalWrapper>
-    )
-};
+     return (
+         <ModalWrapper>
+             <EditProfile>
+                 <p>
+                     Edit profile
+                 </p>
+                 <EditBtn onClick={onEdit}>
+                     <EditInputIcon src={editInput} alt = "edit button"/>
+                 </EditBtn>
+             </EditProfile>
+             <LogoutBtn onClick={onLogout}>
+                 <p>
+                     Logout
+                 </p>
+                 <LogoutIcon src={arrowRight} alt="Logout button" />
+             </LogoutBtn>
+         </ModalWrapper>
+     )
+ };

@@ -4,24 +4,45 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import {addFavorite, getFavorite, deleteFavorite} from '../../redux/ownRecipes/ownRecipesOperations';
-import {getFavoriteRecipes} from '../../redux/ownRecipes/ownRecipesSelectors';
+// import { useDispatch, useSelector } from 'react-redux';
+import { getFavoriteRecipes } from '../../service/API/index';
+
+// import {addFavorite, getFavorite, deleteFavorite} from '../../redux/ownRecipes/ownRecipesOperations';
+// import {getFavoriteRecipes} from '../../redux/ownRecipes/ownRecipesSelectors';
 
 const RecipePageHero = () => {
+
+  const [loading, setLoading] = useState(false);
+  const [allRecipes, setAllRecipes] = useState([])
 
   let time = "20";
 
 const {recipeId} = useParams();
 
-  const dispatch = useDispatch();
-  const fatchFav = useSelector(getFavoriteRecipes);
-  const isFavorite = fatchFav.favoriteRecipes.some(item => item._id === recipeId);
+  // const dispatch = useDispatch();
+  
+  const isFavorite = allRecipes.favoriteRecipes.some(item => item._id === recipeId);
   const [isFav, setIsFav] = useState(isFavorite);
 
-useEffect(() => {
-dispatch(getFavorite())
-}, [dispatch, isFav])
+  useEffect(() => {
+    const getFavorites = async () => {
+      try {
+        setLoading(true);
+        const data = await getFavoriteRecipes();
+        setAllRecipes(data);
+      } catch (error) {
+        toast.error('Something went wrong by getting recipes');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getFavorites()
+    }, [isFav])
+
+// useEffect(() => {
+// dispatch(getFavorites())
+// }, [dispatch, isFav])
 
 function addFavRecipe() {
   setIsFav(true);
