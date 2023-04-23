@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  position: absolute;
-  // position: relative;
-  z-index: 10;
+
   padding-top: 18px;
 `;
 
