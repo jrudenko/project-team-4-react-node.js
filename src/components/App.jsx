@@ -18,6 +18,9 @@ import SingIn from 'pages/SingIn/SinginPage';
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../utils/theme';
+
 // import { lazy } from 'react';
 
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
@@ -25,6 +28,7 @@ import AddRecipe from 'pages/AddRecipe/AddRecipe';
 export const App = () => {
 
   return (
+    <ThemeProvider theme={theme}>
     <Routes>
       <Route path="/welcome" element={<WelcomSection />} />
 
@@ -51,6 +55,7 @@ export const App = () => {
 
         <Route path="*" element={<div>NotFoundPage</div>} />
       </Route>
-    </Routes>
+      </Routes>
+      </ThemeProvider>
   );
 };
