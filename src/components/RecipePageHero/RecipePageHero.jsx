@@ -13,16 +13,26 @@ import { getFavoriteRecipes } from '../../service/API/index';
 const RecipePageHero = () => {
 
   const [loading, setLoading] = useState(false);
-  const [allRecipes, setAllRecipes] = useState([])
+  const [allRecipes, setAllRecipes] = useState({});
+
+  console.log(`allRecipes`, allRecipes)
 
   let time = "20";
 
 const {recipeId} = useParams();
 
+const [isFav, setIsFav] = useState(false);
+
+// console.log(`allRecipes.length`,allRecipes.favoriteRecipes.length )
+
   // const dispatch = useDispatch();
+  if (allRecipes.favoriteRecipes && allRecipes.favoriteRecipes.length > 0) {
+    const isFavorite = allRecipes.favoriteRecipes.some(item => item._id === recipeId);
+    console.log(`LOG`)
+    setIsFav(isFavorite)
+  }
   
-  const isFavorite = allRecipes.favoriteRecipes.some(item => item._id === recipeId);
-  const [isFav, setIsFav] = useState(isFavorite);
+  console.log(`isFav`, isFav)
 
   useEffect(() => {
     const getFavorites = async () => {

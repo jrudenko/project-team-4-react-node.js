@@ -82,8 +82,8 @@ export const TextBox = styled.div`
 `;
 
 export const Label = styled.p`
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[2]};
+  font-family: Poppins, sans-serif;
+  font-weight: ${p => p.theme.fontWeights.title};
   font-size: 16px;
   line-height: ${p => p.theme.lineHeights.description};
   letter-spacing: ${p => p.theme.letterSpacings.subheader};

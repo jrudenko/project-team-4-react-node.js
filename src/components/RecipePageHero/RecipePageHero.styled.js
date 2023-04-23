@@ -31,9 +31,9 @@ background-repeat: no-repeat;
 background-position: 50% 50%;
 background-size: cover;
 
-${highDensity(`${mob2}`)}
+ ${highDensity(`${mob2}`)}
 
-@media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+@media screen and (min-width: ${p=>p.theme.device.tablet}) {
   margin-bottom: 50px;
   padding-top: 136px;
   padding-bottom: 32px;
@@ -45,7 +45,7 @@ ${highDensity(`${mob2}`)}
 
 }
 
-@media screen and (min-width: ${p=>p.theme.breakpoints[2]}) {
+@media screen and (min-width: ${p=>p.theme.device.desktop}) {
   width: 100%;
   padding-top: 164px;
   height: 493px;
@@ -56,24 +56,24 @@ ${highDensity(`${mob2}`)}
 
 ${ButSkewStyle} {
     padding: 10px 18px;
-    color: ${p=>p.theme.button.secondaryBag};
-    border: 2px solid ${p=>p.theme.button.hoverSecondaryText};
+    color: ${p=>p.theme.colors.button.secondaryBag};
+    border: 2px solid ${p=>p.theme.colors.button.hoverSecondaryText};
     margin-bottom: 43px;
 
-    @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+    @media screen and (min-width: ${p=>p.theme.device.tablet}) {
       font-size: 16px;
       line-height: ${p => p.theme.lineHeights.searchSelect};
       padding: 18px 44px;
       margin-bottom: 55px;
     }
 
-    @media screen and (min-width: ${p=>p.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${p=>p.theme.device.desktop}) {
       margin-bottom: 48px;
     }
 
     &:hover {
-       color: ${p=>p.theme.button.textColorMain};; 
-       background-color:${p=>p.theme.button.hoverSecondaryText};
+       color: ${p=>p.theme.colors.button.textColorMain};; 
+       background-color:${p=>p.theme.colors.button.hoverSecondaryText};
     }
   }
 `;
@@ -82,8 +82,8 @@ export const HeroTitle = styled.title`
   display: block;
   text-align: center;
   margin-bottom: 18px;
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[2]};
+  font-family: Poppins, sans-serif;
+  font-weight: ${p => p.theme.fontWeights.title};
   font-size: 24px;
   line-height:${p=>p.theme.lineHeights.subheader} ;
   letter-spacing: ${p => p.theme.letterSpacings.content};
@@ -92,12 +92,12 @@ export const HeroTitle = styled.title`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
     max-width: 680px;
     font-size: 44px;
     margin-bottom: 24px;
   }
-  @media screen and (min-width: ${p=>p.theme.breakpoints[2]}) {
+  @media screen and (min-width: ${p=>p.theme.device.desktop}) {
     max-width: 1000px;
   }
   `;
@@ -105,8 +105,8 @@ export const HeroTitle = styled.title`
   export const HeroText = styled.p`
   width: 300px;
   height: 64px;
-  font-weight: ${p => p.theme.fontWeights[0]};
-  color: ${p=>p.theme.button.secondaryBag};
+  font-weight: ${p => p.theme.fontWeights.body};
+  color: ${p=>p.theme.colors.button.secondaryBag};
   text-align: center;
   font-size: 12px;
   line-height: ${p => p.theme.lineHeights.content};
@@ -116,13 +116,13 @@ export const HeroTitle = styled.title`
   text-overflow: ellipsis;
   hyphens: auto;
 
-  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
     width: 506px;
     height: 96px;
     font-size: 18px;
     margin-bottom: 24px;
   }
-  @media screen and (min-width: ${p=>p.theme.breakpoints[2]}) {
+  @media screen and (min-width: ${p=>p.theme.device.desktop}) {
     width: 656px;
     height: 72px;
     -webkit-line-clamp: 3;
@@ -136,7 +136,7 @@ export const HeroTitle = styled.title`
   margin-right: 4px;
   color: ${p=>p.theme.colors.mainDark};
 
-  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
    width: 20px;
    height: 20px;
    margin-right: 8px;
@@ -148,13 +148,13 @@ export const HeroTitle = styled.title`
   width: fit-content;
   align-items: center;
   color: ${p=>p.theme.colors.mainDark};
-  font-weight: ${p => p.theme.fontWeights[1]};
+  font-weight: ${p =>p.theme.fontWeights.subtitle};
   font-size: 10px;
   line-height: 1.4;
   letter-spacing: ${p => p.theme.letterSpacings.subheader};
   height: 14px;
 
-  @media screen and (min-width: ${p=>p.theme.breakpoints[1]}) {
+  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
     height: 20px;
     font-size: 14px;
   }

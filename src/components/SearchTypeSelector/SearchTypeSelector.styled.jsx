@@ -17,8 +17,8 @@ export const BoxSelector = styled.div`
 `;
 
 export const Label = styled.label`
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[2]};
+  font-family: Poppins, sans-serif;
+  font-weight: ${p => p.theme.fontWeights.title};
   font-size: 12px;
   line-height: ${p => p.theme.content};
   color: ${p => p.theme.colors.titleConteiner};
@@ -36,8 +36,8 @@ export const Label = styled.label`
 export const Select = styled.select`
   width: 146px;
   height: 100%;
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[0]};
+  font-family: Poppins, sans-serif;
+  font-weight: ${p.theme.fontWeights.body};
   font-size: 12px;
   line-height: ${p => p.theme.searchSelect};
   letter-spacing: ${p => p.theme.letterSpacings.content};
