@@ -8,7 +8,7 @@ import { Button } from 'components/Button/Button';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const MainSearch = () => {
+const MainSearchPage = () => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const theme = useSelector(state => state.theme.darkMode);
@@ -63,7 +63,7 @@ const MainSearch = () => {
   );
 };
 
-export default MainSearch;
+export default MainSearchPage;
 
 // import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';

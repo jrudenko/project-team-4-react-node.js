@@ -1,6 +1,6 @@
 import PreviewCategories from 'components/PreviewCategories/PriviewCategories';
 import СhooseYourBreakfast from 'components/ChooseYourBreakfast';
-import MainSearch from './Search/SearchMain';
+import MainSearchPage from './Search/SearchMain';
 
 import MainPageStyled from './MainSection.styled';
 
@@ -17,7 +17,7 @@ const MainPage = () => {
         </p>
         <div>
           <СhooseYourBreakfast />
-          <MainSearch />
+          <MainSearchPage />
         </div>
       </MainPageStyled>
       <PreviewCategories />
