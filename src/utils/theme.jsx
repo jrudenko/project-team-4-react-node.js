@@ -64,7 +64,7 @@ formAddIcon: '#333333',
 labelText: '#000000',
 },
 
-switch: {
+switches: {
 darkTheme: {
 background: '#1E1F28',
 secondaryBg: '#2A2C36',
