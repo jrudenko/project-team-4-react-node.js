@@ -27,6 +27,7 @@ const MainPage = () => {
 
 export default MainPage;
 
+// test
 // import React from 'react';
 // import SearchMain from '../Main/Search';
 // import { useSearchParams } from 'react-router-dom';
