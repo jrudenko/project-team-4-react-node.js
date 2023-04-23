@@ -16,7 +16,7 @@ export const EmptyWrapper = styled.div`
 `;
 
 export const EmptyText = styled.p`
-  font-family: ${p => p.theme.fonts.m};
+  font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights[1]};
   letter-spacing: ${p => p.theme.letterSpacings.content};
   line-height: ${p => p.theme.lineHeights.subheader};

@@ -196,10 +196,9 @@ none: 'none',
 normal: '1px solid',
 },
 
-// lineHeights: {
-// body: 1.5,
-// heading: 1.125,
-// },
+fonts: {
+    main: 'Poppins, sans-serif',
+  },
 
   radius: {
     btnStandart: '6px',
