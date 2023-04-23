@@ -3,9 +3,13 @@ import Navigation from 'components/Navigation';
 import ThemeToggler from 'components/ThemeToggler';
 import BurgerButton from 'components/BurgerButtonMenu';
 import BurgerMenu from 'components/BurgerMenu';
+
+import {User} from '../User/User'
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { HeaderContainer, StyledContainer, Wrapper } from './Header.styled';
+import Modal from 'components/modal';
+
 
 const Header = () => {
   const [isBurgerMenuShow, setIsBurgerMenuShow] = useState(false);
@@ -18,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer>
+   <HeaderContainer>
       {isMobile ? (
         <StyledContainer>
           {!isBurgerMenuShow && (
@@ -26,11 +30,14 @@ const Header = () => {
               <Logo />
               <Wrapper>
                 <BurgerButton onClick={handleBurgerButton} />
+                <User/>
                 </Wrapper>
             </>
           )}
           {isBurgerMenuShow && (
-            <BurgerMenu/>
+            <Modal onClose={handleMenuOnClose} isMenu={true}>
+              <BurgerMenu onClose={handleMenuOnClose} />
+            </Modal>
           )}
           </StyledContainer>
       ) : (
@@ -43,6 +50,7 @@ const Header = () => {
     </HeaderContainer>
   );
 }
+
 
 export default Header;
 

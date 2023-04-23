@@ -9,7 +9,7 @@ const Navigation = (props) => {
   return (
     <NavBar mr={props.mr} fd={props.fd}>
       <NavItem>
-          <NavLinkStyled to="/categories" onClick={onClick}>
+          <NavLinkStyled to="/categories/Beef" onClick={onClick}>
           Categories
         </NavLinkStyled>
       </NavItem>

@@ -1,28 +1,16 @@
-import { Link } from 'react-router-dom';
-import { RegisterForm } from '../../components/AuthForm/RegisterForm';
-import { Page, Image } from './RegistrationPage.styled';
-
-const Register = () => {
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthForm from "../../components/AuthForm/RegistrationForm";
+import {BackgroundImg,Container, Image} from "./RegistrationPage.styled"
+const RegisterPage = () => {
   return (
-    <Page>
+    <Container>
       <Image/>
-    <div>
-      <RegisterForm />
-      <Link
-        to="/singin"
-        style={{
-          color: 'white',
-          textDecoration: 'underline',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
-        Sign In
-      </Link>
-    </div>
-    </Page>
-
+      <AuthForm />
+      <Link to="/signin">Sign in</Link>
+      <BackgroundImg></BackgroundImg>
+    </Container>
   );
 };
 
-export default Register;
+export default RegisterPage;

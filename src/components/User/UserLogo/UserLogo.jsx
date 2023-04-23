@@ -1,5 +1,5 @@
 import { useAuth } from "../../../hooks/useAuth";
-import Avatar from '../../../images/SVG/Social/add-avatar.svg';
+import Avatar from '../../../images/SVG/add-avatar.svg';
 import {UserLogoWrapper, UserBtn, UserName} from './UserLogo.styled'
 
 export const UserLogo = ({ toggleBoard }) => {

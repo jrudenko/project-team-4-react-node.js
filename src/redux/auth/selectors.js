@@ -1,18 +1,22 @@
-// export const selectIsLoggedIn = state => state.auth.isLoggedIn;
+export const selectIsSend = state => state.auth.isSent;
+export const selectEmail = state => state.auth.user.email;
+export const selectIsLoading = state => state.auth.isLoading;
 
-// export const selectUser = state => state.auth.user;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 
-// export const selectIsRefreshing = state => state.auth.isRefreshing;
+export const selectUser = state => state.auth.user;
 
-// --------------- TOKEN -------------
-export const getAccessToken = state => state.auth.accessToken;
+export const selectIsRefreshing = state => state.auth.isRefreshing;
 
-// ---------------- USER INFO -------------
-export const getEmail = state => state.auth.userData.email;
-export const getName = state => state.auth.userData.name;
-export const getAvatar = state => state.auth.userData.avatar;
-export const getToken = state => state.auth.accessToken;
+// // --------------- TOKEN -------------
+// export const getAccessToken = state => state.auth.accessToken;
 
-//  --------------- ADDITIONAL ------------
-export const getIsLoggedIn = state => state.auth.isLoggedIn;
-export const getIsUserFetching = state => state.auth.isUserFetching;
+// // ---------------- USER INFO -------------
+// export const getEmail = state => state.auth.userData.email;
+// export const getName = state => state.auth.userData.name;
+// export const getAvatar = state => state.auth.userData.avatar;
+// export const getToken = state => state.auth.accessToken;
+
+// //  --------------- ADDITIONAL ------------
+// export const getIsLoggedIn = state => state.auth.isLoggedIn;
+// export const getIsUserFetching = state => state.auth.isUserFetching;
