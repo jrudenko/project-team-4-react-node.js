@@ -4,7 +4,7 @@ import ThemeToggler from 'components/ThemeToggler';
 import BurgerButton from 'components/BurgerButtonMenu';
 import BurgerMenu from 'components/BurgerMenu';
 
-import {User} from '../User/User'
+import UserLogo from '../UserLogo/UserLogo'
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { HeaderContainer, StyledContainer, Wrapper, UserToglContainer } from './Header.styled';
@@ -32,9 +32,10 @@ const Header = () => {
             <>
               <Logo />
               <Wrapper>
-                <User />
+                <UserLogo />
                 <BurgerButton onClick={handleBurgerButton} />
-              </Wrapper>
+                <UserLogo/>
+                </Wrapper>
             </>
           )}
           {isBurgerMenuShow && (
@@ -50,7 +51,7 @@ const Header = () => {
           <Logo />
           <Navigation onClick={handleMenuOnClose} />
           <UserToglContainer>
-            <User />
+            <UserLogo />
             <ThemeToggler />
           </UserToglContainer>
       
