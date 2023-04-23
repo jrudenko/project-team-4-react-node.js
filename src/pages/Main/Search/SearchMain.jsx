@@ -29,6 +29,7 @@ const SearchMain = () => {
 export default SearchMain;
 
 // import { useState, useEffect } from 'react';
+// import { Form, SearchInput, SearchButton } from '../Search/SearchMain.styled';
 
 // export default function SearchMain({ onSubmit, queryParam = '' }) {
 //   const [query, setQuery] = useState('');

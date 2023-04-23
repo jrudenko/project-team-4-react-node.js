@@ -12,8 +12,8 @@ import {
 import mainPasta from '../../images/kisspngPasta/unsplash-desktop.webp';
 import ChooseYourBreakfast from 'components/ChooseYourBreakfast';
 import Container from 'components/Container/Container';
+// import PreviewCategories from '../Main/PreviewCategories/PreviewCategories';
 
-// import PreviewCategorie from 'components/PreviewCategorie/PreviewCategorie';
 // import RecipesList from 'components/RecipesList/RecipesList';
 // import recipes from '../../recipes.json';
 // import Preview from './PreviewCategories/Preview/Preview';
@@ -57,6 +57,7 @@ function MainPage() {
       </ContentWrapper>
       {/* <RecipesList recipes={recipes} /> */}
       {/* <Preview /> */}
+      {/* <PreviewCategories /> */}
     </Container>
   );
 }
