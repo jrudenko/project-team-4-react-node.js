@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import getCategoryList from '../../service/API/getCategoryList';
 import CategoryCard from 'components/CategoryCard/CategoryCard';
 import PreviewCategoriesStyled from './PriviewCategoriesStyled';
-import { Button } from '../Button/Button';
+import Button from '../Button';
 
 const PreviewCategories = () => {
   const [popularCategories, setPopularCategories] = useState([]);

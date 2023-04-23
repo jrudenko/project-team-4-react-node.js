@@ -1,17 +1,12 @@
-// import { useDispatch } from 'react-redux';
+import { BtnDel, DeleteIcon } from './ButtonDelete.styled';
 
-import { DeleteBtnWrapper } from './ButtonDelete.styled';
-
-const ButtonDelete = ({ location, id }) => {
-    // const dispatch = useDispatch();
-    
-    return (
-    <DeleteBtnWrapper
-      type="button"     
-      location={location}>
-
-    </DeleteBtnWrapper>
+const ButtonDelete = () => {
+  return (
+    <>
+      <BtnDel>
+        <DeleteIcon />
+      </BtnDel>
+    </>
   );
- }
-
+};
 export default ButtonDelete;
