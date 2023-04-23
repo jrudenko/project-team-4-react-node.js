@@ -45,6 +45,9 @@ export const EditBtn = styled.button`
  // height: 14px;
  // `;
 
+
+ export const EditInputIcon = styled.img`
+ `;
 export const LogoutBtn = styled.button`
  margin-top: 28px;
  display: flex;
@@ -78,5 +81,8 @@ export const LogoutBtn = styled.button`
 // width: 18px;
 // height: 18px;
 // `;
+
+export const LogoutIcon = styled.img`
+`;
 
 // background-color: ${p => p.theme.colors.mainBgColor};

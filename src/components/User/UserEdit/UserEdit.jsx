@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateUserInfo, updateUserAvatar } from '../../../redux/auth/operations';
+import { updateInfo, updateAvatar } from '../../../redux/auth/operations';
 
 import { Wrapper, Form, Button } from './UserEdit.styled';
 import { AvatarEdit } from './AvatarEdit/AvatarEdit';
-import { InfoEdit } from './InfoEdit/InfoEdit.styled';
+import { InfoEdit } from './InfoEdit/InfoEdit';
 
 
-export const UserInfoEdit = () => {
+export const UserEdit = () => {
     const [newAvatar, setNewAvatar] = useState(null);
     const [isNewInfo, setIsNewInfo] = useState(false);
     useEffect(() => {
@@ -20,14 +20,14 @@ export const UserInfoEdit = () => {
     const changeAvatar = () => {
         const formData = new FormData();
         formData.append('avatar', newAvatar);
-        dispatch(updateUserAvatar(formData));
+        dispatch(updateAvatar(formData));
     };
 
     const changeInfo = () => e => {
         const updatedInfo = {
             name: e.target.name.value
         };
-        dispatch(updateUserInfo(updatedInfo));
+        dispatch(updateInfo(updatedInfo));
     };
 
     const handleSubmit = e => {

@@ -201,19 +201,18 @@ body: 1.5,
 heading: 1.125,
 },
 
-radius: {
-btnStandart: '6px',
-btnIcon: '4px',
-logo: '12px',
-image: '8px',
-switch: '50px',
-pagination: '26px',
-modal: '24px',
-circle: '50%',
-},
-
-transitions: {
-main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-},
+  radius: {
+    btnStandart: '6px',
+    btnIcon: '4px',
+    logo: '12px',
+    image: '8px',
+    switch: '50px',
+    pagination: '26px',
+    modal: '24px',
+    circle: '50%',
+  },
+    transitions: {
+      main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
 };
 

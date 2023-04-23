@@ -1,9 +1,9 @@
 import React from 'react';
-import { useEffect } from 'react-redux';
+import { useEffect } from 'react';
 
 
-import arrowRight from '../../images/icon/arrow-right.png' //уточнити назви іконок
-import editInput from '../../images/SVG/editInput.svg'
+import arrowRight from '../../../images/icon/arrow-right.png' //уточнити назви іконок
+import editInput from '../../../images/SVG/editInput.svg'
 import { ModalWrapper, EditProfile,EditInputIcon, EditBtn, LogoutBtn,LogoutIcon } from './UserLogoModal.styled';
 
 
