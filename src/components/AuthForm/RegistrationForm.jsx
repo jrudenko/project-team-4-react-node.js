@@ -3,8 +3,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { useDispatch } from 'react-redux';
-import { signUp } from '../../redux/auth/operations';
-// import { getAccessToken } from '../../redux/auth/selectors';
+import { registrationUser } from '../../redux/auth/operations';
+
 
 import { FormBox, TitleForm, BoxForField, BoxForForm, FormField, FormAuth, Button, BoxForIcon, NameIcon,Warning, EmailIcon,PassIcon} from './RegistrationForm.styled';
 
@@ -47,7 +47,7 @@ const AuthForm = () => {
       password: values.password,
     };
     dispatch(
-      signUp(authData));
+      registrationUser(authData));
     actions.resetForm();
   };
   return (
