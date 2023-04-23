@@ -13,12 +13,6 @@ import MainPage from 'pages/Main/MainSection';
 
 import RegisterPage from '../pages/Registration/RegistrationPage';
 
-// import { getMode } from '../redux/theme/themeSelector';
-// import {
-//   getAccessToken,
-// } from '../redux/auth/selectors';
-// import { getCurrentUser } from '../redux/auth/operations';
-
 import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
@@ -29,9 +23,6 @@ import AddRecipe from 'pages/AddRecipe/AddRecipe';
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
 
 export const App = () => {
-  
-  // const { mode } = useSelector(getMode);
-
 
   return (
     <Routes>

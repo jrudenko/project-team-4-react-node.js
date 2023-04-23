@@ -11,13 +11,16 @@ const getCategoryList = async token => {
   const categoryOptimization = category =>
     category.map(recipe => recipeOptimization(recipe));
 
-  const list = await fetch('https://yummy-rest-api.yurgo.fun/api', {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const list = await fetch(
+    'https://yummy-rest-api.yurgo.fun/api/recipes/main-page',
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
 
   const responseReceived = await list.json();
   const result = responseReceived.result.map(category =>
