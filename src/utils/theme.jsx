@@ -1,10 +1,6 @@
 export const theme = {
 space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 512],
 
-transitions: {
-main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-},
-
 fontSizes: {
 xxxs: 8,
 xxs: 10,
@@ -216,5 +212,8 @@ modal: '24px',
 circle: '50%',
 },
 
+transitions: {
+main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+},
 };
 
