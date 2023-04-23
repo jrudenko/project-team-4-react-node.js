@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
 
-import { logOut } from '../../../redux/auth/operations';
+import { logoutUser } from '../../../redux/auth/operations';
 
 import { Wrapper, Text, BtnWrapper, Button } from "./LogoutBtn.styled";
 
 export const LogoutBtn = ({ onClose }) => {
     const dispatch = useDispatch();
     const onLogout = () => {
-        dispatch(logOut());
+        dispatch(logoutUser());
     };
     return (
         <Wrapper>
