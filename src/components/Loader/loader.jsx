@@ -16,4 +16,6 @@ const Loader = ({ outcolor = '#8BAA36' }) => {
   );
 };
 
+
+
 export default Loader;

@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
 import MyRecipeItem from '../RecipeItem/MyRecipeItem';
-import Loader from 'components/Loader';
+// import Loader from '../Loader/loader';
 import EmptyPage  from 'components/EmptyPage';
 
 import { List } from './FavoriteList.styled.js';
@@ -44,9 +44,9 @@ const FavoriteList = () => {
   return (
     <>
       <List>
-        {loading && (          
-          <Loader />        
-        )}
+        {/* {loading && (          
+          // <Loader />        
+        )} */}
         {currentItems.length !== 0 &&
           !loading &&
           currentItems.map(({ description, preview, time, title, _id }) => (
