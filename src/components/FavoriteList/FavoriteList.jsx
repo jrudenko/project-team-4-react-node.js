@@ -45,7 +45,7 @@ const FavoriteList = () => {
     <>
       <List>
         {loading && (          
-            <Loader />        
+          <Loader />        
         )}
         {currentItems.length !== 0 &&
           !loading &&
