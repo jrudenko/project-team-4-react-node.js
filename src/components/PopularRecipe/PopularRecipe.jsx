@@ -12,20 +12,20 @@ import {
 } from './PopularRecipe.styled';
 import {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {getPopularRecipes} from '../../redux/outerRecipes/outerRecipesOperations';
-import {getPopular} from '../../redux/outerRecipes/outerRecipesSelectors';
+import {getPopularList} from '../../redux/popular/popularOperation';
+import {selectPopular} from '../../redux/popular/popularSelectors';
 
 
 
 const PopularRecipe = () => {
 
   const dispatch = useDispatch();
-  const PopularRecipe = useSelector(getPopular);
+  const PopularRecipe = useSelector(selectPopular);
   
   console.log(`This POPULAR`, PopularRecipe)
 
   useEffect(() => {
-dispatch(getPopularRecipes())
+dispatch(getPopularList())
   }, [dispatch])
 
   return (
@@ -33,7 +33,7 @@ dispatch(getPopularRecipes())
       <PopularTitle>Popular recipe</PopularTitle>
       {popularArray.length > 0 && (
         <List>
-          {popularArray.map(({ _id, thumb, instructions, title }) => {
+          {PopularRecipe.map(({ _id, thumb, instructions, title }) => {
             return (
               <Item key={_id}>
                 <StyledLink to={`/recipe/${_id}`}>
