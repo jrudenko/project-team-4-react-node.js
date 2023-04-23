@@ -1,1 +1,1 @@
-export { default } from './MainSection';
+export { default } from './Search/SearchMain';

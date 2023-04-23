@@ -1,9 +1,8 @@
-import PreviewCategories from '../../components/PreviewCategories/PriviewCategories';
+import PreviewCategories from 'components/PreviewCategories/PriviewCategories';
+import СhooseYourBreakfast from 'components/ChooseYourBreakfast';
+import MainSearch from './Search/SearchMain';
+
 import MainPageStyled from './MainSection.styled';
-import СhooseYourBreakfast from '../../components/СhooseYourBreakfast/СhooseYourBreakfast';
-import MainPageSearch from 'components/MainPageSearch/MainPageSearch';
-import GoToTop from 'helpers/scrollToTop';
-// import { MainPageContainerStyled } from './MainPageStyled';
 
 const MainPage = () => {
   return (
@@ -18,11 +17,10 @@ const MainPage = () => {
         </p>
         <div>
           <СhooseYourBreakfast />
-          <MainPageSearch />
+          <MainSearch />
         </div>
       </MainPageStyled>
       <PreviewCategories />
-      <GoToTop />
     </>
   );
 };
