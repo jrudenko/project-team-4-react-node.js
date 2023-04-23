@@ -1,5 +1,5 @@
 import PreviewCategories from '../../components/PreviewCategories/PriviewCategories';
-import MainPageStyled from './MainPageStyled';
+import MainPageStyled from './MainSection.styled';
 import СhooseYourBreakfast from '../../components/СhooseYourBreakfast/СhooseYourBreakfast';
 import MainPageSearch from 'components/MainPageSearch/MainPageSearch';
 import GoToTop from 'helpers/scrollToTop';
