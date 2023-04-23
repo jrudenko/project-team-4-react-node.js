@@ -7,8 +7,7 @@ import { useParams } from "react-router-dom";
 // import { useDispatch, useSelector } from 'react-redux';
 import { getFavoriteRecipes } from '../../service/API/index';
 
-// import {addFavorite, getFavorite, deleteFavorite} from '../../redux/ownRecipes/ownRecipesOperations';
-// import {getFavoriteRecipes} from '../../redux/ownRecipes/ownRecipesSelectors';
+
 
 const RecipePageHero = () => {
 
@@ -23,17 +22,19 @@ const {recipeId} = useParams();
 
 const [isFav, setIsFav] = useState(false);
 
-// console.log(`allRecipes.length`,allRecipes.favoriteRecipes.length )
 
   // const dispatch = useDispatch();
-  if (allRecipes.favoriteRecipes && allRecipes.favoriteRecipes.length > 0) {
-    const isFavorite = allRecipes.favoriteRecipes.some(item => item._id === recipeId);
-    console.log(`LOG`)
-    setIsFav(isFavorite)
-  }
-  
-  console.log(`isFav`, isFav)
 
+  useEffect(() => {
+    if (allRecipes.favoriteRecipes?.length > 0) {
+
+      const isFavorite = allRecipes.favoriteRecipes.some(item => item._id === recipeId);
+      
+      setIsFav(isFavorite)
+    }
+  }, [allRecipes, recipeId])
+  
+  
   useEffect(() => {
     const getFavorites = async () => {
       try {
@@ -63,7 +64,6 @@ function removeFavRecipe() {
   setIsFav(false);
   toast.success("Recipe removed from favorite");
 }
-
 
   return (
     <>
