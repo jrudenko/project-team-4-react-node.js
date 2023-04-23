@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const ContentWrapper = styled.div``;
+export const ContentWrapper = styled.div`
+  padding-top: 226px;
+`;
 
 export const ChooseYourBreakfastWrapper = styled.div`
   display: flex;

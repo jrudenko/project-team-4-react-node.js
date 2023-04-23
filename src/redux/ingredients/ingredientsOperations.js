@@ -62,9 +62,9 @@ export const addShoppingIngredient = createAsyncThunk(
 
 export const removeShoppingIngredient = createAsyncThunk(
   'ingredients/removeShoppingIngredient',
-  async (_id, { rejectWithValue }) => {
+  async (id, { rejectWithValue }) => {
     try {
-      const data = await removeShoppingIngredientAPI(_id);
+      const data = await removeShoppingIngredientAPI(id);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.status);
