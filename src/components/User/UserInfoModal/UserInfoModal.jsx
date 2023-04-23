@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import {Overlay, ModalWrapper, BtnClose, IconClose} from './UserInfoModal.styled'
 
-import closeBtn from '../../../images/SVG/Social/closeBtn.svg';
+import closeBtn from '../../../images/SVG/closeBtn.svg';
 
 const modalRoot = document.querySelector('#modal-root');
 
