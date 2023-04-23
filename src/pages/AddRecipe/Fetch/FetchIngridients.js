@@ -13,13 +13,10 @@ const API = axios.create({
 const fetchIngridients = async () => {
   try {
     const response = await API.get('/ingredients/list');
-    // console.log(response);
-    // console.log(response.data.searchResult);
     const result = response.data.searchResult.map(ingridient => {
-      //  { value: 'ocean', label: 'Ocean', color: '#00B8D9' },
       return { values: ingridient.ttl, label: ingridient.ttl };
     });
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (error) {
     console.log(error.message);
