@@ -5,14 +5,22 @@ import SharedLayout from './SharedLayout';
 import FavoritePage from '../pages/FavoritePage';
 import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
-import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
+// import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
 import MainPage from 'pages/Main/MainSection';
 
-import RegistrationPage from '../pages/Registration/RegistrationPage';
+import RegisterPage from '../pages/Registration/RegistrationPage';
+
+// import { getMode } from '../redux/theme/themeSelector';
+// import {
+//   getAccessToken,
+// } from '../redux/auth/selectors';
+import { getCurrentUser } from '../redux/auth/operations';
+
 import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
+import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
 // import { lazy } from 'react';
 
@@ -23,7 +31,7 @@ export const App = () => {
     <Routes>
       <Route path="/welcome" element={<WelcomSection />} />
 
-      <Route path="/register" element={<RegistrationPage />} />
+      <Route path="/register" element={<RegisterPage />} />
 
       <Route path="/signin" element={<SingIn />} />
 
@@ -32,7 +40,7 @@ export const App = () => {
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
-        <Route path="add" element={<AddRecipePage />} />
+        <Route path="add" element={<AddRecipe />} />
 
         <Route path="favorite" element={<FavoritePage />} />
 
