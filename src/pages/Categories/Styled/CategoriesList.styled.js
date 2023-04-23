@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CategoriesList = styled.div`
   border-bottom: 1px solid #e0e0e0;
-  height: 56px;
+  height: auto;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -15,6 +15,20 @@ export const CategoriesList = styled.div`
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: 2px;
+  padding-left: 29px;
+
+  @media screen and (min-width: 768px) {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: #bdbdbd;
+    gap: 55px;
+    padding-left: 19px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 
   /* Add custom scrollbar */
   scrollbar-color: transparent;
