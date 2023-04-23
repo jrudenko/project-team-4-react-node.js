@@ -162,57 +162,57 @@ paginateActive: '#EBF3D4',
 },
 },
   
-transitions: {
-main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-},
+// transitions: {
+// main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+// },
 
-device: {
-mobile: `(min-width: 375px)`,
-tablet: `(min-width: 768px)`,
-desktop: `(min-width: 1440px)`,
-},
+// device: {
+// mobile: `(min-width: 375px)`,
+// tablet: `(min-width: 768px)`,
+// desktop: `(min-width: 1440px)`,
+// },
 
-letterSpacings: {
-subheader: '-0.24px',
-content: '-0.02em',
-},
+// letterSpacings: {
+// subheader: '-0.24px',
+// content: '-0.02em',
+// },
 
-lineHeights: {
-body: `1.5`,
-subheader: '1',
-content: '1.33',
-extraContent: '1.29',
-btnText: '1.12',
-description: '1.25',
-time: '1.43',
-heading: `1.125`,
-headerLinks: '1.6',
-userLink: '1.7',
-searchSelect: '1.5',
-},
+// lineHeights: {
+// body: `1.5`,
+// subheader: '1',
+// content: '1.33',
+// extraContent: '1.29',
+// btnText: '1.12',
+// description: '1.25',
+// time: '1.43',
+// heading: `1.125`,
+// headerLinks: '1.6',
+// userLink: '1.7',
+// searchSelect: '1.5',
+// },
 
-borders: {
-none: 'none',
-normal: '1px solid',
-},
+// borders: {
+// none: 'none',
+// normal: '1px solid',
+// },
 
-lineHeights: {
-body: 1.5,
-heading: 1.125,
-},
+// lineHeights: {
+// body: 1.5,
+// heading: 1.125,
+// },
 
-radius: {
-btnStandart: '6px',
-btnIcon: '4px',
-logo: '12px',
-image: '8px',
-switch: '50px',
-pagination: '26px',
-modal: '24px',
-circle: '50%',
-},
-transitions: {
-main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-},
+// radius: {
+// btnStandart: '6px',
+// btnIcon: '4px',
+// logo: '12px',
+// image: '8px',
+// switch: '50px',
+// pagination: '26px',
+// modal: '24px',
+// circle: '50%',
+// },
+// transitions: {
+// main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+// },
 };
 
