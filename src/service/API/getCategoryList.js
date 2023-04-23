@@ -1,7 +1,3 @@
-// const token =
-//   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-//     .eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0
-//     .xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q;
 const getCategoryList = async token => {
   const recipeOptimization = recipe => {
     return {
