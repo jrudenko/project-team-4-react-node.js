@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, useField } from 'formik';
+import { TitleTextareaStyled } from './Textarea.styled';
 
 const FormikTextArea = ({ label, name, ...rest }) => {
   const [field, meta, helpers] = useField(name);
@@ -13,7 +14,8 @@ const FormikTextArea = ({ label, name, ...rest }) => {
 
   return (
     <div className="form-group">
-      {label && <label htmlFor={name}>{label}</label>}
+      <TitleTextareaStyled>Ingredients</TitleTextareaStyled>
+      {label && <label htmlFor={name}></label>}
       <Field
         as="textarea"
         name={name}

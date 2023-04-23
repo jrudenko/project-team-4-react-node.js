@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Field, useField, FieldArray } from 'formik';
-import SelectComponentWithFilter from './Select/SelectComponentWithFilter/SelectComponentWithFilter';
-import SelectWithAmount from './Select/SelectWithAmount';
+import SelectComponentWithFilter from '../Select/SelectComponentWithFilter/SelectComponentWithFilter';
+import SelectWithAmount from '../Select/SelectWithAmount';
 
 const unitOptions = [
   { value: 'kg', label: 'кг' },
@@ -28,7 +28,21 @@ const IngredientComponent = ({ name, label, ingredients, ...props }) => {
     <div>
       <div style={{ display: 'flex' }}>
         <h3>Ingridients</h3>
-        <div style={{ display: 'flex', marginLeft: '10px' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+
+            marginLeft: '10px',
+            width: '92px',
+            height: '28px',
+            boxSizing: 'border-box',
+
+            border: '1px solid rgba(51, 51, 51, 0.3)',
+            borderRadius: '18px',
+          }}
+        >
           <button
             type="button"
             onClick={() => setCounter(Math.max(counter - 1, 1))}
@@ -55,13 +69,13 @@ const IngredientComponent = ({ name, label, ingredients, ...props }) => {
                   alignItems: 'center',
                 }}
               >
-                {label && <label htmlFor={name}>{label}</label>}
+                {label && <label htmlFor={name}></label>}
                 <SelectComponentWithFilter
                   name={`${name}.${index}.name`}
                   data={ingredients}
                   label="Colors"
                 />
-                {label && <label htmlFor={name}>{label}</label>}
+                {label && <label htmlFor={name}></label>}
                 <Field name={`${name}.${index}.amount`} type="number" />
 
                 {label && <label htmlFor={name}></label>}

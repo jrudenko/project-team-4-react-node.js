@@ -3,32 +3,34 @@ import Title from '../../components/Title/Title';
 import SelectComponent from '../../components/addRecipe/component/Select/Select';
 import { Formik, Form } from 'formik';
 import React, { useEffect, useState } from 'react';
-import IngridientComponent from 'components/addRecipe/component/Ingridient';
-import FormikTextArea from 'components/addRecipe/component/Textarea';
+import IngridientComponent from 'components/addRecipe/component/Ingridients/Ingridient';
+import FormikTextArea from 'components/addRecipe/component/Textarea/Textarea';
 import fetchCategoryListFromAPI from 'pages/Categories/Axios/AxiosGetCategories';
 import fetchIngridients from './Fetch/FetchIngridients';
-import * as Yup from 'yup';
+import Container from 'components/Container/Container';
+import FormikImageUpload from 'components/addRecipe/component/InputImage/InputImage';
+// import * as Yup from 'yup';
 
 const initialValues = {
-    photo: '',
-          title: '',
-          description: '',
-          category: '',
-          time: '',
-          ingredients: [],
-          instructions: '',
-          image: null,
-          imagePreviewUrl: null,
-  };
+  photo: '',
+  title: '',
+  description: '',
+  category: '',
+  time: '',
+  ingredients: [],
+  instructions: '',
+  image: '',
+  imagePreviewUrl: null,
+};
 
-const validationSchema = Yup.object({
-    title: Yup.string().required('Title is required'),
-    description: Yup.string().required('Description is required'),
-    category: Yup.string().required('Category is required'),
-    time: Yup.number().required('Time is required'),
-    ingredients: Yup.array().min(1, 'At least 1 ingredient is required'),
-    instructions: Yup.string().required('Instructions are required'),
-  });
+// const validationSchema = Yup.object({
+//     title: Yup.string().required('Title is required'),
+//     description: Yup.string().required('Description is required'),
+//     category: Yup.string().required('Category is required'),
+//     time: Yup.number().required('Time is required'),
+//     ingredients: Yup.array().min(1, 'At least 1 ingredient is required'),
+//     instructions: Yup.string().required('Instructions are required'),
+//   });
 
 const AddRecipe = () => {
   const [categories, setCategories] = useState([]);
@@ -43,11 +45,11 @@ const AddRecipe = () => {
     const fetchData = async () => {
       try {
         const categoryData = await fetchCategoryListFromAPI();
-        console.log(categoryData.categoryList);
+        // console.log(categoryData.categoryList);
         setCategories(categoryData.categoryList);
 
         const ingredientData = await fetchIngridients();
-        console.log(ingredientData.ingredientList);
+        // console.log(ingredientData.ingredientList);
         setIngredients(ingredientData);
       } catch (error) {
         console.error(error);
@@ -56,55 +58,70 @@ const AddRecipe = () => {
     fetchData();
   }, []);
   return (
-    <div>
-      <Title>Add Recipe</Title>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={(values, actions) => {
-          console.log(values);
-        }}
-      >
-        {props => (
-          <Form>
-            <div
-              style={{
-                width: '300px',
-                height: '300px',
-                backgroundColor: 'grey',
-              }}
-            ></div>
-            <div>
-              <InputComponent
-                name="title"
-                label="title"
-                titletext="Enter item title"
+    <Container>
+      <div>
+        <Title>Add Recipe</Title>
+        <Formik
+          initialValues={initialValues}
+          // validationSchema={validationSchema}
+          onSubmit={(values, actions) => {
+            console.log(values);
+          }}
+        >
+          {props => (
+            <Form>
+              <div
+                style={{
+                  display: 'flex',
+                }}
+              >
+                <div
+                  style={{
+                    width: '279px',
+                    height: '268px',
+                    background: '#8BAA36',
+                    borderRadius: '8px',
+                  }}
+                ><FormikImageUpload name="image" /></div>
+                
+                <div>
+                  <InputComponent
+                    name="title"
+                    label="title"
+                    titletext="Enter item title"
+                  />
+                  <InputComponent
+                    name="description"
+                    label="description"
+                    titletext="Enter item description"
+                  />
+                  <SelectComponent
+                    name="category"
+                    options={categories}
+                    label="category"
+                  />
+                  <br />
+                  <SelectComponent
+                    name="time"
+                    options={optionsTime}
+                    label="time"
+                  />
+                </div>
+              </div>
+              <IngridientComponent
+                label="ingredients"
+                name="ingredients"
+                ingredients={ingredients}
               />
-              <InputComponent
-                name="description"
-                label="description"
-                titletext="Enter item description"
-              />
-              <SelectComponent
-                name="category"
-                options={categories}
-                label="category"
-              />
-              <SelectComponent name="time" options={optionsTime} label="time" />
-            </div>
-            <IngridientComponent
-              label="ingredients"
-              name="ingredients"
-              ingredients={ingredients}
-            />
 
-            <FormikTextArea label="instructions" name="instructions" />
+              <FormikTextArea label="instructions" name="instructions" />
 
-            <button type="submit">Submit</button>
-          </Form>
-        )}
-      </Formik>
-    </div>
+              <button type="submit">Submit</button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </Container>
   );
 };
 

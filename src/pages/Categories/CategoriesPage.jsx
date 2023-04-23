@@ -25,6 +25,8 @@ const CategoriesPage = () => {
     categoryName || 'Beef'
   );
 
+  
+
   useEffect(() => {
     setIsLoading(true);
     try {
