@@ -64,7 +64,7 @@ formAddIcon: '#333333',
 labelText: '#000000',
 },
 
-switches: {
+switch: {
 darkTheme: {
 background: '#1E1F28',
 secondaryBg: '#2A2C36',
@@ -206,7 +206,7 @@ btnStandart: '6px',
 btnIcon: '4px',
 logo: '12px',
 image: '8px',
-switch: '50px',
+switches: '50px',
 pagination: '26px',
 modal: '24px',
 circle: '50%',
