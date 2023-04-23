@@ -196,10 +196,10 @@ none: 'none',
 normal: '1px solid',
 },
 
-lineHeights: {
-body: 1.5,
-heading: 1.125,
-},
+// lineHeights: {
+// body: 1.5,
+// heading: 1.125,
+// },
 
   radius: {
     btnStandart: '6px',
@@ -210,9 +210,6 @@ heading: 1.125,
     pagination: '26px',
     modal: '24px',
     circle: '50%',
-  },
-    transitions: {
-      main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
 };
 
