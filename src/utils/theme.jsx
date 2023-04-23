@@ -1,5 +1,19 @@
 export const theme = {
   breakpoints: ['375px', '768px', '1440px'],
+  space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontSizes: {
+    xxs: 10,
+    xs: 12,
+    s: 14,
+    sm: 16,
+    m: 18,
+    l: 20,
+    xl: 24,
+    authxl: 28,
+    xxl: 32,
+    sectXl: 44,
+    xxxl: 48,
+  },
   colors: {
     primaryText: '#3E4462',
     backgroundMain: '#ECECEC',
