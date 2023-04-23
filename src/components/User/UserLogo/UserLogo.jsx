@@ -14,3 +14,4 @@ export const UserLogo = ({ toggleBoard }) => {
         </UserLogoWrapper>
     );
 };
+

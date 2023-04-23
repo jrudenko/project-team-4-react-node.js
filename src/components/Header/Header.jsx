@@ -7,13 +7,14 @@ import BurgerMenu from 'components/BurgerMenu';
 import {User} from '../User/User'
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
-import { HeaderContainer, StyledContainer, Wrapper } from './Header.styled';
+import { HeaderContainer, StyledContainer, Wrapper, UserToglContainer } from './Header.styled';
 import Modal from 'components/modal';
 
 
 const Header = () => {
   const [isBurgerMenuShow, setIsBurgerMenuShow] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 1439});
+  const isMobile = useMediaQuery({ maxWidth: 1439 });
+  
   const handleMenuOnClose = () => {
     setIsBurgerMenuShow(false);
   };
@@ -22,16 +23,18 @@ const Header = () => {
   };
 
   return (
-   <HeaderContainer>
+    <HeaderContainer>
+      
       {isMobile ? (
         <StyledContainer>
+       
           {!isBurgerMenuShow && (
             <>
               <Logo />
               <Wrapper>
+                <User />
                 <BurgerButton onClick={handleBurgerButton} />
-                <User/>
-                </Wrapper>
+              </Wrapper>
             </>
           )}
           {isBurgerMenuShow && (
@@ -39,17 +42,23 @@ const Header = () => {
               <BurgerMenu onClose={handleMenuOnClose} />
             </Modal>
           )}
-          </StyledContainer>
+        </StyledContainer>
+
       ) : (
-          <StyledContainer>
-            <Logo mr="187px" />
-            <Navigation onClick={handleMenuOnClose} />
+          
+        <StyledContainer>
+          <Logo />
+          <Navigation onClick={handleMenuOnClose} />
+          <UserToglContainer>
+            <User />
             <ThemeToggler />
-         </StyledContainer> 
+          </UserToglContainer>
+      
+        </StyledContainer>
       )}
     </HeaderContainer>
   );
-}
+};
 
 
 export default Header;
