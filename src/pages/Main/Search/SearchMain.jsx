@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import MainSearch from './SearchMain.styled';
-import { Button } from 'components/Button/Button';
+import Button from 'components/Button';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
