@@ -12,6 +12,7 @@ const IngredientComponent = ({ name, label, ingredients, ...props }) => {
   const [field, meta, helpers] = useField(name);
   const [counter, setCounter] = useState(field.value.length || 1);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const initialArray = [...field.value];
     if (initialArray.length < counter) {
@@ -21,9 +22,8 @@ const IngredientComponent = ({ name, label, ingredients, ...props }) => {
     if (initialArray.length >= counter) {
       initialArray.splice(counter - 1);
       helpers.setValue(initialArray);
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter]);
-
   return (
     <div>
       <div style={{ display: 'flex' }}>
