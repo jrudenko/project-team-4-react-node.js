@@ -1,6 +1,6 @@
 import { ColorRing } from 'react-loader-spinner';
 
-const Loader = ({ outcolor = '#8BAA36' }) => {
+export const Loader = ({ outcolor = '#8BAA36' }) => {
   return (
     <>
       <ColorRing
@@ -16,6 +16,3 @@ const Loader = ({ outcolor = '#8BAA36' }) => {
   );
 };
 
-
-
-export default Loader;
