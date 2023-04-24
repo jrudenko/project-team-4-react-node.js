@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 //стилі контейнера Footer
@@ -49,7 +50,7 @@ export const LogoBox = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: center;

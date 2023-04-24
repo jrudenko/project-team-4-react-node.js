@@ -5,6 +5,7 @@ import {
   AuthImage,
   AuthBackground,
 } from '../../pages/Registration/RegistrationPage.styled';
+
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ export const SigninPage = () => {
 
   useEffect(() => {
     const url =
-      'https://team-project-so-yummy-backend.onrender.com/api/auth/verify/';
+      'https://yummy-rest-api.yurgo.fun/api/auth/verify/';
 
     if (params.verificationToken) {
       axios.get(url.concat(params.verificationToken));
@@ -28,42 +29,3 @@ export const SigninPage = () => {
     </AuthMain>
   );
 };
-
-
-
-
-
-
-
-
-// import  SignInForm  from '../../components/AuthForm.v2/SignInForm';
-// import { Link } from 'react-router-dom';
-// import { Page, BackgroundImg, Container, Image, Box } from "../Registration/RegistrationPage.styled";
-
-
-// const SingIn = () => {
-//   return (
-//     <Page>
-//       <Container>
-//      <Image />
-//        <Box>
-//         <SignInForm />
-//         <Link
-//           to="/register"
-//           style={{
-//             color: 'white',
-//             textDecoration: 'underline',
-//             marginLeft: 'auto',
-//             marginRight: 'auto',
-//           }}
-//         >
-//           Registration
-//         </Link>
-//       </Box>
-//       </Container>
-//         <BackgroundImg></BackgroundImg>
-//     </Page>
-//   );
-// };
-
-// export default SingIn;
