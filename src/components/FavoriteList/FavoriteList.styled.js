@@ -14,6 +14,15 @@ export const List = styled.div`
   }
 `;
 
+export const ListText = styled.h3`
+  font-size: 20px;
+  color: ${p => p.theme.colors.heroText};
+  @media ${props => props.theme.device.tablet} {
+    font-size: 24px;
+    color: ${p => p.theme.colors.heroText};
+  }
+`;
+
 export const ButtonDelete = styled.button`
   position: absolute;
   top: 0;
