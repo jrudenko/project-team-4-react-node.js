@@ -20,6 +20,8 @@ import SingIn from 'pages/SingIn/SinginPage';
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
+// import Favorite from 'pages/FavoritePage';
+
 import { merge, get } from 'lodash';
 import { getOwnRecipeById } from '../redux/recipe/recipeOperation';
 
