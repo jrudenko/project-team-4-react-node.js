@@ -104,7 +104,7 @@ export const updateAvatar = createAsyncThunk(
       const { data } = await axios.patch('/auth/user/avatar', avatar);
       return data;
     } catch (error) {
-      toast.error('Oops, something wrong')
+      toast.error('Oops, something wrong');
       return rejectWithValue(error.message);
     }
   }
@@ -114,9 +114,8 @@ export const updateInfo = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const { data } = await axios.put('/auth/user/update', user);
-      const {name, email } = data;
+      const { name, email } = data;
       return { name, email };
-
     } catch (error) {
       return rejectWithValue(error.message);
     }

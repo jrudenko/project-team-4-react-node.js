@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as CloseBtnSvg } from '../../images/SVG/closeBtn.svg';
+import { IoClose } from 'react-icons/io5';
 
 import SpinachMob1x from '../../images/spinach-main-bg/spinach-popup-mobile-1x.webp';
 import SpinachMob2x from '../../images/spinach-main-bg/spinach-popup-mobile-@2x.webp';
@@ -9,7 +9,7 @@ import SpinachTablet2x from '../../images/spinach-main-bg/spinach-popup-tablet-@
 export function CloseBtn({ onClose }) {
   return (
     <CloseButton onClick={onClose}>
-      <CloseBtnSvg width={32} height={32} />
+      <CloseIcon width={32} height={32}  />
     </CloseButton>
   );
 }
@@ -23,7 +23,7 @@ export const WrapperBurger = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 18px 16px;
-  background-color: ${p => p.theme.colors.greenSecondary};
+  background-color: ${p => p.theme.colors.secondaryBg};
   background-image: url('${SpinachMob1x}');
   background-repeat: no-repeat;
   background-position: right -250px bottom -70px;
@@ -47,19 +47,6 @@ export const WrapperBurger = styled.div`
 `;
 
 const CloseButton = styled.button`
-  display: block;
-  position: absolute;
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  text-align: inherit;
-  text-decoration: none;
-  cursor: pointer;
   top: 22px;
   right: 16px;
   @media screen and (min-width: 768px) {
@@ -81,7 +68,6 @@ export const LogoWrapper = styled.div`
 `;
 
 export const ThemeTogglerWrapper = styled.div`
-  display: none;
   align-items: center;
   position: absolute;
   bottom: 18px;
@@ -90,4 +76,25 @@ export const ThemeTogglerWrapper = styled.div`
     bottom: 32px;
     left: 32px;
   }
+`;
+
+export const CloseIcon = styled(IoClose)`
+position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  top: 18px;
+  right: 18px;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+ color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.headerText)};
+  transition: all 250ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.accentColor};
+  }
+  
 `;

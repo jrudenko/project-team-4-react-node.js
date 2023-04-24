@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useAuth } from "../../hooks/useAuth";
+import Avatar from '../../images/avatar.png';
 import { useLocation, useParams } from 'react-router-dom';
 import UserLogoModal from './UserLogoModal/UserLogoModal';
 
@@ -9,16 +10,15 @@ const UserLogo = () => {
   const { pathname } = useLocation();
   const recipe = useParams();
   const [modalIsOpen, setmodalIsOpen] = useState(false);
-  const avatar = useSelector(state => state.auth.user.avatar);
-  const name = useSelector(state => state.auth.user.name);
+const { user } = useAuth();
 
   const toggleModalEdit = () => setmodalIsOpen(state => !state);
   return (
     <Container>
       <WrapPhoto onClick={toggleModalEdit}>
-        <Photo src={avatar} alt={name} />
+        <Photo src={user?.avatar ?? Avatar} alt="user" />
         <Name pathname={pathname} recipe={recipe}>
-          {name}
+          {user?.name ?? 'User'}
         </Name>
       </WrapPhoto>
       {modalIsOpen && <UserLogoModal openModalEdit={toggleModalEdit} />}

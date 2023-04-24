@@ -117,9 +117,7 @@ const UserInfoModal = ({ onClose }) => {
               </LabelPhoto>
               <LabelInput>
                 <UserIcon />
-
                 <EditIcon />
-
                 <Input
                   type="text"
                   name="name"

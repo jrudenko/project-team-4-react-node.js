@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 
 export const NavBar = styled.ul`
-  display: flex;
+   display: flex;
   align-items: center;
   margin-right: ${p => p.mr};
   flex-direction: ${p => p.fd || 'row'};
@@ -31,7 +31,7 @@ export const NavItem = styled.li`
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
-  color: ${p => p.theme.colors.mainDark};
+  color: ${p => p.theme.colors.headerText};
   transition: ${p => p.theme.transitions.main};
   &.active,
   &:hover,

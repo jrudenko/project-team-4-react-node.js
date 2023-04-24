@@ -1,22 +1,43 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  padding-top: 18px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 375px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+  }
+
 `;
 
 export const StyledContainer = styled.div`
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  
+  margin: 0 auto;
+  min-width: 375px;
+  z-index: 1;
+  padding-top: ${p => p.theme.space[4] + 2}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[4]}px;
+  padding-bottom: ${p => p.theme.space[0]}px;
   @media screen and (min-width: 768px) {
-    padding: 0 32px;
+    padding-left: ${p => p.theme.space[5]}px;
+    padding-right: ${p => p.theme.space[5]}px;
   }
   @media screen and (min-width: 1440px) {
-    padding: 0 100px;
-    justify-content: start;
-   
+    max-width: 1440px;
+    padding-left: ${p => p.theme.space[2] * 25}px;
+    padding-right: ${p => p.theme.space[2] * 25}px;
   }
 `;
 

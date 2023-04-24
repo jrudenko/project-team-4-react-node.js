@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export const СhooseYourBreakfastStyled = styled.div`
   width: 225px;
   background: ${p => p.theme.colors.background};
-  /* background: #fafafa; */
   border-radius: 8px;
   padding: 8px;
   margin-left: 82px;
