@@ -5,7 +5,7 @@ export const Loader = ({ outcolor = '#8BAA36' }) => {
     <>
       <ColorRing
   visible={true}
-  height="140"
+  height="150"
   width=""
   ariaLabel="blocks-loading"
   wrapperStyle={{}}
