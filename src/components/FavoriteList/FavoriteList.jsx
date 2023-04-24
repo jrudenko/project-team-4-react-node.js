@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
-import MyRecipeItem from '../RecipeItem/MyRecipeItem';
+import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
 // import Loader from '../Loader/loader';
 import EmptyPage  from 'components/EmptyPage';
 
