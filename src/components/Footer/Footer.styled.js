@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-// import spinachModile from '../../images/spinach-main-bg/spinach-mobile-1x.webp';
 
 //стилі контейнера Footer
 export const FooterConteiner = styled.div`
-  background: ${({ theme }) => theme.button.secondaryBag};
+  background-color: ${p => p.theme.colors.switches.lightTheme.footerBg};
   position: absolute;
   width: 100%;
   height: 435px;
@@ -70,7 +69,7 @@ export const Logo = styled.div`
 `;
 
 export const FooterTitle = styled.div`
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.white};
   width: 102px;
   height: 18px;
   font-style: normal;
@@ -116,7 +115,7 @@ export const Benefits = styled.li`
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0, 02em;
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.white};
   &:not(:last-child) {
     margin-bottom: 12px;
   }
@@ -170,7 +169,7 @@ export const Item = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.white};
   letter-spacing: -0.02em;
 `;
 

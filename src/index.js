@@ -1,27 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from 'styled-components';
-import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
+import { App } from './components/App';
 import { BrowserRouter } from 'react-router-dom';
-
-import { App } from 'components/App';
-import { theme } from './utils/theme';
+import { Provider } from 'react-redux';
 import './index.css';
+import { PersistGate } from 'redux-persist/integration/react';
+
 import 'modern-normalize/modern-normalize.css';
-import { store } from 'redux/store';
+import { store, persistor } from 'redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ThemeProvider theme={theme}>
-    {/* <React.StrictMode> */}
-    <BrowserRouter basename="/project-team-4-react-node.js">
-      <Provider store={store}>
-        {/* <PersistGate loading={null} persistor={persistor}> */}
-        <App />
-        {/* </PersistGate> */}
-      </Provider>
-    </BrowserRouter>
-
-    {/* </React.StrictMode> */}
-  </ThemeProvider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/project-team-4-react-node.js">
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
 );

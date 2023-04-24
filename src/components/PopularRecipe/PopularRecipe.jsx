@@ -1,4 +1,3 @@
-import { popularArray } from './ExampleArray';
 import {
   WrapperPoular,
   List,
@@ -15,14 +14,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getPopularList} from '../../redux/popular/popularOperation';
 import {selectPopular} from '../../redux/popular/popularSelectors';
 
-
-
 const PopularRecipe = () => {
 
   const dispatch = useDispatch();
   const PopularRecipe = useSelector(selectPopular);
-  
-  console.log(`This POPULAR`, PopularRecipe)
 
   useEffect(() => {
 dispatch(getPopularList())
@@ -31,9 +26,9 @@ dispatch(getPopularList())
   return (
     <WrapperPoular>
       <PopularTitle>Popular recipe</PopularTitle>
-      {popularArray.length > 0 && (
+      {PopularRecipe.favoriteRecipes?.length > 0 && (
         <List>
-          {PopularRecipe.map(({ _id, thumb, instructions, title }) => {
+          {PopularRecipe.favoriteRecipes.map(({ _id, thumb, instructions, title }) => {
             return (
               <Item key={_id}>
                 <StyledLink to={`/recipe/${_id}`}>

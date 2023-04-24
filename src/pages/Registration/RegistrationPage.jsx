@@ -1,15 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AuthForm from "../../components/AuthForm/RegistrationForm";
-import {BackgroundImg,Container, Image} from "./RegistrationPage.styled"
+import { Page, BackgroundImg, Container, Image, Box } from "./RegistrationPage.styled"
+// import { useSelector } from "react-redux";
+// import { selectUser } from '../../redux/auth/selectors';
+// import { Loader } from 'components/Loader/Loader';
+
+
 const RegisterPage = () => {
+  // const isLoading=useSelector(selectUser)
   return (
-    <Container>
-      <Image/>
-      <AuthForm />
-      <Link to="/signin">Sign in</Link>
-      <BackgroundImg></BackgroundImg>
-    </Container>
+    <Page>
+      {/* {isLoading && <Loader />} */}
+      {/* {!isLoading && (
+
+      )} */}
+      <Container>
+          <Image />
+          <Box>
+            <AuthForm />
+            <Link to="/signin" style={{ color: "white", textDecoration: 'underline'}}>Sign in</Link>
+          </Box>
+
+       </Container>
+       <BackgroundImg></BackgroundImg>
+    </Page>
   );
 };
 

@@ -1,32 +1,99 @@
-import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { updateSearchQuery } from 'redux/search/searchSlice';
-import { Form, SearchInput, SearchButton } from '../Search/SearchMain.styled';
+import { useSelector } from 'react-redux';
 
-const SearchMain = () => {
+import MainSearch from './SearchMain.styled';
+import Button from 'components/Button';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const MainSearchPage = () => {
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const onInputSubmit = e => {
+  const theme = useSelector(state => state.theme.darkMode);
+
+  const handleNameChange = event => setSearch(event.target.value);
+
+  const onSubmit = e => {
     e.preventDefault();
-    if (!e.target.search.value) {
-      toast.warning('Type the query for search');
+    if (search.trim() === '') {
+      toast.error('Please, enter a valid search request!', {
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        progress: undefined,
+        theme: theme ? 'dark' : 'light',
+      });
+      setSearch('');
       return;
     }
-    dispatch(updateSearchQuery(e.target.search.value));
-    navigate('/search');
+    navigate(`/search?query=${search}`);
+    setSearch('');
   };
+
   return (
-    <Form onSubmit={onInputSubmit}>
-      <SearchInput searchQuery="" name="search" />
-      <SearchButton title="Search" type="submit">
+    <MainSearch onSubmit={onSubmit}>
+      <input
+        type="search"
+        placeholder=""
+        value={search}
+        onChange={handleNameChange}
+      />
+
+      <Button
+        type="submit"
+        look="rounded"
+        width="113px"
+        heigth="52px"
+        widthTablet="161px"
+        heigthTablet="59px"
+        heigthDesktop="70px"
+        widthDesktop="161px"
+        fontSize="14px"
+        fontSizeTablet="16px"
+        fontSizeDesktop="16px"
+        lineHeight="21px"
+        lineHeightTablet="24px"
+        lineHeightDesktop="24px"
+      >
         Search
-      </SearchButton>
-    </Form>
+      </Button>
+    </MainSearch>
   );
 };
 
-export default SearchMain;
+export default MainSearchPage;
+
+// import { useDispatch } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
+// import { toast } from 'react-toastify';
+// import { updateSearchQuery } from 'redux/search/searchSlice';
+// import { Form, SearchInput, SearchButton } from '../Search/SearchMain.styled';
+
+// const SearchMain = () => {
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+//   const onInputSubmit = e => {
+//     e.preventDefault();
+//     if (!e.target.search.value) {
+//       toast.warning('Type the query for search');
+//       return;
+//     }
+//     dispatch(updateSearchQuery(e.target.search.value));
+//     navigate('/search');
+//   };
+//   return (
+//     <Form onSubmit={onInputSubmit}>
+//       <SearchInput searchQuery="" name="search" />
+//       <SearchButton title="Search" type="submit">
+//         Search
+//       </SearchButton>
+//     </Form>
+//   );
+// };
+
+// export default SearchMain;
 
 // import { useState, useEffect } from 'react';
 // import { Form, SearchInput, SearchButton } from '../Search/SearchMain.styled';

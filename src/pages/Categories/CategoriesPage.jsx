@@ -8,11 +8,10 @@ import { StyledNavLink } from './Styled/CategoriesListItem.styled';
 import {
   CategoriesCardSet,
   CategoriesCardSetItem,
+  ConteinerCategoriListStyled,
 } from './Styled/CategoriesTable.styled';
 import ProductCard from '../../components/RecipeCard/Recipecard';
-import { testRecipes } from './testVariables';
 import Title from 'components/Title';
-// import { StyledNav, StyledNavMenu } from './Styled/test.styled';
 
 const CategoriesPage = () => {
   const { categoryName } = useParams();
@@ -25,13 +24,10 @@ const CategoriesPage = () => {
     categoryName || 'Beef'
   );
 
-  
-
   useEffect(() => {
     setIsLoading(true);
     try {
       fetchCategoryListFromAPI().then(data => {
-        console.log(data.categoryList);
         setCategories(data.categoryList);
       });
 
@@ -45,12 +41,15 @@ const CategoriesPage = () => {
   useEffect(() => {
     setIsLoading(true);
     try {
-      setRecipes(fetchRecipesFromCategory(currentCategory));
+      fetchRecipesFromCategory(currentCategory).then(data => {
+        setRecipes(data);
+      });
       setIsLoading(false);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
     }
+    console.log();
   }, [currentCategory]);
 
   useEffect(() => {
@@ -61,7 +60,7 @@ const CategoriesPage = () => {
 
   const handleCategoryClick = category => {
     setCurrentCategory(category);
-    console.log(categories);
+   
   };
 
   return (
@@ -74,7 +73,9 @@ const CategoriesPage = () => {
           ) : (
             categories.map(category => (
               <StyledNavLink
-                to={`/categories/${category}`}
+                to={`/categories/${category.toLowerCase()}`}
+                key={category}
+                isActive={() => currentCategory === category}
                 onClick={() => handleCategoryClick(category)}
               >
                 {category}
@@ -84,19 +85,31 @@ const CategoriesPage = () => {
         </CategoriesList>
       </div>
       <div>
-        <h1>Category: {currentCategory}</h1>
         {isLoading && <p>Loading recipes...</p>}
-        {/* {!isLoading && recipes.length > 0 && ( )} */}
-        <CategoriesCardSet>
-          {testRecipes.map(recipe => (
-            <CategoriesCardSetItem key={recipe.id}>
-              <Link to={`/recipes/${recipe.id}`}>
-                <ProductCard imageUrl={recipe.preview} name={recipe.name} />
-              </Link>
-            </CategoriesCardSetItem>
-          ))}
-        </CategoriesCardSet>
-
+        {!isLoading && recipes.length > 0 && (
+          <ConteinerCategoriListStyled>
+            <CategoriesCardSet>
+              {recipes.map(recipe => (
+                <CategoriesCardSetItem key={recipe.id}>
+                  <Link to={`/recipes/${recipe.id}`}>
+                    <ProductCard imageUrl={recipe.preview} name={recipe.name} />
+                  </Link>
+                </CategoriesCardSetItem>
+              ))}
+            </CategoriesCardSet>
+          </ConteinerCategoriListStyled>
+        )}
+        {/* {isLoading && (
+          <div
+            style={{
+              margin: '30px 0px',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <Loader />
+          </div>
+        )} */}
         {!isLoading && recipes.length === 0 && (
           <p>No recipes found for this category</p>
         )}

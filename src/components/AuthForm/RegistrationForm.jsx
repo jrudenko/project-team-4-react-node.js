@@ -1,6 +1,12 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
+
+import { useDispatch } from 'react-redux';
+import { registrationUser } from '../../redux/auth/operations';
+
+
+import { FormBox, TitleForm, BoxForField, BoxForForm, FormField, FormAuth, Button, BoxForIcon, NameIcon,Warning, EmailIcon,PassIcon} from './RegistrationForm.styled';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,33 +24,108 @@ const validationSchema = Yup.object().shape({
     .required('Password is required'),
 });
 
-const AuthForm = ({ formType, handleSubmit }) => {
+const getColor = (
+  errors,
+  touched,
+  defaultColor = 'rgba(255, 255, 255, 0.8)'
+) => {
+  if (
+    errors === 'Your password is short' ||
+    errors === 'Your password is too long'
+  ) {
+    return '#F6C23E';
+  }
+  return touched ? (errors && '#E74A3B') || '#3CBC81' : defaultColor;
+};
+
+const AuthForm = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (values, actions) => {
+    const authData = {
+      name: values.name,
+      email: values.email,
+      password: values.password,
+    };
+    dispatch(
+      registrationUser(authData));
+    actions.resetForm();
+  };
   return (
     <div>
-      <h2>{formType === 'register' ? 'Sign In': 'Register'}</h2>
-      <Formik
-        initialValues={{ name: '', email: '', password: '' }}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <div>
-              <Field name="name" type="text" placeholder="Name"/>
-              <ErrorMessage name="name" />
-            </div>
-            <div>
-              <Field name="email" type="email" placeholder="Email"/>
-              <ErrorMessage name="email" />
-            </div>
-            <div>
-              <Field name="password" type="password" placeholder="Password"/>
-              <ErrorMessage name="password" />
-            </div>
-            <button type="submit">{formType === 'register' ? 'Sign Up' : 'Sign In'}</button>
-          </Form>
-        )}
-      </Formik>
+          <FormBox>
+              <Formik
+                    initialValues={{ name: '', email: '', password: '' }}
+                    validationSchema={validationSchema}
+                    onSubmit={handleSubmit}
+                   >
+                   {({ errors, touched }) => (
+                     <FormAuth>
+                     <TitleForm>Registration</TitleForm>
+                    <BoxForForm>
+
+                   <BoxForField>
+                <BoxForIcon>
+                  <NameIcon stroke={getColor(errors.name, touched.name)} />
+                </BoxForIcon>
+                <FormField
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  color={getColor(errors.name, touched.name)}
+                />
+                {errors.name && touched.name ? (
+                  <Warning color={getColor(errors.name, touched.name)}>
+                    {errors.name}
+                  </Warning>
+                ) : null}
+                    </BoxForField>
+
+              <BoxForField>
+                <BoxForIcon>
+                  <EmailIcon
+                    stroke={getColor(errors.email, touched.email)}
+                  />
+                </BoxForIcon>
+                <FormField
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  color={getColor(errors.email, touched.email)}
+                />
+                {errors.email && touched.email ? (
+                  <Warning color={getColor(errors.email, touched.email)}>
+                    {errors.email}
+                  </Warning>
+                ) : null}
+                  </BoxForField>
+
+              <BoxForField>
+                <BoxForIcon>
+                  <PassIcon
+                    stroke={getColor(errors.password, touched.password)}
+                  />
+                </BoxForIcon>
+                <FormField
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  color={getColor(errors.password, touched.password)}
+                />
+                {errors.password && touched.password ? (
+                  <Warning
+                    color={getColor(errors.password, touched.password)}
+                  >
+                    {errors.password}
+                  </Warning>
+                ) : null}
+                  </BoxForField>
+
+                 </BoxForForm>
+                <Button type="submit">Sign up</Button>
+                    </FormAuth>
+                    )}
+              </Formik>
+          </FormBox>
     </div>
   );
 };
