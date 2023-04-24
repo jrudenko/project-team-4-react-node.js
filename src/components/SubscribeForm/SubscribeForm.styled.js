@@ -116,8 +116,6 @@ export const SubInput = styled.input`
   text-decoration: none;
   width: 148px;
   height: 18px;
-  /* left: 14px; */
-  /* top: 10px; */
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -3,7 +3,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { useDispatch } from 'react-redux';
-// import { registrationUser } from '../../redux/auth/operations';
 import { loginUser } from '../../redux/auth/operations';
 
 import { FormBox, TitleForm, BoxForField, BoxForForm, FormField, FormAuth, Button, BoxForIcon,Warning, EmailIcon,PassIcon} from '../AuthForm/RegistrationForm.styled';
