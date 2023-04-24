@@ -4,7 +4,7 @@ import ThemeToggler from 'components/ThemeToggler';
 import BurgerButton from 'components/BurgerButtonMenu';
 import BurgerMenu from 'components/BurgerMenu';
 
-import {User} from '../User/User'
+import { User } from '../User/User';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { HeaderContainer, StyledContainer, Wrapper, UserToglContainer } from './Header.styled';
