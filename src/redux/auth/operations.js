@@ -4,7 +4,6 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
-
 const setAuthToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };

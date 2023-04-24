@@ -33,7 +33,7 @@ background-size: cover;
 
  ${highDensity(`${mob2}`)}
 
-@media screen and (min-width: ${p=>p.theme.device.tablet}) {
+@media screen and ${p=>p.theme.device.tablet} {
   margin-bottom: 50px;
   padding-top: 136px;
   padding-bottom: 32px;
@@ -45,7 +45,7 @@ background-size: cover;
 
 }
 
-@media screen and (min-width: ${p=>p.theme.device.desktop}) {
+@media screen and ${p=>p.theme.device.desktop} {
   width: 100%;
   padding-top: 164px;
   height: 493px;
@@ -59,15 +59,16 @@ ${ButSkewStyle} {
     color: ${p=>p.theme.colors.button.secondaryBag};
     border: 2px solid ${p=>p.theme.colors.button.hoverSecondaryText};
     margin-bottom: 43px;
+    transition: ${p => p.theme.transitions.main};
 
-    @media screen and (min-width: ${p=>p.theme.device.tablet}) {
+    @media screen and ${p=>p.theme.device.tablet} {
       font-size: 16px;
       line-height: ${p => p.theme.lineHeights.searchSelect};
       padding: 18px 44px;
       margin-bottom: 55px;
     }
 
-    @media screen and (min-width: ${p=>p.theme.device.desktop}) {
+    @media screen and  ${p=>p.theme.device.desktop}{
       margin-bottom: 48px;
     }
 
@@ -89,15 +90,14 @@ export const HeroTitle = styled.title`
   letter-spacing: ${p => p.theme.letterSpacings.content};
   color: ${p => p.theme.colors.colorAccent};
   max-width: 330px;
-  overflow: hidden;
   text-overflow: ellipsis;
 
-  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
+  @media screen and  ${p=>p.theme.device.tablet} {
     max-width: 680px;
     font-size: 44px;
     margin-bottom: 24px;
   }
-  @media screen and (min-width: ${p=>p.theme.device.desktop}) {
+  @media screen and  ${p=>p.theme.device.desktop} {
     max-width: 1000px;
   }
   `;
@@ -116,13 +116,13 @@ export const HeroTitle = styled.title`
   text-overflow: ellipsis;
   hyphens: auto;
 
-  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
+  @media screen and  ${p=>p.theme.device.tablet} {
     width: 506px;
     height: 96px;
     font-size: 18px;
     margin-bottom: 24px;
   }
-  @media screen and (min-width: ${p=>p.theme.device.desktop}) {
+  @media screen and  ${p=>p.theme.device.desktop} {
     width: 656px;
     height: 72px;
     -webkit-line-clamp: 3;
@@ -136,7 +136,7 @@ export const HeroTitle = styled.title`
   margin-right: 4px;
   color: ${p=>p.theme.colors.mainDark};
 
-  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
+  @media screen and  ${p=>p.theme.device.tablet} {
    width: 20px;
    height: 20px;
    margin-right: 8px;
@@ -154,7 +154,7 @@ export const HeroTitle = styled.title`
   letter-spacing: ${p => p.theme.letterSpacings.subheader};
   height: 14px;
 
-  @media screen and (min-width: ${p=>p.theme.device.tablet}) {
+  @media screen and  ${p=>p.theme.device.tablet} {
     height: 20px;
     font-size: 14px;
   }
