@@ -13,7 +13,7 @@ export const TableHeader = styled.div`
   background-color: ${p => p.theme.colors.colorAccent};
   @media screen and (min-width: 768px) {
     padding: 21px 32px;
-    margin-left: 0;і
+    margin-left: 0;
     margin-right: 0;
     margin-bottom: 6px;
   }
