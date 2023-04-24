@@ -9,6 +9,7 @@ import fetchCategoryListFromAPI from 'pages/Categories/Axios/AxiosGetCategories'
 import fetchIngridients from './Fetch/FetchIngridients';
 import Container from 'components/Container/Container';
 import FormikImageUpload from 'components/addRecipe/component/InputImage/InputImage';
+import PopularRecipe from 'components/PopularRecipe/PopularRecipe';
 // import * as Yup from 'yup';
 
 const initialValues = {
@@ -121,6 +122,7 @@ const AddRecipe = () => {
           )}
         </Formik>
       </div>
+      <PopularRecipe />
     </Container>
   );
 };

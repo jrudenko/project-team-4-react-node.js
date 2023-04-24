@@ -170,6 +170,9 @@ device: {
 mobile: `(min-width: 375px)`,
 tablet: `(min-width: 768px)`,
 desktop: `(min-width: 1440px)`,
+mobileMax: `(max-width: 375px)`,
+tabletMax: `(max-width: 768px)`,
+desktopMax: `(max-width: 1440px)`,
 },
 
 letterSpacings: {

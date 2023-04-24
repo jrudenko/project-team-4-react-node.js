@@ -1,12 +1,18 @@
 import RecipePageHero from 'components/RecipePageHero';
+import Container from 'components/Container';
 
 const RecipePage = () => {
    
+ return(
+       
+    <Container>
 
-    return(
-        <>
-        <RecipePageHero/>
-        </>
+         <RecipePageHero/>
+         
+
+
+    </Container> 
+        
     )
 }
 

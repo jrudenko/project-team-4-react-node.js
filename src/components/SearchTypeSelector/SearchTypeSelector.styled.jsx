@@ -18,7 +18,7 @@ export const BoxSelector = styled.div`
 
 export const Label = styled.label`
   font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[2]};
+  font-weight: ${p => p.theme.fontWeights.title};
   font-size: 12px;
   line-height: ${p => p.theme.content};
   color: ${p => p.theme.colors.titleConteiner};

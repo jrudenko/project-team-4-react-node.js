@@ -39,7 +39,7 @@ export const HeroTitle = styled.title`
   text-align: center;
   margin-bottom: 18px;
   font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[2]};
+  font-weight: ${p => p.theme.fontWeights.title};
   font-size: 24px;
   line-height:${p=>p.theme.lineHeights.subheader} ;
   letter-spacing: ${p => p.theme.letterSpacings.content};
@@ -52,7 +52,7 @@ export const HeroTitle = styled.title`
   export const HeroText = styled.p`
   width: 300px;
   height: 64px;
-  font-weight: ${p => p.theme.fontWeights[0]};
+  font-weight: ${p => p.theme.fontWeights.body};
   color: ${p=>p.theme.button.secondaryBag};
   text-align: center;
   font-size: 12px;
