@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import sq_black_6 from '../../images/Title/sq_black_6.png';
 import sq_black_12 from '../../images/Title/sq_black_12.png';
 import sq_green_8 from '../../images/Title/sq_green_8.png';
@@ -7,6 +8,7 @@ import sq_green_14 from '../../images/Title/sq_green_14.png';
 
 export const TitleConteiner = styled.div`
   height: 192px;
+  margin: 0 auto;
   box-sizing: border-box;
   width: 100%;
   padding-top: 114px;
