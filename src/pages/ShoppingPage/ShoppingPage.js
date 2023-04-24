@@ -2,22 +2,22 @@ import React, { useEffect } from 'react';
 import Title from 'components/Title/Title';
 import { EmptyMessage, TableHeader, TableTitle } from './ShoppingPage.styled';
 import { useMedia } from 'hooks';
-import { ShoppingList } from 'components/ShoppingList/ShoppingList';
+// import { ShoppingList } from 'components/ShoppingList/ShoppingList';
 import { useDispatch, useSelector } from 'react-redux';
-import { getList } from '../../../redux/shoppingList/shoppingListOperations';
-import { Loader } from 'components/Loader/Loader';
+import { getList } from '../../redux/shoppingList/shoppingListOperations';
+// import { Loader } from 'components/Loader/Loader';
 
 const ShoppingPage = () => {
-    const { screenType } = useMedia();
-    const { items, isLoading } = useSelector(state => state.shoppings);
+  const { screenType } = useMedia();
+  const { items, isLoading } = useSelector(state => state.shoppings);
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-      dispatch(getList());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(getList());
+  }, [dispatch]);
 
-    const titles = ['Product', 'Number', 'Remove'];
+  const titles = ['Product', 'Number', 'Remove'];
 
   return (
     <main>
@@ -32,7 +32,7 @@ const ShoppingPage = () => {
             justifyContent: 'center',
           }}
         >
-          { <Loader /> }
+          {/* {<Loader />} */}
         </div>
       )}
       {!!items.length && (
@@ -44,7 +44,7 @@ const ShoppingPage = () => {
               </TableTitle>
             ))}
           </TableHeader>
-          <ShoppingList />
+          {/* <ShoppingList /> */}
         </>
       )}
 
