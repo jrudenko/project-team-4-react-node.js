@@ -15,6 +15,11 @@ export const StyledNavLink = styled(NavLink)`
   @media screen and (min-width: 1440px) {
   }
 
+  &.active {
+    color: #8baa36;
+    border-bottom: 2px solid #8baa36;
+  }
+
   &:hover {
     color: #8baa36;
     border-bottom: 2px solid #8baa36;
