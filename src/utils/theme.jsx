@@ -111,7 +111,7 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
-        bgColorTrahsparanted: '#FAFAFA',
+        
       },
       lightTheme: {
         background: '#FAFAFA',
@@ -159,7 +159,7 @@ export const theme = {
         paginateArrow: 'rgba(169, 169, 169, 0.73)',
         paginatePage: '#656565',
         paginateActive: '#EBF3D4',
-        bgColorTrahsparanted: 'transparent',
+      
       },
     },
   },
