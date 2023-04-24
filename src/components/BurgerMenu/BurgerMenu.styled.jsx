@@ -98,3 +98,4 @@ export const ThemeTogglerWrapper = styled.div`
     left: 32px;
   }
 `;
+

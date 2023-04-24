@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const ButtonBurger = styled.button`
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    text-align: inherit;
-    border-radius: 0;
-    padding: 0;
-    color: inherit;
-    cursor: pointer;    
+
+  
+  color: ${p => p.theme.colors.headerText};
+  transition: ${p => p.theme.transitions.main};
+  &.active,
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.colorAccent};
+  }
+  @media screen and (min-width: 1440px) {
+    color: '#23262A';
+  }  
 `;
 
