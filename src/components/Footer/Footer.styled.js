@@ -172,5 +172,3 @@ export const Item = styled.div`
   color: ${p => p.theme.colors.white};
   letter-spacing: -0.02em;
 `;
-
-export const Link = styled.div``;
