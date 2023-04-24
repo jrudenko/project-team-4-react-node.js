@@ -1,23 +1,24 @@
-import{MenuItems,Item,Link} from './Footer.styled'
+import{MenuItems, Item } from './Footer.styled'
+import { Link } from 'react-router-dom';
 
 export const FooterMenu = () => {
   return (
     <>
       <MenuItems>
         <Item>
-          <Link to="/search">Ingredients</Link>
+          <Link to="/search" style={{ color: "white", textDecoration: 'none'}}>Ingredients</Link>
         </Item>
         <Item>
-           <Link to="/add">Add recipes</Link>
+           <Link to="/add" style={{ color: "white", textDecoration: 'none'}}>Add recipes</Link>
         </Item>
         <Item>
-          <Link to="/my">My recipes</Link>
+          <Link to="/my" style={{ color: "white", textDecoration: 'none'}}>My recipes</Link>
         </Item>
         <Item>
-         <Link to="/favorite">Favorite</Link>
+         <Link to="/favorite" style={{ color: "white", textDecoration: 'none'}}>Favorite</Link>
         </Item>
         <Item>
-         <Link to="/shopping-list">Shopping list</Link>
+         <Link to="/shopping-list" style={{ color: "white", textDecoration: 'none'}}>Shopping list</Link>
         </Item>
       </MenuItems>
     </>

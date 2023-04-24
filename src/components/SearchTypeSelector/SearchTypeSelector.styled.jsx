@@ -17,7 +17,7 @@ export const BoxSelector = styled.div`
 `;
 
 export const Label = styled.label`
-  font-family: Poppins, sans-serif;
+  font-family: ${p => p.theme.fonts.main};
   font-weight: ${p => p.theme.fontWeights.title};
   font-size: 12px;
   line-height: ${p => p.theme.content};

@@ -6,7 +6,6 @@ import { theme } from '../utils/theme';
 import WelcomSection from 'pages/Welcome/WelcomSection';
 
 import SharedLayout from './SharedLayout';
-// import FavoritePage from '../pages/FavoritePage';
 import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
 // import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
@@ -19,6 +18,7 @@ import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
+import Favorite from 'pages/FavoritePage';
 // import { lazy } from 'react';
 
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
@@ -41,7 +41,7 @@ export const App = () => {
 
         <Route path="add" element={<AddRecipe />} />
 
-        <Route path="favorite" element={<div>FavoritePage</div>} />
+        <Route path="favorite" element={<Favorite />} />
 
         <Route path="recipe/:recipeId" element={<RecipePage />} />
 

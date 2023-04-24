@@ -1,12 +1,14 @@
-import { SignInForm } from '../../components/AuthForm.v2/SignInForm';
+import  SignInForm  from '../../components/AuthForm.v2/SignInForm';
 import { Link } from 'react-router-dom';
-import { Page, Image } from './SingInPage.styled';
+import { Page, BackgroundImg, Container, Image, Box } from "../Registration/RegistrationPage.styled";
+
 
 const SingIn = () => {
   return (
     <Page>
-      <Image />
-      <div>
+      <Container>
+     <Image />
+       <Box>
         <SignInForm />
         <Link
           to="/singin"
@@ -19,7 +21,9 @@ const SingIn = () => {
         >
           Registration
         </Link>
-      </div>
+      </Box>
+      </Container>
+        <BackgroundImg></BackgroundImg>
     </Page>
   );
 };

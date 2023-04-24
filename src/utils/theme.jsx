@@ -170,6 +170,9 @@ device: {
 mobile: `(min-width: 375px)`,
 tablet: `(min-width: 768px)`,
 desktop: `(min-width: 1440px)`,
+mobileMax: `(max-width: 375px)`,
+tabletMax: `(max-width: 768px)`,
+desktopMax: `(max-width: 1440px)`,
 },
 
 letterSpacings: {
@@ -196,10 +199,9 @@ none: 'none',
 normal: '1px solid',
 },
 
-// lineHeights: {
-// body: 1.5,
-// heading: 1.125,
-// },
+fonts: {
+    main: 'Poppins, sans-serif',
+  },
 
   radius: {
     btnStandart: '6px',
