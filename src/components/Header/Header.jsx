@@ -34,7 +34,6 @@ const Header = () => {
               <Wrapper>
                 <UserLogo />
                 <BurgerButton onClick={handleBurgerButton} />
-                <UserLogo/>
                 </Wrapper>
             </>
           )}
