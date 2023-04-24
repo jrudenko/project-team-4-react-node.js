@@ -10,10 +10,10 @@ export const TableHeader = styled.div`
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-  background-color: ${p => p.theme.colors.accentColor};
+  background-color: ${p => p.theme.colors.colorAccent};
   @media screen and (min-width: 768px) {
     padding: 21px 32px;
-    margin-left: 0;
+    margin-left: 0;і
     margin-right: 0;
     margin-bottom: 6px;
   }
@@ -36,7 +36,7 @@ export const TableTitle = styled.p`
     }
   }};
   line-height: 1.5;
-  color: ${p => p.theme.colors.secondaryTextColor};
+  color: ${p => p.theme.colors.whiteText};
   &:first-child {
     margin-right: auto;
   }
