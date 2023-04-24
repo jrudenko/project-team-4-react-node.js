@@ -14,7 +14,13 @@ const fetchRecipesFromCategory = async category => {
     const response = await axios.get(`recipes/category/${category}`);
 
     const result = response.data.result.map(recip => {
-      return { id: recip._id, name: recip.title, preview: recip.preview };
+      return {
+        id: recip._id,
+        name: recip.title,
+        preview: recip.preview
+          ? recip.preview
+          : ' https://via.placeholder.com/350x350.png?text=No+Image',
+      };
     });
     return result;
   } catch (error) {
