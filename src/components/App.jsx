@@ -15,7 +15,7 @@ import MainPage from 'pages/Main/MainSection';
 import RegisterPage from '../pages/Registration/RegistrationPage';
 
 import SingIn from 'pages/SingIn/SinginPage';
-
+import ShoppingPage from '../pages/SingIn/ShoppingPage/ShoppingPage';
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
 import Favorite from 'pages/FavoritePage';
@@ -49,7 +49,7 @@ export const App = () => {
 
         <Route path="search" element={<SearchPage />} />
 
-        <Route path="shopping-list" element={<div>ShoppingListPage</div>} />
+        <Route path="shopping-list" element={<ShoppingPage />} />
 
         <Route path="*" element={<div>NotFoundPage</div>} />
       </Route>
