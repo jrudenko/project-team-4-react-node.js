@@ -8,8 +8,8 @@ export const SearchInput = styled.input`
   padding: 16px 120px 16px 32px;
   width: 295px;
   height: 53px;
-  font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-family: ${p => p.theme.fonts.main};
+  font-weight: ${p => p.theme.fontWeights[0]};
   font-size: 12px;
   line-height: ${p => p.theme.searchSelect};
   color: #3e4462;
@@ -41,8 +41,8 @@ export const SearchButton = styled.button`
   position: absolute;
   width: 113px;
   height: 53px;
-  font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-family: ${p => p.theme.fonts.main};
+  font-weight: ${p => p.theme.fontWeights[0]};
   font-size: 14px;
   line-height: ${p => p.theme.searchSelect};
   color: ${p => p.theme.colors.button.textColorMain};

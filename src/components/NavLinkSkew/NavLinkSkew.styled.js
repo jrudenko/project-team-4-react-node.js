@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 export const NavLinkSkewStyled = styled(NavLink)`
   box-sizing: border-box;
-  font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-family: ${p => p.theme.fonts.main};
+  font-weight: ${p => p.theme.fontWeights[0]};
   line-height: ${p => p.theme.lineHeights.subheader};
   font-size: 10px;
   color: ${p =>

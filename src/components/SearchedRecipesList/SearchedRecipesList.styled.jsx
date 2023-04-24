@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const NoSearchText = styled.p`
   padding-top: 50px;
   padding-bottom: 100px;
-  font-family: Poppins, sans-serif;
-  font-weight: ${p =>p.theme.fontWeights.subtitle};
+  font-family: ${p => p.theme.fonts.main};
+  font-weight: ${p => p.theme.fontWeights[1]};
   letter-spacing: ${p => p.theme.letterSpacings.content};
   line-height: ${p => p.theme.lineHeights.subheader};
   font-size: 14px;
