@@ -37,7 +37,7 @@ export const Select = styled.select`
   width: 146px;
   height: 100%;
   font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-weight: ${p => p.theme.fontWeights.body}; 
   font-size: 12px;
   line-height: ${p => p.theme.searchSelect};
   letter-spacing: ${p => p.theme.letterSpacings.content};
