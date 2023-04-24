@@ -5,6 +5,7 @@ position: relative;
 `;
 
 export const UserBtn = styled.button`
+
 display: flex;
 gap: 14px;
 justify-content: space-between;

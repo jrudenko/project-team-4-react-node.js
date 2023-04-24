@@ -165,13 +165,14 @@ export const theme = {
   transitions: {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
-
   device: {
     mobile: `(min-width: 375px)`,
     tablet: `(min-width: 768px)`,
     desktop: `(min-width: 1440px)`,
+    mobileMax: `(max-width: 375px)`,
+    tabletMax: `(max-width: 768px)`,
+    desktopMax: `(max-width: 1440px)`,
   },
-
   letterSpacings: {
     subheader: '-0.24px',
     content: '-0.02em',

@@ -1,18 +1,18 @@
 import { useLayoutEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
-import MyRecipeItem from '../RecipeItem/MyRecipeItem';
-// import { Loader } from '../Loader/loader';
-import EmptyPage  from 'components/EmptyPage';
+import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
+// import Loader from '../Loader/loader';
+// import EmptyPage  from 'components/EmptyPage';
 
-import { List } from './FavoriteList.styled.js';
-// import { Paginator } from 'components/Paginator/Paginator';
+import { List,ListText } from './FavoriteList.styled.js';
+import { Paginator } from '../Paginator/Paginator';
 
 const FavoriteList = () => {
   const [loading, setLoading] = useState(false);
   const [allRecipes, setAllRecipes] = useState([]);
   const [currentItems, setCurrentItems] = useState([]);
-//   const itemsPerPage = 4;
+  const itemsPerPage = 4;
 
   const getFavorites = async () => {
     try {
@@ -45,7 +45,7 @@ const FavoriteList = () => {
     <>
       <List>
         {/* {loading && (          
-            <Loader />        
+          // <Loader />        
         )} */}
         {currentItems.length !== 0 &&
           !loading &&
@@ -61,16 +61,17 @@ const FavoriteList = () => {
             />
           ))}
         {allRecipes.length === 0 && !loading && (
-          <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
+          <ListText>You don't have your recipes</ListText>
+          // <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
         )}
       </List>
-      {/* {!!allRecipes.length && (
+      {!!allRecipes.length && (
         <Paginator
           totalItems={allRecipes}
           perPage={itemsPerPage}
           setCurrentItems={setCurrentItems}
         />
-      )} */}
+      )}
     </>
   );
 };

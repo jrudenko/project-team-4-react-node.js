@@ -9,7 +9,7 @@ import SpinachTablet2x from '../../images/spinach-main-bg/spinach-popup-tablet-@
 export function CloseBtn({ onClose }) {
   return (
     <CloseButton onClick={onClose}>
-      <CloseBtnSvg width={32} height={32} />
+      <CloseBtnSvg width={32} height={32}  />
     </CloseButton>
   );
 }
@@ -23,7 +23,7 @@ export const WrapperBurger = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 18px 16px;
-  background-color: ${p => p.theme.colors.greenSecondary};
+  background-color: ${p => p.theme.colors.secondaryBg};
   background-image: url('${SpinachMob1x}');
   background-repeat: no-repeat;
   background-position: right -250px bottom -70px;
@@ -54,17 +54,24 @@ const CloseButton = styled.button`
   padding: 0;
   width: auto;
   background-color: transparent;
-  color: inherit;
-  font: inherit;
+
   line-height: normal;
   text-align: inherit;
   text-decoration: none;
   cursor: pointer;
   top: 22px;
   right: 16px;
+  color: ${p => p.theme.colors.heroText};
+
+ 
   @media screen and (min-width: 768px) {
     top: 24px;
     right: 32px;
+  }
+   transition: all 250ms linear;
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.accentColor};
   }
 `;
 
@@ -81,7 +88,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const ThemeTogglerWrapper = styled.div`
-  display: none;
+
   align-items: center;
   position: absolute;
   bottom: 18px;
