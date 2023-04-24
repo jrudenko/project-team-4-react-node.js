@@ -13,6 +13,7 @@ export const ConteinerCategoriListStyled = styled.div`
 export const CategoriesCardSet = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
   margin-top: 32px;
   @media screen and (min-width: 768px) {
@@ -39,13 +40,13 @@ export const CategoriesCardSetItem = styled.li`
     }
   }
 `;
-export const CardStyled = styled.div`
-  @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 32px * 2) / 2);
-    margin: calc(32px / 2);
-  }
-  @media screen and (min-width: 1440px) {
-    flex-basis: calc((100% - 32px * 4) / 4);
-    margin: calc(32px / 4);
-  }
-`;
+// export const CardStyled = styled.div`
+//   @media screen and (min-width: 768px) {
+//     flex-basis: calc((100% - 32px * 2) / 2);
+//     margin: calc(32px / 2);
+//   }
+//   @media screen and (min-width: 1440px) {
+//     flex-basis: calc((100% - 32px * 4) / 4);
+//     margin: calc(32px / 4);
+//   }
+// `;
