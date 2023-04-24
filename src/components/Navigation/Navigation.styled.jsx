@@ -13,6 +13,7 @@ export const NavBar = styled.ul`
   @media screen and (min-width: 768px) {
     row-gap: 40px;
   }
+  
 `;
 
 export const NavItem = styled.li`
@@ -31,7 +32,7 @@ export const NavItem = styled.li`
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
-  color: ${p => p.theme.colors.mainDark};
+  color: ${p => p.theme.colors.headerText};
   transition: ${p => p.theme.transitions.main};
   &.active,
   &:hover,

@@ -1,9 +1,9 @@
-export const selectSearchQuery = s => {
-  return s.search.searchQuery;
+// export const selectSearchQuery = s => {
+//   return s.search.searchQuery;
+// };
+export const selectIsLoading = state => {
+  return state.search.isLoading;
 };
-export const selectSearchType = s => {
-  return s.search.searchType;
-};
-export const selectSearchResult = s => {
-  return s.search.searchResult;
+export const selectSearchResult = state => {
+  return state.search.searchResult;
 };
