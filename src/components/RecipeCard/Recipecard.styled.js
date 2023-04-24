@@ -20,7 +20,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  background-color: ${p => p.theme.colors.cardBackground};
+  background-color: white;
   width: 307px;
   margin-left: auto;
   margin-right: auto;
@@ -38,13 +38,13 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Name = styled.h3`
-  color: ${p => p.theme.colors.headerText};
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   align-content: center;
+  color: #3e4462;
   padding: 16px;
   @media screen and (min-width: 768px) {
   }
