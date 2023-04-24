@@ -20,15 +20,13 @@ import SingIn from 'pages/SingIn/SinginPage';
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
-// import Favorite from 'pages/FavoritePage';
-
 import { merge, get } from 'lodash';
 import { getOwnRecipeById } from '../redux/recipe/recipeOperation';
+
 
 // import { lazy } from 'react';
 
 // const FavoritePage = lazy(() => import('../pages/FavoritePage'));
-
 
 
 
@@ -75,32 +73,33 @@ useEffect(() => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path="/welcome" element={<WelcomSection />} />
+        
+          <Routes>
+      <Route path="/welcome" element={<WelcomSection />} />
 
-          <Route path="/register" element={<RegisterPage />} />
+      <Route path="/register" element={<RegisterPage />} />
 
-          <Route path="/signin" element={<SingIn />} />
+      <Route path="/signin" element={<SingIn />} />
 
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="main" element={<MainPage>MainPage</MainPage>} />
+      <Route path="/" element={<SharedLayout />}>
+        <Route path="main" element={<MainPage>MainPage</MainPage>} />
 
-            <Route path="categories/:categoryName" element={<CategoriesPage />} />
+        <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
-            <Route path="add" element={<AddRecipe />} />
+        <Route path="add" element={<AddRecipe />} />
 
-            <Route path="favorite" element={<div>FavoritePage</div>} />
+        <Route path="favorite" element={<div>FavoritePage</div>} />
 
-            <Route path="recipe/:recipeId" element={<RecipePage />} />
+        <Route path="recipe/:recipeId" element={<RecipePage />} />
 
-            <Route path="my" element={<MyRecipesPage />} />
+        <Route path="my" element={<MyRecipesPage />} />
 
-            <Route path="search" element={<SearchPage />} />
+        <Route path="search" element={<SearchPage />} />
 
-            <Route path="shopping-list" element={<div>ShoppingListPage</div>} />
+        <Route path="shopping-list" element={<div>ShoppingListPage</div>} />
 
-            <Route path="*" element={<div>NotFoundPage</div>} />
-          </Route>
+        <Route path="*" element={<div>NotFoundPage</div>} />
+      </Route>
         </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>

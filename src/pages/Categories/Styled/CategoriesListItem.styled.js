@@ -8,6 +8,12 @@ export const StyledNavLink = styled(NavLink)`
   text-align: center;
   display: flex;
   align-items: center;
+  padding-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 28px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 
   &:hover {
     color: #8baa36;
