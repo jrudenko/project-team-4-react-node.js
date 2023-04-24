@@ -6,13 +6,13 @@ import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
 // import EmptyPage  from 'components/EmptyPage';
 
 import { List,ListText } from './FavoriteList.styled.js';
-// import { Paginator } from 'components/Paginator/Paginator';
+import { Paginator } from '../Paginator/Paginator';
 
 const FavoriteList = () => {
   const [loading, setLoading] = useState(false);
   const [allRecipes, setAllRecipes] = useState([]);
   const [currentItems, setCurrentItems] = useState([]);
-//   const itemsPerPage = 4;
+  const itemsPerPage = 4;
 
   const getFavorites = async () => {
     try {
@@ -65,13 +65,13 @@ const FavoriteList = () => {
           // <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
         )}
       </List>
-      {/* {!!allRecipes.length && (
+      {!!allRecipes.length && (
         <Paginator
           totalItems={allRecipes}
           perPage={itemsPerPage}
           setCurrentItems={setCurrentItems}
         />
-      )} */}
+      )}
     </>
   );
 };
