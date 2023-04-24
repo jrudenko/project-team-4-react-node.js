@@ -12,9 +12,9 @@ import SearchPage from 'pages/Search/SearchPage';
 import RecipePage from '../pages/RecipePage';
 import MainPage from 'pages/Main/MainSection';
 
-import RegisterPage from '../pages/Registration/RegistrationPage';
+import { RegisterPage } from '../pages/Registration/RegistrationPage';
 
-import SingIn from 'pages/SingIn/SinginPage';
+import { SigninPage } from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
@@ -32,7 +32,7 @@ export const App = () => {
 
       <Route path="/register" element={<RegisterPage />} />
 
-      <Route path="/signin" element={<SingIn />} />
+      <Route path="/signin" element={<SigninPage />} />
 
       <Route path="/" element={<SharedLayout />}>
         <Route path="main" element={<MainPage>MainPage</MainPage>} />
@@ -54,6 +54,6 @@ export const App = () => {
         <Route path="*" element={<div>NotFoundPage</div>} />
       </Route>
     </Routes>
-  </ThemeProvider>    
+  </ThemeProvider>
   );
 };
