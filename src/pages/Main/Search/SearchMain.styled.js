@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const MainSearch = styled.form`
   position: relative;
-  cursor: pointer;
   background-color: #fff;
   border: 1px solid rgba(35, 38, 42, 0.2);
   border-radius: 24px 44px;
