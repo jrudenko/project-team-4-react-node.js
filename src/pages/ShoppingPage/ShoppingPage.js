@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import MainTitle from 'components/MainTitle/MainTitle';
+import Title from 'components/Title/Title';
 import { EmptyMessage, TableHeader, TableTitle } from './ShoppingPage.styled';
 import { useMedia } from 'hooks';
 import { ShoppingList } from 'components/ShoppingList/ShoppingList';
@@ -21,7 +21,9 @@ const ShoppingPage = () => {
 
   return (
     <main>
-      <MainTitle text={'Shopping list'} />
+      {/* <Title text={'Shopping list'} /> */}
+      <Title>Shopping list</Title>
+
       {isLoading && (
         <div
           style={{
