@@ -12,6 +12,7 @@ import SearchPage from 'pages/Search/SearchPage';
 // import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
 import MainPage from 'pages/Main/MainSection';
+import ShoppingPage from 'pages/ShoppingPage/ShoppingPage';
 
 import RegisterPage from '../pages/Registration/RegistrationPage';
 
@@ -96,7 +97,7 @@ useEffect(() => {
 
         <Route path="search" element={<SearchPage />} />
 
-        <Route path="shopping-list" element={<div>ShoppingListPage</div>} />
+        <Route path="shopping-list" element={<ShoppingPage />} />
 
         <Route path="*" element={<div>NotFoundPage</div>} />
       </Route>
