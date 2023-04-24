@@ -28,22 +28,7 @@ const PreviewCategories = () => {
             popular={category}
           />
         ))}
-      <Button
-        to="/categories/beef"
-        look="rounded_other"
-        // width="195px"
-        // heigth="47px"
-        // widthTablet="239px"
-        // widthDesktop="239px"
-        // heigthTablet="61px"
-        // heigthDesktop="61px"
-        // fontSize="14px"
-        // fontSizeTablet="16px"
-        // fontSizeDesktop="16px"
-        // lineHeight="21px"
-        // lineHeightTablet="24px"
-        // lineHeightDesktop="24px"
-      >
+      <Button to="/categories/Beef" look="rounded_other">
         Other categories
       </Button>
     </PreviewCategoriesStyled>

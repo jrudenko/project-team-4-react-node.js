@@ -13,7 +13,7 @@ const СhooseYourBreakfast = () => {
         <span>Delicious and healthy</span> way to enjoy a variety of fresh
         ingredients in one satisfying meal
       </p>
-      <SeeRecipeLink to="/categories/breakfast">
+      <SeeRecipeLink to="/categories/Breakfast">
         <span>See recipes </span>
         <svg
           width="15"
