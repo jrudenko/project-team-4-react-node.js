@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { TogglContainer, TogglCircle } from './ThemeToggler.styled';
+import { useDispatch, useSelector } from "react-redux";
+import { TogglContainer, TogglCircle } from "./ThemeToggler.styled";
+import { toggleTheme } from 'redux/ThemeSlice/ThemeSlice';
 
-const ThemeToggler = ({ onChange }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const toggleTheme = () => {
-    setIsActive(prevState => !prevState);
-    onChange();
-  };
-
+const ThemeToggler = () => {
+  const theme = useSelector((state) => state.theme.darkMode);
+  const dispatch = useDispatch();
   return (
-    <TogglContainer isActive={isActive} onClick={toggleTheme}>
-      <TogglCircle isActive={isActive} />
+    <TogglContainer>
+      <TogglCircle
+        type="checkbox"
+        checked={theme}
+        onChange={() => dispatch(toggleTheme())}
+      />
     </TogglContainer>
   );
 };
