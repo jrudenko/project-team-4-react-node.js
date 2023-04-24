@@ -9,7 +9,7 @@ export const SearchInput = styled.input`
   width: 295px;
   height: 53px;
   font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-weight: ${p => p.theme.fontWeights.body};
   font-size: 12px;
   line-height: ${p => p.theme.searchSelect};
   color: #3e4462;
@@ -42,7 +42,7 @@ export const SearchButton = styled.button`
   width: 113px;
   height: 53px;
   font-family: Poppins, sans-serif;
-  font-weight: ${p.theme.fontWeights.body};
+  font-weight: ${p => p.theme.fontWeights.body};
   font-size: 14px;
   line-height: ${p => p.theme.searchSelect};
   color: ${p => p.theme.colors.button.textColorMain};
