@@ -27,7 +27,7 @@ export const ButtonStyled = styled.button`
       case 'rounded':
         return `${theme.colors.roundedBgColor}`;
       case 'rounded_dark':
-        return `${theme.colors.roundedDarkBgColor}`;
+        return `#8BAA36`;
       case 'rounded_transparent':
         return 'transparent';
       case 'rounded_other':
