@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import placeholder from 'images/mobile/form-add-placeholder.png';
-import  Loader  from '../../Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import { Box } from 'components/Box';
 import { IoMdRemoveCircle } from 'react-icons/io';
 import { FormErrorMsg } from '../FormErrorMsg/FormErrorMsg';

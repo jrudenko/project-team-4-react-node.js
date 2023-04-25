@@ -1,21 +1,20 @@
-// import { ColorRing } from 'react-loader-spinner';
+import { CirclesWithBar } from 'react-loader-spinner';
 
-// const Loader = ({ outcolor = '#8BAA36' }) => {
-//   return (
-//     <>
-//       <ColorRing
-//   visible={true}
-//   height="150"
-//   width=""
-//   ariaLabel="blocks-loading"
-//   wrapperStyle={{}}
-//   wrapperClass="blocks-wrapper"
-//   colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-//       />
-//     </>
-//   );
-// };
-
-
-
-// export default Loader;
+export const Loader = ({ size = '100', pageHeight, outcolor = '#8BAA36' }) => {
+  return (
+    <>
+      <CirclesWithBar
+        height={pageHeight ?? size}
+        width={size}
+        color="#4fa94d"
+        wrapperStyle={{ display: 'flex', justifyContent: 'center' }}
+        wrapperClass=""
+        visible={true}
+        outerCircleColor={outcolor}
+        innerCircleColor="#3E4462"
+        barColor="#1E1F28"
+        ariaLabel="circles-with-bar-loading"
+      />
+    </>
+  );
+};

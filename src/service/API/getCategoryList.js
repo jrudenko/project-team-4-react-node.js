@@ -61,7 +61,7 @@ const getCategoryList = async token => {
     'https://yummy-rest-api.yurgo.fun/api/recipes/main-page'
   );
 
-  const responseReceived = await list.json();
+  const responseReceived = await list();
   const result = responseReceived.result.map(category =>
     categoryOptimization(category)
   );
