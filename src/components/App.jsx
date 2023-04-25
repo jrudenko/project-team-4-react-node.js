@@ -80,7 +80,8 @@ useEffect(() => {
 
       <Route path="/register" element={<RegisterPage />} />
 
-      <Route path="/signin" element={<SigninPage />} />
+      <Route path="/signin" element={<SigninPage />} />          
+          
 
       <Route path="/" element={<SharedLayout />}>
         <Route path="main" element={<MainPage>MainPage</MainPage>} />
@@ -100,8 +101,8 @@ useEffect(() => {
         <Route path="shopping-list" element={<ShoppingPage />} />
 
         <Route path="*" element={<div>NotFoundPage</div>} />
-      </Route>
-
+          </Route>
+          
         </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>
