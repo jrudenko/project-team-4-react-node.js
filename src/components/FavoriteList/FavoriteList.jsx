@@ -5,7 +5,7 @@ import {
   deleteFavoriteRecipe,
 } from '../../service/API/index';
 import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
-import { Loader } from 'components/Loader/Loaders';
+import { Loader } from 'components/Loader/Loader';
 // import EmptyPage  from 'components/EmptyPage';
 
 import { List, ListText } from './FavoriteList.styled.js';

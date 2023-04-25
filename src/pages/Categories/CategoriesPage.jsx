@@ -11,7 +11,7 @@ import {
 } from './Styled/CategoriesTable.styled';
 import ProductCard from '../../components/RecipeCard/Recipecard';
 import Title from 'components/Title';
-import { Loader } from 'components/Loader/Loaders';
+import { Loader } from 'components/Loader/Loader';
 
 const CategoriesPage = () => {
   const { categoryName } = useParams();
