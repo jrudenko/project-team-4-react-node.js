@@ -20,11 +20,11 @@ import {
   createOptionIngredients,
 } from '../../redux/helpers/createOptionsSelectAddRecipeForm';
 import { validationSchema } from '../../redux/helpers/validationSchemaAddRecipeForm';
-import  Loader  from '../../components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import { RecipePreapationFields } from './RecipePreapationFields/RecipePreapationFields';
-import  Button  from '../../components/Button/Button';
+import Button from '../../components/Button/Button';
 import { ShowToastError } from '../../redux/helpers/showToastError';
 import { createArrTimesPrepare } from '../../redux/helpers/createArrTimesPrepare';
 import { RecipeForm } from './AddRecipeForm.styled';

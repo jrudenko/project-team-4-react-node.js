@@ -1,11 +1,14 @@
 import { useLayoutEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
+import {
+  getFavoriteRecipes,
+  deleteFavoriteRecipe,
+} from '../../service/API/index';
 import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
-// import Loader from '../Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 // import EmptyPage  from 'components/EmptyPage';
 
-import { List,ListText } from './FavoriteList.styled.js';
+import { List, ListText } from './FavoriteList.styled.js';
 import { Paginator } from '../Paginator/Paginator';
 
 const FavoriteList = () => {
@@ -44,9 +47,7 @@ const FavoriteList = () => {
   return (
     <>
       <List>
-        {/* {loading && (          
-          // <Loader />        
-        )} */}
+        {loading && <Loader />}
         {currentItems.length !== 0 &&
           !loading &&
           currentItems.map(({ description, preview, time, title, _id }) => (

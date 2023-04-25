@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useState, useEffect, useMemo, lazy } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../utils/theme';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,7 @@ import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from 'components/SharedLayout';
 import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
+import { Loader } from 'components/Loader/Loader';
 
 // import FavoritePage from '../pages/FavoritePage';
 // import CategoriesPage from 'pages/Categories/CategoriesPage';
@@ -86,14 +87,29 @@ export const App = () => {
               }
             >
               <Route path="*" element={<div>NotFoundPage</div>} />
-              <Route path="main" element={<MainPage />} />
+              <Route
+                path="main"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <MainPage />
+                  </Suspense>
+                }
+              />
 
               <Route
                 path="categories/:categoryName"
                 element={<CategoriesPage />}
               />
               <Route path="add" element={<AddRecipePage />} />
-              <Route path="favorite" element={<FavoritePage />} />
+              {/* <Route path="favorite" element={<FavoritePage />} /> */}
+              <Route
+                path="favorite"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <FavoritePage />
+                  </Suspense>
+                }
+              />
               <Route path="recipe/:recipeId" element={<RecipePage />} />
               <Route path="my" element={<MyRecipesPage />} />
               <Route path="search" element={<SearchPage />} />
