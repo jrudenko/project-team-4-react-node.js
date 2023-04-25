@@ -26,11 +26,11 @@ export const ButtonClose = styled.button`
   width: 20px;
   height: 20px;
 
-  color: ${p => (p.dark ? '#FAFAFA' : '#333333')};
+  color: ${p => (p.darkTheme ? '#FAFAFA' : '#333333')};
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -91,14 +91,14 @@ export const ButtonAdd = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: ${p => p.theme.colors.accentColor};
+  color: ${p => p.theme.colors.colorAccent};
 
   transition: all 250ms linear;
 
   &:hover,
   &:focus {
     transform: scale(1.2);
-    color: ${p => (p.dark ? '#FAFAFA' : '#333333')};
+    color: ${p => (p.darkTheme ? '#FAFAFA' : '#333333')};
   }
 
   @media screen and (min-width: 768px) {
@@ -114,12 +114,13 @@ export const PlusIcon = styled(BsFillPlusCircleFill)`
 
 export const LabelInput = styled.label`
   position: relative;
-  color: ${p => p.theme.colors.headerText};
+  color: ${p => p.theme.colors.mainDark};
 
   :focus-within > svg {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
 `;
+
 export const UserIcon = styled(FiUser)`
   position: absolute;
   top: 17px;
@@ -168,16 +169,16 @@ export const Input = styled(Field)`
   font-size: ${p => p.theme.fontSizes.s}px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: ${p => p.theme.colors.headerText};
+  color: ${p => p.theme.colors.mainDark};
   outline: none;
   background-color: transparent;
   width: 282px;
 
-  border: 1px solid ${p => p.theme.colors.headerText};
+  border: 1px solid ${p => p.theme.colors.mainDark};
   border-radius: 6px;
   margin-bottom: 24px;
   :focus-within {
-    border: 1px solid ${p => p.theme.colors.accentColor};
+    border: 1px solid ${p => p.theme.colors.colorAccent};
   }
 
   @media screen and (min-width: 768px) {

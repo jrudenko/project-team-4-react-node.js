@@ -16,7 +16,7 @@ const ImageUploadField = ({ field, form }) => {
     reader.readAsDataURL(file);
   };
 
-  const { value } = field || {};
+  // const { value } = field || {};
   const imagePreviewUrl = form?.values?.imagePreviewUrl;
 
   return (

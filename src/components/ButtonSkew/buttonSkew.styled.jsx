@@ -7,8 +7,8 @@ export const ButSkewStyle = styled.button`
   width: fit-content;
   white-space: nowrap;
   box-sizing: border-box;
-  font-family: ${p => p.theme.fonts.main};
-  font-weight: ${p => p.theme.fontWeights[0]};
+  font-family: Poppins, sans-serif;
+  font-weight: ${p => p.theme.fontWeights.body};
   line-height: ${p => p.theme.lineHeights.subheader};
   font-size: 14px;
   border-radius: 24px 44px;
