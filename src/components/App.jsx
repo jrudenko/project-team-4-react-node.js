@@ -79,7 +79,8 @@ useEffect(() => {
             {isLoggedIn && <Route index element={<WelcomSection />} />}
 
             <Route path="/" element={
-              <PrivateRoute element={<SharedLayout />} redirectTo="/signin"/>
+              // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
+              <PrivateRoute component={SharedLayout} redirectTo="/signin" />
             } >
               <Route path="*" element={<div>NotFoundPage</div>} />
               <Route path='main' element={<MainPage />}
