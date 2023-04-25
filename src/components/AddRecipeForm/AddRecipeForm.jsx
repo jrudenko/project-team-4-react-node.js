@@ -20,7 +20,7 @@ import {
   createOptionIngredients,
 } from '../../redux/helpers/createOptionsSelectAddRecipeForm';
 import { validationSchema } from '../../redux/helpers/validationSchemaAddRecipeForm';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loaders';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import { RecipePreapationFields } from './RecipePreapationFields/RecipePreapationFields';

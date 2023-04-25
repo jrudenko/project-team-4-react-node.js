@@ -14,7 +14,7 @@ import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from 'components/SharedLayout';
 import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loaders';
 
 // import FavoritePage from '../pages/FavoritePage';
 // import CategoriesPage from 'pages/Categories/CategoriesPage';
