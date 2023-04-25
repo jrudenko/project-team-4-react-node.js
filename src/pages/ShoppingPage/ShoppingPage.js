@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Title from 'components/Title/Title';
 import { EmptyMessage, TableHeader, TableTitle } from './ShoppingPage.styled';
 import { useMedia } from 'hooks';
-// import { ShoppingList } from 'components/ShoppingList/ShoppingList';
+// import { ShoppingList } from '../../components/ShoppingList/ShoppingList';
 import { useDispatch, useSelector } from 'react-redux';
 import { getList } from '../../redux/shoppingList/shoppingListOperations';
 // import { Loader } from 'components/Loader/Loader';

@@ -6,7 +6,7 @@ export const getRecipeById = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`/recipes/id/${id}`);
-      return response.data;
+      return response.data.result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -18,7 +18,7 @@ export const getOwnRecipeById = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`/own-recipes/id/${id}`);
-      return response.data;
+      return response.data.result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -29,7 +29,8 @@ export const addRecipeToFavorite = createAsyncThunk(
   'recipe/addRecipeToFavorite',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.post(`/favorite/${id}`);
+      const body = { recipeId: id };
+      const response = await axios.post(`/favorite`, body);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

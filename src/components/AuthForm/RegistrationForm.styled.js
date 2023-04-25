@@ -206,7 +206,7 @@ export const FormInput = styled(Field)`
   padding-left: 40px;
   padding-right: ${({ state }) =>
     state === 'error' || state === 'checked' ? '40px' : '10px'};
-  color: ${p => p.theme.colors.form.inputBorder};
+  color: ${p => p.theme.colors.form.inpBorder};
   background-color: transparent;
   border: ${({ state }) => {
     switch (state) {
@@ -227,7 +227,7 @@ export const FormInput = styled(Field)`
     font-size: ${p => p.theme.fontSizes.s}px;
     line-height: ${p => p.theme.lineHeights.body};
     letter-spacing: -0.02em;
-    color: #fafafa;
+    color: ${p => p.theme.colors.form.formIcon};
   }
   :focus + svg {
     opacity: 1;
@@ -236,7 +236,7 @@ export const FormInput = styled(Field)`
     opacity: 1;
     outline: none;
     ::placeholder {
-      color: #ffffff;
+      color: ${p => p.theme.colors.form.inpBorder};
       opacity: 1;
     }
   }
@@ -285,7 +285,7 @@ export const FormLink = styled(Link)`
   font-size: ${p => p.theme.fontSizes.s}px;
   line-height: ${p => p.theme.lineHeights.body};
   text-decoration-line: underline;
-  color: #fafafa;
+  color: ${p => p.theme.colors.whiteText};
   transform: translateX(-50%);
   transition: color 250ms ease;
   @media screen and (min-width: 768px) {
@@ -293,6 +293,6 @@ export const FormLink = styled(Link)`
     line-height: ${p => p.theme.lineHeights.body};
   }
   :hover {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
 `;

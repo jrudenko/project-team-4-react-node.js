@@ -1,8 +1,8 @@
 import { Field, FieldArray, useFormikContext } from "formik";
 
 function IngredientList() {
-  const { values, push, remove } = useFormikContext(); // get values, push, and remove from Formik context
-
+  const { values } = useFormikContext(); // get values, push, and remove from Formik context
+  // const { values, push, remove } = useFormikContext();const { values, push, remove } = useFormikContext();
   return (
     <FieldArray name="ingredients">
       {({ push, remove }) => (
