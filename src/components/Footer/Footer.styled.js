@@ -5,10 +5,8 @@ import styled from 'styled-components';
 export const FooterConteiner = styled.div`
   background-color: ${p => p.theme.colors.switches.lightTheme.footerBg};
   position: relative;
-  width: 100%;
   height: 435px;
   left: 0px;
-  width: 100%;
   padding: 85px, 18px, 85px, 28px;
 
   @media (min-width: 768px) {
