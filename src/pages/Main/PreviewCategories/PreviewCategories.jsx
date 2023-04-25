@@ -13,6 +13,7 @@ const PreviewCategories = () => {
   //   const dataReceived = await getCategoryList(token);
   //   setPopularCategories(dataReceived);
   //   console.log(dataReceived);
+
   // };
 
   useEffect(() => {
