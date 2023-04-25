@@ -9,7 +9,7 @@ import SharedLayout from './SharedLayout';
 // import FavoritePage from '../pages/FavoritePage';
 import CategoriesPage from 'pages/Categories/CategoriesPage';
 import SearchPage from 'pages/Search/SearchPage';
-// import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
+import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
 import RecipePage from '../pages/RecipePage';
 import MainPage from 'pages/Main/MainSection';
 
@@ -18,7 +18,6 @@ import RegisterPage from '../pages/Registration/RegistrationPage';
 import SingIn from 'pages/SingIn/SinginPage';
 
 import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
-import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
 import { merge, get } from 'lodash';
 import { getOwnRecipeById } from '../redux/recipe/recipeOperation';
@@ -86,7 +85,7 @@ useEffect(() => {
 
         <Route path="categories/:categoryName" element={<CategoriesPage />} />
 
-        <Route path="add" element={<AddRecipe />} />
+        <Route path="add" element={<AddRecipePage />} />
 
         <Route path="favorite" element={<div>FavoritePage</div>} />
 
