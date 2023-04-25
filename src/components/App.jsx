@@ -29,7 +29,7 @@ const ShoppingPage = lazy(() => import('pages/ShoppingPage/ShoppingPage'));
 const SearchPage = lazy(() => import('pages/Search/SearchPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipes/MyRecipesPage'));
 const RecipePage = lazy(() => import('pages/RecipePage'));
-const FavoritePage= lazy(() => import('pages/FavoritePage'));
+const FavoritePage = lazy(() => import('pages/FavoritePage'));
 const AddRecipePage = lazy(() => import('pages/AddRecipePage'));
 const CategoriesPage = lazy(() => import('pages/Categories/CategoriesPage'));
 const MainPage = lazy(() => import('pages/Main/MainSection'));
@@ -42,7 +42,6 @@ const getTheme = mode =>
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export const App = () => {
-
   const dispatch = useDispatch();
   const { isRefreshing, isLoggedIn } = useSelector(state => state.auth);
   const [mode, setMode] = useState('lightTheme');
@@ -60,61 +59,67 @@ export const App = () => {
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode(prevMode => (prevMode === 'lightTheme' ? 'darkTheme' : 'lightTheme'));
+        setMode(prevMode =>
+          prevMode === 'lightTheme' ? 'darkTheme' : 'lightTheme'
+        );
       },
     }),
     []
   );
 
-useEffect(() => {
-  dispatch(refreshUser());
-}, [dispatch]);
-
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         {!isRefreshing && (
-        <Routes>
+          <Routes>
             {!isLoggedIn && <Route index element={<WelcomSection />} />}
 
-            <Route path="/" element={
-              // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
-              <PrivateRoute component={SharedLayout} redirectTo="/signin" />
-            } >
+            <Route
+              path="/"
+              element={
+                // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
+                <PrivateRoute component={SharedLayout} redirectTo="/signin" />
+              }
+            >
               <Route path="*" element={<div>NotFoundPage</div>} />
-              <Route path='main' element={<MainPage />}
-              />
+              <Route path="main" element={<MainPage />} />
 
-              <Route path="categories/:categoryName" element={<CategoriesPage />}
+              <Route
+                path="categories/:categoryName"
+                element={<CategoriesPage />}
               />
-              <Route path='add' element={<AddRecipePage />}
-              />
-              <Route path="favorite" element={<FavoritePage/>}
-              />
-              <Route path="recipe/:recipeId" element={<RecipePage />}
-              />
-              <Route path='my' element={<MyRecipesPage />}
-              />
-              <Route path="search" element={<SearchPage />}
-              />
-              <Route path="shopping-list" element={<ShoppingPage />}
-              />
+              <Route path="add" element={<AddRecipePage />} />
+              <Route path="favorite" element={<FavoritePage />} />
+              <Route path="recipe/:recipeId" element={<RecipePage />} />
+              <Route path="my" element={<MyRecipesPage />} />
+              <Route path="search" element={<SearchPage />} />
+              <Route path="shopping-list" element={<ShoppingPage />} />
             </Route>
 
-            <Route index path='/register' element={
-              <RestrictedRoute component={RegisterPage} redirectTo="/main" />
-            }
+            <Route
+              index
+              path="/register"
+              element={
+                <RestrictedRoute component={RegisterPage} redirectTo="/main" />
+              }
             />
-            <Route path='/signin' element={
-              <RestrictedRoute component={SigninPage} redirectTo="/main" />
-            }
+            <Route
+              path="/signin"
+              element={
+                <RestrictedRoute component={SigninPage} redirectTo="/main" />
+              }
             />
-            <Route path='/signin/:verificationToken' element={
-              <RestrictedRoute component={SigninPage} redirectTo="/main" />
-            }
+            <Route
+              path="/signin/:verificationToken"
+              element={
+                <RestrictedRoute component={SigninPage} redirectTo="/main" />
+              }
             />
-        </Routes>
+          </Routes>
         )}
         <StyledToastContainer
           osition="top-center"
@@ -132,4 +137,3 @@ useEffect(() => {
     </ColorModeContext.Provider>
   );
 };
-
