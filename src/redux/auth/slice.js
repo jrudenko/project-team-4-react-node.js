@@ -31,7 +31,7 @@ export const userSlice = createSlice({
       .addCase(registrationUser.fulfilled, (state, action) => {
         state.isSent = true;
         state.user = action.payload.user;
-        state.token = action.payload.token;
+        // state.token = action.payload.token;
         state.error = null;
         state.isLoading = false;
       })
@@ -44,6 +44,7 @@ export const userSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.isLoading = false;
         state.user.avatar = action.payload.user.avatarURL;
         state.user.name = action.payload.user.name;
