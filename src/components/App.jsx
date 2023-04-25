@@ -12,7 +12,7 @@ import { StyledToastContainer } from 'pages/Registration/RegistrationPage.styled
 
 import WelcomSection from 'pages/Welcome/WelcomSection';
 import SharedLayout from 'components/SharedLayout';
-import { RegisterPage } from '../pages/Registration/RegistrationPage';
+import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
 
 // import FavoritePage from '../pages/FavoritePage';
