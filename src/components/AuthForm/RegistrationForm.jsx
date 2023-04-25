@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAuth } from "../../hooks/useAuth"
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading } from '../../redux/auth/selectors';
 import { registrationUser, loginUser } from '../../redux/auth/operations';
@@ -65,7 +67,11 @@ const registerSchema = Yup.object({
     .required('Password is a required field'),
 });
 
+
+
 export const AuthForm = ({ login }) => {
+  const { user, isLoggedIn } = useAuth();
+  console.log(user.email, isLoggedIn)
   const [secure, setSecure] = useState(null);
 
   const isLoading = useSelector(selectIsLoading);
