@@ -30,7 +30,7 @@ const SearchPage = lazy(() => import('pages/Search/SearchPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipes/MyRecipesPage'));
 const RecipePage = lazy(() => import('pages/RecipePage'));
 const FavoritePage= lazy(() => import('pages/FavoritePage'));
-const AddRecipe = lazy(() => import('pages/AddRecipe/AddRecipe'));
+const AddRecipePage = lazy(() => import('pages/AddRecipePage'));
 const CategoriesPage = lazy(() => import('pages/Categories/CategoriesPage'));
 const MainPage = lazy(() => import('pages/Main/MainSection'));
 
@@ -88,7 +88,7 @@ useEffect(() => {
 
               <Route path="categories/:categoryName" element={<CategoriesPage />}
               />
-              <Route path='add' element={<AddRecipe />}
+              <Route path='add' element={<AddRecipePage />}
               />
               <Route path="favorite" element={<FavoritePage/>}
               />
@@ -114,31 +114,6 @@ useEffect(() => {
               <RestrictedRoute component={SigninPage} redirectTo="/main" />
             }
             />
-
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
-
-      {/* <Route path="/signin" element={<SigninPage />} /> */}
-
-      {/* <Route path="/" element={<SharedLayout />}> */}
-        {/* <Route path="main" element={<MainPage>MainPage</MainPage>} /> */}
-
-        {/* <Route path="categories/:categoryName" element={<CategoriesPage />} /> */}
-
-        {/* <Route path="add" element={<AddRecipe />} /> */}
-
-        {/* <Route path="favorite" element={<div>FavoritePage</div>} /> */}
-
-        {/* <Route path="recipe/:recipeId" element={<RecipePage />} /> */}
-
-        {/* <Route path="my" element={<MyRecipesPage />} /> */}
-
-        {/* <Route path="search" element={<SearchPage />} /> */}
-
-        {/* <Route path="shopping-list" element={<ShoppingPage />} /> */}
-
-        {/* <Route path="*" element={<div>NotFoundPage</div>} /> */}
-      {/* </Route> */}
-
         </Routes>
         )}
         <StyledToastContainer
