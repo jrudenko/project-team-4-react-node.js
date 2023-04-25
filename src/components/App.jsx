@@ -1,16 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, useMemo, lazy } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../utils/theme';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useState, useEffect, useMemo, lazy } from 'react';
-import { PrivateRoute, RestrictedRoute } from 'components/Routes';
+
+import { PrivateRoute, RestrictedRoute } from './Routes';
 
 import { merge, get } from 'lodash';
 import { refreshUser } from '../redux/auth/operations';
 import { StyledToastContainer } from 'pages/Registration/RegistrationPage.styled';
 
 import WelcomSection from 'pages/Welcome/WelcomSection';
-import SharedLayout from './SharedLayout';
+import SharedLayout from 'components/SharedLayout';
 import { RegisterPage } from '../pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
 
@@ -75,13 +76,13 @@ useEffect(() => {
       <ThemeProvider theme={theme}>
         {!isRefreshing && (
         <Routes>
-            {isLoggedIn && <Route path="/welcome" element={<WelcomSection />} />}
+            {isLoggedIn && <Route index element={<WelcomSection />} />}
 
             <Route path="/" element={
-              <PrivateRoute component={<SharedLayout />} redirectTo="/signin"/>
+              <PrivateRoute element={<SharedLayout />} redirectTo="/signin"/>
             } >
               <Route path="*" element={<div>NotFoundPage</div>} />
-              <Route path='main' element={<MainPage>MainPage</MainPage>}
+              <Route path='main' element={<MainPage />}
               />
 
               <Route path="categories/:categoryName" element={<CategoriesPage />}
