@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import { AuthForm } from 'components/AuthForm/RegistrationForm';
 import {
   AuthMain,
@@ -6,8 +8,6 @@ import {
   AuthBackground,
 } from '../../pages/Registration/RegistrationPage.styled';
 
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 export const SigninPage = () => {
   const params = useParams();
