@@ -30,7 +30,7 @@ const SearchPage = lazy(() => import('pages/Search/SearchPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipes/MyRecipesPage'));
 const RecipePage = lazy(() => import('pages/RecipePage'));
 const FavoritePage= lazy(() => import('pages/FavoritePage'));
-const AddRecipe = lazy(() => import('pages/AddRecipe/AddRecipe'));
+const AddRecipePage = lazy(() => import('pages/AddRecipePage'));
 const CategoriesPage = lazy(() => import('pages/Categories/CategoriesPage'));
 const MainPage = lazy(() => import('pages/Main/MainSection'));
 
@@ -88,7 +88,7 @@ useEffect(() => {
 
               <Route path="categories/:categoryName" element={<CategoriesPage />}
               />
-              <Route path='add' element={<AddRecipe />}
+              <Route path='add' element={<AddRecipePage />}
               />
               <Route path="favorite" element={<FavoritePage/>}
               />
