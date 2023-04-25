@@ -76,7 +76,7 @@ useEffect(() => {
       <ThemeProvider theme={theme}>
         {!isRefreshing && (
         <Routes>
-            {isLoggedIn && <Route index element={<WelcomSection />} />}
+            {!isLoggedIn && <Route index element={<WelcomSection />} />}
 
             <Route path="/" element={
               // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
