@@ -5,7 +5,9 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
 const setAuthToken = token => {
+  // console.log(token);
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  // console.log(token);
 };
 
 const clearAuthToken = () => {
@@ -32,7 +34,9 @@ export const loginUser = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const res = await axios.post('/auth/login', credentials);
-      setAuthToken(res.data.token);
+      // console.log(res.data);
+
+      setAuthToken(res.data.user.token);
 
       return res.data;
     } catch (error) {
