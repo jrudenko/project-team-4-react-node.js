@@ -18,3 +18,4 @@ export const Loader = ({ size = '100', pageHeight, outcolor = '#8BAA36' }) => {
     </>
   );
 };
+// test
