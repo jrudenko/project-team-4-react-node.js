@@ -7,6 +7,12 @@ import TabletBackgroundSecond2x from '../../images/tablet/mainpage2x_tab_second.
 import DesktopBackgroundSecond1x from '../../images/desktop/mainpage1x_des_second.png';
 import DesktopBackgroundSecond2x from '../../images/desktop/mainpage2x_des_second.png';
 
+export const Wrapper = styled.div`
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const LayoutContainer = styled.div`
   position: relative;
   margin: 0 auto;

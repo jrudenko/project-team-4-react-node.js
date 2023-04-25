@@ -10,7 +10,7 @@ import React from 'react';
 import Button from 'components/Button/Button';
 import logosvg from '../../images/SVG/Logo/WelcomeSectionLogo.svg';
 
-function MyComponent() {
+function WellcomePage() {
   // function handleButtonClick() {
   //   console.log('Button clicked!');
   // }
@@ -30,32 +30,32 @@ function MyComponent() {
         {/* <ReplaceableButton onClick={handleButtonClick} label="Registration" />
         <ReplaceableButton onClick={handleButtonClick} label="Sign In" /> */}
         <Button
-              look="rounded_dark"
-              to="/register"
-              fontSize="14px"
-              fontSizeTablet="16px"
-              width="132px"
-              heigth="45px"
-              widthTablet="184px"
-              heigthTablet="67px"
-            >
-              Registration
-            </Button>
-            <Button
-              look="rounded_transparent"
-              to="/signin"
-              fontSize="14px"
-              fontSizeTablet="16px"
-              width="95px"
-              heigth="45px"
-              widthTablet="184px"
-              heigthTablet="67px"
-            >
-              Sign In
-            </Button>
+          look="rounded_dark"
+          to="/register"
+          fontSize="14px"
+          fontSizeTablet="16px"
+          width="132px"
+          heigth="45px"
+          widthTablet="184px"
+          heigthTablet="67px"
+        >
+          Registration
+        </Button>
+        <Button
+          look="rounded_transparent"
+          to="/signin"
+          fontSize="14px"
+          fontSizeTablet="16px"
+          width="95px"
+          heigth="45px"
+          widthTablet="184px"
+          heigthTablet="67px"
+        >
+          Sign In
+        </Button>
       </WrapperBtn>
     </Wrapper>
   );
 }
 
-export default MyComponent;
+export default WellcomePage;
