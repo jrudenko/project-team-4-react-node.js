@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
-import Container from 'components/Container/Container';
 import fetchCategoryListFromAPI from './Axios/AxiosGetCategories';
 import fetchRecipesFromCategory from './Axios/AxiosGetResieptsFromCategory';
 import { CategoriesList } from './Styled/CategoriesList.styled';
@@ -12,6 +11,7 @@ import {
 } from './Styled/CategoriesTable.styled';
 import ProductCard from '../../components/RecipeCard/Recipecard';
 import Title from 'components/Title';
+import Loader from 'components/Loader/loader';
 
 const CategoriesPage = () => {
   const { categoryName } = useParams();
@@ -23,6 +23,8 @@ const CategoriesPage = () => {
   const [currentCategory, setCurrentCategory] = useState(
     categoryName || 'Beef'
   );
+
+  // activeStyle
 
   useEffect(() => {
     setIsLoading(true);
@@ -60,11 +62,10 @@ const CategoriesPage = () => {
 
   const handleCategoryClick = category => {
     setCurrentCategory(category);
-   
   };
 
   return (
-    <Container>
+    <>
       <div>
         <Title>Categories</Title>
         <CategoriesList>
@@ -73,9 +74,8 @@ const CategoriesPage = () => {
           ) : (
             categories.map(category => (
               <StyledNavLink
-                to={`/categories/${category.toLowerCase()}`}
+                to={`/categories/${category}`}
                 key={category}
-                isActive={() => currentCategory === category}
                 onClick={() => handleCategoryClick(category)}
               >
                 {category}
@@ -91,7 +91,7 @@ const CategoriesPage = () => {
             <CategoriesCardSet>
               {recipes.map(recipe => (
                 <CategoriesCardSetItem key={recipe.id}>
-                  <Link to={`/recipes/${recipe.id}`}>
+                  <Link to={`/recipe/${recipe.id}`}>
                     <ProductCard imageUrl={recipe.preview} name={recipe.name} />
                   </Link>
                 </CategoriesCardSetItem>
@@ -99,7 +99,7 @@ const CategoriesPage = () => {
             </CategoriesCardSet>
           </ConteinerCategoriListStyled>
         )}
-        {/* {isLoading && (
+        {isLoading && (
           <div
             style={{
               margin: '30px 0px',
@@ -109,12 +109,12 @@ const CategoriesPage = () => {
           >
             <Loader />
           </div>
-        )} */}
+        )}
         {!isLoading && recipes.length === 0 && (
           <p>No recipes found for this category</p>
         )}
       </div>
-    </Container>
+    </>
   );
 };
 

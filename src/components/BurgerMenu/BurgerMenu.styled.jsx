@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as CloseBtnSvg } from '../../images/SVG/closeBtn.svg';
+import { IoClose } from 'react-icons/io5';
 
 import SpinachMob1x from '../../images/spinach-main-bg/spinach-popup-mobile-1x.webp';
 import SpinachMob2x from '../../images/spinach-main-bg/spinach-popup-mobile-@2x.webp';
@@ -9,7 +9,7 @@ import SpinachTablet2x from '../../images/spinach-main-bg/spinach-popup-tablet-@
 export function CloseBtn({ onClose }) {
   return (
     <CloseButton onClick={onClose}>
-      <CloseBtnSvg width={32} height={32}  />
+      <CloseIcon width={32} height={32}  />
     </CloseButton>
   );
 }
@@ -47,31 +47,11 @@ export const WrapperBurger = styled.div`
 `;
 
 const CloseButton = styled.button`
-  display: block;
-  position: absolute;
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  background-color: transparent;
-
-  line-height: normal;
-  text-align: inherit;
-  text-decoration: none;
-  cursor: pointer;
   top: 22px;
   right: 16px;
-  color: ${p => p.theme.colors.heroText};
-
- 
   @media screen and (min-width: 768px) {
     top: 24px;
     right: 32px;
-  }
-   transition: all 250ms linear;
-  &:hover,
-  &:focus {
-    color: ${p => p.theme.colors.accentColor};
   }
 `;
 
@@ -88,7 +68,6 @@ export const LogoWrapper = styled.div`
 `;
 
 export const ThemeTogglerWrapper = styled.div`
-
   align-items: center;
   position: absolute;
   bottom: 18px;
@@ -97,4 +76,25 @@ export const ThemeTogglerWrapper = styled.div`
     bottom: 32px;
     left: 32px;
   }
+`;
+
+export const CloseIcon = styled(IoClose)`
+position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  top: 18px;
+  right: 18px;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+ color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.headerText)};
+  transition: all 250ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.colors.accentColor};
+  }
+  
 `;

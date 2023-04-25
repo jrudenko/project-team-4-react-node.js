@@ -1,76 +1,91 @@
-import axios from "axios";
-import { toast } from 'react-toastify';
+import  Button  from '../Button';
+import { Formik } from 'formik';
 import {
+  SubInput,
+  InputIcon,
+  InputBox,
+  SubForm,
   FormFrame,
-  TextFrame,
-    SubButton,
-    SubForm,
-    InputIcon,
-    SubInput,
-    SubText,
   SubTitle,
-    InputBox,
-} from "./SubscribeForm.styled";
-import { useState, useEffect } from "react";
+  SubText,
+} from './SubscribeForm.styled';
+import { useMedia } from 'hooks';
+import { updateSubscribe } from 'service/API/serviseApi';
+import { useSelector } from 'react-redux';
+import * as yup from 'yup';
 
-export const SubscribeForm = () => {
-    const [email, setEmail] = useState("");
-    const [isDisabled, setIsDisabled] = useState(true);
-    useEffect(() => {
-        if (email.trim() !== "") {
-            setIsDisabled(false);
-        } else {
-            setIsDisabled(true);
-        }
-    }, [email]);
+const schema = yup.object().shape({
+  subscribe: yup.string().min(4).email(),
+});
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const emailText = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  if (emailText.test(email)) {
-    axios
-      .patch("/user/subscription", { inputEmail: email })
-      .then((response) => {
-        toast.success("Email was successfully submitted!");
-      })
-      .catch((error) => {
-        toast.error("Something went wrong. Please try again later!");
-      });
-  } else {
-    toast.error("Please enter a valid email!");
-  }
-};
-  const onChange = (event) => {
-    setEmail(event.target.value);
+const SubscribeForm = () => {
+  const { screenType } = useMedia();
+
+  const userEmail = useSelector(state => state.auth.user.email);
+
+  const handleSubmit = async (values, { resetForm }) => {
+    const { subscribe } = values;
+    if (userEmail !== subscribe) {
+      return;
+    }
+    await updateSubscribe();
+    resetForm();
   };
+
   return (
-    <>
-      <SubForm onSubmit={handleSubmit}>
+    <SubForm>
+      {screenType === 'desktop' ? (
+        <>
+          <SubTitle>Subscribe to our Newsletter</SubTitle>
+          <SubText>
+            Subscribe up to our newsletter. Be in touch with latest news and
+            special offers, etc.
+          </SubText>
+        </>
+      ) : null}
+      <Formik
+        initialValues={{ subscribe: '' }}
+        validationSchema={schema}
+        onSubmit={handleSubmit}
+      >
+        {({ errors, touched }) => {
+          return (
+            <FormFrame>
+              <InputBox>
+                <InputIcon>
+                </InputIcon>
 
-        <TextFrame>
-        <SubTitle>Subscribe to our Newsletter</SubTitle>
-         <SubText>
-          Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.
-        </SubText>
-        </TextFrame>
-
-        <FormFrame>
-          <InputBox>
-          <InputIcon />
-          <SubInput
-            type="email"
-            placeholder="Enter your email address"
-            value={email}
-            onChange={onChange}
-          />
-        </InputBox>
-        <SubButton type="submit" disabled={isDisabled}>
-          Subscribe
-          </SubButton>
-        </FormFrame>
-
-      </SubForm>
-    </>
+                <SubInput
+                  state={errors.subscribe ? 'error' : 'undefined'}
+                  type="email"
+                  name="subscribe"
+                  placeholder="Enter your email address"
+                />
+              </InputBox>
+              <Button
+                type="submit"
+                look="subscribe"
+                width="204px"
+                heigth="38px"
+                widthTablet="171px"
+                heigthTablet="50px"
+                widthDesktop="339px"
+                heigthDesktop="60px"
+                fontSize="14px"
+                fontSizeTablet="16px"
+                fontSizeDesktop="16px"
+                lineHeight="16px"
+                lineHeightTablet="18px"
+                lineHeightDesktop="18px"
+              >
+               Subcribe
+              </Button>
+            </FormFrame>
+          );
+        }}
+      </Formik>
+    </SubForm>
   );
-
 };
+
+export default SubscribeForm;
