@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const getCategoryList = async token => {
-  const recipeOptimization = recipe => {
-    return {
-      id: recipe._id,
-      title: recipe.title,
-      preview: recipe.preview,
-      category: recipe.category,
-    };
-  };
+  // const recipeOptimization = recipe => {
+  //   return {
+  //     id: recipe._id,
+  //     title: recipe.title,
+  //     preview: recipe.preview,
+  //     category: recipe.category,
+  //   };
+  // };
 
   // const categoryOptimization = category =>
   //   category.map(recipe => recipeOptimization(recipe));
