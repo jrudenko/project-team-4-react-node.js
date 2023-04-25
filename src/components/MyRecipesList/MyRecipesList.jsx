@@ -1,14 +1,52 @@
-import MyRecipesItem from 'components/MyRecipesItem/MyRecipesItem';
-// import PageEmpty from 'components/PageEmpty';
-
-import data from '../../recipes.json';
+import { useState, useEffect } from 'react';
+import { getMyRecipes, deleteMyRecipe } from 'service/API';
+import MyRecipeItem from 'components/RecipeItem';
+import { List, ListText } from 'components/FavoriteList/FavoriteList.styled';
 
 export default function MyRecipesList() {
-  // Компонент подписан на коллекцию рецептов в store и передает их в MyRecipesItem. Если коллекция пустая, нужно отобразить PageEmpty
+  const [myRecipes, setMyRecipes] = useState([]);
+
+  useEffect(() => {
+    const fetchMyRecipes = async () => {
+      try {
+        const data = await getMyRecipes();
+        setMyRecipes(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchMyRecipes();
+  }, []);
+
+  const handleDelete = async id => {
+    try {
+      await deleteMyRecipe(id);
+      const data = await getMyRecipes();
+      setMyRecipes(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <>
-      <MyRecipesItem recipes={data} />
-      {/* <PageEmpty text="Start adding own recipes right now!" /> */}
-    </>
+    <List>
+      {myRecipes ? (
+        <ul>
+          {myRecipes.map(({ description, preview, time, title, _id }) => (
+            <MyRecipeItem
+              key={_id}
+              description={description}
+              preview={preview}
+              time={time}
+              title={title}
+              id={_id}
+              handleDelete={handleDelete}
+            />
+          ))}
+        </ul>
+      ) : (
+        <ListText>You don't have your recipes yet</ListText>
+      )}
+    </List>
   );
 }
