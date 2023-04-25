@@ -31,6 +31,7 @@ export const userSlice = createSlice({
       .addCase(registrationUser.fulfilled, (state, action) => {
         state.isSent = true;
         state.user = action.payload.user;
+        state.token = action.payload.token;
         state.error = null;
         state.isLoading = false;
       })
@@ -51,6 +52,7 @@ export const userSlice = createSlice({
         state.isLoggedIn = true;
         state.error = null;
       })
+
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload.message;
