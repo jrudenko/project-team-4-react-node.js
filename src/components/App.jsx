@@ -114,31 +114,6 @@ useEffect(() => {
               <RestrictedRoute component={SigninPage} redirectTo="/main" />
             }
             />
-
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
-
-      {/* <Route path="/signin" element={<SigninPage />} /> */}
-
-      {/* <Route path="/" element={<SharedLayout />}> */}
-        {/* <Route path="main" element={<MainPage>MainPage</MainPage>} /> */}
-
-        {/* <Route path="categories/:categoryName" element={<CategoriesPage />} /> */}
-
-        {/* <Route path="add" element={<AddRecipe />} /> */}
-
-        {/* <Route path="favorite" element={<div>FavoritePage</div>} /> */}
-
-        {/* <Route path="recipe/:recipeId" element={<RecipePage />} /> */}
-
-        {/* <Route path="my" element={<MyRecipesPage />} /> */}
-
-        {/* <Route path="search" element={<SearchPage />} /> */}
-
-        {/* <Route path="shopping-list" element={<ShoppingPage />} /> */}
-
-        {/* <Route path="*" element={<div>NotFoundPage</div>} /> */}
-      {/* </Route> */}
-
         </Routes>
         )}
         <StyledToastContainer
