@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q`;
-
 export const getFavoriteRecipes = async () => {
   try {
     const { data } = await axios.get(`/favorite`);
@@ -26,7 +24,7 @@ export const deleteFavoriteRecipe = async id => {
 export const getMyRecipes = async () => {
   try {
     const { data } = await axios.get(`/ownRecipes`);
-    return data.data.recipes;
+    return data.recipes;
   } catch (error) {
     console.error(error);
   }
