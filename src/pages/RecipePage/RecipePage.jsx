@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import RecipePageHero from 'components/RecipePageHero';
 import RecipeInngredientsList from 'components/RecipeInngredientsList';
+import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 import {
      selectRecipeById,
      selectOwnRecipeById,
@@ -10,13 +11,18 @@ import {
    import { getRecipeById, getOwnRecipeById } from 'redux/recipe/recipeOperation';
    import {getIngredientsList} from '../../service/API/serviseApi'
 
-const RecipePage = () => {
 
-     const { recipeId } = useParams();
-     const dispatch = useDispatch();
-     const location = useLocation();
-     const recipe = useSelector(selectRecipeById);
-     const ownRecipe = useSelector(selectOwnRecipeById);
+
+
+const RecipePage = () => {
+  const { recipeId } = useParams();
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const recipe = useSelector(selectRecipeById);
+  const ownRecipe = useSelector(selectOwnRecipeById);
+
+  const [currentRecipe, setCurrentRecipe] = useState(null);
+  const [isOwnRecipe, setOwnRecipe] = useState(null);
 
      const [currentRecipe, setCurrentRecipe] = useState(null);
      const [currentIngredients, setCurrentIngredients] = useState([])
@@ -65,6 +71,7 @@ const RecipePage = () => {
 <>
          <RecipePageHero recipe={currentRecipe} isOwnRecipe = {isOwnRecipe}/>
          <RecipeInngredientsList ingredients={currentIngredients} ingList = {listIngredients} />
+         <RecipePreparation ingredients={currentIngredients}/>
 </>
      ) : (<div>ERROR</div>)}
    

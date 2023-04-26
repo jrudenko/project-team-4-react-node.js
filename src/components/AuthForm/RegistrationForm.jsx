@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAuth } from "../../hooks/useAuth"
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading } from '../../redux/auth/selectors';
 import { registrationUser, loginUser } from '../../redux/auth/operations';
@@ -7,7 +9,7 @@ import * as Yup from 'yup';
 import zxcvbn from 'zxcvbn';
 
 import Button  from '../../components/Button/Button';
-// import { Loader } from '../../components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormWrapper,
   FormTitle,
@@ -65,7 +67,11 @@ const registerSchema = Yup.object({
     .required('Password is a required field'),
 });
 
+
+
 export const AuthForm = ({ login }) => {
+  const { user, isLoggedIn } = useAuth();
+  console.log(user.email, isLoggedIn)
   const [secure, setSecure] = useState(null);
 
   const isLoading = useSelector(selectIsLoading);
@@ -256,7 +262,7 @@ export const AuthForm = ({ login }) => {
               >
                 {login && !isLoading ? 'Sign in' : null}
                 {!login && !isLoading ? 'Sign up' : null}
-                {/* {isLoading && <Loader size={40} outcolor="#3E4462" />} */}
+                {isLoading && <Loader size={40} outcolor="#3E4462" />}
               </Button>
             </Form>
             {!login ? (

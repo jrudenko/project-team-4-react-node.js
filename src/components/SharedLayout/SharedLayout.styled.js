@@ -7,25 +7,32 @@ import TabletBackgroundSecond2x from '../../images/tablet/mainpage2x_tab_second.
 import DesktopBackgroundSecond1x from '../../images/desktop/mainpage1x_des_second.png';
 import DesktopBackgroundSecond2x from '../../images/desktop/mainpage2x_des_second.png';
 
+export const Wrapper = styled.div`
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export const LayoutContainer = styled.div`
   position: relative;
   margin: 0 auto;
+  width: 100%;
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;
   padding-top: 54px;
   padding-bottom: 100px;
-  min-width: 375px;
+  /* min-width: 375px; */
   background-color: ${p => p.theme.colors.background};
   overflow: hidden;
   @media screen and (min-width: 768px) {
-    min-width: 768px;
+    /* min-width: 768px; */
     padding-top: 86px;
     padding-left: ${p => p.theme.space[5]}px;
     padding-right: ${p => p.theme.space[5]}px;
     padding-bottom: 200px;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1600px;
+    /* max-width: 1600px; */
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 104px;

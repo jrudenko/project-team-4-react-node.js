@@ -1,4 +1,4 @@
-import PreviewCategories from 'components/PreviewCategories/PriviewCategories';
+import PreviewCategories from './PreviewCategories/PreviewCategories';
 import СhooseYourBreakfast from 'components/ChooseYourBreakfast';
 import MainSearchPage from './Search/SearchMain';
 

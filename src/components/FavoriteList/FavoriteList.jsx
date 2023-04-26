@@ -1,12 +1,15 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { getFavoriteRecipes, deleteFavoriteRecipe } from '../../service/API/index';
-import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
-// import Loader from '../Loader/loader';
-// import EmptyPage  from 'components/EmptyPage';
+import {
+  getFavoriteRecipes,
+  deleteFavoriteRecipe,
+} from 'service/API/index';
+import MyRecipeItem from 'components/MyRecipesItem/MyRecipesItem';
+import { Loader } from 'components/Loader/Loader';
+import EmptyPage  from 'components/EmptyPage';
 
-import { List,ListText } from './FavoriteList.styled.js';
-import { Paginator } from '../Paginator/Paginator';
+import { List } from './FavoriteList.styled.js';
+import { Paginator } from 'components/Paginator/Paginator.jsx';
 
 const FavoriteList = () => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +21,13 @@ const FavoriteList = () => {
     try {
       setLoading(true);
       const data = await getFavoriteRecipes();
-      setAllRecipes(data);
+      console.log(data);
+      if (data.favoriteRecipes.length > 0) {
+        setAllRecipes(data.favoriteRecipes);
+        console.log("dddd", data.favoriteRecipes);
+      }
+      // setAllRecipes(data.favoriteRecipes);
+      //   console.log();
     } catch (error) {
       toast.error('Something went wrong by getting recipes');
     } finally {
@@ -26,11 +35,15 @@ const FavoriteList = () => {
     }
   };
 
-  useLayoutEffect(() => {
+  // useLayoutEffect(() => {
+  //   getFavorites();
+  // }, []);
+
+  useEffect(() => {
     getFavorites();
   }, []);
 
-  const handleDelete = async id => {
+  const handleDelete = async (id) => {
     try {
       await deleteFavoriteRecipe(id);
       const data = await getFavoriteRecipes();
@@ -44,25 +57,23 @@ const FavoriteList = () => {
   return (
     <>
       <List>
-        {/* {loading && (          
-          // <Loader />        
-        )} */}
+        {loading && <Loader />}
         {currentItems.length !== 0 &&
           !loading &&
-          currentItems.map(({ description, preview, time, title, _id }) => (
+          currentItems.map(({ description, preview, time, title, id }) => (
             <MyRecipeItem
-              key={_id}
+              key={id}
               description={description}
               preview={preview}
               time={time}
               title={title}
-              id={_id}
+              id={id}
               handleDelete={handleDelete}
             />
           ))}
         {allRecipes.length === 0 && !loading && (
-          <ListText>You don't have your recipes</ListText>
-          // <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
+          // <ListText>You don't have your recipes</ListText>
+          <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
         )}
       </List>
       {!!allRecipes.length && (

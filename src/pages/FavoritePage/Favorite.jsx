@@ -5,12 +5,13 @@ import Scroll from '../../utils/scroll';
 
 const Favorite = () => (
   // <FavoriteWrapper>
-  <>
+ <>
     <Title>Favorite</Title>
     <FavoriteList />
     <Scroll />
   {/* // </FavoriteWrapper> */}
-    </>
+  </>
 );
 
 export default Favorite;
+ 

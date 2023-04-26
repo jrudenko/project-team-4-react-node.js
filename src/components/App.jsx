@@ -1,18 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../utils/theme';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useState, useEffect, useMemo, lazy } from 'react';
-import { PrivateRoute, RestrictedRoute } from 'components/Routes';
+
+import { PrivateRoute, RestrictedRoute } from './Routes';
 
 import { merge, get } from 'lodash';
 import { refreshUser } from '../redux/auth/operations';
 import { StyledToastContainer } from 'pages/Registration/RegistrationPage.styled';
 
 import WelcomSection from 'pages/Welcome/WelcomSection';
-import SharedLayout from './SharedLayout';
-import { RegisterPage } from '../pages/Registration/RegistrationPage';
+import SharedLayout from 'components/SharedLayout';
+import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
+import { Loader } from 'components/Loader/Loader';
 
 // import FavoritePage from '../pages/FavoritePage';
 // import CategoriesPage from 'pages/Categories/CategoriesPage';
@@ -28,8 +30,8 @@ const ShoppingPage = lazy(() => import('pages/ShoppingPage/ShoppingPage'));
 const SearchPage = lazy(() => import('pages/Search/SearchPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipes/MyRecipesPage'));
 const RecipePage = lazy(() => import('pages/RecipePage'));
-const FavoritePage= lazy(() => import('pages/FavoritePage'));
-const AddRecipe = lazy(() => import('pages/AddRecipe/AddRecipe'));
+const FavoritePage = lazy(() => import('pages/FavoritePage'));
+const AddRecipePage = lazy(() => import('pages/AddRecipePage'));
 const CategoriesPage = lazy(() => import('pages/Categories/CategoriesPage'));
 const MainPage = lazy(() => import('pages/Main/MainSection'));
 
@@ -41,7 +43,6 @@ const getTheme = mode =>
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export const App = () => {
-
   const dispatch = useDispatch();
   const { isRefreshing, isLoggedIn } = useSelector(state => state.auth);
   const [mode, setMode] = useState('lightTheme');
@@ -59,85 +60,115 @@ export const App = () => {
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode(prevMode => (prevMode === 'lightTheme' ? 'darkTheme' : 'lightTheme'));
+        setMode(prevMode =>
+          prevMode === 'lightTheme' ? 'darkTheme' : 'lightTheme'
+        );
       },
     }),
     []
   );
 
-useEffect(() => {
-  dispatch(refreshUser());
-}, [dispatch]);
-
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         {!isRefreshing && (
-        <Routes>
-            {isLoggedIn && <Route path="/welcome" element={<WelcomSection />} />}
+          <Routes>
+            {!isLoggedIn && <Route index element={<WelcomSection />} />}
 
-            <Route path="/" element={
-              <PrivateRoute component={<SharedLayout />} redirectTo="/signin"/>
-            } >
+            <Route
+              path="/"
+              element={
+                // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
+                <PrivateRoute component={SharedLayout} redirectTo="/signin" />
+              }
+            >
               <Route path="*" element={<div>NotFoundPage</div>} />
-              <Route path='main' element={<MainPage>MainPage</MainPage>}
+              <Route
+                path="main"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <MainPage />
+                  </Suspense>
+                }
               />
 
-              <Route path="categories/:categoryName" element={<CategoriesPage />}
+              <Route
+                path="categories/:categoryName"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <CategoriesPage />
+                  </Suspense>
+                }               
               />
-              <Route path='add' element={<AddRecipe />}
+              <Route path="add" element={ <Suspense fallback={<Loader pageHeight="100vh" />}>
+                    <AddRecipePage />
+                  </Suspense>} />
+              <Route
+                path="favorite"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <FavoritePage />
+                  </Suspense>
+                }
               />
-              <Route path="favorite" element={<FavoritePage/>}
+              <Route
+                path="recipe/:recipeId"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <RecipePage />
+                  </Suspense>
+                }
               />
-              <Route path="recipe/:recipeId" element={<RecipePage />}
+              <Route
+                path="my"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <MyRecipesPage />
+                  </Suspense>
+                }
               />
-              <Route path='my' element={<MyRecipesPage />}
+              <Route
+                path="search"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <SearchPage />
+                  </Suspense>
+                }
               />
-              <Route path="search" element={<SearchPage />}
-              />
-              <Route path="shopping-list" element={<ShoppingPage />}
+              <Route
+                path="shopping-list"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <ShoppingPage />
+                  </Suspense>
+                }
               />
             </Route>
 
-            <Route index path='/register' element={
-              <RestrictedRoute component={RegisterPage} redirectTo="/main" />
-            }
+            <Route
+              index
+              path="/register"
+              element={
+                <RestrictedRoute component={RegisterPage} redirectTo="/main" />
+              }
             />
-            <Route path='/signin' element={
-              <RestrictedRoute component={SigninPage} redirectTo="/main" />
-            }
+            <Route
+              path="/signin"
+              element={
+                <RestrictedRoute component={SigninPage} redirectTo="/main" />
+              }
             />
-            <Route path='/signin/:verificationToken' element={
-              <RestrictedRoute component={SigninPage} redirectTo="/main" />
-            }
+            <Route
+              path="/signin/:verificationToken"
+              element={
+                <RestrictedRoute component={SigninPage} redirectTo="/main" />
+              }
             />
-
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
-
-      {/* <Route path="/signin" element={<SigninPage />} /> */}
-
-      {/* <Route path="/" element={<SharedLayout />}> */}
-        {/* <Route path="main" element={<MainPage>MainPage</MainPage>} /> */}
-
-        {/* <Route path="categories/:categoryName" element={<CategoriesPage />} /> */}
-
-        {/* <Route path="add" element={<AddRecipe />} /> */}
-
-        {/* <Route path="favorite" element={<div>FavoritePage</div>} /> */}
-
-        {/* <Route path="recipe/:recipeId" element={<RecipePage />} /> */}
-
-        {/* <Route path="my" element={<MyRecipesPage />} /> */}
-
-        {/* <Route path="search" element={<SearchPage />} /> */}
-
-        {/* <Route path="shopping-list" element={<ShoppingPage />} /> */}
-
-        {/* <Route path="*" element={<div>NotFoundPage</div>} /> */}
-      {/* </Route> */}
-
-        </Routes>
+          </Routes>
         )}
         <StyledToastContainer
           osition="top-center"
@@ -155,4 +186,3 @@ useEffect(() => {
     </ColorModeContext.Provider>
   );
 };
-

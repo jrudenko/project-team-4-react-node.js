@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const getFavoriteRecipes = async () => {
   try {
     const { data } = await axios.get(`/favorite?page=0`);
@@ -24,7 +23,7 @@ export const deleteFavoriteRecipe = async id => {
 
 export const getMyRecipes = async () => {
   try {
-    const { data } = await axios.get(`/own-recipes`);
+    const { data } = await axios.get(`/ownRecipes`);
     return data.recipes;
   } catch (error) {
     console.error(error);
@@ -33,7 +32,7 @@ export const getMyRecipes = async () => {
 
 export const deleteMyRecipe = async id => {
   try {
-    const { data } = await axios.delete(`/own-recipes/id/${id}`);
+    const { data } = await axios.delete(`/ownRecipes/${id}`);
     return data;
   } catch (error) {
     console.error(error);
