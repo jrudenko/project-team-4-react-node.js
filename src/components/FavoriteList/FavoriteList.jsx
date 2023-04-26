@@ -21,10 +21,10 @@ const FavoriteList = () => {
     try {
       setLoading(true);
       const data = await getFavoriteRecipes();
-      console.log(data);
+      // console.log(data);
       if (data.favoriteRecipes.length > 0) {
         setAllRecipes(data.favoriteRecipes);
-        console.log("dddd", data.favoriteRecipes);
+        // console.log("dddd", data.favoriteRecipes);
       }
       // setAllRecipes(data.favoriteRecipes);
       //   console.log();
@@ -43,7 +43,7 @@ const FavoriteList = () => {
     getFavorites();
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleDelete = async id => {
     try {
       await deleteFavoriteRecipe(id);
       const data = await getFavoriteRecipes();
