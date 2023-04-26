@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  selectCategory,
+  // selectCategory,
   selectError,
   selectIngredients,
   selectIsLoading,
@@ -14,10 +14,10 @@ import {
 } from 'redux/addRecipe/addRecipeOperation';
 import { Formik } from 'formik';
 import {
-  createOptionCategory,
+  // createOptionCategory,
   createOptionTimes,
   createOptionMeasure,
-  createOptionIngredients,
+  // createOptionIngredients,
 } from '../../redux/helpers/createOptionsSelectAddRecipeForm';
 import { validationSchema } from '../../redux/helpers/validationSchemaAddRecipeForm';
 import { Loader } from 'components/Loader/Loader';
@@ -42,7 +42,7 @@ const initialValues = {
 
 export const AddRecipeForm = props => {
   const dispatch = useDispatch();
-  const categoryList = useSelector(selectCategory);
+  // const categoryList = useSelector(selectCategory);
   const ingredientsListAll = useSelector(selectIngredients);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
@@ -53,9 +53,9 @@ export const AddRecipeForm = props => {
     dispatch(getIngredientsList());
   }, [dispatch]);
 
-  const optionsCategory = createOptionCategory(categoryList);
+  // const optionsCategory = createOptionCategory(categoryList);
   const optionsTimes = createOptionTimes(createArrTimesPrepare(5, 120, 5));
-  const optionsIngredients = createOptionIngredients(ingredientsListAll);
+  // const optionsIngredients = createOptionIngredients(ingredientsListAll);
   const optionMesure = createOptionMeasure();
 
   const handleSubmit = async (values, actions) => {
@@ -118,11 +118,11 @@ export const AddRecipeForm = props => {
             <RecipeDescriptionFields
               setFieldValue={setFieldValue}
               values={values}
-              optionsCategory={optionsCategory}
+              // optionsCategory={optionsCategory}
               optionsTimes={optionsTimes}
             />
             <RecipeIngredientsFields
-              optionsIngredients={optionsIngredients}
+              // optionsIngredients={optionsIngredients}
               optionMesure={optionMesure}
               values={values}
             />

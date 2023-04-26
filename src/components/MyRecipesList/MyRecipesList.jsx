@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getMyRecipes, deleteMyRecipe } from 'service/API';
 import MyRecipeItem from 'components/RecipeItem';
-import { List, ListText } from 'components/FavoriteList/FavoriteList.styled';
+import { List } from 'components/FavoriteList/FavoriteList.styled';
+import EmptyPage from '../EmptyPage';
 
 export default function MyRecipesList() {
   const [myRecipes, setMyRecipes] = useState([]);
@@ -45,7 +46,7 @@ export default function MyRecipesList() {
           ))}
         </ul>
       ) : (
-        <ListText>You don't have your recipes yet</ListText>
+        <EmptyPage text="You don't have your recipes yet" />
       )}
     </List>
   );

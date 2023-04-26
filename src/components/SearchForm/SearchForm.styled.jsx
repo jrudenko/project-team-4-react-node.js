@@ -45,10 +45,11 @@ export const SearchButton = styled.button`
   font-weight: ${p => p.theme.fontWeights.body};
   font-size: 14px;
   line-height: ${p => p.theme.searchSelect};
-  color: ${p => p.theme.colors.button.textColorMain};
-  background-color: ${p => p.theme.colors.button.secondaryBag};
+  color: ${p => p.theme.colors.background};
+  transition: ${p => p.theme.transitions.main};
+  background-color: ${p => p.theme.colors.roundedBgColor};
   border-radius: 24px 44px;
-  transform: translate(-100%);
+  transform: translate(-98%);
 
   @media screen and (min-width: 768px) {
     width: 161px;
@@ -62,6 +63,6 @@ export const SearchButton = styled.button`
 
   &:focus,
   &:hover {
-    background-color: ${p => p.theme.colors.button.primaryBag};
+    background-color: ${p => p.theme.colors.roundedBgHoverColor};
   }
 `;

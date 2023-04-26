@@ -69,7 +69,7 @@ export const TextBox = styled.div`
   width: 307px;
   display: flex;
   align-items: center;
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.cardBackground};
   border-radius: 8px;
 
   @media screen and (min-width: 768px) {
