@@ -9,7 +9,7 @@ import {
 } from 'redux/search/searchSelectors';
 import { getSearchByTitle } from 'redux/search/searchOperations';
 import { NoSearchText } from './SearchedRecipesList.styled';
-import { Puff } from 'react-loader-spinner';
+import { Loader } from 'components/Loader/Loader';
 
 export default function SearchedRecipesList() {
   const [searchParams] = useSearchParams();
@@ -30,9 +30,7 @@ export default function SearchedRecipesList() {
 
   return (
     <>
-      {isLoading && (
-        <Puff wrapperStyle={{ display: 'inline-block', textAlign: 'center' }} />
-      )}
+      {isLoading && <Loader />}
       {!isLoading && recipes ? (
         (recipes.length === 0 && (
           <PageEmpty text="Try looking for something else..." />
