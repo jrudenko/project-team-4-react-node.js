@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Form, SearchInput, SearchButton } from './SearchForm.styled';
 
 export default function SearchForm({ onSubmit, queryParam = '' }) {
@@ -36,7 +34,6 @@ export default function SearchForm({ onSubmit, queryParam = '' }) {
         onChange={inputChange}
       />
       <SearchButton type="submit">Search</SearchButton>
-      <ToastContainer position="top-left" theme="light" autoClose={3000} />
     </Form>
   );
 }
