@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import getCategoryList from '../../../service/API/getCategoryList';
-// import CategoryCard from './Preview/CategotyCard';
+import CategoryCard from './Preview/CategotyCard';
 import PreviewCategoriesStyled from './PreviewCategories.styled';
 import { Button } from './PreviewCategories.styled';
 
@@ -15,7 +15,7 @@ const PreviewCategories = () => {
   //   console.log(dataReceived);
 
   // };
-
+const categories = [ 'Beef', 'Breakfast', 'Chicken', 'Dessert' ]; 
   useEffect(() => {
     const receiveCategories = async () => {
       const dataReceived = await getCategoryList(token);
@@ -40,15 +40,15 @@ const PreviewCategories = () => {
     <PreviewCategoriesStyled>
       {popularCategories &&
         popularCategories.map(category => (
-          // <CategoryCard
-          //   key={`cat_key${category[0].id}`}
-          //   name={category[0].category}
-          //   popular={category}
-          // />
-          <li key={category.id}>
-            <h2>{category.title}</h2>
-            {category.category}
-          </li>
+          <CategoryCard
+            key={`cat_key${category._id}`}
+            name={category.title}
+            popular={ popularCategories }
+          />
+          // <li key={category.id}>
+          //   <h2>{category.title}</h2>
+          //   {category.category}
+          // </li>
         ))}
       <Button
         to="/categories/Beef"
