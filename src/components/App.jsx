@@ -98,10 +98,15 @@ export const App = () => {
 
               <Route
                 path="categories/:categoryName"
-                element={<CategoriesPage />}
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <CategoriesPage />
+                  </Suspense>
+                }               
               />
-              <Route path="add" element={<AddRecipePage />} />
-              {/* <Route path="favorite" element={<FavoritePage />} /> */}
+              <Route path="add" element={ <Suspense fallback={<Loader pageHeight="100vh" />}>
+                    <AddRecipePage />
+                  </Suspense>} />
               <Route
                 path="favorite"
                 element={
@@ -110,10 +115,38 @@ export const App = () => {
                   </Suspense>
                 }
               />
-              <Route path="recipe/:recipeId" element={<RecipePage />} />
-              <Route path="my" element={<MyRecipesPage />} />
-              <Route path="search" element={<SearchPage />} />
-              <Route path="shopping-list" element={<ShoppingPage />} />
+              <Route
+                path="recipe/:recipeId"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <RecipePage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="my"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <MyRecipesPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="search"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <SearchPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="shopping-list"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <ShoppingPage />
+                  </Suspense>
+                }
+              />
             </Route>
 
             <Route

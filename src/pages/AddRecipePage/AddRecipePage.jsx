@@ -11,7 +11,7 @@ import {
   SharedContainer,
   SocialsTitle,
 } from './AddRecipePage.styled';
-import GoToTop from '../../redux/helpers/scrollToTop';
+import Scroll from '../../utils/scroll';
 
 const AddRecipePage = () => {
   const { isDesktopScreen } = useMedia();
@@ -32,7 +32,7 @@ const AddRecipePage = () => {
           <PopularRecipe />
         </ContainerPopular>
       </SharedContainer>
-      <GoToTop />
+      <Scroll />
     </Page>
   );
 };
