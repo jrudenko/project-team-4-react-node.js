@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import RecipePageHero from 'components/RecipePageHero';
-import Container from 'components/Container';
+import RecipeInngredientsList from 'components/RecipeInngredientsList';
 import {
      selectRecipeById,
      // selectRecipeIsLoading,
@@ -10,6 +10,7 @@ import {
      selectOwnRecipeById,
    } from 'redux/recipe/recipeSelectors';
    import { getRecipeById, getOwnRecipeById } from 'redux/recipe/recipeOperation';
+   import {getIngredientsList} from '../../service/API/serviseApi'
 
 const RecipePage = () => {
 
@@ -20,9 +21,9 @@ const RecipePage = () => {
      const ownRecipe = useSelector(selectOwnRecipeById);
 
      const [currentRecipe, setCurrentRecipe] = useState(null);
+     const [currentIngredients, setCurrentIngredients] = useState([])
+     const [listIngredients, setListIngredients] = useState(null)
      const [isOwnRecipe, setOwnRecipe] = useState(null);
-
-     console.log(`currentRecipe`, currentRecipe)
    
      useEffect(() => {
           if (location?.state?.from.pathname === '/my') {
@@ -39,18 +40,37 @@ const RecipePage = () => {
           setCurrentRecipe(recipe ?? ownRecipe);
         }, [recipe, ownRecipe]);
 
+        useEffect(() => {
+          if (currentRecipe !== null) {
+            const { ingredients } = currentRecipe;
+            setCurrentIngredients(ingredients);
+          }
+        }, [currentRecipe]);
+
+        useEffect(() => {
+          const getIngredients = async () => {
+          try {
+            const IngredientsList = await getIngredientsList();
+            setListIngredients(IngredientsList.data.searchResult);
+          } catch (error) {
+            console.log(error)
+          }
+        }
+        getIngredients()
+        }, [])
+
 
  return(
-       
-    <Container>
-     {currentRecipe !== null && (
-
+       <>
+   
+     {currentRecipe !== null ? (
+<>
          <RecipePageHero recipe={currentRecipe} isOwnRecipe = {isOwnRecipe}/>
-         
-
-     )}
-    </Container> 
-        
+         <RecipeInngredientsList ingredients={currentIngredients} ingList = {listIngredients} />
+</>
+     ) : (<div>ERROR</div>)}
+   
+    </>
     )
 }
 

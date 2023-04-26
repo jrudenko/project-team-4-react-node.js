@@ -6,7 +6,7 @@ import {
   StyledClock,
 } from './RecipePageHero.styled';
 import ButtonSkew from 'components/ButtonSkew';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -18,20 +18,17 @@ import {
   removeRecipeFromFavorite,
 } from 'redux/recipe/recipeOperation';
 
-import {
-  selectFavoriteIsLoading,
-} from 'redux/recipe/recipeSelectors';
+import { selectFavoriteIsLoading } from 'redux/recipe/recipeSelectors';
 
-const RecipePageHero = ({ recipe, isOwnRecipe }) => {
+const RecipePageHero = ({ recipe = null, isOwnRecipe }) => {
   const [loading, setLoading] = useState(false);
   const [allRecipes, setAllRecipes] = useState({});
   const { recipeId } = useParams();
   const dispatch = useDispatch();
-  const loader = useSelector(selectFavoriteIsLoading)
+  const loader = useSelector(selectFavoriteIsLoading);
 
   const [isFav, setIsFav] = useState(false);
-  console.log(`allRecipes`, allRecipes);
-  console.log(`isFav`, isFav);
+  // console.log(`allRecipes`, allRecipes);
 
   useEffect(() => {
     if (allRecipes.favoriteRecipes?.length > 0) {
@@ -57,66 +54,65 @@ const RecipePageHero = ({ recipe, isOwnRecipe }) => {
     };
 
     getFavorites();
-  }, [isFav]);
+  }, []);
 
-  function addFavRecipe() {
-    dispatch(addRecipeToFavorite(recipe._id));
-    setIsFav(true);
-    toast.success('Recipe added to favorite');
-  }
+  const addFavRecipe = async () => {
+    try {
+      await dispatch(addRecipeToFavorite(recipe._id)).unwrap();
+      setIsFav(true);
+      toast.success('Recipe added to favorite');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  function removeFavRecipe() {
-    dispatch(removeRecipeFromFavorite(recipe._id));
-    setIsFav(false);
-    toast.success('Recipe removed from favorite');
-  }
+  const removeFavRecipe = async () => {
+    try {
+      await dispatch(removeRecipeFromFavorite(recipe._id)).unwrap();
+      setIsFav(false);
+      toast.success('Recipe added to favorite');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-    
-      <Wrapper>
-        {recipe ? 
+    <Wrapper>
+      {recipe ? (
         <>
-        {!loading ? 
-        <>
-        <HeroTitle>{recipe.title}</HeroTitle>
-        <HeroText>{recipe.description.slice(0, 200)}...</HeroText>
-        {!isOwnRecipe &&
-          (!isFav ? (
-            <ButtonSkew
-              type="button"
-              text= {loader ? "loader...": "Add to favorite recipes"}
-              fn={addFavRecipe}
-            />
+          {!loading ? (
+            <>
+              <HeroTitle>{recipe.title}</HeroTitle>
+              <HeroText>{recipe.description.slice(0, 200)}...</HeroText>
+              {!isOwnRecipe &&
+                (!isFav ? (
+                  <ButtonSkew
+                    type="button"
+                    text={loader ? 'loader...' : 'Add to favorite recipes'}
+                    fn={addFavRecipe}
+                  />
+                ) : (
+                  <ButtonSkew
+                    type="button"
+                    text={loader ? 'loader...' : 'Remove from favorite recipes'}
+                    fn={removeFavRecipe}
+                  />
+                ))}
+              {recipe.time && (
+                <WrapperTime>
+                  <StyledClock />
+                  <span>{recipe.time + ` min`}</span>
+                </WrapperTime>
+              )}
+            </>
           ) : (
-            <ButtonSkew
-              type="button"
-              text= {loader ? "loader...": "Remove from favorite recipes"}
-              fn={removeFavRecipe}
-            />
-          ))}
-        {recipe.time && (
-          <WrapperTime>
-            <StyledClock />
-            <span>{recipe.time + ` min`}</span>
-          </WrapperTime>
-        )}
-
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          closeOnClick
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        /> </> : <HeroTitle>Loading...</HeroTitle>}
-          
-          
+            <HeroTitle>Loading...</HeroTitle>
+          )}
         </>
-        : <HeroTitle>Recipe not found</HeroTitle>}
-        
-      </Wrapper>
-    
+      ) : (
+        <HeroTitle>Recipe not found</HeroTitle>
+      )}
+    </Wrapper>
   );
 };
 
@@ -125,7 +121,7 @@ RecipePageHero.propTypes = {
     _id: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    time: PropTypes.string,
+    time: PropTypes.number,
   }).isRequired,
 };
 

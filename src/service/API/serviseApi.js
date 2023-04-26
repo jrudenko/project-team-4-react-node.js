@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q`
 
 export const getFavoriteRecipes = async () => {
   try {
-    const { data } = await axios.get(`/favorite`);
+    const { data } = await axios.get(`/favorite?page=0`);
     return data;
   } catch (error) {
     console.error(error);
@@ -62,4 +61,8 @@ export const getPopularRecipes = async () => {
 };
 export const getRecipeById = async id => {
   return await axios.get(`/recipes/${id}`);
+};
+
+export const getIngredientsList = async () => {
+  return await axios.get(`/ingredients/list`);
 };
