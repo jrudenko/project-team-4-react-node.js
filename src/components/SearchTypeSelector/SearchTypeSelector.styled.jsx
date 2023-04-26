@@ -21,7 +21,7 @@ export const Label = styled.label`
   font-weight: ${p => p.theme.fontWeights.title};
   font-size: 12px;
   line-height: ${p => p.theme.content};
-  color: ${p => p.theme.colors.titleConteiner};
+  color: ${p => p.theme.colors.sectionTitle};
   letter-spacing: ${p => p.theme.letterSpacings.subheader};
 
   @media screen and (min-width: 768px) {
@@ -37,11 +37,11 @@ export const Select = styled.select`
   width: 146px;
   height: 100%;
   font-family: Poppins, sans-serif;
-  font-weight: ${p => p.theme.fontWeights.body}; 
+  font-weight: ${p => p.theme.fontWeights.body};
   font-size: 12px;
   line-height: ${p => p.theme.searchSelect};
   letter-spacing: ${p => p.theme.letterSpacings.content};
-  color: ${p => p.theme.colors.black};
+  color: ${p => p.theme.colors.formAddInputText};
   border-radius: 6px;
   border: 1px solid #d9d9d9;
   background-color: ${p => p.theme.colors.grey};
