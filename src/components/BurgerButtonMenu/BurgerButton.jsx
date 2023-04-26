@@ -7,7 +7,7 @@ const BurgerButton = ({ onClick }) => {
     const isTablet = useMediaQuery({ minWidth: 768 });
     return (
         <ButtonBurger type="button" onClick={onClick} >
-            {isMobile && <MenuIcon width={28} height={28} />}
+            {isMobile && <MenuIcon />}
             {isTablet && <MenuIcon />}
         </ButtonBurger>
     );
