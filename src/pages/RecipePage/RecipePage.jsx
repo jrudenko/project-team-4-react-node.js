@@ -5,8 +5,6 @@ import RecipePageHero from 'components/RecipePageHero';
 import RecipeInngredientsList from 'components/RecipeInngredientsList';
 import {
      selectRecipeById,
-     // selectRecipeIsLoading,
-     // selectRecipeError,
      selectOwnRecipeById,
    } from 'redux/recipe/recipeSelectors';
    import { getRecipeById, getOwnRecipeById } from 'redux/recipe/recipeOperation';

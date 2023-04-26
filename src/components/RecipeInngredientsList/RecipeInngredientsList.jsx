@@ -14,13 +14,9 @@ import {Wrapper, TableData,
 
 
 const RecipeInngredientsList = ({ingredients, ingList}) => {
-    console.log(`ingredients`, ingredients)
-    console.log(`ingList`, ingList)
+   
 const [allIngredients, setAllIngredients] = useState(null)
 
-const a = ingList?.find(e => e._id === '640c2dd963a319ea671e372e')
-
-console.log(`AAAA`, a)
 
 useEffect(() => {
     if (ingredients && ingList) {
@@ -32,9 +28,6 @@ useEffect(() => {
         
     }
 }, [ingredients, ingList])
-
-
-console.log(`allIngredients`, allIngredients)
 
 
     const hendler = (e) => {
