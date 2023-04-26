@@ -166,7 +166,7 @@ export const Icon = styled.span`
   pointer-events: none;
   svg {
     display: none;
-    fill: ${p => p.theme.colors.accentColor};
+    fill: ${p => p.theme.colors.colorAccent};
     color: ${p => p.theme.colors.accentColor};
     width: 13px;
     height: 13px;

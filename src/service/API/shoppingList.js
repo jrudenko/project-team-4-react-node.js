@@ -11,3 +11,9 @@ export const deleteShoppingItem = async productId => {
 
   return item.data;
 };
+
+export const addShoppingItem = async body => {
+  const item = await axios.post(`/shopping-list/`, body);
+
+  return item.data;
+};

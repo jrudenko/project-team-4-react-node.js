@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import { toast } from 'react-toastify';
 import {Wrapper, TableData,
     Container,
     Title,
@@ -10,12 +11,17 @@ import {Wrapper, TableData,
     ContainerCheckbox,
     Checkbox,
     Icon, Box} from './RecipeInngredientsList.styled'
-    import { BiCheckSquare } from 'react-icons/bi';
+    import { BsCheckLg } from 'react-icons/bs';
+    import {
+      addShoppingItem,
+      deleteShoppingItem,
+    } from '../../service/API/shoppingList';
 
 
 const RecipeInngredientsList = ({ingredients, ingList}) => {
    
 const [allIngredients, setAllIngredients] = useState(null)
+const [isLoading, setIsLoading] = useState(false);
 
 
 useEffect(() => {
@@ -30,8 +36,29 @@ useEffect(() => {
 }, [ingredients, ingList])
 
 
-    const hendler = (e) => {
-console.log(e)
+    const hendlerToggle = async (e, ing) => {
+      console.log(`isLoading`, isLoading)
+      if (isLoading) return;
+      setIsLoading(true);
+      const body = {
+        iid: ing.id,
+        ttl: ing.ttl,
+        thb: ing.thb,
+        number: ing.measure
+      }
+      if (e.target.checked) {
+        try {
+        const a =  await addShoppingItem(body);
+          setIsLoading(false);
+          toast.success(`${ing.ttl} add to shopping list`)
+
+          console.log(`AAAA`, a)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      setIsLoading(false);
+console.log(ing.id)
     }
 
  return (
@@ -56,12 +83,12 @@ console.log(e)
                 <ContainerCheckbox>
                   <Checkbox
                     type="checkbox"
-                    checked={true}
-                    onChange={hendler}
-                    name="CheckboxName"
+                    
+                    onChange={e => {hendlerToggle(e, ing)}}
+                    name={ing.id}
                   />
                   <Icon>
-                    <BiCheckSquare />
+                    <BsCheckLg />
                   </Icon>
                 </ContainerCheckbox>
               </Container>
