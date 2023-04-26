@@ -19,14 +19,14 @@ export default function SearchedRecipesList() {
   const dispatch = useDispatch();
 
   const query = searchParams.get('query') ?? '';
-  const searchType = searchParams.get('type') ?? '';
+  const type = searchParams.get('type') ?? '';
 
   useEffect(() => {
-    if (query === '' || searchType === '') {
+    if (query === '' || type === '') {
       return;
     }
-    dispatch(getSearchByTitle({ query }));
-  }, [dispatch, query, searchType]);
+    dispatch(getSearchByTitle({ query, type }));
+  }, [dispatch, query, type]);
 
   return (
     <>
@@ -43,13 +43,4 @@ export default function SearchedRecipesList() {
       )}
     </>
   );
-
-  //     recipes ? (
-  //     (recipes.length === 0 && (
-  //       <PageEmpty text="Try looking for something else..." />
-  //     )) ||
-  //       (recipes.length > 0 && <RecipesList recipes={recipes} />)
-  //   ) : (
-  //     <NoSearchText>Enter your search query</NoSearchText>
-  //   );
 }
