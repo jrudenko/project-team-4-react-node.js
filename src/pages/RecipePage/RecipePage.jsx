@@ -21,9 +21,6 @@ const RecipePage = () => {
   const recipe = useSelector(selectRecipeById);
   const ownRecipe = useSelector(selectOwnRecipeById);
 
-  const [currentRecipe, setCurrentRecipe] = useState(null);
-  const [isOwnRecipe, setOwnRecipe] = useState(null);
-
      const [currentRecipe, setCurrentRecipe] = useState(null);
      const [currentIngredients, setCurrentIngredients] = useState([])
      const [listIngredients, setListIngredients] = useState(null)
