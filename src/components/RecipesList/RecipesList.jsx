@@ -14,7 +14,7 @@ export default function RecipesList({ recipes }) {
       <List>
         {recipes.map(({ _id, thumb, title }) => (
           <li key={_id}>
-            <StyledLink to={`recipe/${_id}`}>
+            <StyledLink to={`/recipe/${_id}`}>
               <Thumb>
                 <Image src={thumb} alt={title} loading="lazy" />
                 <TextBox>
