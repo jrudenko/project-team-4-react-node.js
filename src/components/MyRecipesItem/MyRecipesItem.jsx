@@ -1,5 +1,5 @@
-import ButtonDel from '../ButtonDelete';
-import Button from '../Button/Button';
+import ButtonDel from 'components/ButtonDelete';
+import Button from 'components/Button';
 
 import {
   CardItem,
