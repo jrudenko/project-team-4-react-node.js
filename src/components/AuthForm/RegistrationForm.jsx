@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import zxcvbn from 'zxcvbn';
 
 import Button  from '../../components/Button/Button';
-// import { Loader } from '../../components/Loader/loader';
+import { Loader } from 'components/Loader/Loader';
 import {
   FormWrapper,
   FormTitle,
@@ -262,7 +262,7 @@ export const AuthForm = ({ login }) => {
               >
                 {login && !isLoading ? 'Sign in' : null}
                 {!login && !isLoading ? 'Sign up' : null}
-                {/* {isLoading && <Loader size={40} outcolor="#3E4462" />} */}
+                {isLoading && <Loader size={40} outcolor="#3E4462" />}
               </Button>
             </Form>
             {!login ? (

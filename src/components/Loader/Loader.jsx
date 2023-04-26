@@ -1,21 +1,42 @@
-import { CirclesWithBar } from 'react-loader-spinner';
+// import { ColorRing } from 'react-loader-spinner';
 
-export const Loader = ({ size = '100', pageHeight, outcolor = '#8BAA36' }) => {
+// export const Loader = ({ outcolor = '#8BAA36' }) => {
+//   return (
+//     <>
+//       <ColorRing
+//   visible={true}
+//   height="150"
+//   width=""
+//   ariaLabel="blocks-loading"
+//   wrapperStyle={{}}
+//   wrapperClass="blocks-wrapper"
+//   colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+//       />
+//     </>
+//   );
+// };
+
+import styled from 'styled-components';
+import { ColorRing } from 'react-loader-spinner';
+
+const LoaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+export const Loader = ({ pageHeight, size = '100' }) => {
   return (
-    <>
-      <CirclesWithBar
+    <LoaderWrapper>
+      <ColorRing
+        visible={true}
         height={pageHeight ?? size}
         width={size}
-        color="#4fa94d"
-        wrapperStyle={{ display: 'flex', justifyContent: 'center' }}
-        wrapperClass=""
-        visible={true}
-        outerCircleColor={outcolor}
-        innerCircleColor="#3E4462"
-        barColor="#1E1F28"
-        ariaLabel="circles-with-bar-loading"
+        ariaLabel="blocks-loading"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
       />
-    </>
+    </LoaderWrapper>
   );
 };
-// test
+
