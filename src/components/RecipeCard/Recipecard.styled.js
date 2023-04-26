@@ -20,7 +20,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  background-color: white;
+  background-color: ${p => p.theme.colors.cardBackground};
   width: 307px;
   margin-left: auto;
   margin-right: auto;
@@ -44,7 +44,7 @@ export const Name = styled.h3`
   font-size: 16px;
   line-height: 20px;
   align-content: center;
-  color: #3e4462;
+  color: ${p => p.theme.colors.primaryText};
   padding: 16px;
   @media screen and (min-width: 768px) {
   }
