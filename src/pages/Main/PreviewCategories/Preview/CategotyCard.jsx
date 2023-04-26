@@ -7,6 +7,9 @@ const CategoryCard = ({ name, popular }) => {
   const [number, setNumber] = useState(1);
   const navigate = useNavigate();
 
+    console.log(typeof popular);
+  console.log(popular);
+
   const resizeHandler = async () => {
     if (window.screen.width < 768) {
       setNumber(1);
@@ -29,7 +32,7 @@ const CategoryCard = ({ name, popular }) => {
   }, []);
 
   const seeAllHandler = () => {
-    navigate(`/categories/${name}`);
+    navigate(`/categories/${popular[0].category}`);
   };
 
   return (
@@ -40,7 +43,7 @@ const CategoryCard = ({ name, popular }) => {
           <RecipeStyled
             imgUrl={recipe.preview}
             key={recipe.id}
-            onClick={() => navigate(`/recipe/${recipe.id}`)}
+            onClick={() => navigate(`/recipe/${recipe._id}`)}
           >
             <span>{recipe.title}</span>
           </RecipeStyled>
