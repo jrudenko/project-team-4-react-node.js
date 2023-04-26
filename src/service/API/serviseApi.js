@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getFavoriteRecipes = async () => {
   try {
-    const { data } = await axios.get(`/favorite`);
+    const { data } = await axios.get(`/favorite?page=0`);
     return data;
   } catch (error) {
     console.error(error);
@@ -60,4 +60,8 @@ export const getPopularRecipes = async () => {
 };
 export const getRecipeById = async id => {
   return await axios.get(`/recipes/${id}`);
+};
+
+export const getIngredientsList = async () => {
+  return await axios.get(`/ingredients/list`);
 };
