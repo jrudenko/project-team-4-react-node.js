@@ -91,6 +91,7 @@ const CategoryCardStyled = styled.div`
 export const RecipeStyled = styled.div`
   background: url(${props => props.imgUrl});
   background-size: cover;
+  cursor: pointer;
 
   width: 343px;
   height: 323px;
@@ -131,5 +132,4 @@ export const RecipeStyled = styled.div`
     text-overflow: ellipsis;
   }
 `;
-
 export default CategoryCardStyled;

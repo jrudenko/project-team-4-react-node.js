@@ -25,6 +25,8 @@ export const CategoriesCardSet = styled.ul`
   }
 `;
 export const CategoriesCardSetItem = styled.li`
+  margin-left: auto;
+  margin-right: auto;
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 32px * 2) / 2);
     margin: calc(32px / 2);
