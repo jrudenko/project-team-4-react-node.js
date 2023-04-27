@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 
 export const NavBar = styled.ul`
-   display: flex;
+  display: flex;
   align-items: center;
   margin-right: ${p => p.mr};
   flex-direction: ${p => p.fd || 'row'};

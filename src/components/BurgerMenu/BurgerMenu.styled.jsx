@@ -94,7 +94,7 @@ position: absolute;
   transition: all 250ms ease-in-out;
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
   
 `;
