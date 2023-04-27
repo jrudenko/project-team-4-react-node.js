@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-team-4-react-node.js/static/css/main.a2e59d36.css",
-    "main.js": "/project-team-4-react-node.js/static/js/main.77ef2de5.js",
+    "main.js": "/project-team-4-react-node.js/static/js/main.6a0833f4.js",
     "static/js/705.07fe69ae.chunk.js": "/project-team-4-react-node.js/static/js/705.07fe69ae.chunk.js",
     "static/js/308.cbd5028c.chunk.js": "/project-team-4-react-node.js/static/js/308.cbd5028c.chunk.js",
     "static/js/975.abe0593e.chunk.js": "/project-team-4-react-node.js/static/js/975.abe0593e.chunk.js",
@@ -13,7 +13,6 @@
     "static/js/355.fb3bc64c.chunk.js": "/project-team-4-react-node.js/static/js/355.fb3bc64c.chunk.js",
     "static/js/34.a56a72b8.chunk.js": "/project-team-4-react-node.js/static/js/34.a56a72b8.chunk.js",
     "static/js/48.b5b31c19.chunk.js": "/project-team-4-react-node.js/static/js/48.b5b31c19.chunk.js",
-    "static/media/welcomSection.png": "/project-team-4-react-node.js/static/media/welcomSection.effc44e072ca061912de.png",
     "static/media/mainpage2x_desk.png": "/project-team-4-react-node.js/static/media/mainpage2x_desk.906cdb4f2d00194ec785.png",
     "static/media/mainpage2x_tab.png": "/project-team-4-react-node.js/static/media/mainpage2x_tab.1e3f8e77edef9f06bd13.png",
     "static/media/mainpage2x_mob.png": "/project-team-4-react-node.js/static/media/mainpage2x_mob.d48be9cc28c1dcdfd6b1.png",
@@ -35,6 +34,7 @@
     "static/media/bg_search_tablet@1x.png": "/project-team-4-react-node.js/static/media/bg_search_tablet@1x.bc91271998b75900e48e.png",
     "static/media/spinach-popup-tablet-@2x.webp": "/project-team-4-react-node.js/static/media/spinach-popup-tablet-@2x.6647cf79742cb4c65d7d.webp",
     "static/media/placeholder-meal.jpg": "/project-team-4-react-node.js/static/media/placeholder-meal.d0b3f481995be572c370.jpg",
+    "static/media/welcomSection.jpg": "/project-team-4-react-node.js/static/media/welcomSection.d6588c15ceb7a5ca57c8.jpg",
     "static/media/auth-pana-tab-min-ret.png": "/project-team-4-react-node.js/static/media/auth-pana-tab-min-ret.88c83cbcec23bb3db03c.png",
     "static/media/footer-background-des1x.png": "/project-team-4-react-node.js/static/media/footer-background-des1x.6866261bc6dfb6ec7a00.png",
     "static/media/bg_error_desktop@2x.png": "/project-team-4-react-node.js/static/media/bg_error_desktop@2x.3cfaecf1beea8a207660.png",
@@ -69,13 +69,13 @@
     "static/media/Search-1x-mob.webp": "/project-team-4-react-node.js/static/media/Search-1x-mob.c8c4449de51afd37fd33.webp",
     "static/media/photo-icon.svg": "/project-team-4-react-node.js/static/media/photo-icon.d5abba0d2a5cd1f9bb1aa90c017384f8.svg",
     "index.html": "/project-team-4-react-node.js/index.html",
-    "static/media/WelcomeSectionLogo.svg": "/project-team-4-react-node.js/static/media/WelcomeSectionLogo.409a243ea7f68b41aa46be0a3f1c3459.svg",
     "static/media/logo.svg": "/project-team-4-react-node.js/static/media/logo.3326a095578a5f612526f7ab93edd379.svg",
     "static/media/logoInv.svg": "/project-team-4-react-node.js/static/media/logoInv.67b5c5343b245c9a9cbc5adeeb091ac5.svg",
     "static/media/envelope.svg": "/project-team-4-react-node.js/static/media/envelope.ffbda48ba70d9a4633070aa7e9d2ad80.svg",
+    "static/media/WelcomeSectionLogo.svg": "/project-team-4-react-node.js/static/media/WelcomeSectionLogo.415f32a94a3c20057f5073962eda1b80.svg",
     "static/media/clock1.svg": "/project-team-4-react-node.js/static/media/clock1.6521cc8abf7aa82709c51f1a4bf40698.svg",
     "main.a2e59d36.css.map": "/project-team-4-react-node.js/static/css/main.a2e59d36.css.map",
-    "main.77ef2de5.js.map": "/project-team-4-react-node.js/static/js/main.77ef2de5.js.map",
+    "main.6a0833f4.js.map": "/project-team-4-react-node.js/static/js/main.6a0833f4.js.map",
     "705.07fe69ae.chunk.js.map": "/project-team-4-react-node.js/static/js/705.07fe69ae.chunk.js.map",
     "308.cbd5028c.chunk.js.map": "/project-team-4-react-node.js/static/js/308.cbd5028c.chunk.js.map",
     "975.abe0593e.chunk.js.map": "/project-team-4-react-node.js/static/js/975.abe0593e.chunk.js.map",
@@ -90,6 +90,6 @@
   },
   "entrypoints": [
     "static/css/main.a2e59d36.css",
-    "static/js/main.77ef2de5.js"
+    "static/js/main.6a0833f4.js"
   ]
 }
