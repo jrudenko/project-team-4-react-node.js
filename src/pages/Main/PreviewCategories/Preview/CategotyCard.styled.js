@@ -54,7 +54,6 @@ const CategoryCardStyled = styled.div`
     line-height: 28px;
     letter-spacing: -0.02em;
     font-feature-settings: 'liga' off;
-    /* color: #001833; */
     color: ${p => p.theme.colors.heroText};
     margin-bottom: 32px;
     @media ${props => props.theme.device.tablet} {
@@ -74,7 +73,9 @@ const CategoryCardStyled = styled.div`
     border-radius: 6px;
     margin-left: auto;
     border: none;
+
     & > span {
+      transition: color 0.2s ease-in-out;
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 400;
@@ -84,6 +85,10 @@ const CategoryCardStyled = styled.div`
     }
     &:hover {
       cursor: pointer;
+      &:hover span,
+      &:focus span {
+        color: #000000;
+      }
     }
   }
 `;

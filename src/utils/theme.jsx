@@ -39,7 +39,7 @@ export const theme = {
     mainDark: '#23262A',
     secondaryDark: '#3E4462',
     titleConteiner: `#001833`,
-  
+
     button: {
       textColorMain: '#FAFAFA',
       hoverTextColorMain: '#22252A',
@@ -111,7 +111,6 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
-        
       },
       lightTheme: {
         background: '#FAFAFA',
@@ -159,11 +158,10 @@ export const theme = {
         paginateArrow: 'rgba(169, 169, 169, 0.73)',
         paginatePage: '#656565',
         paginateActive: '#EBF3D4',
-      
       },
     },
   },
-  
+
   transitions: {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
@@ -203,7 +201,6 @@ export const theme = {
     main: 'Poppins, sans-serif',
   },
 
-
   radius: {
     btnStandart: '6px',
     btnIcon: '4px',
@@ -215,5 +212,3 @@ export const theme = {
     circle: '50%',
   },
 };
-
-
