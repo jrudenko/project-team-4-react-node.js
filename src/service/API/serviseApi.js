@@ -1,22 +1,20 @@
 import axios from 'axios';
 
-axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2RhYjA2ODJhZGUzMDA2ZjY3ZWNhZSIsImlhdCI6MTY4MTc2MzMwNX0.xgcSynbdL8pnbV4_bItE5Tagzj7XVNcGXClp35qD59Q`;
-
 export const getFavoriteRecipes = async () => {
   try {
-    const { data } = await axios.get(`/favorite`);
+    const { data } = await axios.get(`/favorite?page=0`);
     return data;
   } catch (error) {
     console.error(error);
   }
 };
-export const addToFavorites = async id => {
-  return await axios.post(`/favorite/${id}`);
+export const addToFavorites = async _id => {
+  return await axios.post(`/favorite/${_id}`);
 };
 
-export const deleteFavoriteRecipe = async id => {
+export const deleteFavoriteRecipe = async _id => {
   try {
-    const { data } = await axios.delete(`/favorite/${id}`);
+    const { data } = await axios.delete(`/favorite/${_id}`);
     return data;
   } catch (error) {
     console.error(error);
@@ -26,7 +24,7 @@ export const deleteFavoriteRecipe = async id => {
 export const getMyRecipes = async () => {
   try {
     const { data } = await axios.get(`/ownRecipes`);
-    return data.data.recipes;
+    return data.recipes;
   } catch (error) {
     console.error(error);
   }
@@ -62,4 +60,8 @@ export const getPopularRecipes = async () => {
 };
 export const getRecipeById = async id => {
   return await axios.get(`/recipes/${id}`);
+};
+
+export const getIngredientsList = async () => {
+  return await axios.get(`/ingredients/list`);
 };

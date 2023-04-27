@@ -16,6 +16,5 @@ export const getIngredientsFulfilledReducer = (state, action) => {
 };
 
 export const addRecipeFulfilledReducer = (state, action) => {
-  console.log(action.payload);
   state.recipe = action.payload;
 };

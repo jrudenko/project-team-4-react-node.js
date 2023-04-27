@@ -6,15 +6,10 @@ import {
   LogoWrapper,
 } from './WelcomSection.styled';
 import React from 'react';
-// import ReplaceableButton from 'components/ButtonMain/ButtonMain';
 import Button from 'components/Button/Button';
 import logosvg from '../../images/SVG/Logo/WelcomeSectionLogo.svg';
 
 function WellcomePage() {
-  // function handleButtonClick() {
-  //   console.log('Button clicked!');
-  // }
-
   return (
     <Wrapper>
       <LogoWrapper>
@@ -27,8 +22,6 @@ function WellcomePage() {
         your own recipes at any time.
       </Content>
       <WrapperBtn>
-        {/* <ReplaceableButton onClick={handleButtonClick} label="Registration" />
-        <ReplaceableButton onClick={handleButtonClick} label="Sign In" /> */}
         <Button
           look="rounded_dark"
           to="/register"

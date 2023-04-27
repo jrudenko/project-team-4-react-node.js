@@ -3,28 +3,17 @@ import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../utils/theme';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { PrivateRoute, RestrictedRoute } from './Routes';
-
 import { merge, get } from 'lodash';
 import { refreshUser } from '../redux/auth/operations';
 import { StyledToastContainer } from 'pages/Registration/RegistrationPage.styled';
 
 import WelcomSection from 'pages/Welcome/WelcomSection';
+import NotFoundPage from 'pages/NotFoundPage';
 import SharedLayout from 'components/SharedLayout';
 import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
 import { Loader } from 'components/Loader/Loader';
-
-// import FavoritePage from '../pages/FavoritePage';
-// import CategoriesPage from 'pages/Categories/CategoriesPage';
-// import SearchPage from 'pages/Search/SearchPage';
-// import AddRecipePage from 'pages/AddRecipePage/AddRecipePage';
-// import RecipePage from '../pages/RecipePage';
-// import MainPage from 'pages/Main/MainSection';
-// import ShoppingPage from 'pages/ShoppingPage/ShoppingPage';
-// import MyRecipesPage from 'pages/MyRecipes/MyRecipesPage';
-// import AddRecipe from 'pages/AddRecipe/AddRecipe';
 
 const ShoppingPage = lazy(() => import('pages/ShoppingPage/ShoppingPage'));
 const SearchPage = lazy(() => import('pages/Search/SearchPage'));
@@ -82,11 +71,10 @@ export const App = () => {
             <Route
               path="/"
               element={
-                // <PrivateRoute element={<SharedLayout />} redirectTo="/signin" />
                 <PrivateRoute component={SharedLayout} redirectTo="/signin" />
               }
             >
-              <Route path="*" element={<div>NotFoundPage</div>} />
+              <Route path="*" element={<NotFoundPage />} />
               <Route
                 path="main"
                 element={
@@ -104,9 +92,12 @@ export const App = () => {
                   </Suspense>
                 }               
               />
-              <Route path="add" element={ <Suspense fallback={<Loader pageHeight="100vh" />}>
+              <Route path="add" element={
+                <Suspense fallback={<Loader />}>
                     <AddRecipePage />
-                  </Suspense>} />
+                </Suspense>
+              }
+              />
               <Route
                 path="favorite"
                 element={
@@ -180,7 +171,7 @@ export const App = () => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme={darkMode ? 'darkTheme' : 'lightTheme'}
+          theme={darkMode ? 'dark' : 'light'}
         />
       </ThemeProvider>
     </ColorModeContext.Provider>

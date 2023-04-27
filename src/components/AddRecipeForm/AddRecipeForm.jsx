@@ -22,8 +22,8 @@ import {
 import { validationSchema } from '../../redux/helpers/validationSchemaAddRecipeForm';
 import { Loader } from 'components/Loader/Loader';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
-import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import { RecipePreapationFields } from './RecipePreapationFields/RecipePreapationFields';
+import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import Button from '../../components/Button/Button';
 import { ShowToastError } from '../../redux/helpers/showToastError';
 import { createArrTimesPrepare } from '../../redux/helpers/createArrTimesPrepare';
@@ -43,16 +43,17 @@ const initialValues = {
 export const AddRecipeForm = props => {
   const dispatch = useDispatch();
   const categoryList = useSelector(selectCategory);
-  const ingredientsListAll = useSelector(selectIngredients);
+  const ingredientsListAll = useSelector(selectIngredients);  
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const [submitRecipe, setSubmitRecipe] = useState(false);
+
 
   useEffect(() => {
     dispatch(getCategoryList());
     dispatch(getIngredientsList());
   }, [dispatch]);
-
+  
   const optionsCategory = createOptionCategory(categoryList);
   const optionsTimes = createOptionTimes(createArrTimesPrepare(5, 120, 5));
   const optionsIngredients = createOptionIngredients(ingredientsListAll);
@@ -72,7 +73,8 @@ export const AddRecipeForm = props => {
           acc.desc = ingr.desc;
         }
         return acc;
-      }, {});
+      }, {}
+      );
     });
 
     const res = await fetch(placeholderNoUserImg);
@@ -92,6 +94,8 @@ export const AddRecipeForm = props => {
     formData.append('preview', preview);
     formData.append('time', time);
     formData.append('ingredients', JSON.stringify(ingredientsList));
+
+    console.log(formData);
 
     dispatch(addRecipe(formData))
       .unwrap()

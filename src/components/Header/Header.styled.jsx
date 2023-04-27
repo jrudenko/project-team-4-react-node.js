@@ -6,25 +6,15 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   min-width: 375px;
   margin: 0 auto;
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
-  }
-  @media screen and (min-width: 1440px) {
-    max-width: 1440px;
-  }
-
 `;
 
 export const StyledContainer = styled.div`
+  display: flex;
   position: absolute;
   width: 100vw;
-  display: flex;
   justify-content: center;
-  margin: 0 auto;
-  display: flex;
   align-items: center;
   margin: 0 auto;
-  min-width: 375px;
   z-index: 1;
   padding-top: ${p => p.theme.space[4] + 2}px;
   padding-left: ${p => p.theme.space[4]}px;
@@ -41,7 +31,6 @@ export const StyledContainer = styled.div`
   }
 `;
 
-
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -55,10 +44,5 @@ export const Wrapper = styled.div`
 export const UserToglContainer = styled.div`
   display: flex;
   margin-left: auto;
-  margin-right: 24px;
   align-items: center;
-  @media screen and (min-width: 768px) {
-    margin-right: 50px;
-  }
-
 `;

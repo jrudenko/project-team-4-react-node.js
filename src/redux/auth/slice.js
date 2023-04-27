@@ -44,7 +44,6 @@ export const userSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.isLoading = false;
         state.user.avatar = action.payload.user.avatarURL;
         state.user.name = action.payload.user.name;

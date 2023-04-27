@@ -1,19 +1,21 @@
 import { useMediaQuery } from 'react-responsive';
 import { ButtonBurger, MenuIcon } from './BurgerButton.styled.jsx';
+import { useLocation, useParams } from 'react-router-dom';
 
 const BurgerButton = ({ onClick }) => {
-
-    const isMobile = useMediaQuery({ maxWidth: 767 });
-    const isTablet = useMediaQuery({ minWidth: 768 });
+    const { pathname } = useLocation();
+    const recipe = useParams();
+    const isMobileOrTablet = useMediaQuery({ maxWidth: 1439 });
+    
     return (
         <ButtonBurger type="button" onClick={onClick} >
-            {isMobile && <MenuIcon width={28} height={28} />}
-            {isTablet && <MenuIcon />}
+            {isMobileOrTablet && <MenuIcon pathname={pathname} recipe={recipe} />}
         </ButtonBurger>
     );
 };
 
 export default BurgerButton;
+
 
 
 

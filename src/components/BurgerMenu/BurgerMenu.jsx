@@ -9,16 +9,15 @@ const BurgerMenu = ({ onClose }) => {
   return (
     <WrapperBurger>
       <LogoWrapper>
-         
         <Logo mr="0px" />
       </LogoWrapper>
-      <CloseBtn onClose={onClose} dark={darkMode.darkMode}/>
+      <CloseBtn onClose={onClose} dark={darkMode.darkMode} />
       <Navigation mr="0px" fd="column" onClick={onClose} />
       <ThemeTogglerWrapper>
-       <ThemeToggler />
+        <ThemeToggler />
       </ThemeTogglerWrapper>
     </WrapperBurger>
   );
-}
+};
 
 export default BurgerMenu;

@@ -1,15 +1,15 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
   getFavoriteRecipes,
   deleteFavoriteRecipe,
-} from '../../service/API/index';
-import MyRecipeItem from '../MyRecipesItem/MyRecipesItem';
+} from 'service/API/index';
+import MyRecipeItem from 'components/MyRecipesItem/MyRecipesItem';
 import { Loader } from 'components/Loader/Loader';
-// import EmptyPage  from 'components/EmptyPage';
+import EmptyPage  from 'components/EmptyPage';
 
-import { List, ListText } from './FavoriteList.styled.js';
-import { Paginator } from '../Paginator/Paginator';
+import { List } from './FavoriteList.styled.js';
+import { Paginator } from 'components/Paginator/Paginator.jsx';
 
 const FavoriteList = () => {
   const [loading, setLoading] = useState(false);
@@ -21,7 +21,10 @@ const FavoriteList = () => {
     try {
       setLoading(true);
       const data = await getFavoriteRecipes();
-      setAllRecipes(data);
+      if (data.favoriteRecipes.length > 0) {
+        setAllRecipes(data.favoriteRecipes);
+      }
+
     } catch (error) {
       toast.error('Something went wrong by getting recipes');
     } finally {
@@ -29,16 +32,18 @@ const FavoriteList = () => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     getFavorites();
   }, []);
 
-  const handleDelete = async id => {
+  const handleDelete = async _id => {
     try {
-      await deleteFavoriteRecipe(id);
+      await deleteFavoriteRecipe(_id);
       const data = await getFavoriteRecipes();
       setAllRecipes(data);
-      setCurrentItems(data);
+      setCurrentItems(data.favoriteRecipes
+);
+
     } catch (error) {
       toast.error('Something went wrong by removing recipe');
     }
@@ -62,8 +67,7 @@ const FavoriteList = () => {
             />
           ))}
         {allRecipes.length === 0 && !loading && (
-          <ListText>You don't have your recipes</ListText>
-          // <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
+          <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
         )}
       </List>
       {!!allRecipes.length && (
