@@ -5,21 +5,43 @@ export const FooterMenu = () => {
   return (
     <>
       <MenuItems>
-        <Item>
-          <Link to="/search" style={{ color: "white", textDecoration: 'none'}}>Ingredients</Link>
-        </Item>
-        <Item>
-           <Link to="/add" style={{ color: "white", textDecoration: 'none'}}>Add recipes</Link>
-        </Item>
-        <Item>
-          <Link to="/my" style={{ color: "white", textDecoration: 'none'}}>My recipes</Link>
-        </Item>
-        <Item>
-         <Link to="/favorite" style={{ color: "white", textDecoration: 'none'}}>Favorite</Link>
-        </Item>
-        <Item>
-         <Link to="/shopping-list" style={{ color: "white", textDecoration: 'none'}}>Shopping list</Link>
-        </Item>
+
+          <Link to="/search" style={{
+            color: "white",
+            textDecoration: 'none'
+          }}>
+            <Item> Ingredients </Item>
+          </Link>
+
+          <Link to="/add" style={{
+            color: "white",
+            textDecoration: 'none'
+          }}>
+             <Item>Add recipes </Item>
+          </Link>
+
+          <Link to="/my" style={{
+            color: "white",
+            textDecoration: 'none'
+          }}>
+             <Item>My recipes</Item>
+          </Link>
+
+          <Link to="/favorite" style={{
+            color: "white",
+            textDecoration: 'none'
+          }}>
+            <Item> Favorite</Item>
+          </Link>
+
+
+          <Link to="/shopping-list" style={{
+            color: "white",
+            textDecoration: 'none'
+          }}>
+           <Item>Shopping list </Item>
+          </Link>
+
       </MenuItems>
     </>
   );
