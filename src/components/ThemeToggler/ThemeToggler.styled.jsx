@@ -10,15 +10,15 @@ export const TogglCircle = styled.input`
   width: 61px;
   height: 27px;
   outline: none;
-  background-color: #efefef;
+  background-color: #EFEFEF;
   border-radius: 50px;
   transition: 0.5s;
-  background: #efefef;
+  background: #EFEFEF;
   box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
   -webkit-appearance: none;
   cursor: pointer;
   &:checked {
-    background: #8baa36;
+    background: ${p => p.theme.colors.colorAccent};
     box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
     ::before {
       left: 37px;
