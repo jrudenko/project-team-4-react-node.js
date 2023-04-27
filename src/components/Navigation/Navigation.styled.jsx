@@ -39,7 +39,7 @@ export const NavLinkStyled = styled(NavLink)`
     color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 1440px) {
-    color: '#23262A';
+    color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.headerText)};
   }
 `;
 
