@@ -41,7 +41,9 @@ const FavoriteList = () => {
       await deleteFavoriteRecipe(_id);
       const data = await getFavoriteRecipes();
       setAllRecipes(data);
-      setCurrentItems(data);
+      setCurrentItems(data.favoriteRecipes
+);
+
     } catch (error) {
       toast.error('Something went wrong by removing recipe');
     }
