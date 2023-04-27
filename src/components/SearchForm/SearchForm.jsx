@@ -19,6 +19,8 @@ export default function SearchForm({ onSubmit, queryParam = '' }) {
 
     if (query.trim() === '') {
       return toast.info('Enter request to search');
+    } else if (query.length > 20) {
+      return toast.info('Search query must be less than 20 characters');
     }
 
     onSubmit(query);

@@ -6,7 +6,7 @@ import { InformImage, InformText } from './NotFoundPage.styled';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   const { isMobileScreen, isDesktopScreen, isTabletScreen } = useMedia();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
