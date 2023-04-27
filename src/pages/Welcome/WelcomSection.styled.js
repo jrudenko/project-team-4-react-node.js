@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bg from '../../images/welcomeSection/welcomSection.png';
+import bg from '../../images/welcomeSection/welcomSection.jpg';
 import bg_tablet from '../../images/welcomeSection/tablet_welcomSection.jpg';
 import bg_mobile from '../../images/welcomeSection/mobile_welcomSection.jpg';
 
@@ -39,7 +39,6 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 600;
 
-  /* identical to box height, or 100% */
   letter-spacing: -0.02em;
   font-feature-settings: 'liga' off;
 
@@ -57,7 +56,6 @@ export const Content = styled.div`
   font-style: normal;
   font-weight: 400;
 
-  /* or 129% */
   text-align: center;
   letter-spacing: -0.02em;
   margin-top: 14px;
@@ -83,8 +81,3 @@ export const WrapperBtn = styled.div`
     gap: 18px;
   }
 `;
-
-// export const ButtonWelcomSection = styled.div`
-//   /* button {
-//   } */
-// `;
