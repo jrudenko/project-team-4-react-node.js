@@ -16,6 +16,6 @@ export const ModalWrapper = styled.div`
 export const ModalWindow = styled.div`
   overflow: hidden;
   border-radius: ${({ isMenu }) => (isMenu ? 0 : '24px')};
-  background-color: ${props => props.theme.colors.white[100]};
+  background-color: ${props => props.theme.colors.white};
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
 `;
