@@ -6,8 +6,14 @@ export const getShoppingList = async () => {
   return list.data;
 };
 
-export const deleteShoppingItem = async productId => {
-  const item = await axios.patch(`/shopping-list/${productId}`);
+export const deleteShoppingItem = async body => {
+  const item = await axios.patch(`/shopping-list`, body);
+
+  return item.data;
+};
+
+export const addShoppingItem = async body => {
+  const item = await axios.post(`/shopping-list`, body);
 
   return item.data;
 };

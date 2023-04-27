@@ -1,42 +1,80 @@
-import {useState, useEffect} from 'react'
-import {Wrapper, TableData,
-    Container,
-    Title,
-    List,
-    Item,
-    RecipeImage,
-    IngredientTitle,
-    MeasureInfo,
-    ContainerCheckbox,
-    Checkbox,
-    Icon, Box} from './RecipeInngredientsList.styled'
-    import { BiCheckSquare } from 'react-icons/bi';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import {
+  Wrapper,
+  TableData,
+  Container,
+  Title,
+  List,
+  Item,
+  RecipeImage,
+  IngredientTitle,
+  MeasureInfo,
+  ContainerCheckbox,
+  Checkbox,
+  Icon,
+  Box,
+} from './RecipeInngredientsList.styled';
+import { BsCheckLg } from 'react-icons/bs';
+import {
+  addShoppingItem,
+  deleteShoppingItem,
+} from '../../service/API/shoppingList';
 
+const RecipeInngredientsList = ({ ingredients, ingList }) => {
+  const [allIngredients, setAllIngredients] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-const RecipeInngredientsList = ({ingredients, ingList}) => {
-   
-const [allIngredients, setAllIngredients] = useState(null)
-
-
-useEffect(() => {
+  useEffect(() => {
     if (ingredients && ingList) {
-        const mergeArray = ingredients.map(item1 => {
-            const {ttl, thb} = ingList.find(item2 => { return item2._id === item1.id})
-            return {...item1, ttl:ttl, thb:thb}
-        })
-        setAllIngredients(mergeArray)
-        
+      const mergeArray = ingredients.map(item1 => {
+        const { ttl, thb } = ingList.find(item2 => {
+          return item2._id === item1.id;
+        });
+        return { ...item1, ttl: ttl, thb: thb };
+      });
+      setAllIngredients(mergeArray);
     }
-}, [ingredients, ingList])
+  }, [ingredients, ingList]);
 
+  const hendlerToggle = async (e, ing) => {
+    if (isLoading) return;
+    setIsLoading(true);
+    const bodyPost = {
+      iid: ing.id,
+      ttl: ing.ttl,
+      thb: ing.thb,
+      number: ing.measure,
+    };
+    const bodyPatch = {
+      iid: ing.id,
+      number: ing.measure,
+    };
 
-    const hendler = (e) => {
-console.log(e)
+    if (e.target.checked) {
+      try {
+        await addShoppingItem(bodyPost);
+        setIsLoading(false);
+        toast.success(`${ing.ttl} add to shopping list`);
+      } catch (err) {
+        toast.error('Something went wrong by adding ingredients');
+      }
     }
+    if (!e.target.checked) {
+      try {
+        await deleteShoppingItem(bodyPatch);
+        setIsLoading(false);
+        toast.success(`${ing.ttl} remove to shopping list`);
+      } catch (err) {
+        toast.error('Something went wrong by removing ingredients');
+      }
+    }
+    setIsLoading(false);
+  };
 
- return (
-     allIngredients && (
-        <Wrapper>
+  return (
+    allIngredients && (
+      <Wrapper>
         <TableData>
           <Title>Ingredients</Title>
           <Container>
@@ -45,8 +83,8 @@ console.log(e)
           </Container>
         </TableData>
         <List>
-      { allIngredients.map (ing => (
-        <Item key={ing.id}>
+          {allIngredients.map(ing => (
+            <Item key={ing.id}>
               <Box>
                 <RecipeImage src={ing.thb} alt={ing.ttl} />
                 <IngredientTitle>{ing.ttl}</IngredientTitle>
@@ -56,25 +94,22 @@ console.log(e)
                 <ContainerCheckbox>
                   <Checkbox
                     type="checkbox"
-                    checked={true}
-                    onChange={hendler}
-                    name="CheckboxName"
+                    onChange={e => {
+                      hendlerToggle(e, ing);
+                    }}
+                    name={ing.id}
                   />
                   <Icon>
-                    <BiCheckSquare />
+                    <BsCheckLg />
                   </Icon>
                 </ContainerCheckbox>
               </Container>
             </Item>
-      ))}
-            
-          
+          ))}
         </List>
-        {/* {error && <ShowToastError msg="Failed to add to shopping cart" />} */}
       </Wrapper>
     )
-    
- )
-}
+  );
+};
 
-export default RecipeInngredientsList
+export default RecipeInngredientsList;
