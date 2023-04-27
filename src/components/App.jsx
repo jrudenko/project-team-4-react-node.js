@@ -171,7 +171,7 @@ export const App = () => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme={darkMode ? 'darkTheme' : 'lightTheme'}
+          theme={darkMode ? 'dark' : 'light'}
         />
       </ThemeProvider>
     </ColorModeContext.Provider>
