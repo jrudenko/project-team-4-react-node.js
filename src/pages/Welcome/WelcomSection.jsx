@@ -6,7 +6,6 @@ import {
   LogoWrapper,
 } from './WelcomSection.styled';
 import React from 'react';
-// import ReplaceableButton from 'components/ButtonMain/ButtonMain';
 import Button from 'components/Button/Button';
 import logosvg from '../../images/SVG/Logo/WelcomeSectionLogo.svg';
 
