@@ -6,6 +6,15 @@ export const Button = styled.button`
   border-radius: 24px 44px;
   border: 1px solid;
   padding: 12px 24px;
+  transition: background-color 0.2s, color 0.2s;
+  &:hover {
+    color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.colorAccent};
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const PreviewCategoriesStyled = styled.div`

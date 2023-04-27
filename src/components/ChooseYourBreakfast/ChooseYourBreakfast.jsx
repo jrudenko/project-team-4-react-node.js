@@ -16,6 +16,7 @@ const СhooseYourBreakfast = () => {
       <SeeRecipeLink to="/categories/Breakfast">
         <span>See recipes </span>
         <svg
+          style={{ marginLeft: '6px' }}
           width="15"
           height="12"
           viewBox="0 0 15 12"
