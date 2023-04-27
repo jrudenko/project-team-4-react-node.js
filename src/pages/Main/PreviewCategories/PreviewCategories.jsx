@@ -15,13 +15,11 @@ const PreviewCategories = () => {
     const receiveCategories = async () => {
       const dataReceived = await getCategoryList(token);
       setPopularCategories(dataReceived);
-      console.log(dataReceived);
     };
     receiveCategories().finally(() => {
       setLoading(false); // установка loading в false, когда данные получены
     });
   }, [token]);
-  console.log(popularCategories);
 
   if (loading) {
     return <div>Loading...</div>; // заглушка, пока данные не загружены
@@ -38,48 +36,44 @@ const PreviewCategories = () => {
     c => c.category === 'Dessert'
   );
 
-function handleClick() {
-  console.log('Кнопка была нажата');
-  navigate(`/categories/Beef`)
-}
+  function handleClick() {
+    navigate(`/categories/Beef`);
+  }
 
-
-  console.log(CategoryBeef);
   return (
     <>
-    <PreviewCategoriesStyled>
-      {CategoryBeef && <CategoryCard name={'Beef'} popular={CategoryBeef} />}
-      {CategoryBreakfast && (
-        <CategoryCard name={'Breakfast'} popular={CategoryBreakfast} />
-      )}
-      {CategoryChicken && (
-        <CategoryCard name={'Chicken'} popular={CategoryChicken} />
-      )}
-      {CategoryDessert && (
-        <CategoryCard name={'Dessert'} popular={CategoryDessert} />
-      )}
+      <PreviewCategoriesStyled>
+        {CategoryBeef && <CategoryCard name={'Beef'} popular={CategoryBeef} />}
+        {CategoryBreakfast && (
+          <CategoryCard name={'Breakfast'} popular={CategoryBreakfast} />
+        )}
+        {CategoryChicken && (
+          <CategoryCard name={'Chicken'} popular={CategoryChicken} />
+        )}
+        {CategoryDessert && (
+          <CategoryCard name={'Dessert'} popular={CategoryDessert} />
+        )}
 
         <Button
           onClick={handleClick}
           look="rounded_other"
-        marginTop="100px"
-        width="195px"
-        heigth="47px"
-        widthTablet="239px"
-        widthDesktop="239px"
-        heigthTablet="61px"
-        heigthDesktop="61px"
-        fontSize="14px"
-        fontSizeTablet="16px"
-        fontSizeDesktop="16px"
-        lineHeight="21px"
-        lineHeightTablet="24px"
-        lineHeightDesktop="24px"
+          marginTop="100px"
+          width="195px"
+          heigth="47px"
+          widthTablet="239px"
+          widthDesktop="239px"
+          heigthTablet="61px"
+          heigthDesktop="61px"
+          fontSize="14px"
+          fontSizeTablet="16px"
+          fontSizeDesktop="16px"
+          lineHeight="21px"
+          lineHeightTablet="24px"
+          lineHeightDesktop="24px"
         >
           Other categories
         </Button>
-    </PreviewCategoriesStyled>
-
+      </PreviewCategoriesStyled>
     </>
   );
 };
