@@ -3,10 +3,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getCategoryList = createAsyncThunk(
   'add/getCategoryList',
-  async (_, thunkAPI) => {
+  async (_, thunkAPI) => {    
     try {
       const response = await axios.get('/recipes/category-list');
-      return response.data;
+      return response.data.categoryList;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -18,7 +18,8 @@ export const getIngredientsList = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/ingredients/list');
-      return response.data;
+
+      return response.data.searchResult;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -27,7 +28,7 @@ export const getIngredientsList = createAsyncThunk(
 
 export const addRecipe = createAsyncThunk(
   'add/addRecipe',
-  async (recipe, thunkAPI) => {
+  async (recipe, thunkAPI) => {    
     console.log(recipe);
     console.log(Object.fromEntries(recipe.entries()));
     try {
@@ -36,7 +37,8 @@ export const addRecipe = createAsyncThunk(
           'Content-Type': 'multipart/form-data',
         },
       });
-      return response.data;
+      debugger;
+      return response.data.result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

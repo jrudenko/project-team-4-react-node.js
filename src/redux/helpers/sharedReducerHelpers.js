@@ -1,7 +1,7 @@
 export const handlePending = state => {
   state.isLoading = true;
 };
-export const handleFulfilled = state => {
+export const handleFulfilled = state => {  
   state.isLoading = false;
   state.error = null;
 };

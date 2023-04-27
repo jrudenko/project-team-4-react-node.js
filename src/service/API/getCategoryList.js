@@ -6,8 +6,10 @@ const getCategoryList = async token => {
       'https://yummy-rest-api.yurgo.fun/api/recipes/main-page'
     );
 
-    const responseReceived = await list;
-    return responseReceived.data.result;
+    // const result = responseReceived.data.result.map(category =>
+    //   categoryOptimization(category)
+    // );
+    return list.data.result;
   } catch (error) {
     return [];
   }

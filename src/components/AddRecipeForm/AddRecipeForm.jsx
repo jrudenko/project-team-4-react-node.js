@@ -22,8 +22,8 @@ import {
 import { validationSchema } from '../../redux/helpers/validationSchemaAddRecipeForm';
 import { Loader } from 'components/Loader/Loader';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
-import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import { RecipePreapationFields } from './RecipePreapationFields/RecipePreapationFields';
+import { RecipeIngredientsFields } from './RecipeIngredientsFields/RecipeIngredientsFields';
 import Button from '../../components/Button/Button';
 import { ShowToastError } from '../../redux/helpers/showToastError';
 import { createArrTimesPrepare } from '../../redux/helpers/createArrTimesPrepare';
@@ -42,8 +42,8 @@ const initialValues = {
 
 export const AddRecipeForm = props => {
   const dispatch = useDispatch();
-  const {categoryList} = useSelector(selectCategory);
-  const ingredientsListAll = useSelector(selectIngredients);
+  const categoryList = useSelector(selectCategory);
+  const ingredientsListAll = useSelector(selectIngredients);  
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const [submitRecipe, setSubmitRecipe] = useState(false);
@@ -53,10 +53,10 @@ export const AddRecipeForm = props => {
     dispatch(getCategoryList());
     dispatch(getIngredientsList());
   }, [dispatch]);
-
+  
   const optionsCategory = createOptionCategory(categoryList);
   const optionsTimes = createOptionTimes(createArrTimesPrepare(5, 120, 5));
-  const optionsIngredients = createOptionIngredients(ingredientsListAll.searchResult);
+  const optionsIngredients = createOptionIngredients(ingredientsListAll);
   const optionMesure = createOptionMeasure();
 
   const handleSubmit = async (values, actions) => {
@@ -64,7 +64,7 @@ export const AddRecipeForm = props => {
       values;
     const instructions = preparation.join('\n');
     const ingredientsList = ingredients.flatMap(item => {
-      return ingredientsListAll.searchResult.reduce((acc, ingr) => {
+      return ingredientsListAll.reduce((acc, ingr) => {
         if (item.id === ingr._id) {
           acc.id = ingr._id;
           acc.measure = `${item.quantity} ${item.measure}`;
@@ -73,7 +73,8 @@ export const AddRecipeForm = props => {
           acc.desc = ingr.desc;
         }
         return acc;
-      }, {});
+      }, {}
+      );
     });
 
     const res = await fetch(placeholderNoUserImg);

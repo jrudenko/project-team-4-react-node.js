@@ -24,6 +24,7 @@ const PreviewCategories = () => {
   if (loading) {
     return <div>Loading...</div>; // заглушка, пока данные не загружены
   }
+
   const CategoryBeef = popularCategories.filter(c => c.category === 'Beef');
   const CategoryBreakfast = popularCategories.filter(
     c => c.category === 'Breakfast'
