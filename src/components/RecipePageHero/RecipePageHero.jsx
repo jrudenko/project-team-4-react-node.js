@@ -6,6 +6,7 @@ import {
   StyledClock,
 } from './RecipePageHero.styled';
 import ButtonSkew from 'components/ButtonSkew';
+import { Loader } from 'components/Loader/Loader';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from 'react';
@@ -28,7 +29,6 @@ const RecipePageHero = ({ recipe = null, isOwnRecipe }) => {
   const loader = useSelector(selectFavoriteIsLoading);
 
   const [isFav, setIsFav] = useState(false);
-  // console.log(`allRecipes`, allRecipes);
 
   useEffect(() => {
     if (allRecipes.favoriteRecipes?.length > 0) {
@@ -62,7 +62,7 @@ const RecipePageHero = ({ recipe = null, isOwnRecipe }) => {
       setIsFav(true);
       toast.success('Recipe added to favorite');
     } catch (err) {
-      console.log(err);
+      toast.error('Something went wrong by adding recipe');
     }
   };
 
@@ -70,47 +70,41 @@ const RecipePageHero = ({ recipe = null, isOwnRecipe }) => {
     try {
       await dispatch(removeRecipeFromFavorite(recipe._id)).unwrap();
       setIsFav(false);
-      toast.success('Recipe added to favorite');
+      toast.success('Recipe remove from favorite');
     } catch (err) {
-      console.log(err);
+      toast.error('Something went wrong by removing recipe');
     }
   };
 
   return (
     <Wrapper>
-      {recipe ? (
+      {!loading ? (
         <>
-          {!loading ? (
-            <>
-              <HeroTitle>{recipe.title}</HeroTitle>
-              <HeroText>{recipe.description.slice(0, 200)}...</HeroText>
-              {!isOwnRecipe &&
-                (!isFav ? (
-                  <ButtonSkew
-                    type="button"
-                    text={loader ? 'loader...' : 'Add to favorite recipes'}
-                    fn={addFavRecipe}
-                  />
-                ) : (
-                  <ButtonSkew
-                    type="button"
-                    text={loader ? 'loader...' : 'Remove from favorite recipes'}
-                    fn={removeFavRecipe}
-                  />
-                ))}
-              {recipe.time && (
-                <WrapperTime>
-                  <StyledClock />
-                  <span>{recipe.time + ` min`}</span>
-                </WrapperTime>
-              )}
-            </>
-          ) : (
-            <HeroTitle>Loading...</HeroTitle>
+          <HeroTitle>{recipe.title}</HeroTitle>
+          <HeroText>{recipe.description.slice(0, 200)}...</HeroText>
+          {!isOwnRecipe &&
+            (!isFav ? (
+              <ButtonSkew
+                type="button"
+                text={loader ? 'loader...' : 'Add to favorite recipes'}
+                fn={addFavRecipe}
+              />
+            ) : (
+              <ButtonSkew
+                type="button"
+                text={loader ? 'loader...' : 'Remove from favorite recipes'}
+                fn={removeFavRecipe}
+              />
+            ))}
+          {recipe.time && (
+            <WrapperTime>
+              <StyledClock />
+              <span>{recipe.time + ` min`}</span>
+            </WrapperTime>
           )}
         </>
       ) : (
-        <HeroTitle>Recipe not found</HeroTitle>
+        <Loader pageHeight="100vh" />
       )}
     </Wrapper>
   );

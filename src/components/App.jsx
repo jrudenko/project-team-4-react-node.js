@@ -92,9 +92,12 @@ export const App = () => {
                   </Suspense>
                 }               
               />
-              <Route path="add" element={ <Suspense fallback={<Loader pageHeight="100vh" />}>
+              <Route path="add" element={
+                <Suspense fallback={<Loader />}>
                     <AddRecipePage />
-                  </Suspense>} />
+                </Suspense>
+              }
+              />
               <Route
                 path="favorite"
                 element={
