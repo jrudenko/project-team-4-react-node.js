@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import { FooterConteiner } from './Footer.styled';
+import { FooterConteiner,MenuBox, MainBox, FormBox,  DescreptionWrapper, SocialMadia} from './Footer.styled';
 
 import { Preferences } from './BenefitsList';
 import { LogoFooter } from './LogoFooter';
@@ -8,17 +8,36 @@ import { Networks } from 'components/SocialMedia/Networks';
 import SubscribeForm from 'components/SubscribeForm/SubscribeForm';
 import DownFooter from 'components/Footer/DownFooter/DownFooter';
 
+
 export const Footer = () => {
   return (
     <>
       <FooterConteiner>
-        <LogoFooter />
-        <Preferences />
-        <FooterMenu />
-        <Networks />
-        <SubscribeForm />
+        <MainBox>
+
+           <DescreptionWrapper>
+                <LogoFooter/>
+                <Preferences />
+          </DescreptionWrapper>
+
+           <MenuBox>
+             <FooterMenu />
+          </MenuBox>
+
+          <FormBox>
+          <SubscribeForm />
+        </FormBox>
+
+        </MainBox>
+
+        <SocialMadia>
+           <Networks />
+        </SocialMadia>
+
       </FooterConteiner>
+
       <DownFooter></DownFooter>
-    </>
+      </>
+
   );
 };

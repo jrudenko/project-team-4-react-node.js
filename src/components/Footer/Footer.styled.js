@@ -3,62 +3,114 @@ import styled from 'styled-components';
 
 //стилі контейнера Footer
 export const FooterConteiner = styled.div`
-  background-color: ${p => p.theme.colors.switches.lightTheme.footerBg};
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 28px;
+  background-color: ${p => p.theme.colors.footerBg};
   height: 435px;
-  left: 0px;
-  padding: 85px, 18px, 85px, 28px;
-
-  @media (min-width: 768px) {
-    padding: 32px, 50px, 94px, 24px;
+  width: 100%;
+  /* gap: 40px; */
+  @media (min-width: 768px )  {
     height: 423px;
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 50px;
   }
   @media (min-width: 1440px) {
-    /* width: 1440px; */
-    padding-left: 100px, 64px, 100px, 50px;
     height: 414px;
+  }
+`;
+
+export const MainBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  @media (min-width: 918px) and (max-width:1439px) {
+    padding-top:45px;
+  }
+
+
+    @media (min-width: 1440px) {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 41px;
+
+  }
+`
+
+export const MenuBox = styled.div`
+  justify-content:center;
+  margin-bottom: 32px;
+`;
+
+
+export const FormBox = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 38px;
+  }
+
+  @media (min-width: 918px) {
+    flex-direction: column;
+
+  }
+
+  @media (min-width: 1440px) {
+    flex-direction: column;
+    margin: 0;
+  }
+`;
+
+export const DescreptionWrapper = styled.div`
+  margin-bottom: 32px;
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 72px;
+  }
+  @media (min-width: 1440px) {
+    gap: 40px;
   }
 `;
 
 //стилі компонента-Лого+Заголовок
 export const LogoBox = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0px;
+  justify-content: center;
   gap: 8px;
 
-  position: absolute;
-  width: 143px;
-  height: 32px;
-  left: 116px;
-  top: 28px;
   @media (min-width: 768px) {
     gap: 12px;
-    width: 215px;
-    height: 44px;
-    left: 32px;
-    top: 50px;
+    margin-bottom: 24px;
   }
   @media (min-width: 1440px) {
-    left: 100px;
-    top: 64px;
+    margin:0;
   }
 `;
 
 export const Logo = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* padding: 14px 24px; */
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
 
-  width: 32px;
-  height: 32px;
-
-  background: #ebf3d4;
-  border-radius: 6px;
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     width: 44px;
     height: 44px;
     border-radius: 12px;
@@ -67,8 +119,6 @@ export const Logo = styled(Link)`
 
 export const FooterTitle = styled.div`
   color: ${p => p.theme.colors.white};
-  width: 102px;
-  height: 18px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -77,8 +127,6 @@ export const FooterTitle = styled.div`
   @media (min-width: 768px) {
     font-size: 28px;
     line-height: 28px;
-    width: 159px;
-    height: 28px;
   }
 `;
 
@@ -89,50 +137,28 @@ export const BenefitsList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 10px;
-
-    position: absolute;
-    /* width: 380px; */
-    height: 102px;
-    left: 32px;
-    top: 118px;
   }
   @media (min-width: 1440px) {
     gap: 12px;
-    width: 418px;
-    height: 156px;
-    left: 100px;
-    top: 148px;
   }
 `;
 
 export const Benefits = styled.li`
+  color: ${p => p.theme.colors.white};
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 14px;
+  }
+`;
+export const BenefitsText = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0, 02em;
-  color: ${p => p.theme.colors.white};
-  &:not(:last-child) {
-    margin-bottom: 12px;
-  }
-  @media (min-width: 768px) {
-    font-size: 18px;
-    line-height: 24px;
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
-`;
-
-export const BenefitsText = styled.span`
-  @media (min-width: 768px) {
-    white-space: nowrap;
-  }
-  @media (min-width: 1440px) {
-    display: block;
-    text-indent: 12px;
-  }
+  font-family: 'Poppins';
+  font-style: normal;
+  padding: 0;
 `;
 
 //стилі компонента- меню(футер)
@@ -140,32 +166,35 @@ export const MenuItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  gap: 14px;
+  gap: 10px;
 
-  position: absolute;
-  width: 89px;
-  left: 143px;
-  top: 92px;
   @media (min-width: 768px) {
     align-items: flex-start;
-    gap: 20px;
-    height: 170px;
-    left: 585px;
-    top: 50px;
+    gap: 18px;
   }
   @media (min-width: 1440px) {
     gap: 24px;
-    height: 186px;
-    left: 677px;
-    top: 64px;
   }
 `;
 
-export const Item = styled.div`
-  font-weight: 500;
+export const Item = styled.span`
+  font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 14px;
+  text-decoration: none;
+  font-family: 'Poppins';
+  font-style: normal;
   color: ${p => p.theme.colors.white};
   letter-spacing: -0.02em;
+  :hover {
+    color: ${p => p.theme.colors.colorAccent};
+  }
+`;
+
+export const SocialMadia = styled.div`
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;

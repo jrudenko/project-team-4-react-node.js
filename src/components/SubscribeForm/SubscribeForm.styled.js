@@ -8,28 +8,13 @@ export const SubForm = styled.form`
   padding: 0px;
   gap: 8px;
 
-  position: absolute;
-  width: 204px;
-  height: 84px;
-  left: 94px;
-  top: 270px;
   @media (min-width: 768px) {
     flex-direction: row;
     gap: 12px;
-
-    width: 442px;
-    height: 50px;
-    left: 163px;
-    top: 292px;
   }
   @media (min-width: 1440px) {
     flex-direction: column;
     gap: 28px;
-
-    width: 339px;
-    height: 240px;
-    left: 1001px;
-    top: 64px;
   }
 `;
 export const TextFrame = styled.div`
@@ -40,9 +25,6 @@ export const TextFrame = styled.div`
     align-items: flex-start;
     padding: 0px;
     gap: 14px;
-
-    width: 339px;
-    height: 77px;
   }
 `;
 
@@ -54,6 +36,8 @@ export const SubTitle = styled.h3`
 `;
 
 export const SubText = styled.p`
+  width: 339px;
+  height: 36px;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -67,28 +51,15 @@ export const FormFrame = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
-
-  /* position: absolute; */
-  width: 204px;
-  height: 84px;
-  /* left: 103px;
-top: 276px; */
   @media (min-width: 768px) {
     flex-direction: row;
     gap: 12px;
-
-    width: 442px;
-    height: 50px;
-    /* left: 163px;
-top: 292px; */
   }
   @media (min-width: 1440px) {
     flex-direction: column;
     align-items: center;
     gap: 16px;
 
-    width: 339px;
-    height: 135px;
   }
 `;
 
@@ -119,6 +90,7 @@ export const SubInput = styled.input`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border:none;
   background-color: ${p => p.theme.colors.button.secondaryBag};
   color: ${p => p.theme.colors.whiteText};
   @media (min-width: 768px) {

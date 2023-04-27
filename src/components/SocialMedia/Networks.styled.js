@@ -1,71 +1,39 @@
 import styled from 'styled-components';
-import { SiFacebook, SiYoutube, SiTwitter, SiInstagram } from 'react-icons/si';
+import { BsYoutube, BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs';
 
 export const MediaConteiner = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 0px;
   gap: 14px;
 
-  position: absolute;
-  width: 119px;
-  height: 19px;
-  left: 128px;
-  top: 398px;
   @media (min-width: 768px) {
     gap: 18px;
-    width: 134px;
-    height: 19px;
-    left: 317px;
-    top: 380px;
-  }
-  @media (min-width: 1440px) {
-    left: 653px;
-    top: 345px;
   }
 `;
 
-export const FacebookIcon = styled(SiFacebook)`
+export const FacebookIcon = styled(BsFacebook)`
   color: ${p => p.theme.colors.colorAccent};
-  width: 20px;
-  height: 20px;
   &:hover {
     color: ${p => p.theme.colors.white};
   }
 `;
 
-export const YoutubeIcon = styled(SiYoutube)`
+export const YoutubeIcon = styled(BsYoutube)`
   color: ${p => p.theme.colors.colorAccent};
-  width: 19px;
-  height: 14px;
   &:hover {
     color: ${p => p.theme.colors.white};
   }
-  @media (min-width: 768px) {
-    width: 20px;
-    height: 15px;
-  }
 `;
-export const TwitterIcon = styled(SiTwitter)`
+export const TwitterIcon = styled(BsTwitter)`
   color: ${p => p.theme.colors.colorAccent};
-  width: 20px;
-  height: 16px;
   &:hover {
     color: ${p => p.theme.colors.white};
   }
 `;
 
-export const InstagramIcon = styled(SiInstagram)`
+export const InstagramIcon = styled(BsInstagram)`
   color: ${p => p.theme.colors.colorAccent};
-  width: 17px;
-  height: 17px;
   &:hover {
     color: ${p => p.theme.colors.white};
-  }
-  @media (min-width: 768px) {
-    width: 20px;
-    height: 20px;
   }
 `;
