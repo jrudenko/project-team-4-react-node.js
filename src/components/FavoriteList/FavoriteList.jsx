@@ -21,13 +21,10 @@ const FavoriteList = () => {
     try {
       setLoading(true);
       const data = await getFavoriteRecipes();
-      // console.log(data);
       if (data.favoriteRecipes.length > 0) {
         setAllRecipes(data.favoriteRecipes);
-        // console.log("dddd", data.favoriteRecipes);
       }
-      // setAllRecipes(data.favoriteRecipes);
-      //   console.log();
+
     } catch (error) {
       toast.error('Something went wrong by getting recipes');
     } finally {
@@ -35,17 +32,13 @@ const FavoriteList = () => {
     }
   };
 
-  // useLayoutEffect(() => {
-  //   getFavorites();
-  // }, []);
-
   useEffect(() => {
     getFavorites();
   }, []);
 
-  const handleDelete = async id => {
+  const handleDelete = async _id => {
     try {
-      await deleteFavoriteRecipe(id);
+      await deleteFavoriteRecipe(_id);
       const data = await getFavoriteRecipes();
       setAllRecipes(data);
       setCurrentItems(data);
@@ -60,19 +53,18 @@ const FavoriteList = () => {
         {loading && <Loader />}
         {currentItems.length !== 0 &&
           !loading &&
-          currentItems.map(({ description, preview, time, title, id }) => (
+          currentItems.map(({ description, preview, time, title, _id }) => (
             <MyRecipeItem
-              key={id}
+              key={_id}
               description={description}
               preview={preview}
               time={time}
               title={title}
-              id={id}
+              id={_id}
               handleDelete={handleDelete}
             />
           ))}
         {allRecipes.length === 0 && !loading && (
-          // <ListText>You don't have your recipes</ListText>
           <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
         )}
       </List>

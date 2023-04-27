@@ -8,13 +8,13 @@ export const getFavoriteRecipes = async () => {
     console.error(error);
   }
 };
-export const addToFavorites = async id => {
-  return await axios.post(`/favorite/${id}`);
+export const addToFavorites = async _id => {
+  return await axios.post(`/favorite/${_id}`);
 };
 
-export const deleteFavoriteRecipe = async id => {
+export const deleteFavoriteRecipe = async _id => {
   try {
-    const { data } = await axios.delete(`/favorite/${id}`);
+    const { data } = await axios.delete(`/favorite/${_id}`);
     return data;
   } catch (error) {
     console.error(error);
