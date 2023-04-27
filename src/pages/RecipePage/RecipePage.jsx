@@ -13,8 +13,8 @@ import {
 import { getRecipeById, getOwnRecipeById } from 'redux/recipe/recipeOperation';
 import { getIngredientsList } from '../../service/API/serviseApi';
 import { Loader } from 'components/Loader/Loader';
-import EmptyPage  from 'components/EmptyPage';
-import Scroll from 'utils/scroll'
+import EmptyPage from 'components/EmptyPage';
+import Scroll from 'utils/scroll';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -66,7 +66,7 @@ const RecipePage = () => {
 
   return (
     <>
-    <Scroll/>
+      <Scroll />
       {isLoading && <Loader pageHeight="100vh" />}
       {currentRecipe !== null ? (
         <>
@@ -75,10 +75,12 @@ const RecipePage = () => {
             ingredients={currentIngredients}
             ingList={listIngredients}
           />
-          <RecipePreparation ingredients={currentIngredients} />
+          <RecipePreparation recipe={currentRecipe} />
         </>
       ) : (
-        !isLoading && <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
+        !isLoading && (
+          <EmptyPage text="You currently don't have any favorite recipes added. Let's add some!" />
+        )
       )}
     </>
   );
