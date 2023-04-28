@@ -43,6 +43,7 @@ export const ButtonClose = styled.button`
 export const CloseIcon = styled(IoClose)`
   width: 20px;
   height: 20px;
+  color: ${p => p.theme.colors.headerText};
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
@@ -61,6 +62,8 @@ export const LabelPhoto = styled.label`
   margin-bottom: 54px;
   width: 88px;
   height: 88px;
+  border-radius: 50px;
+  background-color: ${p => p.theme.colors.grey};
   @media screen and (min-width: 768px) {
     width: 103px;
     height: 103px;
@@ -128,6 +131,7 @@ export const UserIcon = styled(FiUser)`
   width: 18px;
   height: 18px;
   cursor: pointer;
+  color: ${p => p.theme.colors.headerText};
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
@@ -169,12 +173,12 @@ export const Input = styled(Field)`
   font-size: ${p => p.theme.fontSizes.s}px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: ${p => p.theme.colors.mainDark};
+  color: ${p => p.theme.colors.headerText};
   outline: none;
   background-color: transparent;
   width: 282px;
 
-  border: 1px solid ${p => p.theme.colors.mainDark};
+  border: 1px solid ${p => p.theme.colors.headerText};
   border-radius: 6px;
   margin-bottom: 24px;
   :focus-within {
