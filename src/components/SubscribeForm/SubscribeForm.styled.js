@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { ReactComponent as envelope } from '../../images/SVG/envelope.svg';
 import { Field } from 'formik';
 
+
 export const SubForm = styled.form`
   @media (min-width: 768px) {
     flex-direction: row;
@@ -91,7 +92,7 @@ export const SubInput = styled(Field)`
     outline:none;
   }
   @media (min-width: 768px) {
-    height: 49px;
+    height: 48px;
   }
   @media (min-width: 1440px) {
     height: 57px;
