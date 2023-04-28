@@ -24,7 +24,7 @@ export const deleteFavoriteRecipe = async _id => {
 export const getMyRecipes = async () => {
   try {
     const { data } = await axios.get(`/ownRecipes`);
-    return data.recipes;
+    return data.data;
   } catch (error) {
     console.error(error);
   }

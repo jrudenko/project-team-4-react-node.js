@@ -4,6 +4,7 @@ export const List = styled.div`
   position: relative;
   padding-top: 50px;
   padding-bottom: 40px;
+
   @media ${props => props.theme.device.tablet} {
     padding-top: 100px;
     padding-bottom: 50px;
@@ -38,7 +39,9 @@ export const ButtonDelete = styled.button`
   :focus {
     background: #22252a;
     color: ${props => props.theme.colors.textWhite};
-    scale: 1.1;
+    /* scale: 1.1;   */
+    transform: scale(1.1);
+    transform: scale(1.1);
   }
   @media ${props => props.theme.device.tablet} {
     font-size: 22px;

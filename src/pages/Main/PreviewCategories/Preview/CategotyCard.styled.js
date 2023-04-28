@@ -54,7 +54,6 @@ const CategoryCardStyled = styled.div`
     line-height: 28px;
     letter-spacing: -0.02em;
     font-feature-settings: 'liga' off;
-    /* color: #001833; */
     color: ${p => p.theme.colors.heroText};
     margin-bottom: 32px;
     @media ${props => props.theme.device.tablet} {
@@ -74,7 +73,9 @@ const CategoryCardStyled = styled.div`
     border-radius: 6px;
     margin-left: auto;
     border: none;
+
     & > span {
+      transition: color 0.2s ease-in-out;
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 400;
@@ -84,6 +85,10 @@ const CategoryCardStyled = styled.div`
     }
     &:hover {
       cursor: pointer;
+      &:hover span,
+      &:focus span {
+        color: #000000;
+      }
     }
   }
 `;
@@ -92,7 +97,8 @@ export const RecipeStyled = styled.div`
   background: url(${props => props.imgUrl});
   background-size: cover;
   cursor: pointer;
-
+  position: relative;
+  overflow: hidden;
   width: 343px;
   height: 323px;
   border-radius: 8px;
@@ -110,12 +116,9 @@ export const RecipeStyled = styled.div`
 
   & > span {
     display: block;
-
     margin-left: 18px;
     margin-right: 18px;
     padding: 16px;
-
-    /* background-color: #fff; */
     background-color: ${p => p.theme.colors.background};
     font-family: 'Poppins';
     font-style: normal;
@@ -123,13 +126,45 @@ export const RecipeStyled = styled.div`
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.24px;
-    /* color: #3e4462; */
     color: ${p => p.theme.colors.primaryText};
     border-radius: 8px;
-
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover:before,
+  &:focus:before {
+    opacity: 1;
+  }
+
+  & > span {
+    position: relative;
+    z-index: 2;
+  }
 `;
+
 export default CategoryCardStyled;

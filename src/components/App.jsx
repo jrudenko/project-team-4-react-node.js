@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { PrivateRoute, RestrictedRoute } from './Routes';
 import { merge, get } from 'lodash';
 import { refreshUser } from '../redux/auth/operations';
-import { StyledToastContainer } from 'pages/Registration/RegistrationPage.styled';
+import { StyledToastContainer, GlobalStyle } from 'pages/Registration/RegistrationPage.styled';
 
 import WelcomSection from 'pages/Welcome/WelcomSection';
 import NotFoundPage from 'pages/NotFoundPage';
@@ -161,6 +161,7 @@ export const App = () => {
             />
           </Routes>
         )}
+        <GlobalStyle/>
         <StyledToastContainer
           osition="top-center"
           autoClose={3000}

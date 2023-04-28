@@ -28,15 +28,15 @@ const MainSearchPage = () => {
       setSearch('');
       return;
     }
-    navigate(`/search?query=${search}`);
+    navigate(`/search?query=${search}&type=title`);
     setSearch('');
   };
 
   return (
     <MainSearch onSubmit={onSubmit}>
       <input
-        type="search"
-        placeholder=""
+        type="text"
+        placeholder="Enter query"
         value={search}
         onChange={handleNameChange}
       />

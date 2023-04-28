@@ -10,6 +10,14 @@ import regImageDesktop from '../../images/desktop/auth-pana-des.png';
 // import regImageDesktopRetina from '../../images/desktop/auth-pana-des-ret.png';
 
 import { ToastContainer } from 'react-toastify';
+import { createGlobalStyle } from 'styled-components';
+
+ export const GlobalStyle = createGlobalStyle`
+  :root {
+    --toastify-icon-color-success: #8BAA36;
+    --toastify-color-success: #8BAA36;
+  }
+`;
 
 export const AuthMain = styled.main`
   position: relative;
@@ -78,7 +86,15 @@ export const AuthBackground = styled.div`
 `;
 
 export const StyledToastContainer = styled(ToastContainer)`
-  .Toastify__toast {
-    font-size: 12px;
+.Toastify__toast {
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
   }
+};
+
+.Toastify__toast-theme--dark {
+  background:#22252A
+}
 `;

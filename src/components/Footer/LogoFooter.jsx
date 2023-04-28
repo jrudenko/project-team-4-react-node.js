@@ -1,6 +1,5 @@
 import { LogoBox, FooterTitle, Logo } from './Footer.styled';
 import { ReactComponent as SvgLogo } from '../../images/SVG/Logo/logoInv.svg';
-// import { Link } from 'react-router-dom';
 
 export const LogoFooter = () => {
   return (
