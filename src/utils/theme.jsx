@@ -64,6 +64,9 @@ export const theme = {
       labelText: '#000000',
     },
 
+
+
+    
     switches: {
       darkTheme: {
         background: '#1E1F28',
@@ -111,6 +114,9 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
+        boxShadow: {
+    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+    },
       },
       lightTheme: {
         background: '#FAFAFA',
@@ -158,6 +164,12 @@ export const theme = {
         paginateArrow: 'rgba(169, 169, 169, 0.73)',
         paginatePage: '#656565',
         paginateActive: '#EBF3D4',
+
+        boxShadow: {
+    boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
+    },
+
+
       },
     },
   },
@@ -165,6 +177,8 @@ export const theme = {
   transitions: {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
+
+ 
   device: {
     mobile: `(min-width: 375px)`,
     tablet: `(min-width: 768px)`,

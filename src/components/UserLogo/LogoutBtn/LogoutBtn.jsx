@@ -46,6 +46,7 @@ const LogoutBtn = ({ onClose }) => {
           fontSizeTablet="16px"
           lineHeight="18px"
           onClick={onClose}
+          colors
         >
           Cancel
         </Button>
