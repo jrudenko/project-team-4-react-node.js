@@ -16,12 +16,12 @@ export const CardItem = styled.li`
     margin-bottom: 0;
   }
     &:hover {
-    transition: 1s;
-    transform: scale(0.9);
+    transition: 5s;
+    transform: scale(1.1);
   }
     &:focus {
-    transition: 1s;
-    transform: scale(0.9);
+    transition: s;
+    transform: scale(1.1);
   }
   @media ${props => props.theme.device.tablet} {
     height: 288px;
