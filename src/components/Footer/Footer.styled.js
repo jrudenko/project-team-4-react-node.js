@@ -118,7 +118,7 @@ export const Logo = styled(Link)`
 `;
 
 export const FooterTitle = styled.div`
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.footerText};
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -145,7 +145,7 @@ export const BenefitsList = styled.div`
 `;
 
 export const Benefits = styled.li`
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.footerText};
   @media (min-width: 768px) {
     font-size: 14px;
     line-height: 14px;
@@ -184,10 +184,10 @@ export const Item = styled.span`
   text-decoration: none;
   font-family: 'Poppins';
   font-style: normal;
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.footerText};
   letter-spacing: -0.02em;
   :hover {
-    color: ${p => p.theme.colors.colorAccent};
+    color: ${p => p.theme.colors.subscribeBgColor};
   }
 `;
 

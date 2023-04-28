@@ -12,28 +12,28 @@ export const MediaConteiner = styled.div`
 `;
 
 export const FacebookIcon = styled(BsFacebook)`
-  color: ${p => p.theme.colors.colorAccent};
+  color: ${p => p.theme.colors.footerSocialIcons};
   &:hover {
-    color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.footerText};
   }
 `;
 
 export const YoutubeIcon = styled(BsYoutube)`
-  color: ${p => p.theme.colors.colorAccent};
+  color: ${p => p.theme.colors.footerSocialIcons};
   &:hover {
-    color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.footerText};
   }
 `;
 export const TwitterIcon = styled(BsTwitter)`
-  color: ${p => p.theme.colors.colorAccent};
+  color: ${p => p.theme.colors.footerSocialIcons};
   &:hover {
-    color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.footerText};
   }
 `;
 
 export const InstagramIcon = styled(BsInstagram)`
-  color: ${p => p.theme.colors.colorAccent};
+  color: ${p => p.theme.colors.footerSocialIcons};
   &:hover {
-    color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.footerText};
   }
 `;
