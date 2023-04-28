@@ -24,7 +24,8 @@ const SubscribeForm = () => {
 
   const userEmail = useSelector(state => state.auth.user.email);
 
-  const handleSubmit = async (values, { resetForm }) => {
+  const handleSubmit = async (e, values, { resetForm }) => {
+    e.preventDefault();
     const { subscribe } = values;
     if (userEmail !== subscribe) {
       return;

@@ -70,7 +70,7 @@ const UserInfoModal = ({ onClose }) => {
           handleSubmit(values);
           actions.setSubmitting(false);
           actions.resetForm();
-        }}
+        }}   
       >
         {(props) => (
           <FormEdit onSubmit={props.handleSubmit}>
