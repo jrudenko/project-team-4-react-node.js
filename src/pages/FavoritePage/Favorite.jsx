@@ -6,7 +6,7 @@ import Scroll from '../../utils/scroll';
 const Favorite = () => (
   // <FavoriteWrapper>
  <>
-    <Title>Favorite</Title>
+    <Title>Favorites</Title>
     <FavoriteList />
     <Scroll />
   {/* // </FavoriteWrapper> */}
