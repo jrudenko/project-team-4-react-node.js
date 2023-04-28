@@ -7,6 +7,12 @@ export const LogoLink = styled(Link)`
     width: 40px;
     height: 40px;
 
+  :hover,
+  :focus {
+    transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
     @media screen and (min-width: 768px) {
       margin-right: 187px;
       width: 44px;

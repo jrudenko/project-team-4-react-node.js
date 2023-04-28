@@ -9,7 +9,6 @@ export const StyledPaginator = styled(ReactPaginate)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap: 15px; */
   background: ${p => p.theme.colors.paginateBg};
   box-shadow: 0px 4px 4px rgba(135, 135, 135, 0.2);
   border-radius: 26px;
