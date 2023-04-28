@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import RecipesList from 'components/RecipesList/RecipesList';
 import PageEmpty from 'components/PageEmpty';
 import {
   selectSearchResult,
   selectIsLoading,
+  selectError,
 } from 'redux/search/searchSelectors';
 import { getSearchByTitle } from 'redux/search/searchOperations';
 import { NoSearchText } from './SearchedRecipesList.styled';
@@ -16,6 +18,8 @@ export default function SearchedRecipesList() {
 
   const recipes = useSelector(selectSearchResult);
   const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
   const dispatch = useDispatch();
 
   const query = searchParams.get('query') ?? '';
@@ -30,7 +34,7 @@ export default function SearchedRecipesList() {
 
   return (
     <>
-      {isLoading && <Loader />}
+      {isLoading && !error && <Loader />}
       {!isLoading && recipes ? (
         (recipes.length === 0 && (
           <PageEmpty text="Try looking for something else..." />
@@ -39,6 +43,7 @@ export default function SearchedRecipesList() {
       ) : (
         <NoSearchText>Enter your search query</NoSearchText>
       )}
+      {error && toast.warn('Something gone wrong, please try again!')}
     </>
   );
 }
