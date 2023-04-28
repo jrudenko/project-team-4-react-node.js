@@ -8,6 +8,8 @@ import {
   updateUserProfile,
 } from './operations';
 
+// state.auth.user;
+
 const initialState = {
   user: { name: null, email: null, avatar: null },
   token: null,
@@ -72,6 +74,7 @@ export const userSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
+        // state.user.name = action.payload.user.name;
         state.user.avatar = action.payload.data.user.avatar;
         state.user.name = action.payload.data.user.name;
         state.user.email = action.payload.data.user.email;
@@ -87,10 +90,10 @@ export const userSlice = createSlice({
       })
       .addCase(updateUserProfile.pending, state => state)
       .addCase(updateUserProfile.fulfilled, (state, action) => {
-        if (action.payload.avatarURL) {
-          state.user.avatar = action.payload.avatarURL;
+        if (action.payload.data.updatedUser.avatar) {
+          state.user.avatar = action.payload.data.updatedUser.avatar;
         }
-        state.user.name = action.payload.name;
+        state.user.name = action.payload.data.updatedUser.name;
         state.error = null;
       })
       .addCase(updateUserProfile.rejected, (state, action) => {
