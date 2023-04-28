@@ -114,6 +114,7 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
+        inputBg:'#8BAA36',
         boxShadow: {
     boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
     },
@@ -164,11 +165,10 @@ export const theme = {
         paginateArrow: 'rgba(169, 169, 169, 0.73)',
         paginatePage: '#656565',
         paginateActive: '#EBF3D4',
-
+        inputBg:'#22252A',
         boxShadow: {
     boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
     },
-
 
       },
     },
