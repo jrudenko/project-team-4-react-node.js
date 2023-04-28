@@ -5,43 +5,27 @@ import { getSearchByTitle } from './searchOperations';
 const initialState = {
   searchResult: null,
   isLoading: false,
+  error: null,
 };
 
 const searchSlice = createSlice({
   name: 'search',
   initialState,
-  // reducers: {
-  //   updateSearchQuery(state, action) {
-  //     state.searchQuery = action.payload;
-  //   },
-  //   updateSearchType(state, action) {
-  //     state.searchType = action.payload;
-  //   },
-  //   updateSearchResult(state, action) {
-  //     state.searchResult = action.payload;
-  //   },
-  //   clearSearch() {
-  //     return initialState;
-  //   },
-  // },
   extraReducers: builder =>
     builder
       .addCase(getSearchByTitle.fulfilled, (state, action) => {
         state.searchResult = action.payload;
         state.isLoading = false;
+        state.error = null;
       })
       .addCase(getSearchByTitle.pending, state => {
         state.isLoading = true;
       })
-      .addCase(getSearchByTitle.rejected, state => {
+      .addCase(getSearchByTitle.rejected, (state, action) => {
         state.isLoading = false;
+        state.error = action.payload;
+        state.searchResult = null;
       }),
 });
 
-// export const {
-//   updateSearchQuery,
-//   updateSearchResult,
-//   updateSearchType,
-//   clearSearch,
-// } = searchSlice.actions;
 export const searchReducer = searchSlice.reducer;
