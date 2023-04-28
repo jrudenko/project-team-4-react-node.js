@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -5,6 +6,7 @@ import styled from "styled-components";
 import {SubForm,TextFrame, SubTitle, SubText,FormFrame,InputBox,InputIcon, SubInput} from './SubscribeForm.styled'
 import Button from '../Button';
 import { useState, useEffect } from "react";
+
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),

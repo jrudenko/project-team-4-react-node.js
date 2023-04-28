@@ -1,4 +1,3 @@
-// import { Suspense } from "react";
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import Header from 'components/Header';
 import { Footer } from 'components/Footer/Footer';
@@ -17,11 +16,8 @@ const SharedLayout = () => {
     <Wrapper>
       {isLoggedIn && location.pathname === '/' && <Navigate to="/main" />}
       <Header />
-
       <LayoutContainer>
-        {/* <Suspense fallback={<div>Loader...</div>}> */}
         <Outlet />
-        {/* </Suspense> */}
         <LeafBackground></LeafBackground>
       </LayoutContainer>
 

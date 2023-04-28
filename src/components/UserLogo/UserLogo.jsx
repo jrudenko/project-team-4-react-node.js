@@ -10,7 +10,7 @@ const UserLogo = () => {
   const { pathname } = useLocation();
   const recipe = useParams();
   const [modalIsOpen, setmodalIsOpen] = useState(false);
-const { user } = useAuth();
+  const { user } = useAuth();
 
   const toggleModalEdit = () => setmodalIsOpen(state => !state);
   return (

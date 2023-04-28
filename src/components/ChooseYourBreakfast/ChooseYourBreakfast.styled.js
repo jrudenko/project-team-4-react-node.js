@@ -33,7 +33,6 @@ export const СhooseYourBreakfastStyled = styled.div`
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.24px;
-    /* color: #3e4462; */
     color: ${p => p.theme.colors.primaryText};
     margin-bottom: 4px;
     display: block;
@@ -69,15 +68,12 @@ export const СhooseYourBreakfastStyled = styled.div`
     }
 
     & > span {
-      /* display: inline-block; */
-
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 400;
       font-size: 10px;
       line-height: 12px;
       letter-spacing: 0.2px;
-      /* color: #3e4462; */
       color: ${p => p.theme.colors.primaryText};
       :hover {
         color: ${p => p.theme.colors.colorAccent};
