@@ -10,8 +10,8 @@ export const FooterConteiner = styled.div`
   background-color: ${p => p.theme.colors.footerBg};
   height: 435px;
   width: 100%;
-  /* gap: 40px; */
-  @media (min-width: 768px )  {
+
+  @media (min-width: 768px) {
     height: 423px;
     display: block;
     flex-direction: row;
@@ -28,7 +28,6 @@ export const MainBox = styled.div`
   flex-direction: column;
   justify-content: center;
 
-
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -36,24 +35,21 @@ export const MainBox = styled.div`
     justify-content: space-around;
   }
 
-  @media (min-width: 918px) and (max-width:1439px) {
-    padding-top:45px;
+  @media (min-width: 918px) and (max-width: 1439px) {
+    padding-top: 45px;
   }
 
-
-    @media (min-width: 1440px) {
+  @media (min-width: 1440px) {
     display: flex;
     align-items: stretch;
     margin-bottom: 41px;
-
   }
-`
-
-export const MenuBox = styled.div`
-  justify-content:center;
-  margin-bottom: 32px;
 `;
 
+export const MenuBox = styled.div`
+  justify-content: center;
+  margin-bottom: 32px;
+`;
 
 export const FormBox = styled.div`
   display: flex;
@@ -66,7 +62,6 @@ export const FormBox = styled.div`
 
   @media (min-width: 918px) {
     flex-direction: column;
-
   }
 
   @media (min-width: 1440px) {
@@ -100,17 +95,20 @@ export const LogoBox = styled.div`
     margin-bottom: 24px;
   }
   @media (min-width: 1440px) {
-    margin:0;
+    margin: 0;
   }
 `;
 
 export const Logo = styled(Link)`
-    display: flex;
-    align-items: center;
-    width: 32px;
-    height: 32px;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
 
-@media (min-width: 768px) {
+  transform: scale(1.1);
+  transform: scale(1.1);
+
+  @media (min-width: 768px) {
     width: 44px;
     height: 44px;
     border-radius: 12px;
@@ -192,7 +190,6 @@ export const Item = styled.span`
 `;
 
 export const SocialMadia = styled.div`
-
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;

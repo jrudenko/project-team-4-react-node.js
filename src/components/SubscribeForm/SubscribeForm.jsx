@@ -13,7 +13,6 @@ import { useMedia } from 'hooks';
 import { updateSubscribe } from 'service/API/serviseApi';
 import { useSelector } from 'react-redux';
 import * as yup from 'yup';
-// import { ReactComponent as envelope } from '../../images/SVG/envelope.svg';
 
 const schema = yup.object().shape({
   subscribe: yup.string().min(4).email(),
@@ -54,14 +53,14 @@ const SubscribeForm = () => {
           return (
             <FormFrame>
               <InputBox>
-                <InputIcon />
+                <InputIcon>
+                </InputIcon>
 
                 <SubInput
                   state={errors.subscribe ? 'error' : 'undefined'}
                   type="email"
                   name="subscribe"
                   placeholder="Enter your email address"
-                  autoComplete="off"
                 />
               </InputBox>
               <Button
