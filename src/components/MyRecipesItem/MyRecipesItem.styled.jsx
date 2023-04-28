@@ -11,8 +11,15 @@ export const CardItem = styled.li`
   border-radius: 8px;
   margin-bottom: 18px;
   padding: 14px 9px;
+  box-shadow: 17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset;
   :last-child {
     margin-bottom: 0;
+  }
+    &:hover {
+    transform: scale(1.1);
+  }
+    &:focus {
+    transform: scale(1.1);
   }
   @media ${props => props.theme.device.tablet} {
     height: 288px;
