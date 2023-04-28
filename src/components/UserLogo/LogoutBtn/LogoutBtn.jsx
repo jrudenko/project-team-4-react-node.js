@@ -31,7 +31,7 @@ const LogoutBtn = ({ onClose }) => {
           lineHeight="18px"
           onClick={() => {
             dispatch(logoutUser());
-          }}
+          }} 
         >
           Log out
         </Button>
@@ -45,8 +45,9 @@ const LogoutBtn = ({ onClose }) => {
           fontSize="14px"
           fontSizeTablet="16px"
           lineHeight="18px"
-          onClick={onClose}
-          colors
+
+          onClick={onClose} 
+
         >
           Cancel
         </Button>
