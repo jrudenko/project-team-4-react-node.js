@@ -4,8 +4,9 @@ import React from 'react';
 // import { selectIsSend, selectEmail } from '../../redux/auth/selectors';
 
 import { AuthForm } from 'components/AuthForm/RegistrationForm';
-import { AuthMain, AuthImage, AuthBackground } from './RegistrationPage.styled';
-
+import { AuthMain, AuthBackground } from './RegistrationPage.styled';
+// import {AuthImg} from '../../components/AuthImg/authImg'
+import {AuthImg} from '../../components/AuthImeges/AuthImg'
 // import { toast } from 'react-toastify';
 
 export const RegisterPage = () => {
@@ -22,7 +23,7 @@ export const RegisterPage = () => {
   return (
     <>
       <AuthMain>
-        <AuthImage></AuthImage>
+        <AuthImg/>
         <AuthForm />
         <AuthBackground></AuthBackground>
       </AuthMain>

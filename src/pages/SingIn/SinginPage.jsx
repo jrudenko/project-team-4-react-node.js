@@ -4,9 +4,10 @@ import axios from 'axios';
 import { AuthForm } from 'components/AuthForm/RegistrationForm';
 import {
   AuthMain,
-  AuthImage,
   AuthBackground,
 } from '../../pages/Registration/RegistrationPage.styled';
+import {AuthImg} from '../../components/AuthImeges/AuthImg'
+
 
 
 export const SigninPage = () => {
@@ -23,7 +24,7 @@ export const SigninPage = () => {
 
   return (
     <AuthMain>
-      <AuthImage></AuthImage>
+      <AuthImg/>
       <AuthForm login />
       <AuthBackground></AuthBackground>
     </AuthMain>

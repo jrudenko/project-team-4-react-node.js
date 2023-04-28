@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import regBgMobile from '../../images/mobile/form-auth-mob-min.png';
 import regBgTablet from '../../images/tablet/form-auth-tab-min.png';
 import regBgDesktop from '../../images/desktop/form-auth-des.png';
-import regImage from '../../images/mobile/auth-pana-mob-min.png';
-import regImageRetina from '../../images/mobile/auth-pana-mob-ret-min.png';
-import regImageTablet from '../../images/tablet/auth-pana-tab-min.png';
-import regImageTabletRetina from '../../images/tablet/auth-pana-tab-min-ret.png';
-import regImageDesktop from '../../images/desktop/auth-pana-des.png';
+// import regImage from '../../images/mobile/auth-pana-mob-min.png';
+// import regImageRetina from '../../images/mobile/auth-pana-mob-ret-min.png';
+// import regImageTablet from '../../images/tablet/auth-pana-tab-min.png';
+// import regImageTabletRetina from '../../images/tablet/auth-pana-tab-min-ret.png';
+// import regImageDesktop from '../../images/desktop/auth-pana-des.png';
 // import regImageDesktopRetina from '../../images/desktop/auth-pana-des-ret.png';
 
 import { ToastContainer } from 'react-toastify';
@@ -32,38 +32,38 @@ export const AuthMain = styled.main`
   }
 `;
 
-export const AuthImage = styled.div`
-  width: 285px;
-  height: 250px;
-  margin: 0 auto;
-  background-image: url(${regImage});
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${regImageRetina});
-    background-size: cover;
-  }
-  @media screen and (min-width: 768px) {
-    width: 409px;
-    height: 359px;
-    background-image: url(${regImageTablet});
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${regImageTabletRetina});
-      background-size: cover;
-    }
-  }
-  @media screen and (min-width: 1440px) {
-    position: absolute;
-    left: 113px;
-    top: 45%;
-    width: 532px;
-    height: 468px;
-    background-image: url(${regImageDesktop});
-    transform: translateY(-50%);
-  }
-`;
+// export const AuthImage = styled.div`
+//   width: 285px;
+//   height: 250px;
+//   margin: 0 auto;
+//   background-image: url(${regImage});
+//   @media (min-device-pixel-ratio: 2),
+//     (min-resolution: 192dpi),
+//     (min-resolution: 2dppx) {
+//     background-image: url(${regImageRetina});
+//     background-size: cover;
+//   }
+//   @media screen and (min-width: 768px) {
+//     width: 409px;
+//     height: 359px;
+//     background-image: url(${regImageTablet});
+//     @media (min-device-pixel-ratio: 2),
+//       (min-resolution: 192dpi),
+//       (min-resolution: 2dppx) {
+//       background-image: url(${regImageTabletRetina});
+//       background-size: cover;
+//     }
+//   }
+//   @media screen and (min-width: 1440px) {
+//     position: absolute;
+//     left: 113px;
+//     top: 45%;
+//     width: 532px;
+//     height: 468px;
+//     background-image: url(${regImageDesktop});
+//     transform: translateY(-50%);
+//   }
+// `;
 
 export const AuthBackground = styled.div`
   width: 100%;
