@@ -45,7 +45,7 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         // console.log(action.payload);
-        state.token = action.payload.token;
+        // state.token = action.payload.token;
         state.isLoading = false;
         state.user.avatar = action.payload.user.avatar;
         state.user.id = action.payload.user._id;
@@ -74,9 +74,10 @@ export const userSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user.avatar = action.payload.avatarURL;
-        state.user.name = action.payload.name;
-        state.user.email = action.payload.email;
+        // console.log(action.payload);
+        state.user.avatar = action.payload.data.user.avatar;
+        state.user.name = action.payload.data.user.name;
+        state.user.email = action.payload.data.user.email;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = null;
