@@ -34,7 +34,7 @@ const initialValues = {
   file: '',
   title: '',
   about: '',
-  category: 'breakfast',
+  category: 'Breakfast',
   time: '40',
   ingredients: [{ quantity: '', measure: 'tbs', id: '' }],
   preparation: [],
@@ -43,17 +43,16 @@ const initialValues = {
 export const AddRecipeForm = props => {
   const dispatch = useDispatch();
   const categoryList = useSelector(selectCategory);
-  const ingredientsListAll = useSelector(selectIngredients);  
+  const ingredientsListAll = useSelector(selectIngredients);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
   const [submitRecipe, setSubmitRecipe] = useState(false);
-
 
   useEffect(() => {
     dispatch(getCategoryList());
     dispatch(getIngredientsList());
   }, [dispatch]);
-  
+
   const optionsCategory = createOptionCategory(categoryList);
   const optionsTimes = createOptionTimes(createArrTimesPrepare(5, 120, 5));
   const optionsIngredients = createOptionIngredients(ingredientsListAll);
@@ -73,8 +72,7 @@ export const AddRecipeForm = props => {
           acc.desc = ingr.desc;
         }
         return acc;
-      }, {}
-      );
+      }, {});
     });
 
     const res = await fetch(placeholderNoUserImg);
@@ -90,7 +88,7 @@ export const AddRecipeForm = props => {
     formData.append('category', category);
     formData.append('description', about);
     formData.append('instructions', instructions);
-    formData.append('favorite', false);
+    // formData.append('favorite', false);
     formData.append('preview', preview);
     formData.append('time', time);
     formData.append('ingredients', JSON.stringify(ingredientsList));
