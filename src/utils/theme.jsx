@@ -63,10 +63,6 @@ export const theme = {
       formAddIcon: '#333333',
       labelText: '#000000',
     },
-
-
-
-
     switches: {
       darkTheme: {
         background: '#1E1F28',
