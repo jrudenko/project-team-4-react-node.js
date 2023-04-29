@@ -1,13 +1,15 @@
 import { Box } from 'components/Box';
 import React, { useEffect } from 'react';
-import { mobileLow, tabletLow, desktopLow } from 'images/bg/bgError';
-import { useMedia } from 'hooks';
+import img from 'images/bg/bgError/not-found.svg';
+
 import { InformImage, InformText } from './NotFoundPage.styled';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import Title from 'components/Title/Title';
+
 export const NotFoundPage = () => {
-  const { isMobileScreen, isDesktopScreen, isTabletScreen } = useMedia();
+
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   const navigate = useNavigate();
@@ -24,15 +26,11 @@ export const NotFoundPage = () => {
     return () => clearTimeout(timer);
   }, [navigate, isLoggedIn]);
 
-  const imageSrc =
-    (isMobileScreen && mobileLow) ||
-    (isTabletScreen && tabletLow) ||
-    (isDesktopScreen && desktopLow);
-
   return (
     <Box as={'main'} mt={52}>
-      <InformImage src={imageSrc} alt="not found" />
-      <InformText>
+      <Title></Title>
+      <InformImage src={img} alt="not found" /> 
+       <InformText>
         We are sorry,
         <span>but the page you were looking for can't be found...</span>
       </InformText>
