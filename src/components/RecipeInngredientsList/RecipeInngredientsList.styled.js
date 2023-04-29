@@ -3,10 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 padding: 420px 0 50px 0;
   @media ${props => props.theme.device.tablet} {
-    padding: 540px 0 96px 0;
-  }
-  @media ${props => props.theme.device.desktop} {
-    padding: 570px 0 96px 0;
+    padding: 460px 0 96px 0;
   }
 `; 
 
