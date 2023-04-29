@@ -32,9 +32,9 @@ export const getMyRecipes = async (page = 1, pageSize = 12) => {
   }
 };
 
-export const deleteMyRecipe = async id => {
+export const deleteMyRecipe = async _id => {
   try {
-    const { data } = await axios.delete(`/ownRecipes/${id}`);
+    const { data } = await axios.delete(`/ownRecipes/${_id}`);
     return data;
   } catch (error) {
     console.error(error);
