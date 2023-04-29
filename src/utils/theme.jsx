@@ -66,7 +66,7 @@ export const theme = {
 
 
 
-    
+
     switches: {
       darkTheme: {
         background: '#1E1F28',
@@ -178,7 +178,7 @@ export const theme = {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
 
- 
+
   device: {
     mobile: `(min-width: 375px)`,
     tablet: `(min-width: 768px)`,
