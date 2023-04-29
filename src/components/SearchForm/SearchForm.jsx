@@ -39,3 +39,4 @@ export default function SearchForm({ onSubmit, queryParam = '' }) {
     </Form>
   );
 }
+
