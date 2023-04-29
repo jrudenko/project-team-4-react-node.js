@@ -27,8 +27,8 @@ export const AuthMain = styled.main`
     padding-top: 96px;
   }
   @media screen and (min-width: 1440px) {
-    padding-top: 122px;
-    padding-bottom: 122px;
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -98,3 +98,11 @@ export const StyledToastContainer = styled(ToastContainer)`
   background:#22252A
 }
 `;
+
+export const Wrapper = styled.div`
+@media screen and (min-width: 1440px) {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+`

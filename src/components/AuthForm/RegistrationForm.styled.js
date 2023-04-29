@@ -25,12 +25,14 @@ export const FormWrapper = styled.div`
     padding: 44px 50px;
   }
   @media screen and (min-width: 1440px) {
-    top: 50%;
-    right: 180px;
+    // top: 50%;
+    // right: 180px;
     width: 500px;
     height: auto;
     padding: 44px 50px;
-    transform: translateY(-50%);
+    position: unset;
+    transform: none;
+      // transform: translateY(-50%);
   }
 `;
 
@@ -291,6 +293,11 @@ export const FormLink = styled(Link)`
   @media screen and (min-width: 768px) {
     font-size: ${p => p.theme.fontSizes.sm}px;
     line-height: ${p => p.theme.lineHeights.body};
+  }
+  @media screen and (min-width: 1440px) {
+   position: unset;
+   margin-left: 160px;
+   margin-top: 20px;
   }
   :hover {
     color: ${p => p.theme.colors.colorAccent};
