@@ -154,7 +154,6 @@ const scale1 = keyframes`
 export const ImageMain = styled.div`
   width: 285px;
   height: 250px;
-  margin: 0 auto;
   position: relative;
 
   @media screen and (min-width: 768px) {
@@ -165,7 +164,6 @@ export const ImageMain = styled.div`
   @media screen and (min-width: 1440px) {
     width: 532px;
     height: 468px;
-    margin-right: 130px;
   }
 `;
 
