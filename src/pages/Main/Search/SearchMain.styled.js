@@ -2,15 +2,14 @@ import styled from 'styled-components';
 
 const MainSearch = styled.form`
   position: relative;
-  background-color: #fff;
-  border: ${p => p.theme.colors.borderInputSearch};
-  color: ${p => p.theme.colors.colorInputSearch};
+  color: #3e4462;
   border-radius: 24px 44px;
   height: 52px;
   width: 295px;
   margin-right: 3px;
   margin-bottom: 83px;
   margin-left: 4px;
+  border: 1px solid #f0f0f0;
   background-color: ${p => p.theme.colors.background};
   
 

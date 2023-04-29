@@ -56,7 +56,6 @@ const PreviewCategories = () => {
 
         <Button
           onClick={handleClick}
-          look="rounded_other"
           marginTop="100px"
           width="195px"
           heigth="47px"
@@ -69,7 +68,7 @@ const PreviewCategories = () => {
           fontSizeDesktop="16px"
           lineHeight="21px"
           lineHeightTablet="24px"
-          lineHeightDesktop="24px"
+          lineHeightDesktop="24px" 
         >
           Other categories
         </Button>

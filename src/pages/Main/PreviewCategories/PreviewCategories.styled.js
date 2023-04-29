@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background-color: ${props => props.bgColor};
-  color: green;
+  line-height: 14px;
+  width: 195px;
+  height: 46px;
+  border: ${p => p.theme.colors.subscribeBgColor};
+  color: ${p => p.theme.colors.inputBg};
+  border: 2px solid #8baa36;
   border-radius: 24px 44px;
-  border: 1px solid;
   padding: 12px 24px;
   transition: background-color 0.2s, color 0.2s;
   &:hover {
@@ -14,6 +17,12 @@ export const Button = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    line-height: 24px;
+width: 239px;
+  height: 61px;
   }
 `;
 
