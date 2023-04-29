@@ -114,7 +114,8 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
-        inputBg:'#8BAA36',
+        inputBg: '#8BAA36',
+        headerTextModal: '#000000',
         boxShadow: {
     boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
     },
@@ -125,6 +126,7 @@ export const theme = {
         cardBackground: '#FFFFFF',
         deleteButton: '#EBF3D4',
         headerText: '#23262A',
+        headerTextModal:'#FFFFFF',
         heroText: '#22252A',
         primaryText: '#3E4462',
         heroForm: '#F0F0F0',
