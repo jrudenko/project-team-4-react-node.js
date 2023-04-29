@@ -39,7 +39,6 @@ export const ButtonDelete = styled.button`
   :focus {
     background: #22252a;
     color: ${props => props.theme.colors.textWhite};
-    /* scale: 1.1;   */
     transform: scale(1.1);
     transform: scale(1.1);
   }

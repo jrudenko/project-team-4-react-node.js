@@ -1,7 +1,7 @@
 import {MediaConteiner, FacebookIcon, YoutubeIcon, TwitterIcon, InstagramIcon} from './Networks.styled'
 
 export const Networks = () => {
-   
+
   return (
     <MediaConteiner>
       <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Facebook">
@@ -13,7 +13,7 @@ export const Networks = () => {
       <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Twitter">
         <TwitterIcon/>
       </a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Instagram">
+      <a href="https://www.instagram.com/"  target="_blank" rel="noopener noreferrer" aria-label="link to Instagram">
         <InstagramIcon/>
       </a>
     </MediaConteiner>

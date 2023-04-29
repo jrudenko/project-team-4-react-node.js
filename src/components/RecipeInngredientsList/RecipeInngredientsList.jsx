@@ -42,12 +42,6 @@ const RecipeInngredientsList = ({ ingredients, ingList }) => {
     setIsLoading(true);
     const bodyPost = {
       iid: ing.id,
-      ttl: ing.ttl,
-      thb: ing.thb,
-      number: ing.measure,
-    };
-    const bodyPatch = {
-      iid: ing.id,
       number: ing.measure,
     };
 
@@ -62,9 +56,9 @@ const RecipeInngredientsList = ({ ingredients, ingList }) => {
     }
     if (!e.target.checked) {
       try {
-        await deleteShoppingItem(bodyPatch);
+        await deleteShoppingItem(bodyPost);
         setIsLoading(false);
-        toast.success(`${ing.ttl} remove to shopping list`);
+        toast.success(`${ing.ttl} remove from shopping list`);
       } catch (err) {
         toast.error('Something went wrong by removing ingredients');
       }

@@ -16,11 +16,11 @@ export const CardItem = styled.li`
     margin-bottom: 0;
   }
     &:hover {
-    transition: 1s;
+    transition: 5s;
     transform: scale(1.1);
   }
     &:focus {
-    transition: 1s;
+    transition: s;
     transform: scale(1.1);
   }
   @media ${props => props.theme.device.tablet} {

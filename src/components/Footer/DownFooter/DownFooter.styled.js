@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import bg_small_mob_1x from "../../../../images/bg/bg_small_mob_1x.png"
 
 import FooterMobileBackground1x from '../../../images/mobile/footer-background-mob1x.png';
 import FooterMobileBackground2x from '../../../images/mobile/footer-background-mob2x.png';

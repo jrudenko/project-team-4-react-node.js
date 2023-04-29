@@ -42,6 +42,7 @@ export const deleteMyRecipe = async id => {
 export const updateSubscribe = async () => {
   try {
     const { data } = await axios.patch('/subscribe', {
+      // email: email,
       subscribe: true,
     });
     return data;

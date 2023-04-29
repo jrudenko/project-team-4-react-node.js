@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { ReactComponent as envelope } from '../../images/SVG/envelope.svg';
+import { Field } from 'formik';
+
 
 export const SubForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-
   @media (min-width: 768px) {
     flex-direction: row;
     gap: 12px;
   }
   @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
     flex-direction: column;
     gap: 28px;
   }
@@ -32,7 +32,7 @@ export const SubTitle = styled.h3`
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.footerText};
 `;
 
 export const SubText = styled.p`
@@ -42,7 +42,7 @@ export const SubText = styled.p`
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.02em;
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.footerText};
 `;
 
 export const FormFrame = styled.div`
@@ -70,9 +70,9 @@ export const InputBox = styled.div`
   width: 204px;
   height: 38px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 12px;
+  background-color: ${p => p.theme.colors.inputBg};
   @media (min-width: 768px) {
     width: 259px;
     height: 50px;
@@ -82,30 +82,26 @@ export const InputBox = styled.div`
     height: 59px;
   }
 `;
-export const SubInput = styled.input`
+export const SubInput = styled(Field)`
   border: none;
-  text-decoration: none;
-  width: 148px;
-  height: 18px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border:none;
-  background-color: ${p => p.theme.colors.button.secondaryBag};
-  color: ${p => p.theme.colors.whiteText};
+  width: 100%;
+  height: 36px;
+  background-color: ${p => p.theme.colors.inputBg};
+  color: ${p => p.theme.colors.footerText};
+  :focus{
+    outline:none;
+  }
   @media (min-width: 768px) {
-    width: 168px;
-    height: 21px;
+    height: 48px;
   }
   @media (min-width: 1440px) {
-    width: 216px;
-    height: 24px;
+    height: 57px;
   }
   &::placeholder {
     font-size: 10px;
     line-height: 15px;
     letter-spacing: -0.02em;
-    color: ${p => p.theme.colors.whiteText};
+    color: ${p => p.theme.colors.footerText};
     @media (min-width: 768px) {
       font-size: 14px;
       line-height: 21px;
@@ -118,7 +114,7 @@ export const SubInput = styled.input`
 `;
 
 export const InputIcon = styled(envelope)`
-  color: ${p => p.theme.colors.whiteText};
+  color: ${p => p.theme.colors.footerText};
   width: 16px;
   height: 12px;
   @media (min-width: 768px) {
@@ -127,32 +123,3 @@ export const InputIcon = styled(envelope)`
   }
 `;
 
-export const SubButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 11px 71px;
-  gap: 8px;
-
-  width: 204px;
-  height: 38px;
-  color: ${p => p.theme.colors.button.textColorMain};
-  background: ${p => p.theme.colors.button.primaryBag};
-  border-radius: 6px;
-  &:hover {
-    color: ${p => p.theme.colors.button.hoverTextColorMain};
-  }
-
-  @media (min-width: 768px) {
-    padding: 16px 50px;
-    width: 171px;
-    height: 50px;
-  }
-  @media (min-width: 1440px) {
-    padding: 21px 138px;
-
-    width: 339px;
-    height: 60px;
-  }
-`;

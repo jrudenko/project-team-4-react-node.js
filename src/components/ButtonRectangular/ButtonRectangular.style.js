@@ -25,11 +25,4 @@ export const RectanBtn = styled.button`
     width: 192px;
     height: 59px;
   }
-
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 21px 39px;
-  gap: 8px; */
 `;
