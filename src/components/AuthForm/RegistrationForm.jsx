@@ -260,6 +260,7 @@ export const AuthForm = ({ login }) => {
                 heigth="45px"
                 heigthTablet="59px"
                 fontSize="16px"
+          
               >
                 {login && !isLoading ? 'Sign in' : null}
                 {!login && !isLoading ? 'Sign up' : null}

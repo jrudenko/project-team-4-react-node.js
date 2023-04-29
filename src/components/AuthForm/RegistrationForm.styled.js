@@ -7,30 +7,26 @@ import { FiLock } from 'react-icons/fi';
 import { IoIosCloseCircle, IoIosCheckmarkCircle } from 'react-icons/io';
 import { RiErrorWarningFill } from 'react-icons/ri';
 
+
 export const FormWrapper = styled.div`
-  position: absolute;
-  top: 305px;
-  right: 50%;
+  position: relative;
+  top: -28px;
   width: 335px;
   height: auto;
   padding: 40px 28px;
   background-color: ${p => p.theme.colors.form.formBackground};
   border-radius: 30px;
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
-  transform: translateX(50%);
+ 
   @media screen and (min-width: 768px) {
-    top: 443px;
     width: 500px;
     height: auto;
     padding: 44px 50px;
   }
   @media screen and (min-width: 1440px) {
-    top: 50%;
-    right: 180px;
     width: 500px;
     height: auto;
     padding: 44px 50px;
-    transform: translateY(-50%);
   }
 `;
 
