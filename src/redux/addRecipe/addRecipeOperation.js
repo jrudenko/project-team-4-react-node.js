@@ -37,7 +37,6 @@ export const addRecipe = createAsyncThunk(
           'Content-Type': 'multipart/form-data',
         },
       });
-      // debugger;
       return response.data.result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
