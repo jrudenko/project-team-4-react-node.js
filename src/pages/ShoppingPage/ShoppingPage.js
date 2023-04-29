@@ -5,11 +5,11 @@ import { useMedia } from 'hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { getList } from '../../redux/shoppingList/shoppingListOperations';
 import { Loader } from 'components/Loader/Loader';
+import {ShoppingList} from '../../components/ShoppingList/ShoppingList'
 
 const ShoppingPage = () => {
   const { screenType } = useMedia();
   const { items, isLoading } = useSelector(state => state.shoppings);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const ShoppingPage = () => {
           {<Loader />}
         </div>
       )}
-      {!!items.length && (
+      {items?.length > 0 && (
         <>
           <TableHeader>
             {titles.map(title => (
@@ -42,11 +42,11 @@ const ShoppingPage = () => {
               </TableTitle>
             ))}
           </TableHeader>
-          {/* <ShoppingList /> */}
+          <ShoppingList />
         </>
       )}
 
-      {!items.length && !isLoading && (
+      {!items?.length > 0 && !isLoading && (
         <EmptyMessage>
           You haven't added any ingredients to your shopping list yet!
         </EmptyMessage>

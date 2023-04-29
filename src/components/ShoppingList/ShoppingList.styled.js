@@ -75,7 +75,7 @@ export const CloseButton = styled.button`
   border: none;
   cursor: pointer;
   margin-left: 30px;
-  color: ${p => (p.dark ? '#FAFAFA' : '#333333')};
+  color: ${p => p.dark ? '#FAFAFA' : '#333333'};
   transition: all 250ms linear;
   &:hover,
   &:focus {

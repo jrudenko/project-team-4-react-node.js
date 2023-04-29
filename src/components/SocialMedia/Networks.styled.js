@@ -13,27 +13,40 @@ export const MediaConteiner = styled.div`
 
 export const FacebookIcon = styled(BsFacebook)`
   color: ${p => p.theme.colors.footerSocialIcons};
-  &:hover {
+  :hover,
+  :focus{
     color: ${p => p.theme.colors.footerText};
+    transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;
 
 export const YoutubeIcon = styled(BsYoutube)`
   color: ${p => p.theme.colors.footerSocialIcons};
-  &:hover {
+  :hover,
+  :focus{
     color: ${p => p.theme.colors.footerText};
+    transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;
 export const TwitterIcon = styled(BsTwitter)`
   color: ${p => p.theme.colors.footerSocialIcons};
-  &:hover {
+  :hover,
+  :focus{
     color: ${p => p.theme.colors.footerText};
+    transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;
 
 export const InstagramIcon = styled(BsInstagram)`
   color: ${p => p.theme.colors.footerSocialIcons};
-  &:hover {
+  :hover,
+  :focus{
+    /* color: ${p => (p.darkTheme ? p.theme.colors.footerBgButton : p.theme.colors.footerText)}; */
     color: ${p => p.theme.colors.footerText};
+    transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;

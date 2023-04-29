@@ -38,7 +38,6 @@
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.9",
     "styled-system": "^5.1.5",
-    "toast": "^0.5.4",
     "web-vitals": "^2.1.3",
     "yup": "^1.1.1",
     "zxcvbn": "^4.4.2"
