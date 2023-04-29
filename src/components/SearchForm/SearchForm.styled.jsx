@@ -45,7 +45,7 @@ export const SearchButton = styled.button`
   font-weight: ${p => p.theme.fontWeights.body};
   font-size: 14px;
   line-height: ${p => p.theme.searchSelect};
-  color: ${p => p.theme.colors.background};
+  color: ${p => p.theme.colors.backgroundSerch};
   transition: ${p => p.theme.transitions.main};
   background-color: ${p => p.theme.colors.roundedBgColor};
   border-radius: 24px 44px;

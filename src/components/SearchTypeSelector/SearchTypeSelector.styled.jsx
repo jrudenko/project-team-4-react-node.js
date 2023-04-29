@@ -44,7 +44,7 @@ export const Select = styled.select`
   color: ${p => p.theme.colors.formAddInputText};
   border-radius: 6px;
   border: 1px solid #d9d9d9;
-  background-color: ${p => p.theme.colors.grey};
+  background-color: ${p => p.theme.colors.bgSerchInput};
   cursor: pointer;
   opacity: 0.5;
 
@@ -59,6 +59,6 @@ export const Select = styled.select`
 
   &:focus {
     outline: none;
-    background-color: ${p => p.theme.colors.white};
+    
   }
 `;
