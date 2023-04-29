@@ -13,15 +13,17 @@ export const ShoppingList = () => {
     <>
       <ShoppingBox as={'ul'}>
         {currentItems.map(item => (
-          <ShoppingListItem key={item.ttl} item={item} />
+          <ShoppingListItem key={item._id} item={item} />
         ))}
       </ShoppingBox>
       <ShoppingBox mt={20}>
+
         <Paginator
           totalItems={items}
           perPage={itemsPerPage}
           setCurrentItems={setCurrentItems}
         />
+       
       </ShoppingBox>
     </>
   );
