@@ -95,7 +95,7 @@ export const SubInput = styled(Field)`
     height: 48px;
   }
   @media (min-width: 1440px) {
-    height: 57px;
+    height: 56px;
   }
   &::placeholder {
     font-size: 10px;
