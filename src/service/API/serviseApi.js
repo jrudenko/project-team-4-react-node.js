@@ -43,7 +43,8 @@ export const deleteMyRecipe = async id => {
 
 export const updateSubscribe = async () => {
   try {
-    const { data } = await axios.patch('/subscribe', {
+    //29.04 11.30 замінила patch на post
+    const { data } = await axios.post('/subscribe', {
       // email: email,
       subscribe: true,
     });

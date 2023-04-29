@@ -44,7 +44,11 @@ export const Text = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   font-size: ${p => p.theme.fontSizes.s}px;
   line-height: 1.6;
-  color: ${p => p.theme.colors.headerText};
+  color: ${p => p.theme.colors.headerTextModal};
+  &:hover {
+    transition: 5s;
+    color: ${p => p.theme.colors.headerTextModal};
+  }
 `;
 
 export const ButtonEdit = styled.button`
@@ -54,9 +58,10 @@ export const ButtonEdit = styled.button`
   padding: 0;
   display: flex;
   align-items: center;
-  color: ${p => p.theme.colors.headerText};
+  color: ${p => p.theme.colors.headerTextModal};
   cursor: pointer;
   transition: all 250ms ease-in-out;
+  box-shadow: ${props => props.theme.colors.boxShadow.boxshadow};
 
   &:hover {
     transform: scale(1.4);

@@ -105,7 +105,8 @@ export const InputText = styled(Field)`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid ${p => p.theme.colors.formAddBorder};
-  outline-color: ${p => p.theme.colors.form.formBottomLine};
+  // outline-color: ${p => p.theme.colors.form.formBottomLine};
+  outline: none;
 
   &::placeholder {
     position: absolute;
@@ -216,13 +217,13 @@ export const StyledSelect = styled(Select)`
 
     &:hover,
     &:focus {
-      background-color: ${p => p.theme.colors.accentColor};
+      background-color: ${p => p.theme.colors.inputAcentColor};
       color: ${p => p.theme.colors.form.formIcon};
       opacity: 1;
     }
   }
   .сustom-select__option--is-selected {
-    background-color: ${p => p.theme.colors.accentColor};
+    background-color: ${p => p.theme.colors.inputAcentColor};
     color: ${p => p.theme.colors.form.formIcon};
     opacity: 1;
   }
