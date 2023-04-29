@@ -119,11 +119,11 @@ export const theme = {
         bgSerchInput: '#2A2C36',
         borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
         colorInputSearch: '#23262A',
-        inputAcentColor:'#a5dd0c',
+        inputAcentColor: '#a5dd0c',
 
->        boxShadow: {
-    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
-    },
+        boxShadow: {
+          boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+        },
       },
       lightTheme: {
         background: '#FAFAFA',
@@ -131,7 +131,7 @@ export const theme = {
         cardBackground: '#FFFFFF',
         deleteButton: '#EBF3D4',
         headerText: '#23262A',
-        headerTextModal:'#FFFFFF',
+        headerTextModal: '#FFFFFF',
         heroText: '#22252A',
         primaryText: '#3E4462',
         heroForm: '#F0F0F0',
@@ -178,8 +178,8 @@ export const theme = {
         borderInputSearch: '1px solid rgba(35, 38, 42, 0.2)',
         colorInputSearch: '#bdbdbd',
         boxShadow: {
-    boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
-    },
+          boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
+        },
 
       },
     },
