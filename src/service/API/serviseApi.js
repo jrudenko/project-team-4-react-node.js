@@ -21,9 +21,11 @@ export const deleteFavoriteRecipe = async _id => {
   }
 };
 
-export const getMyRecipes = async () => {
+export const getMyRecipes = async (page = 1, pageSize = 12) => {
   try {
-    const { data } = await axios.get(`/ownRecipes`);
+    const { data } = await axios.get(
+      `/ownRecipes/?pageNumber=${page}&pageSize=${pageSize}`
+    );
     return data.data;
   } catch (error) {
     console.error(error);

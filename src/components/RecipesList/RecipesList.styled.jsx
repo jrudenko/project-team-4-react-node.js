@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.section`
   padding-top: 42px;
+  padding-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
+    padding-bottom: 50px;
   }
 
   @media screen and (min-width: 1440px) {
