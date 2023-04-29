@@ -45,9 +45,7 @@ const LogoutBtn = ({ onClose }) => {
           fontSize="14px"
           fontSizeTablet="16px"
           lineHeight="18px"
-
           onClick={onClose} 
-
         >
           Cancel
         </ButtonC>

@@ -84,7 +84,6 @@ display: flex;
   line-height: 18px;
   cursor: pointer;
   color: "#23262A";
-
   background-color: rgb(217, 217, 217);
   border: none;
   border-radius: 6px;
@@ -103,8 +102,5 @@ display: flex;
     height: 59px;
     font-size: 16px;
     line-height: 21px;
-   
-  
-
 }
 `;
