@@ -15,7 +15,9 @@ export function CloseBtn({ onClose }) {
 }
 
 export const WrapperBurger = styled.div`
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

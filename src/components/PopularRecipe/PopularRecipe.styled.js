@@ -38,7 +38,7 @@ export const PopularTitle = styled.h3`
   font-size: 24px;
   line-height: ${p => p.theme.lineHeights.subheader};
   letter-spacing: ${p => p.theme.letterSpacings.subheader};
-  color: ${p => p.theme.colors.secondaryDark};
+  color: ${p => p.theme.colors.headerText};
   margin-bottom: 32px;
   @media screen and (min-width: ${p => p.theme.device.tablet}) {
     margin-bottom: 40px;

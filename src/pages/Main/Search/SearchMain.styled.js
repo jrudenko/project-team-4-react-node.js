@@ -3,13 +3,16 @@ import styled from 'styled-components';
 const MainSearch = styled.form`
   position: relative;
   background-color: #fff;
-  border: 1px solid rgba(35, 38, 42, 0.2);
+  border: ${p => p.theme.colors.borderInputSearch};
+  color: ${p => p.theme.colors.colorInputSearch};
   border-radius: 24px 44px;
   height: 52px;
   width: 295px;
   margin-right: 3px;
   margin-bottom: 83px;
   margin-left: 4px;
+  background-color: ${p => p.theme.colors.background};
+  
 
   @media ${props => props.theme.device.tablet} {
     order: 2;

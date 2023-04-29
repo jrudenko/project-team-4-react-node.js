@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { ShoppingListItem } from './ShoppingListItem';
-import { ShoppingBox } from './ShoppingBox';
+import { Box } from '../Box';
 import { Paginator } from '../Paginator/Paginator';
 import { useState } from 'react';
 
@@ -11,12 +11,12 @@ export const ShoppingList = () => {
 
   return (
     <>
-      <ShoppingBox as={'ul'}>
+      <Box as={'ul'}>
         {currentItems.map(item => (
           <ShoppingListItem key={item._id} item={item} />
         ))}
-      </ShoppingBox>
-      <ShoppingBox mt={20}>
+      </Box>
+      <Box mt={20}>
 
         <Paginator
           totalItems={items}
@@ -24,7 +24,7 @@ export const ShoppingList = () => {
           setCurrentItems={setCurrentItems}
         />
        
-      </ShoppingBox>
+      </Box>
     </>
   );
 };

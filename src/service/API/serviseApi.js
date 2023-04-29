@@ -21,18 +21,20 @@ export const deleteFavoriteRecipe = async _id => {
   }
 };
 
-export const getMyRecipes = async () => {
+export const getMyRecipes = async (page = 1, pageSize = 12) => {
   try {
-    const { data } = await axios.get(`/ownRecipes`);
+    const { data } = await axios.get(
+      `/ownRecipes/?pageNumber=${page}&pageSize=${pageSize}`
+    );
     return data.data;
   } catch (error) {
     console.error(error);
   }
 };
 
-export const deleteMyRecipe = async id => {
+export const deleteMyRecipe = async _id => {
   try {
-    const { data } = await axios.delete(`/ownRecipes/${id}`);
+    const { data } = await axios.delete(`/ownRecipes/${_id}`);
     return data;
   } catch (error) {
     console.error(error);
