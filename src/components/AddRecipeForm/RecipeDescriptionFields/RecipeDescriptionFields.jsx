@@ -89,6 +89,7 @@ export const RecipeDescriptionFields = ({
               type="text"
               name="title"
               placeholder="Enter item title"
+              
             />
             <FormErrorMsg name="title" position="left" />
           </Label>

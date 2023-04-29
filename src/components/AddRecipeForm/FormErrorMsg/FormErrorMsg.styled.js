@@ -5,7 +5,7 @@ export const ErrorText = styled.p`
   font-size: ${p => `${p.theme.fontSizes.s}px`};
   text-align: ${p => (p.position === 'left' ? 'left' : 'center')};
   white-space: nowrap;
-  color: ${p => p.theme.colors.form.inputError};
+  color: ${p => p.theme.colors.form.inpError};
 
   @media ${props => props.theme.device.desktop} {
     font-size: ${p => `${p.theme.fontSizes.sm}px`};

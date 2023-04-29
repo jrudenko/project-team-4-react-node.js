@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -8,17 +8,25 @@ import {
   selectSearchResult,
   selectIsLoading,
   selectError,
+  selectTotalPage,
 } from 'redux/search/searchSelectors';
-import { getSearchByTitle } from 'redux/search/searchOperations';
+import {
+  getSearchByTitle,
+  getSearchByIngredients,
+} from 'redux/search/searchOperations';
 import { NoSearchText } from './SearchedRecipesList.styled';
 import { Loader } from 'components/Loader/Loader';
+import { Paginator } from 'components/Paginator/Paginator';
 
 export default function SearchedRecipesList() {
   const [searchParams] = useSearchParams();
+  const [page, setPage] = useState(1);
+  const perPage = 6;
 
   const recipes = useSelector(selectSearchResult);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const totalPage = useSelector(selectTotalPage);
 
   const dispatch = useDispatch();
 
@@ -29,21 +37,34 @@ export default function SearchedRecipesList() {
     if (query === '' || type === '') {
       return;
     }
-    dispatch(getSearchByTitle({ query, type }));
-  }, [dispatch, query, type]);
+
+    if (type === 'title') {
+      dispatch(getSearchByTitle({ query, page, perPage }));
+    }
+
+    if (type === 'ingredients') {
+      dispatch(getSearchByIngredients({ query, page, perPage }));
+    }
+  }, [dispatch, page, perPage, query, type]);
 
   return (
     <>
       {isLoading && !error && <Loader />}
-      {!isLoading && recipes ? (
-        (recipes.length === 0 && (
-          <PageEmpty text="Try looking for something else..." />
-        )) ||
-        (recipes.length > 0 && <RecipesList recipes={recipes} />)
-      ) : (
-        <NoSearchText>Enter your search query</NoSearchText>
-      )}
+      {!isLoading && recipes
+        ? (recipes.length === 0 && (
+            <PageEmpty text="Try looking for something else..." />
+          )) ||
+          (recipes.length > 0 && <RecipesList recipes={recipes} />)
+        : !isLoading && <NoSearchText>Enter your search query</NoSearchText>}
       {error && toast.warn('Something gone wrong, please try again!')}
+      {recipes && !isLoading && recipes.length > 0 && (
+        <Paginator
+          perPage={perPage}
+          totalData={totalPage}
+          setPage={setPage}
+          page={page}
+        />
+      )}
     </>
   );
 }

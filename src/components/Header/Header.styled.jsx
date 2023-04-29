@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 10;
   padding-top: ${p => p.theme.space[4] + 2}px;
   padding-left: ${p => p.theme.space[4]}px;
   padding-right: ${p => p.theme.space[4]}px;

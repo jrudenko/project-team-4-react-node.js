@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
   left: 0;
   right: 0;
   display: flex;
+  z-index: 1;
   flex-direction: column;
   align-items: center;
   width: 100%;

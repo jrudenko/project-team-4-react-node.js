@@ -54,12 +54,12 @@ export const Bage = styled.div`
   align-items: center;
   min-width: 37px;
   height: auto;
-  background: ${p => p.theme.colors.accentColor};
+  background: ${p => p.theme.colors.colorAccent};
   border-radius: 4px;
   font-weight: 600;
   font-size: ${p => p.theme.fontSizes.xxs}px;
   line-height: 1.5;
-  color: ${p => p.theme.colors.secondaryTextColor};
+  color: ${p => p.theme.colors.whiteText};
   @media screen and (min-width: 768px) {
     min-width: 68px;
     font-size: ${p => p.theme.fontSizes.m}px;
@@ -75,11 +75,11 @@ export const CloseButton = styled.button`
   border: none;
   cursor: pointer;
   margin-left: 30px;
-  color: ${p => (p.dark ? '#FAFAFA' : '#333333')};
+  color: ${p => p.dark ? '#FAFAFA' : '#333333'};
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 768px) {
     margin-left: 90px;
