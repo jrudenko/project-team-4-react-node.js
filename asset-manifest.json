@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-team-4-react-node.js/static/css/main.cac57c9b.css",
-    "main.js": "/project-team-4-react-node.js/static/js/main.60bc59f1.js",
+    "main.js": "/project-team-4-react-node.js/static/js/main.48feb4a9.js",
     "static/js/450.71495323.chunk.js": "/project-team-4-react-node.js/static/js/450.71495323.chunk.js",
     "static/js/308.06053cd8.chunk.js": "/project-team-4-react-node.js/static/js/308.06053cd8.chunk.js",
     "static/js/28.8be4dd7e.chunk.js": "/project-team-4-react-node.js/static/js/28.8be4dd7e.chunk.js",
@@ -36,7 +36,6 @@
     "static/media/spinach-popup-tablet-@2x.webp": "/project-team-4-react-node.js/static/media/spinach-popup-tablet-@2x.6647cf79742cb4c65d7d.webp",
     "static/media/placeholder-meal.jpg": "/project-team-4-react-node.js/static/media/placeholder-meal.d0b3f481995be572c370.jpg",
     "static/media/welcomSection.jpg": "/project-team-4-react-node.js/static/media/welcomSection.d6588c15ceb7a5ca57c8.jpg",
-    "static/media/auth-pana-tab-min-ret.png": "/project-team-4-react-node.js/static/media/auth-pana-tab-min-ret.88c83cbcec23bb3db03c.png",
     "static/media/footer-background-des1x.png": "/project-team-4-react-node.js/static/media/footer-background-des1x.6866261bc6dfb6ec7a00.png",
     "static/media/flat-lay-assortment-vegetables-tablet@2x.jpg": "/project-team-4-react-node.js/static/media/flat-lay-assortment-vegetables-tablet@2x.9c7b2fccd8421961024b.jpg",
     "static/media/mainpage1x_mob_second.png": "/project-team-4-react-node.js/static/media/mainpage1x_mob_second.21428ae5fc7c0ddbb842.png",
@@ -50,18 +49,21 @@
     "static/media/Search-2x-tab.webp": "/project-team-4-react-node.js/static/media/Search-2x-tab.9eb3ce672463f563592b.webp",
     "static/media/footer-background-tab1x.png": "/project-team-4-react-node.js/static/media/footer-background-tab1x.3dd40109573fafcf4230.png",
     "static/media/flat-lay-assortment-vegetables-mobile@2x.jpg": "/project-team-4-react-node.js/static/media/flat-lay-assortment-vegetables-mobile@2x.a87befb6a8cf6899d775.jpg",
-    "static/media/auth-pana-mob-ret-min.png": "/project-team-4-react-node.js/static/media/auth-pana-mob-ret-min.14335bd09b581e799964.png",
+    "static/media/humanImg.svg": "/project-team-4-react-node.js/static/media/humanImg.8156b7d53ea651c3465093ef461ab31e.svg",
     "static/media/not-found.svg": "/project-team-4-react-node.js/static/media/not-found.e7600a8f734bd26f161b7e956f4aff68.svg",
     "static/media/mobile_welcomSection.jpg": "/project-team-4-react-node.js/static/media/mobile_welcomSection.4496ca8a436059dfad2c.jpg",
+    "static/media/mainImg.svg": "/project-team-4-react-node.js/static/media/mainImg.e78a2e20d59be1df4809592c02193e75.svg",
     "static/media/spinach-popup-mobile-1x.webp": "/project-team-4-react-node.js/static/media/spinach-popup-mobile-1x.d635a92294719ec5f8b9.webp",
     "static/media/Search-2x-mob.webp": "/project-team-4-react-node.js/static/media/Search-2x-mob.480958b3d96bcb5df4a8.webp",
     "static/media/flat-lay-assortment-vegetables-tablet.jpg": "/project-team-4-react-node.js/static/media/flat-lay-assortment-vegetables-tablet.9012f964c0a8808c865a.jpg",
     "static/media/Search-1x-desc.webp": "/project-team-4-react-node.js/static/media/Search-1x-desc.dc35f49379fdea369836.webp",
     "static/media/Search-1x-tab.webp": "/project-team-4-react-node.js/static/media/Search-1x-tab.dc35f49379fdea369836.webp",
+    "static/media/secondImg.svg": "/project-team-4-react-node.js/static/media/secondImg.c90eac3656bb73f98fc5dc2c952f9ed3.svg",
+    "static/media/thirdImg.svg": "/project-team-4-react-node.js/static/media/thirdImg.9a1f9eb70d8da9edc4afdf205e5ebe0a.svg",
     "static/media/footer-background-mob1x.png": "/project-team-4-react-node.js/static/media/footer-background-mob1x.f7c1f284d35fd9c21f33.png",
-    "static/media/auth-pana-des.png": "/project-team-4-react-node.js/static/media/auth-pana-des.9556d40c68d06e675366.png",
+    "static/media/firstImg.svg": "/project-team-4-react-node.js/static/media/firstImg.672766b5065d8b633a530923b47ffb81.svg",
     "static/media/flat-lay-assortment-vegetables-mobile.jpg": "/project-team-4-react-node.js/static/media/flat-lay-assortment-vegetables-mobile.0dc5aa0fbd1c2c93ed1d.jpg",
-    "static/media/auth-pana-tab-min.png": "/project-team-4-react-node.js/static/media/auth-pana-tab-min.da31f1cc4a620623d530.png",
+    "static/media/fourthSvg.svg": "/project-team-4-react-node.js/static/media/fourthSvg.6ad4cec7f12a56a9972bf1e72524d46c.svg",
     "static/media/Search-1x-mob.webp": "/project-team-4-react-node.js/static/media/Search-1x-mob.c8c4449de51afd37fd33.webp",
     "static/media/photo-icon.svg": "/project-team-4-react-node.js/static/media/photo-icon.d5abba0d2a5cd1f9bb1aa90c017384f8.svg",
     "index.html": "/project-team-4-react-node.js/index.html",
@@ -71,7 +73,7 @@
     "static/media/WelcomeSectionLogo.svg": "/project-team-4-react-node.js/static/media/WelcomeSectionLogo.415f32a94a3c20057f5073962eda1b80.svg",
     "static/media/clock1.svg": "/project-team-4-react-node.js/static/media/clock1.6521cc8abf7aa82709c51f1a4bf40698.svg",
     "main.cac57c9b.css.map": "/project-team-4-react-node.js/static/css/main.cac57c9b.css.map",
-    "main.60bc59f1.js.map": "/project-team-4-react-node.js/static/js/main.60bc59f1.js.map",
+    "main.48feb4a9.js.map": "/project-team-4-react-node.js/static/js/main.48feb4a9.js.map",
     "450.71495323.chunk.js.map": "/project-team-4-react-node.js/static/js/450.71495323.chunk.js.map",
     "308.06053cd8.chunk.js.map": "/project-team-4-react-node.js/static/js/308.06053cd8.chunk.js.map",
     "28.8be4dd7e.chunk.js.map": "/project-team-4-react-node.js/static/js/28.8be4dd7e.chunk.js.map",
@@ -87,6 +89,6 @@
   },
   "entrypoints": [
     "static/css/main.cac57c9b.css",
-    "static/js/main.60bc59f1.js"
+    "static/js/main.48feb4a9.js"
   ]
 }
