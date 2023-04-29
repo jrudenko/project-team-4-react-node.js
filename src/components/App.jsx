@@ -90,7 +90,7 @@ export const App = () => {
                   <Suspense fallback={<Loader />}>
                     <CategoriesPage />
                   </Suspense>
-                }               
+                }
               />
               <Route path="add" element={
                 <Suspense fallback={<Loader />}>
@@ -144,7 +144,7 @@ export const App = () => {
               index
               path="/register"
               element={
-                <RestrictedRoute component={RegisterPage} redirectTo="/main" />
+                <RestrictedRoute component={RegisterPage} redirectTo="/signin" />
               }
             />
             <Route

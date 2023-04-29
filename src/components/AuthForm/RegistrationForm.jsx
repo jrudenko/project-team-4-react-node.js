@@ -68,10 +68,11 @@ const registerSchema = Yup.object({
 });
 
 
-
 export const AuthForm = ({ login }) => {
   const { user, isLoggedIn } = useAuth();
+
   console.log(user.email, isLoggedIn)
+
   const [secure, setSecure] = useState(null);
 
   const isLoading = useSelector(selectIsLoading);

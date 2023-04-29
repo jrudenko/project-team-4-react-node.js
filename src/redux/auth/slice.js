@@ -34,6 +34,7 @@ export const userSlice = createSlice({
         state.isSent = true;
         state.user = action.payload.user;
         state.token = action.payload.token;
+        state.isLoggedIn=true;
         state.error = null;
         state.isLoading = false;
       })
