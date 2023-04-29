@@ -44,11 +44,7 @@ export const Text = styled.p`
   font-weight: ${p => p.theme.fontWeights.body};
   font-size: ${p => p.theme.fontSizes.s}px;
   line-height: 1.6;
-  color: ${p => p.theme.colors.headerTextModal};
-  &:hover {
-    transition: 5s;
-    color: ${p => p.theme.colors.headerTextModal};
-  }
+  color: ${p => p.theme.colors.headerText};
 `;
 
 export const ButtonEdit = styled.button`
@@ -58,14 +54,12 @@ export const ButtonEdit = styled.button`
   padding: 0;
   display: flex;
   align-items: center;
-  color: ${p => p.theme.colors.headerTextModal};
+  color: ${p => p.theme.colors.headerText};
   cursor: pointer;
   transition: all 250ms ease-in-out;
-  box-shadow: ${props => props.theme.colors.boxShadow.boxshadow};
-
   &:hover {
     transform: scale(1.4);
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
 `;
 

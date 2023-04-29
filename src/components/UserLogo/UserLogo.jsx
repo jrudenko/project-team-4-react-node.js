@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from "../../hooks/useAuth";
-import Avatar from '../../images/avatar.png';
+// import Avatar from '../../images/avatar.png';
 import { useLocation, useParams } from 'react-router-dom';
 import UserLogoModal from './UserLogoModal/UserLogoModal';
 
@@ -16,9 +16,9 @@ const UserLogo = () => {
   return (
     <Container>
       <WrapPhoto onClick={toggleModalEdit}>
-        <Photo src={user?.avatar ?? Avatar} alt="user" />
+        <Photo src={user.avatar} alt={user.name} />
         <Name pathname={pathname} recipe={recipe}>
-          {user?.name ?? 'User'}
+          {user.name}
         </Name>
       </WrapPhoto>
       {modalIsOpen && <UserLogoModal openModalEdit={toggleModalEdit} />}

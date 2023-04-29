@@ -87,7 +87,7 @@ export const theme = {
         backdropColor: 'rgba(0, 0, 0, 0.5);',
         roundedBgColor: '#8BAA36',
         roundedBgHoverColor: '#22252A',
-        roundedOtherBtnColor: '#fafafa',
+        roundedOtherBtnColor: '#23262A',
         subscribeBgColor: '#1E1F28',
         subscribeBtnColor: '#8BAA36',
         roundedDarkBgColor: '#8baa36',
@@ -115,11 +115,12 @@ export const theme = {
         bgSerchInput: '#2A2C36',
         borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
         colorInputSearch: '#23262A',
-        inputAcentColor: '#a5dd0c',
 
-        boxShadow: {
-          boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
-        },
+        inputAcentColor:'#a5dd0c',
+    boxShadow: {
+    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+    },
+
       },
       lightTheme: {
         background: '#FAFAFA',

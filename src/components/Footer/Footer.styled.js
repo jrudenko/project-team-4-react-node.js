@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 //стилі контейнера Footer
 export const FooterConteiner = styled.div`
   display: flex;
@@ -105,8 +106,12 @@ export const Logo = styled(Link)`
   width: 32px;
   height: 32px;
 
-  transform: scale(1.1);
-  transform: scale(1.1);
+  :hover,
+  :focus {
+    transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
 
   @media (min-width: 768px) {
     width: 44px;
@@ -114,6 +119,7 @@ export const Logo = styled(Link)`
     border-radius: 12px;
   }
 `;
+
 
 export const FooterTitle = styled.div`
   color: ${p => p.theme.colors.footerText};
@@ -184,9 +190,12 @@ export const Item = styled.span`
   font-style: normal;
   color: ${p => p.theme.colors.footerText};
   letter-spacing: -0.02em;
-  :hover {
+
+  :hover,
+  :focus {
     color: ${p => p.theme.colors.subscribeBgColor};
   }
+
 `;
 
 export const SocialMadia = styled.div`
@@ -195,3 +204,4 @@ export const SocialMadia = styled.div`
     justify-content: center;
   }
 `;
+
