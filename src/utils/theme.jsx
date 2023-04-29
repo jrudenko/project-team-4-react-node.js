@@ -91,7 +91,7 @@ export const theme = {
         backdropColor: 'rgba(0, 0, 0, 0.5);',
         roundedBgColor: '#8BAA36',
         roundedBgHoverColor: '#22252A',
-        roundedOtherBtnColor: '#fafafa',
+        roundedOtherBtnColor: '#23262A',
         subscribeBgColor: '#1E1F28',
         subscribeBtnColor: '#8BAA36',
         roundedDarkBgColor: '#8baa36',

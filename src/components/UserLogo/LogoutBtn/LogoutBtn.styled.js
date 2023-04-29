@@ -30,7 +30,7 @@ export const ButtonClose = styled.button`
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 768px) {
     top: 24px;
@@ -67,40 +67,4 @@ export const Wrap = styled.div`
   @media screen and (min-width: 768px) {
     gap: 16px;
   }
-`;
-
-
-
-export const ButtonC = styled.button`
-display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 137px;
-  height: 49px;
-  font-family: Poppins, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  cursor: pointer;
-  color: "#23262A";
-  background-color: rgb(217, 217, 217);
-  border: none;
-  border-radius: 6px;
-  transition: color 250ms ease 0s, background-color 250ms ease 0s, border 250ms ease 0s;
-  
-  &:hover,
-  &:focus {
-    background-color: rgba(0, 0, 0, 0.005);
-    color: ${p => (p.dark ? '#8BAA36' : '#8BAA36')};
-    border: 1px solid #23262A;
-    
-  }
-  
-@media screen and (min-width: 768px){
-    width: 192px;
-    height: 59px;
-    font-size: 16px;
-    line-height: 21px;
-}
 `;
