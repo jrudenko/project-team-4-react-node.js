@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import { Formik, ErrorMessage } from "formik";
 // import * as Yup from "yup";
@@ -6,7 +5,6 @@
 // import {SubForm,TextFrame, SubTitle, SubText,FormFrame,InputBox,InputIcon, SubInput} from './SubscribeForm.styled'
 // import Button from '../Button';
 // import { useState, useEffect } from "react";
-
 
 // const validationSchema = Yup.object().shape({
 //   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -97,8 +95,7 @@
 
 // export default SubscribeForm;
 
-
-import  Button  from 'components/Button/Button';
+import Button from 'components/Button/Button';
 import { Formik } from 'formik';
 import {
   SubInput,
@@ -126,8 +123,7 @@ const SubscribeForm = () => {
 
   const userEmail = useSelector(state => state.auth.user.email);
 
-  const handleSubmit = async (e, values, { resetForm }) => {
-   e.preventDefault();
+  const handleSubmit = async (values, { resetForm }) => {
     const { subscribe } = values;
     if (userEmail !== subscribe) {
       return;
@@ -152,12 +148,11 @@ const SubscribeForm = () => {
         validationSchema={schema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched }) => {
+        {({ errors, handleSubmit, resetForm }) => {
           return (
             <FormFrame>
               <InputBox>
-                <InputIcon>
-                </InputIcon>
+                <InputIcon></InputIcon>
 
                 <SubInput
                   state={errors.subscribe ? 'error' : 'undefined'}
@@ -182,7 +177,10 @@ const SubscribeForm = () => {
                 lineHeight="16px"
                 lineHeightTablet="18px"
                 lineHeightDesktop="18px"
-            
+                onClick={event => {
+                  handleSubmit(event);
+                  resetForm();
+                }}
               >
                 Subcribe
               </Button>
