@@ -4,33 +4,32 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
 export const getSearchByTitle = createAsyncThunk(
-  'search',
-  async ({ query, type }, thunkApi) => {
+  'search/byTitle',
+  async ({ query, page = 1, perPage = 12 }, thunkApi) => {
     try {
-      const { data } = await axios.get(`/search/?query=${query}&type=${type}`);
-      return data.searchResult;
+      const { data } = await axios.get(
+        `/search/?query=${query}&page=${page}&perPage=${perPage}`
+      );
+      return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);
     }
   }
 );
 
-export const getSearchByIngredients = async (
-  query,
-  page = 1,
-  limit = 12,
-  sort = 'popular'
-) => {
-  try {
-    const { data } = await axios.get(
-      `/recipes/search/ingredient/${query.trim()}?page=${page}&limit=${limit}&sort=${sort}`
-    );
-    return data;
-  } catch (error) {
-    console.log(error.message);
-    return null;
+export const getSearchByIngredients = createAsyncThunk(
+  'search/byIngredient',
+  async ({ query, page = 1, perPage = 12 }, thunkApi) => {
+    try {
+      const { data } = await axios.get(
+        `/ingredients/?query=${query}&page=${page}&perPage=${perPage}`
+      );
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
   }
-};
+);
 
 export const getRecipeById = async id => {
   try {

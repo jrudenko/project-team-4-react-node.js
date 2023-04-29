@@ -11,8 +11,17 @@ export const CardItem = styled.li`
   border-radius: 8px;
   margin-bottom: 18px;
   padding: 14px 9px;
+   box-shadow: ${props => props.theme.colors.boxShadow.boxshadow};
   :last-child {
     margin-bottom: 0;
+  }
+    &:hover {
+    transition: 5s;
+    transform: scale(1.1);
+  }
+    &:focus {
+    transition: s;
+    transform: scale(1.1);
   }
   @media ${props => props.theme.device.tablet} {
     height: 288px;
@@ -159,14 +168,3 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
-// export const ContentWrapper = styled.ul`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 18px;
-//   @media screen and (min-width: 768px) {
-//     gap: 40px;
-//   }
-//   @media screen and (min-width: 1440px) {
-//     gap: 50px;
-//   }
-// `;

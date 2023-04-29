@@ -119,7 +119,7 @@ export const SelectIngredients = styled(Select)`
     -ms-overflow-style: none;
 
     ::-webkit-scrollbar {
-      width: 4px;
+      width: 5px;
     }
     ::-webkit-scrollbar-thumb {
       background-color: ${p => p.theme.colors.formAddScrollThumb};
@@ -138,13 +138,13 @@ export const SelectIngredients = styled(Select)`
 
     &:hover,
     &:focus {
-      background-color: ${p => p.theme.colors.accentColor};
+      background-color: ${p => p.theme.colors.inputAcentColor};
       color: ${p => p.theme.colors.form.formIcon};
       opacity: 1;
     }
   }
   .сustom-select__option--is-selected {
-    background-color: ${p => p.theme.colors.accentColor};
+    background-color: ${p => p.theme.colors.inputAcentColor};
     color: ${p => p.theme.colors.form.formIcon};
     opacity: 1;
   }
@@ -248,13 +248,13 @@ export const SelectMeasure = styled(Select)`
 
     &:hover,
     &:focus {
-      background-color: ${p => p.theme.colors.accentColor};
+      background-color: ${p => p.theme.colors.inputAcentColor};
       color: ${p => p.theme.colors.form.formIcon};
       opacity: 1;
     }
   }
   .сustom-select__option--is-selected {
-    background-color: ${p => p.theme.colors.accentColor};
+    background-color: ${p => p.theme.colors.inputAcentColor};
     color: ${p => p.theme.colors.form.formIcon};
     opacity: 1;
   }

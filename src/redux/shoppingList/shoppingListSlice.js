@@ -27,8 +27,7 @@ export const shoppingsSlice = createSlice({
       .addCase(deleteItem.pending, state => {
         state.isDeleting = true;
       })
-      .addCase(deleteItem.fulfilled, (state, action) => {
-        state.items = action.payload.shoppingList;
+      .addCase(deleteItem.fulfilled, (state) => {
         state.isDeleting = false;
         state.error = null;
       })

@@ -5,8 +5,8 @@ export const TableHeader = styled.div`
   padding: 10px;
   margin-top: 50px;
   margin-bottom: 8px;
-  margin-left: -${p => p.theme.space[3]}px;
-  margin-right: -${p => p.theme.space[3]}px;
+  margin-left: -${p => p.theme.space[2]}px;
+  margin-right: -${p => p.theme.space[2]}px;
   display: flex;
   flex-direction: row;
   border-radius: 8px;

@@ -1,9 +1,4 @@
-// export const selectSearchQuery = s => {
-//   return s.search.searchQuery;
-// };
-export const selectIsLoading = state => {
-  return state.search.isLoading;
-};
-export const selectSearchResult = state => {
-  return state.search.searchResult;
-};
+export const selectIsLoading = state => state.search.isLoading;
+export const selectSearchResult = state => state.search.searchResult;
+export const selectError = state => state.search.error;
+export const selectTotalPage = state => state.search.totalPages;

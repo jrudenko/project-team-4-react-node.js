@@ -44,8 +44,7 @@ export const Name = styled.p`
   font-weight: ${p => p.theme.fontWeights.title};
   font-size: ${p => p.theme.fontSizes.xs}px;
   line-height: 170%;
-  color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.hoverTextColorMain)};
-
+  color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.headerText)};
   @media screen and (min-width: 768px) {
     font-size: ${p => p.theme.fontSizes.s}px;
   }
@@ -53,12 +52,12 @@ export const Name = styled.p`
     color: ${p =>
       p.pathname === '/main' || p.recipe?.recipeId
         ? '#23262A'
-        : p.theme.colors.mainDark};
+        : p.theme.colors.headerText};
   }
   @media screen and (min-width: 1440px) {
     color: ${p =>
       p.pathname === '/main' || p.recipe?.recipeId
         ? '#23262A'
-        : p.theme.colors.mainDark};
+        : p.theme.colors.headerText};
   }
 `;

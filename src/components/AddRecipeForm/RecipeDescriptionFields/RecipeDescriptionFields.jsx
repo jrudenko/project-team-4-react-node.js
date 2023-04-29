@@ -89,6 +89,7 @@ export const RecipeDescriptionFields = ({
               type="text"
               name="title"
               placeholder="Enter item title"
+              
             />
             <FormErrorMsg name="title" position="left" />
           </Label>
@@ -107,7 +108,7 @@ export const RecipeDescriptionFields = ({
                 {({ field }) => (
                   <StyledSelect
                     options={optionsCategory}
-                    defaultValue={{ value: 'breakfast', label: 'Breakfast' }}
+                    defaultValue={{ value: 'Breakfast', label: 'Breakfast' }}
                     isSearchable={false}
                     className="сustom-select-container"
                     classNamePrefix="сustom-select"

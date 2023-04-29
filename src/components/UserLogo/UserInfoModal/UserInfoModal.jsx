@@ -2,9 +2,7 @@ import { updateUserProfile } from "../../../redux/auth/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
-
 import * as yup from "yup";
-import  Button  from "../../Button";
 import { Formik } from "formik";
 import {
   Container,
@@ -21,6 +19,8 @@ import {
   LabelInput,
 } from "./UserInfoModal.styled";
 
+import Button from "../../Button";
+
 const schema = yup.object().shape({
   name: yup.string().min(2).required(),
 });
@@ -36,11 +36,11 @@ const UserInfoModal = ({ onClose }) => {
   const handleSubmit = (values) => {
     const formData = new FormData();
 
-    if (values.avatarURL === "" && values.name === userName) {
+    if (values.avatar === "" && values.name === userName) {
       toast.warning("There are no changes!");
       return;
     }
-    if (values.avatarURL === "" && values.name !== userName) {
+    if (values.avatar === "" && values.name !== userName) {
       formData.append("name", values.name);
       dispatch(updateUserProfile(formData));
       onClose();
@@ -48,7 +48,7 @@ const UserInfoModal = ({ onClose }) => {
       return;
     }
 
-    formData.append("avatar", values.avatarURL);
+    formData.append("avatar", values.avatar);
     formData.append("name", values.name);
     dispatch(updateUserProfile(formData));
     onClose();
@@ -62,7 +62,7 @@ const UserInfoModal = ({ onClose }) => {
     <>
       <Formik
         initialValues={{
-          avatarURL: "",
+          avatar: "",
           name: userName,
         }}
         validationSchema={schema}
@@ -70,7 +70,7 @@ const UserInfoModal = ({ onClose }) => {
           handleSubmit(values);
           actions.setSubmitting(false);
           actions.resetForm();
-        }}
+        }}   
       >
         {(props) => (
           <FormEdit onSubmit={props.handleSubmit}>
@@ -88,11 +88,11 @@ const UserInfoModal = ({ onClose }) => {
                   className="hidden"
                   type="file"
                   ref={filePicker}
-                  name="avatarURL"
+                  name="avatar"
                   accept="image/*,.png, .jpeg,.gif,.web"
                   onBlur={() => {
                     props.setTouched({
-                      avatarURL: true,
+                      avatar: true,
                     });
                   }}
                   onChange={(event) => {
@@ -103,7 +103,7 @@ const UserInfoModal = ({ onClose }) => {
                     setSelectedFile(
                       window.URL.createObjectURL(event.target.files[0])
                     );
-                    props.setFieldValue("avatarURL", event.target.files[0]);
+                    props.setFieldValue("avatar", event.target.files[0]);
                   }}
                 />
 

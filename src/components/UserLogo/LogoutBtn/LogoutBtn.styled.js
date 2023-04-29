@@ -30,7 +30,7 @@ export const ButtonClose = styled.button`
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accentColor};
+    color: ${p => p.theme.colors.colorAccent};
   }
   @media screen and (min-width: 768px) {
     top: 24px;

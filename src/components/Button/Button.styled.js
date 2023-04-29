@@ -8,6 +8,8 @@ export const ButtonStyled = styled.button`
   width: ${({ width }) => width && width};
   height: ${({ height }) => height && height};
 
+  transition: 5s;
+
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: ${p => p.theme.fontWeights.body};
@@ -17,7 +19,7 @@ export const ButtonStyled = styled.button`
   color: ${({ look, theme }) =>
     look === 'cancel' || look === 'rounded_other'
       ? `${theme.colors.roundedOtherBtnColor}`
-      : '#fafafa'};
+      : '#FAFAFA'};
   background-color: ${({ look, theme }) => {
     switch (look) {
       case 'subscribe':
@@ -33,7 +35,7 @@ export const ButtonStyled = styled.button`
       case 'rounded_other':
         return 'transparent';
       case 'logout':
-        return '#8baa36';
+        return `${theme.colors.colorAccent}`;
       case 'cancel':
         return '#D9D9D9';
       default:

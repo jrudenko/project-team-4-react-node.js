@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import { FooterConteiner,MenuBox, MainBox, FormBox,  DescreptionWrapper, SocialMadia} from './Footer.styled';
 
 import { Preferences } from './BenefitsList';

@@ -225,9 +225,11 @@ export const FormInput = styled(Field)`
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.form.formIcon};
   }
+  :hover,
   :focus + svg {
     opacity: 1;
   }
+  :hover,
   :focus {
     opacity: 1;
     outline: none;

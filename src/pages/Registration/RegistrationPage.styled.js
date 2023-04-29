@@ -26,8 +26,6 @@ export const AuthMain = styled.main`
   }
 `;
 
-
-
 export const AuthBackground = styled.div`
   position: absolute;
   bottom: 0;

@@ -29,6 +29,14 @@ const getTheme = mode =>
     colors: get(theme.colors.switches, mode, theme.colors),
   });
 
+// const getTheme = mode => {
+//   const colors = mode === 'darkTheme' ? theme.colors.switches.darkTheme : theme.colors;
+//   return {
+//     ...theme,
+//     colors: colors
+//   };
+// };
+
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export const App = () => {
@@ -90,7 +98,7 @@ export const App = () => {
                   <Suspense fallback={<Loader />}>
                     <CategoriesPage />
                   </Suspense>
-                }               
+                }
               />
               <Route path="add" element={
                 <Suspense fallback={<Loader />}>
@@ -144,7 +152,7 @@ export const App = () => {
               index
               path="/register"
               element={
-                <RestrictedRoute component={RegisterPage} redirectTo="/main" />
+                <RestrictedRoute component={RegisterPage} redirectTo="/signin" />
               }
             />
             <Route

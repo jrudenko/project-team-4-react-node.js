@@ -33,7 +33,7 @@ export const theme = {
     warning: '#F6C23E',
     error: '#E74A3B',
     whiteText: '#FAFAFA',
-    grey: `#D9D9D9`,
+    grey: '#D9D9D9',
     white: '#ffffff',
     black: '#000000',
     mainDark: '#23262A',
@@ -63,7 +63,6 @@ export const theme = {
       formAddIcon: '#333333',
       labelText: '#000000',
     },
-
     switches: {
       darkTheme: {
         background: '#1E1F28',
@@ -88,7 +87,7 @@ export const theme = {
         backdropColor: 'rgba(0, 0, 0, 0.5);',
         roundedBgColor: '#8BAA36',
         roundedBgHoverColor: '#22252A',
-        roundedOtherBtnColor: '#fafafa',
+        roundedOtherBtnColor: '#23262A',
         subscribeBgColor: '#1E1F28',
         subscribeBtnColor: '#8BAA36',
         roundedDarkBgColor: '#8baa36',
@@ -111,6 +110,17 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
+        inputBg: '#8BAA36',
+        backgroundSerch: '#FAFAFA',
+        bgSerchInput: '#2A2C36',
+        borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
+        colorInputSearch: '#23262A',
+
+        inputAcentColor:'#a5dd0c',
+    boxShadow: {
+    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+    },
+
       },
       lightTheme: {
         background: '#FAFAFA',
@@ -118,6 +128,7 @@ export const theme = {
         cardBackground: '#FFFFFF',
         deleteButton: '#EBF3D4',
         headerText: '#23262A',
+        headerTextModal: '#FFFFFF',
         heroText: '#22252A',
         primaryText: '#3E4462',
         heroForm: '#F0F0F0',
@@ -158,6 +169,15 @@ export const theme = {
         paginateArrow: 'rgba(169, 169, 169, 0.73)',
         paginatePage: '#656565',
         paginateActive: '#EBF3D4',
+        inputBg: '#22252A',
+        backgroundSerch: '#FAFAFA',
+        bgSerchInput: '#D9D9D9',
+        borderInputSearch: '1px solid rgba(35, 38, 42, 0.2)',
+        colorInputSearch: '#bdbdbd',
+        boxShadow: {
+          boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
+        },
+
       },
     },
   },
@@ -165,6 +185,8 @@ export const theme = {
   transitions: {
     main: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   },
+
+
   device: {
     mobile: `(min-width: 375px)`,
     tablet: `(min-width: 768px)`,
