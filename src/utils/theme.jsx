@@ -114,8 +114,9 @@ export const theme = {
         paginateArrow: 'rgba(250, 250, 250, 0.6)',
         paginatePage: 'rgba(250, 250, 250, 0.6)',
         paginateActive: '#8BAA36',
-        inputBg: '#8BAA36',
-        headerTextModal: '#000000',
+        inputBg:'#8BAA36',
+        inputAcentColor:'#a5dd0c',
+
         boxShadow: {
     boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
     },

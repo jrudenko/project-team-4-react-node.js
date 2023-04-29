@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import { FormErrorMsg } from '../FormErrorMsg/FormErrorMsg';
+import { FormErrorMsg } from '../FormErrorMsg/FormErrorMsg';
 import { Ingredients } from '../Ingredients/Ingredients.styled';
 import { FieldsetPreparation, Textarea } from './RecipePreapationFields.styled';
 
@@ -18,7 +18,7 @@ export const RecipePreapationFields = ({ setFieldValue }) => {
         onBlur={handleTextareaBlur}
         placeholder="Enter recipe"
       />
-      {/* <FormErrorMsg name="preparation" position="left" /> */}
+      <FormErrorMsg name="preparation" position="left" />
     </FieldsetPreparation>
   );
 };
