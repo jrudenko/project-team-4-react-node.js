@@ -120,8 +120,7 @@ export const theme = {
         borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
         colorInputSearch: '#23262A',
         inputAcentColor:'#a5dd0c',
-
->        boxShadow: {
+    boxShadow: {
     boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
     },
       },
