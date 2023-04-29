@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
-  min-width: 375px;
   margin: 0 auto;
 `;
 

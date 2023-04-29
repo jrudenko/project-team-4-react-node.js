@@ -15,7 +15,7 @@ export const SearchInput = styled.input`
   color: #3e4462;
   border: 1px solid #f0f0f0;
   border-radius: 24px 44px;
-  background-color: ${p => p.theme.colors.whiteText};
+  background-color: ${p => p.theme.colors.background};
 
   @media screen and (min-width: 768px) {
     padding: 19px 180px 16px 38px;
@@ -33,7 +33,7 @@ export const SearchInput = styled.input`
 
   &:focus {
     outline: none;
-    background-color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.background};
   }
 `;
 
