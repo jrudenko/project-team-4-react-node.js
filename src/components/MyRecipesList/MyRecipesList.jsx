@@ -6,6 +6,8 @@ import { List } from 'components/FavoriteList/FavoriteList.styled';
 import { Loader } from 'components/Loader/Loader';
 import EmptyPage from '../EmptyPage';
 
+
+
 export default function MyRecipesList() {
   const [myRecipes, setMyRecipes] = useState([]);
   const [isloading, setIsLoading] = useState(false);
@@ -30,7 +32,7 @@ export default function MyRecipesList() {
     try {
       await deleteMyRecipe(id);
       const data = await getMyRecipes();
-      setMyRecipes(data);
+      setMyRecipes(data.recipes);
     } catch (error) {
       console.log(error);
     }
@@ -58,5 +60,6 @@ export default function MyRecipesList() {
         <EmptyPage text="You don't have your recipes yet!" />
       )}
     </List>
+        
   );
 }
