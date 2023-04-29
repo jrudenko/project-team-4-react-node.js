@@ -15,7 +15,7 @@ export const SearchInput = styled.input`
   color: #3e4462;
   border: 2px solid #8baa36;
   border-radius: 24px 44px;
-  background-color: ${p => p.theme.colors.whiteText};
+  background-color: ${p => p.theme.colors.background};
 
   @media screen and (min-width: 768px) {
     padding: 19px 180px 16px 38px;
@@ -33,7 +33,7 @@ export const SearchInput = styled.input`
 
   &:focus {
     outline: none;
-    background-color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.background};
   }
 `;
 
@@ -45,7 +45,9 @@ export const SearchButton = styled.button`
   font-weight: ${p => p.theme.fontWeights.body};
   font-size: 14px;
   line-height: ${p => p.theme.searchSelect};
-  color: ${p => p.theme.colors.footerSocialIcons};
+
+  color: ${p => p.theme.colors.backgroundSerch};
+
   transition: ${p => p.theme.transitions.main};
   background-color: ${p => p.theme.colors.roundedBgColor};
   border-radius: 24px 44px;
