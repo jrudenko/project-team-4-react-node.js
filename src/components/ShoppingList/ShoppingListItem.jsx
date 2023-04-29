@@ -1,4 +1,4 @@
-// import { IoClose } from 'react-icons/io5';
+import { IoClose } from 'react-icons/io5';
 import {
   Descriptions,
   ImageItem,
@@ -9,7 +9,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import { deleteItem, getList } from '../../redux/shoppingList/shoppingListOperations';
-// import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
 
 
 export const ShoppingListItem = ({ item }) => {
@@ -43,12 +43,12 @@ dispatch(getList())
           disabled={isDeleting}
           dark={darkMode.darkMode}
           onClick={() => handleDeleteItem(item)}
-        > X
-          {/* {isDeleting && deletingId ? (
+        > 
+          {isDeleting && deleteItem ? (
             <Loader size="28" />
           ) : (
             <IoClose size={24} />
-          )} */}
+          )}
         </CloseButton>
       </div>
     </ShoppingItem>
