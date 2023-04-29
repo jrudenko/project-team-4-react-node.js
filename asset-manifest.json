@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/project-team-4-react-node.js/static/css/main.cac57c9b.css",
-    "main.js": "/project-team-4-react-node.js/static/js/main.535fd8e9.js",
+    "main.js": "/project-team-4-react-node.js/static/js/main.12be0e96.js",
     "static/js/878.8a6009de.chunk.js": "/project-team-4-react-node.js/static/js/878.8a6009de.chunk.js",
     "static/js/308.fd7c715e.chunk.js": "/project-team-4-react-node.js/static/js/308.fd7c715e.chunk.js",
-    "static/js/975.9063f5bd.chunk.js": "/project-team-4-react-node.js/static/js/975.9063f5bd.chunk.js",
+    "static/js/975.4eaa4023.chunk.js": "/project-team-4-react-node.js/static/js/975.4eaa4023.chunk.js",
     "static/js/301.5ed03a41.chunk.js": "/project-team-4-react-node.js/static/js/301.5ed03a41.chunk.js",
     "static/js/391.25b02f32.chunk.js": "/project-team-4-react-node.js/static/js/391.25b02f32.chunk.js",
     "static/js/869.be2a0ddb.chunk.js": "/project-team-4-react-node.js/static/js/869.be2a0ddb.chunk.js",
@@ -71,10 +71,10 @@
     "static/media/WelcomeSectionLogo.svg": "/project-team-4-react-node.js/static/media/WelcomeSectionLogo.415f32a94a3c20057f5073962eda1b80.svg",
     "static/media/clock1.svg": "/project-team-4-react-node.js/static/media/clock1.6521cc8abf7aa82709c51f1a4bf40698.svg",
     "main.cac57c9b.css.map": "/project-team-4-react-node.js/static/css/main.cac57c9b.css.map",
-    "main.535fd8e9.js.map": "/project-team-4-react-node.js/static/js/main.535fd8e9.js.map",
+    "main.12be0e96.js.map": "/project-team-4-react-node.js/static/js/main.12be0e96.js.map",
     "878.8a6009de.chunk.js.map": "/project-team-4-react-node.js/static/js/878.8a6009de.chunk.js.map",
     "308.fd7c715e.chunk.js.map": "/project-team-4-react-node.js/static/js/308.fd7c715e.chunk.js.map",
-    "975.9063f5bd.chunk.js.map": "/project-team-4-react-node.js/static/js/975.9063f5bd.chunk.js.map",
+    "975.4eaa4023.chunk.js.map": "/project-team-4-react-node.js/static/js/975.4eaa4023.chunk.js.map",
     "301.5ed03a41.chunk.js.map": "/project-team-4-react-node.js/static/js/301.5ed03a41.chunk.js.map",
     "391.25b02f32.chunk.js.map": "/project-team-4-react-node.js/static/js/391.25b02f32.chunk.js.map",
     "869.be2a0ddb.chunk.js.map": "/project-team-4-react-node.js/static/js/869.be2a0ddb.chunk.js.map",
@@ -87,6 +87,6 @@
   },
   "entrypoints": [
     "static/css/main.cac57c9b.css",
-    "static/js/main.535fd8e9.js"
+    "static/js/main.12be0e96.js"
   ]
 }
