@@ -15,14 +15,11 @@ export const GlobalStyle = createGlobalStyle`
 
 export const AuthMain = styled.main`
   position: relative;
-  height: 100vh;
+  height: 650px;
   padding-top: 87px;
   @media screen and (min-width: 768px) {
     padding-top: 96px;
-  }
-  @media screen and (min-width: 1440px) {
-    // display: flex;
-    // justify-content: center;
+    height: 920px;
   }
 `;
 
