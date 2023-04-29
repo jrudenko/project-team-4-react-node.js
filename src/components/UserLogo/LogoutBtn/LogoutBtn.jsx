@@ -4,7 +4,7 @@ import {
   ButtonClose,
   CloseIcon,
   Title,
-  Wrap, ButtonC
+  Wrap
 } from './LogoutBtn.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../../redux/auth/operations';
@@ -35,7 +35,7 @@ const LogoutBtn = ({ onClose }) => {
         >
           Log out
         </Button>
-        <ButtonC
+        <Button
           type="button"
           look="cancel"
           width="137px"
@@ -48,7 +48,7 @@ const LogoutBtn = ({ onClose }) => {
           onClick={onClose} 
         >
           Cancel
-        </ButtonC>
+        </Button>
       </Wrap>
     </Container>
   );

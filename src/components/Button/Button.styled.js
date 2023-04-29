@@ -19,7 +19,7 @@ export const ButtonStyled = styled.button`
   color: ${({ look, theme }) =>
     look === 'cancel' || look === 'rounded_other'
       ? `${theme.colors.roundedOtherBtnColor}`
-      : '#000000'};
+      : '#FAFAFA'};
   background-color: ${({ look, theme }) => {
     switch (look) {
       case 'subscribe':
@@ -35,7 +35,7 @@ export const ButtonStyled = styled.button`
       case 'rounded_other':
         return 'transparent';
       case 'logout':
-        return '#8baa36';
+        return `${theme.colors.colorAccent}`;
       case 'cancel':
         return '#D9D9D9';
       default:
@@ -265,7 +265,7 @@ export const LinkStyled = styled(Link)`
         case 'rounded_other':
           return '#fafafa';
         case 'logout':
-          return '#000000';
+          return '#fafafa';
         case 'subscribe_dark':
           return '#8baa36';
         default:
