@@ -1,3 +1,4 @@
+
 export const theme = {
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 512],
 
@@ -55,6 +56,7 @@ export const theme = {
       inpConfirm: '#3CBC81',
       inpWarning: '#F6C23E',
       inpError: '#E74A3B',
+      formIcon: '#FAFAFA',
       formBottomLine: '#E0E0E0',
       formBackground: '#2a2c36',
       formIngredientsBackground: '#F5F5F5',
@@ -64,7 +66,6 @@ export const theme = {
     },
     switches: {
       darkTheme: {
-        formIcon: '#FAFAFA',
         background: '#1E1F28',
         secondaryBg: '#2A2C36',
         cardBackground: '#2A2C36',
@@ -115,15 +116,17 @@ export const theme = {
         bgSerchInput: '#2A2C36',
         borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
         colorInputSearch: '#23262A',
+        socialIconHover: '#22252A',
+        inputAcentColor:'#a5dd0c',
+        folowUsIconHover: '#8BAA36',
+        folowUsIcon: '#FAFAFA',
 
-        inputAcentColor:'#b7e241',
-    boxShadow: {
-    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
-    },
+        boxShadow: {
+        boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+       },
 
       },
       lightTheme: {
-        formIcon: '#8BAA36',
         background: '#FAFAFA',
         secondaryBg: '#EBF3D4',
         cardBackground: '#FFFFFF',
@@ -154,7 +157,7 @@ export const theme = {
         formAddInputText: '#000000',
         formAddPlaceholder: '#7d7d7d',
         formAddBorder: '#e0e0e0',
-        formAddSelectMenu: '#FFFFFF',
+        formAddSelectMenu: '#fafafa',
         formAddScrollThumb: '#e0e0e0',
         fromAddScrollTrack: '#fafafa',
         fromAddSelectOption: '#7d7d7d',
@@ -175,11 +178,13 @@ export const theme = {
         bgSerchInput: '#D9D9D9',
         borderInputSearch: '1px solid rgba(35, 38, 42, 0.2)',
         colorInputSearch: '#bdbdbd',
-        inputAcentColor: '#ffffff7a',
         boxShadow: {
+        inputAcentColor:'#FFFFFF',
         boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
         },
-
+        socialIconHover:'#FFFFFF',
+        folowUsIconHover: '#22252A',
+        folowUsIcon: '#8baa36',
       },
     },
   },

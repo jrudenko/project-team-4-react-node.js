@@ -3,7 +3,6 @@ import Title from 'components/Title/Title';
 import { Box } from 'components/Box';
 import { AddRecipeForm } from 'components/AddRecipeForm/AddRecipeForm';
 import  PopularRecipe  from 'components/PopularRecipe/PopularRecipe';
-import {Networks} from 'components/SocialMedia/Networks';
 import {
   Page,
   ContainerForm,
@@ -12,6 +11,7 @@ import {
   SocialsTitle,
 } from './AddRecipePage.styled';
 import Scroll from '../../utils/scroll';
+import SocMadia from 'components/AddRecipeForm/SocMedia/SocMedia';
 
 const AddRecipePage = () => {
   const { isDesktopScreen } = useMedia();
@@ -26,7 +26,7 @@ const AddRecipePage = () => {
           {isDesktopScreen && (
             <Box mb={100}>
               <SocialsTitle>Follow us</SocialsTitle>
-              <Networks place="recipe-page" sizeIcon={26} />
+              <SocMadia place="recipe-page" sizeIcon={26} />
             </Box>
           )}
           <PopularRecipe />
