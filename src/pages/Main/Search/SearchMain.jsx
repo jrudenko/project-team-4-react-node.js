@@ -28,7 +28,7 @@ const MainSearchPage = () => {
       setSearch('');
       return;
     }
-    navigate(`/search?query=${search}&type=title`);
+    navigate(`/search?query=${search}&type=ingredients`);
     setSearch('');
   };
 
@@ -64,4 +64,3 @@ const MainSearchPage = () => {
 };
 
 export default MainSearchPage;
-

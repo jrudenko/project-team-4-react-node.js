@@ -7,7 +7,7 @@ export default function SearchTypeSelector({ onHandleChange }) {
       <Select
         id="search"
         name="type"
-        defaultValue="title"
+        defaultValue="ingredients"
         onChange={evt => onHandleChange(evt)}
       >
         <option value="title">Title</option>
