@@ -113,12 +113,16 @@ import {
 import { useMedia } from 'hooks';
 import { updateSubscribe } from 'service/API/serviseApi';
 import { useSelector } from 'react-redux';
-
 import * as yup from 'yup';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const schema = yup.object().shape({
   subscribe: yup.string().min(4).email().required(),
 });
+function showToast() {
+  toast.info('You have successfully subscribed to the newsletter!');
+}
 
 const SubscribeForm = () => {
   const { screenType } = useMedia();
@@ -132,6 +136,7 @@ const SubscribeForm = () => {
     }
     await updateSubscribe();
     resetForm();
+
   };
 
   return (
@@ -162,7 +167,6 @@ const SubscribeForm = () => {
                   name="subscribe"
                   placeholder="Enter your current email"
                 />
-                {/* <FormError name="subscribe" /> */}
               </InputBox>
               <Button
                 type="submit"
@@ -182,6 +186,7 @@ const SubscribeForm = () => {
                 onClick={event => {
                   handleSubmit(event);
                   resetForm();
+                  showToast();
                 }}
               >
                 Subcribe
