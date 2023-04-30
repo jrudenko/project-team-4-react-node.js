@@ -64,7 +64,7 @@ export const RemoveFileBtn = styled.button`
   padding: 5px;
   background-color: transparent;
   border: none;
-  z-index: 5;
+  z-index: 1;
   cursor: pointer;
 
   svg {

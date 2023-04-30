@@ -175,7 +175,8 @@ export const theme = {
         borderInputSearch: '1px solid rgba(35, 38, 42, 0.2)',
         colorInputSearch: '#bdbdbd',
         boxShadow: {
-          boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
+        inputAcentColor:'#FFFFFF',
+        boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
         },
 
       },
