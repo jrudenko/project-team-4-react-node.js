@@ -180,7 +180,7 @@ export const SelectMeasure = styled(Select)`
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    z-index: ${p => `${100 - p.idx}`};
+    z-index: ${p => `${1 - p.idx}`};
   }
   .сustom-select__control {
     background-color: transparent;
