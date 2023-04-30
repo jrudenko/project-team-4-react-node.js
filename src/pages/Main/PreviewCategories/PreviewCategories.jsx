@@ -9,21 +9,15 @@ import { useNavigate } from 'react-router-dom';
 const PreviewCategories = () => {
   const navigate = useNavigate();
   const [popularCategories, setPopularCategories] = useState([]);
-  const [loading, setLoading] = useState(true); // новое состояние
   const token = useSelector(state => state.auth.token);
   useEffect(() => {
     const receiveCategories = async () => {
       const dataReceived = await getCategoryList(token);
+      console.log(dataReceived);
       setPopularCategories(dataReceived);
     };
-    receiveCategories().finally(() => {
-      setLoading(false); // установка loading в false, когда данные получены
-    });
+    receiveCategories();
   }, [token]);
-
-  if (loading) {
-    return <div>Loading...</div>; // заглушка, пока данные не загружены
-  }
 
   const CategoryBeef = popularCategories.filter(c => c.category === 'Beef');
   const CategoryBreakfast = popularCategories.filter(
@@ -68,7 +62,7 @@ const PreviewCategories = () => {
           fontSizeDesktop="16px"
           lineHeight="21px"
           lineHeightTablet="24px"
-          lineHeightDesktop="24px" 
+          lineHeightDesktop="24px"
         >
           Other categories
         </Button>
