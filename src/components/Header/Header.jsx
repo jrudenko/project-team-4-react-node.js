@@ -1,5 +1,5 @@
 import Logo from 'components/Logo';
-import Navigation from 'components/Navigation';
+import Navigation from 'components/Navigation/Navigation';
 import ThemeToggler from 'components/ThemeToggler';
 import BurgerButton from 'components/BurgerButtonMenu';
 import BurgerMenu from 'components/BurgerMenu';

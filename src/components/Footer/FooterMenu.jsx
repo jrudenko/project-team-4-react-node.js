@@ -6,7 +6,7 @@ export const FooterMenu = () => {
     <>
       <MenuItems>
 
-          <Link to="/search" style={{
+          <Link to="/search?query=&type=ingredients" style={{
             color: "white",
             textDecoration: 'none'
           }}>
