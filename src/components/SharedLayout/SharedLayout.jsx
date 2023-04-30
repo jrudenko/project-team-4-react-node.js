@@ -20,7 +20,6 @@ const SharedLayout = () => {
         <Outlet />
         <LeafBackground></LeafBackground>
       </LayoutContainer>
-
       <Footer />
     </Wrapper>
   );
