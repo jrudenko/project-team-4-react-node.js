@@ -105,7 +105,6 @@ export const InputText = styled(Field)`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid ${p => p.theme.colors.formAddBorder};
-  // outline-color: ${p => p.theme.colors.form.formBottomLine};
   outline: none;
 
   &::placeholder {
@@ -154,7 +153,7 @@ export const Placeholder = styled.span`
 `;
 
 export const StyledSelect = styled(Select)`
-    
+
   width: 123px;
   font-size: ${p => `${p.theme.fontSizes.xs}px`};
   line-height: 1;
@@ -211,7 +210,7 @@ export const StyledSelect = styled(Select)`
     }
   }
   .сustom-select__option {
-    
+
     font-size: ${p => `${p.theme.fontSizes.xs}px`};
     line-height: 1.5;
     color: ${p => p.theme.colors.fromAddSelectOption};

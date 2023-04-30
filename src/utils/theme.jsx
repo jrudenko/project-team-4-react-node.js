@@ -56,7 +56,6 @@ export const theme = {
       inpConfirm: '#3CBC81',
       inpWarning: '#F6C23E',
       inpError: '#E74A3B',
-      formIcon: '#FAFAFA',
       formBottomLine: '#E0E0E0',
       formBackground: '#2a2c36',
       formIngredientsBackground: '#F5F5F5',
@@ -120,6 +119,7 @@ export const theme = {
         inputAcentColor:'#a5dd0c',
         folowUsIconHover: '#8BAA36',
         folowUsIcon: '#FAFAFA',
+        formIcon: '#FAFAFA',
 
         boxShadow: {
         boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
@@ -178,13 +178,15 @@ export const theme = {
         bgSerchInput: '#D9D9D9',
         borderInputSearch: '1px solid rgba(35, 38, 42, 0.2)',
         colorInputSearch: '#bdbdbd',
-        boxShadow: {
         inputAcentColor:'#FFFFFF',
+
+        boxShadow: {
         boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
         },
         socialIconHover:'#FFFFFF',
         folowUsIconHover: '#22252A',
         folowUsIcon: '#8baa36',
+        formIcon: '#8BAA36',
       },
     },
   },
