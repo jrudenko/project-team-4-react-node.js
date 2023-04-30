@@ -3,7 +3,7 @@ import TabletBackground1x from '../../images/tablet/mainpage1x_tab.png';
 import DesktopBackground1x from '../../images/desktop/mainpage1x_desk.png';
 import MobileBackground2x from '../../images/mobile/mainpage2x_mob.png';
 import TabletBackground2x from '../../images/tablet/mainpage2x_tab.png';
-import DesktopBackground2x from '../../images/desktop/mainpage2x_desk.jpg';
+import DesktopBackground2x from '../../images/desktop/mainpage2x_desk.png';
 
 import styled from 'styled-components';
 
