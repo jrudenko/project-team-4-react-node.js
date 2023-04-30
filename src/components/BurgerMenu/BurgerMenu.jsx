@@ -1,5 +1,5 @@
 import Logo from '../Logo';
-import Navigation from '../Navigation';
+import Navigation from '../Navigation/Navigation';
 import ThemeToggler from '../ThemeToggler';
 import { WrapperBurger, CloseBtn, LogoWrapper, ThemeTogglerWrapper, } from './BurgerMenu.styled';
 import { useSelector } from 'react-redux';
