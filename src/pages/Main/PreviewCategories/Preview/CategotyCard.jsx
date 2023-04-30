@@ -24,7 +24,6 @@ const CategoryCard = ({ name, popular }) => {
     return () => {
       window.removeEventListener('resize', resizeHandler);
     };
-    // eslint-disable-next-line
   }, []);
 
   const seeAllHandler = () => {

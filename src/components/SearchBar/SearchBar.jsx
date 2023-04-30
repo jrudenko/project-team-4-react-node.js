@@ -5,11 +5,12 @@ import SearchTypeSelector from 'components/SearchTypeSelector/SearchTypeSelector
 import { SearchBarWrapper } from './SearchBar.styled';
 
 export default function SearchBar() {
-  const [type, setType] = useState({
-    type: 'title',
-  });
-
   const [searchParams, setSearchParams] = useSearchParams();
+  const searchType = searchParams.get('type') || 'title';
+
+  const [type, setType] = useState({
+    type: searchType,
+  });
 
   const searchQuery = searchParams.get('query') ?? '';
 
@@ -29,7 +30,10 @@ export default function SearchBar() {
   return (
     <SearchBarWrapper>
       <SearchForm onSubmit={updateQuery} queryParam={searchQuery} />
-      <SearchTypeSelector onHandleChange={handleChange} />
+      <SearchTypeSelector
+        onHandleChange={handleChange}
+        defaultValue={searchType}
+      />
     </SearchBarWrapper>
   );
 }

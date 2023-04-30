@@ -8,7 +8,6 @@ import DesktopBackgroundSecond1x from '../../images/desktop/mainpage1x_des_secon
 import DesktopBackgroundSecond2x from '../../images/desktop/mainpage2x_des_second.png';
 
 export const Wrapper = styled.div`
-  /* max-width: 1600px; */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
