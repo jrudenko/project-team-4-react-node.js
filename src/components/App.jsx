@@ -29,14 +29,6 @@ const getTheme = mode =>
     colors: get(theme.colors.switches, mode, theme.colors),
   });
 
-// const getTheme = mode => {
-//   const colors = mode === 'darkTheme' ? theme.colors.switches.darkTheme : theme.colors;
-//   return {
-//     ...theme,
-//     colors: colors
-//   };
-// };
-
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export const App = () => {
