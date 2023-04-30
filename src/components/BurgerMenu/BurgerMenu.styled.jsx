@@ -24,12 +24,24 @@ export const WrapperBurger = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  padding: 18px 16px;
   background-color: ${p => p.theme.colors.secondaryBg};
   background-image: url('${SpinachMob1x}');
   background-repeat: no-repeat;
   background-position: right -250px bottom -70px;
   background-size: 550px 360px;
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${p => p.theme.colors.formAddScrollThumb};
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: ${p => p.theme.colors.fromAddScrollTrack};
+      border-radius: 5px;
+    }
+
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {

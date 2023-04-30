@@ -14,6 +14,7 @@ import SharedLayout from 'components/SharedLayout';
 import { RegisterPage } from 'pages/Registration/RegistrationPage';
 import { SigninPage } from 'pages/SingIn/SinginPage';
 import { Loader } from 'components/Loader/Loader';
+import BtnScrollToTop from 'components/BtnScrollToTop/BtnScrollToTop';
 
 const ShoppingPage = lazy(() => import('pages/ShoppingPage/ShoppingPage'));
 const SearchPage = lazy(() => import('pages/Search/SearchPage'));
@@ -64,6 +65,7 @@ export const App = () => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+         <BtnScrollToTop />
         {!isRefreshing && (
           <Routes>
             {!isLoggedIn && <Route index element={<WelcomSection />} />}
