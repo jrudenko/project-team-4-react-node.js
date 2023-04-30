@@ -113,7 +113,7 @@ export const RecipeDescriptionFields = ({
                     className="сustom-select-container"
                     classNamePrefix="сustom-select"
                     onChange={option => setFieldValue(field.name, option.value)}
-                    zIndex={110}
+                    zIndex={2}
                   />
                 )}
               </Field>
@@ -133,7 +133,7 @@ export const RecipeDescriptionFields = ({
                     className="сustom-select-container"
                     classNamePrefix="сustom-select"
                     onChange={option => setFieldValue(field.name, option.value)}
-                    zIndex={105}
+                    zIndex={1}
                   />
                 )}
               </Field>

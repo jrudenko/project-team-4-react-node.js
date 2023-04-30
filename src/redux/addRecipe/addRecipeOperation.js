@@ -29,8 +29,6 @@ export const getIngredientsList = createAsyncThunk(
 export const addRecipe = createAsyncThunk(
   'add/addRecipe',
   async (recipe, thunkAPI) => {
-    // console.log(recipe);
-    // console.log(Object.fromEntries(recipe.entries()));
     try {
       const response = await axios.post('/ownRecipes', recipe, {
         headers: {
