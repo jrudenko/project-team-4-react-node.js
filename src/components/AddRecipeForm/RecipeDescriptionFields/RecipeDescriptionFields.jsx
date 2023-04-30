@@ -86,18 +86,33 @@ export const RecipeDescriptionFields = ({
         >
           <Label>
             <InputText
-              type="text"
               name="title"
               placeholder="Enter item title"
-              
+              type="text"
+              maxLength={40}
+              onKeyPress={(event) => {
+                const regex = /^[^а-яА-Я]*$/; // регулярний вираз для блокування кирилиці
+                const inputChar = String.fromCharCode(event.charCode);
+                if (!regex.test(inputChar)) {
+                  event.preventDefault();
+                }
+              }}
             />
             <FormErrorMsg name="title" position="left" />
           </Label>
           <Label>
             <InputText
-              type="text"
               name="about"
               placeholder="Enter about recipe"
+              type="text"
+              maxLength={50}
+              onKeyPress={(event) => {
+                const regex = /^[^а-яА-Я]*$/; // регулярний вираз для блокування кирилиці
+                const inputChar = String.fromCharCode(event.charCode);
+                if (!regex.test(inputChar)) {
+                  event.preventDefault();
+                }
+              }}
             />
             <FormErrorMsg name="about" position="left" />
           </Label>
