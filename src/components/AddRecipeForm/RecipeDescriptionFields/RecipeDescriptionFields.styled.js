@@ -64,7 +64,7 @@ export const RemoveFileBtn = styled.button`
   padding: 5px;
   background-color: transparent;
   border: none;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
 
   svg {
@@ -154,6 +154,7 @@ export const Placeholder = styled.span`
 `;
 
 export const StyledSelect = styled(Select)`
+    
   width: 123px;
   font-size: ${p => `${p.theme.fontSizes.xs}px`};
   line-height: 1;
@@ -192,7 +193,7 @@ export const StyledSelect = styled(Select)`
     background-color: ${p => p.theme.colors.formAddSelectMenu};
   }
   .сustom-select__menu-list {
-    max-height: 210px;
+    max-height: 220px;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -210,6 +211,7 @@ export const StyledSelect = styled(Select)`
     }
   }
   .сustom-select__option {
+    
     font-size: ${p => `${p.theme.fontSizes.xs}px`};
     line-height: 1.5;
     color: ${p => p.theme.colors.fromAddSelectOption};
