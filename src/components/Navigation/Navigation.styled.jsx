@@ -33,7 +33,10 @@ export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   color: ${p => p.theme.colors.headerText};
   transition: ${p => p.theme.transitions.main};
-  &.active,
+  &.active {
+    color: #8baa36;
+    border-bottom: 2px solid #8baa36;
+  }
   &:hover,
   &:focus {
     color: ${p => p.theme.colors.colorAccent};
