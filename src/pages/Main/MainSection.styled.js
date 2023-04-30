@@ -165,3 +165,4 @@ const MainPageStyled = styled.div`
 `;
 
 export default MainPageStyled;
+//
