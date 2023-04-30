@@ -18,7 +18,6 @@ export const registrationUser = createAsyncThunk(
     try {
       const res = await axios.post('/auth/register', credentials);
       setAuthToken(res.data.user.token);
-
       return res.data;
     } catch (error) {
       toast.error(error.response.data.message, {

@@ -36,7 +36,7 @@ const Navigation = (props) => {
         </NavLinkStyled>
       </NavItem>
       <NavItem>
-        <NavLinkStyled to="/search" onClick={onClick} pathname={pathname} recipe={recipe}>
+        <NavLinkStyled to="/search?query=&type=title" onClick={onClick} pathname={pathname} recipe={recipe}>
           {isMobileOrTablet ? (
             <Flex>
               {' '}

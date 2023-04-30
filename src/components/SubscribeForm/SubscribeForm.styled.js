@@ -102,6 +102,7 @@ export const SubInput = styled(Field)`
     line-height: 15px;
     letter-spacing: -0.02em;
     color: ${p => p.theme.colors.footerText};
+
     @media (min-width: 768px) {
       font-size: 14px;
       line-height: 21px;
