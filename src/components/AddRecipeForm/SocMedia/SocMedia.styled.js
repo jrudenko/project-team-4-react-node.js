@@ -1,51 +1,54 @@
 import styled from 'styled-components';
 import { BsYoutube, BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs';
 
-export const MediaConteiner = styled.div`
+export const Conteiner = styled.div`
   display: flex;
   padding: 0px;
-  gap: 14px;
-
-  @media (min-width: 768px) {
-    gap: 18px;
-  }
+  gap: 20px;
 `;
 
-export const FacebookIcon = styled(BsFacebook)`
+export const Facebook = styled(BsFacebook)`
+  width: 26px;
+  height: 26px;
   color: ${p => p.theme.colors.footerSocialIcons};
   :hover,
   :focus{
-    color: ${p => p.theme.colors.socialIconHover};
-    transform: scale(1.1);
-    transform: scale(1.1);
-  }
-`;
-
-export const YoutubeIcon = styled(BsYoutube)`
-  color: ${p => p.theme.colors.footerSocialIcons};
-  :hover,
-  :focus{
-    color: ${p => p.theme.colors.socialIconHover};
-    transform: scale(1.1);
-    transform: scale(1.1);
-  }
-`;
-export const TwitterIcon = styled(BsTwitter)`
-  color: ${p => p.theme.colors.footerSocialIcons};
-  :hover,
-  :focus{
-    color: ${p => p.theme.colors.socialIconHover};
+    color: ${p => p.theme.colors.folowUsIconHover};
     transform: scale(1.1);
     transform: scale(1.1);
   }
 `;
 
-export const InstagramIcon = styled(BsInstagram)`
+export const Youtube= styled(BsYoutube)`
+  width: 28px;
+  height: 22px;
   color: ${p => p.theme.colors.footerSocialIcons};
   :hover,
   :focus{
+    color: ${p => p.theme.colors.folowUsIconHover};
+    transform: scale(1.1);
+    transform: scale(1.1);
+  }
+`;
+export const Twitter= styled(BsTwitter)`
+  width: 25px;
+  height: 22px;
+  color: ${p => p.theme.colors.footerSocialIcons};
+  :hover,
+  :focus{
+    color: ${p => p.theme.colors.folowUsIconHover};
+    transform: scale(1.1);
+    transform: scale(1.1);
+  }
+`;
 
-    color: ${p => p.theme.colors.socialIconHover};
+export const Instagram= styled(BsInstagram)`
+  width: 24px;
+  height: 24px;
+  color: ${p => p.theme.colors.footerSocialIcons};
+  :hover,
+  :focus{
+    color: ${p => p.theme.colors.folowUsIconHover};
     transform: scale(1.1);
     transform: scale(1.1);
   }

@@ -1,6 +1,7 @@
 
 import styled from 'styled-components';
 
+
 export const Page = styled.div`
   background-repeat: no-repeat;
   background-size: 6px 6px, 8px 8px, 8px 8px;
@@ -53,3 +54,5 @@ export const SocialsTitle = styled.b`
   letter-spacing: -0.24px;
   color: ${p => p.theme.colors.primaryText};
 `;
+
+

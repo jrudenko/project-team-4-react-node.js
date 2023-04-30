@@ -115,11 +115,14 @@ export const theme = {
         bgSerchInput: '#2A2C36',
         borderInputSearch: '1px solid rgba(250, 250, 250, 0.5)',
         colorInputSearch: '#23262A',
-
+        socialIconHover: '#22252A',
         inputAcentColor:'#a5dd0c',
-    boxShadow: {
-    boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
-    },
+        folowUsIconHover: '#8BAA36',
+        folowUsIcon: '#FAFAFA',
+
+        boxShadow: {
+        boxshadow: '17px 17px 84px 18px rgba(104, 101, 101, 0.375) inset',
+       },
 
       },
       lightTheme: {
@@ -178,7 +181,9 @@ export const theme = {
         inputAcentColor:'#FFFFFF',
         boxshadow: '17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset',
         },
-
+        socialIconHover:'#FFFFFF',
+        folowUsIconHover: '#22252A',
+        folowUsIcon: '#8baa36',
       },
     },
   },
