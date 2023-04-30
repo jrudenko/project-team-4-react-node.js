@@ -1,7 +1,21 @@
 import styled from 'styled-components';
 
 export const InformImage = styled.img`
-  margin: 0 auto;
+  display: block;
+  width: 259px;
+  height: 170px;
+  margin: 0 auto 14px;
+
+
+  @media screen and (min-width: 768px) {
+    width: 498px;
+    height: 327px;
+    margin: 0 auto 32px;
+  }
+
+    @media screen and (min-width: 1140px) {
+    height: 331px;
+   }
 `;
 
 export const InformText = styled.p`
