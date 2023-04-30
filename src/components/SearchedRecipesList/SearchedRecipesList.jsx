@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import RecipesList from 'components/RecipesList/RecipesList';
-import PageEmpty from 'components/PageEmpty';
+import EmptyPage from 'components/EmptyPage';
 import {
   selectSearchResult,
   selectIsLoading,
@@ -52,7 +52,7 @@ export default function SearchedRecipesList() {
       {isLoading && !error && <Loader />}
       {!isLoading && recipes
         ? (recipes.length === 0 && (
-            <PageEmpty text="Try looking for something else..." />
+            <EmptyPage text="Try looking for something else..." />
           )) ||
           (recipes.length > 0 && <RecipesList recipes={recipes} />)
         : !isLoading && <NoSearchText>Enter your search query</NoSearchText>}
