@@ -19,11 +19,10 @@ export const СhooseYourBreakfastStyled = styled.div`
   }
 
   @media ${props => props.theme.device.desktop} {
-    margin-left: 407px;
     width: 298px;
     padding: 16px;
     margin-top: 19px;
-    margin-right: 0px;
+    margin-right: 122px;
   }
 
   & > p {
