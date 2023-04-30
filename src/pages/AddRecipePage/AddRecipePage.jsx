@@ -26,7 +26,7 @@ const AddRecipePage = () => {
           {isDesktopScreen && (
             <Box mb={100}>
               <SocialsTitle>Follow us</SocialsTitle>
-              <SocMadia place="recipe-page" sizeIcon={26} />
+              <SocMadia place="recipe-page"/>
             </Box>
           )}
           <PopularRecipe />
