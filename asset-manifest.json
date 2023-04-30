@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-team-4-react-node.js/static/css/main.4eeb7e67.css",
-    "main.js": "/project-team-4-react-node.js/static/js/main.bc683ba2.js",
+    "main.js": "/project-team-4-react-node.js/static/js/main.a29628f0.js",
     "static/js/450.71495323.chunk.js": "/project-team-4-react-node.js/static/js/450.71495323.chunk.js",
     "static/js/660.6eb10d9e.chunk.js": "/project-team-4-react-node.js/static/js/660.6eb10d9e.chunk.js",
     "static/js/28.15b83060.chunk.js": "/project-team-4-react-node.js/static/js/28.15b83060.chunk.js",
@@ -9,11 +9,10 @@
     "static/js/391.25b02f32.chunk.js": "/project-team-4-react-node.js/static/js/391.25b02f32.chunk.js",
     "static/js/79.d8fe94a4.chunk.js": "/project-team-4-react-node.js/static/js/79.d8fe94a4.chunk.js",
     "static/js/793.7c931485.chunk.js": "/project-team-4-react-node.js/static/js/793.7c931485.chunk.js",
-    "static/js/390.1a9e8317.chunk.js": "/project-team-4-react-node.js/static/js/390.1a9e8317.chunk.js",
+    "static/js/730.abc49e29.chunk.js": "/project-team-4-react-node.js/static/js/730.abc49e29.chunk.js",
     "static/js/355.fb3bc64c.chunk.js": "/project-team-4-react-node.js/static/js/355.fb3bc64c.chunk.js",
     "static/js/48.b5b31c19.chunk.js": "/project-team-4-react-node.js/static/js/48.b5b31c19.chunk.js",
     "static/js/33.a294ef97.chunk.js": "/project-team-4-react-node.js/static/js/33.a294ef97.chunk.js",
-    "static/media/mainpage2x_desk.png": "/project-team-4-react-node.js/static/media/mainpage2x_desk.906cdb4f2d00194ec785.png",
     "static/media/mainpage2x_tab.png": "/project-team-4-react-node.js/static/media/mainpage2x_tab.1e3f8e77edef9f06bd13.png",
     "static/media/mainpage2x_mob.png": "/project-team-4-react-node.js/static/media/mainpage2x_mob.d48be9cc28c1dcdfd6b1.png",
     "static/media/mainpage2x_des_second.png": "/project-team-4-react-node.js/static/media/mainpage2x_des_second.29a402dd8f6651cf2953.png",
@@ -26,6 +25,7 @@
     "static/media/mainpage1x_mob.png": "/project-team-4-react-node.js/static/media/mainpage1x_mob.65dcf270532f0a855f41.png",
     "static/media/mainpage1x_des_second.png": "/project-team-4-react-node.js/static/media/mainpage1x_des_second.9a2624cacf47643aa4b1.png",
     "static/media/mainpage2x_mob_second.png": "/project-team-4-react-node.js/static/media/mainpage2x_mob_second.70fbd797b0d451418bec.png",
+    "static/media/mainpage2x_desk.jpg": "/project-team-4-react-node.js/static/media/mainpage2x_desk.28ecbe08ec8cbebbeeac.jpg",
     "static/media/bg_search_mob@2x.png": "/project-team-4-react-node.js/static/media/bg_search_mob@2x.7f02eca71ddf396f17e0.png",
     "static/media/flat-lay-assortment-vegetables-desktop@2x.jpg": "/project-team-4-react-node.js/static/media/flat-lay-assortment-vegetables-desktop@2x.8da4e5e76c7e225021e8.jpg",
     "static/media/mainpage1x_tab_second.png": "/project-team-4-react-node.js/static/media/mainpage1x_tab_second.e8770a4ad1a9870b405b.png",
@@ -66,7 +66,7 @@
     "static/media/WelcomeSectionLogo.svg": "/project-team-4-react-node.js/static/media/WelcomeSectionLogo.415f32a94a3c20057f5073962eda1b80.svg",
     "static/media/clock1.svg": "/project-team-4-react-node.js/static/media/clock1.6521cc8abf7aa82709c51f1a4bf40698.svg",
     "main.4eeb7e67.css.map": "/project-team-4-react-node.js/static/css/main.4eeb7e67.css.map",
-    "main.bc683ba2.js.map": "/project-team-4-react-node.js/static/js/main.bc683ba2.js.map",
+    "main.a29628f0.js.map": "/project-team-4-react-node.js/static/js/main.a29628f0.js.map",
     "450.71495323.chunk.js.map": "/project-team-4-react-node.js/static/js/450.71495323.chunk.js.map",
     "660.6eb10d9e.chunk.js.map": "/project-team-4-react-node.js/static/js/660.6eb10d9e.chunk.js.map",
     "28.15b83060.chunk.js.map": "/project-team-4-react-node.js/static/js/28.15b83060.chunk.js.map",
@@ -74,13 +74,13 @@
     "391.25b02f32.chunk.js.map": "/project-team-4-react-node.js/static/js/391.25b02f32.chunk.js.map",
     "79.d8fe94a4.chunk.js.map": "/project-team-4-react-node.js/static/js/79.d8fe94a4.chunk.js.map",
     "793.7c931485.chunk.js.map": "/project-team-4-react-node.js/static/js/793.7c931485.chunk.js.map",
-    "390.1a9e8317.chunk.js.map": "/project-team-4-react-node.js/static/js/390.1a9e8317.chunk.js.map",
+    "730.abc49e29.chunk.js.map": "/project-team-4-react-node.js/static/js/730.abc49e29.chunk.js.map",
     "355.fb3bc64c.chunk.js.map": "/project-team-4-react-node.js/static/js/355.fb3bc64c.chunk.js.map",
     "48.b5b31c19.chunk.js.map": "/project-team-4-react-node.js/static/js/48.b5b31c19.chunk.js.map",
     "33.a294ef97.chunk.js.map": "/project-team-4-react-node.js/static/js/33.a294ef97.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4eeb7e67.css",
-    "static/js/main.bc683ba2.js"
+    "static/js/main.a29628f0.js"
   ]
 }
