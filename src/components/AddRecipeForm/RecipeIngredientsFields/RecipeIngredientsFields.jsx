@@ -88,11 +88,19 @@ export const RecipeIngredientsFields = ({
                     }}
                     placeholder=""
                     idx={idx}
+
                   />
                   <InputText
                     type="text"
                     autoComplete="off"
                     name={`ingredients.${idx}.quantity`}
+                    maxLength={4}
+                    onKeyPress={(event) => {
+                      const charCode = event.which ? event.which : event.keyCode;
+                      if (charCode < 48 || charCode > 57) {
+                        event.preventDefault();
+                      }
+                    }}
                   />
                 </LabelMeasure>
                 <RemoveFieldsButton
