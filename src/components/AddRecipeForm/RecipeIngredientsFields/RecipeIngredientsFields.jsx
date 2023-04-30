@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import PropTypes from 'prop-types';
 import { FieldArray } from 'formik';
 import { Counter } from './Counter/Counter';
 import { FormErrorMsg } from '../FormErrorMsg/FormErrorMsg';
