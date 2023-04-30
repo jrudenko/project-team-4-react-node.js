@@ -13,6 +13,7 @@ export const getRecipeByIdRejectedReducer = (state, action) => {
 };
 
 export const getOwnRecipeByIdPendingReducer = state => {
+  state.recipe.item = null;
   state.ownRecipe.isLoading = true;
 };
 export const getOwnRecipeByIdFulfilledReducer = (state, action) => {

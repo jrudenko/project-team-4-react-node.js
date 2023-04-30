@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
 
@@ -12,6 +13,7 @@ export const getSearchByTitle = createAsyncThunk(
       );
       return data;
     } catch (error) {
+      toast.error('Something happened during request. Please try again.');
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -26,6 +28,7 @@ export const getSearchByIngredients = createAsyncThunk(
       );
       return data;
     } catch (error) {
+      toast.error('Something happened during request. Please try again.');
       return thunkApi.rejectWithValue(error.message);
     }
   }
