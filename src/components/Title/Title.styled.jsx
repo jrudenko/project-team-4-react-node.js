@@ -18,8 +18,8 @@ export const TitleConteiner = styled.div`
     ${p => (p.dark ? `url(${white_circle})` : `url(${sq_black_6})`)},
     url(${sq_green_8});
   background-size: 10px 10px, 7px 7px, 10px 10px;
-  background-position: top 80px left 104px, top 145px left 231px,
-    top 112px left 329px;
+  background-position: top 20px left 90px, top 85px left 200px,
+    top 50px left 270px;
   @media screen and (min-width: 768px) {
     padding-bottom: 40px;
     padding-top: 72px;
@@ -28,8 +28,8 @@ export const TitleConteiner = styled.div`
       url(${sq_green_14});
     background-repeat: no-repeat;
     background-size: 18px 18px, 15px 15px, 18px 18px;
-    background-position: top 91px left 187px, top 160px left 405px,
-      top 104px left 682px;
+    background-position: top 20px left 180px, top 95px left 400px,
+      top 45px left 682px;
   }
   @media screen and (min-width: 1440px) {
     background-image: url(${sq_green_14}),
@@ -37,8 +37,8 @@ export const TitleConteiner = styled.div`
       url(${sq_green_14});
     padding-bottom: 50px;
     padding-top: 104px;
-    background-position: top 122px left 228px, top 205px left 707px,
-      top 135px left 1150px;
+    background-position: top 12px left 228px, top 140px left 730px,
+      top 30px left 1150px;
   }
   h2 {
     font-style: normal;

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import '../node_modules/modern-normalize/modern-normalize.css';
+
 body {
   margin: 0;
   position: relative;

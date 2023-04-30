@@ -11,6 +11,11 @@ const initialState = {
 const searchSlice = createSlice({
   name: 'search',
   initialState,
+  reducers: {
+    getNewState: state => {
+      state.searchResult = null;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(getSearchByTitle.fulfilled, (state, action) => {
@@ -44,3 +49,4 @@ const searchSlice = createSlice({
 });
 
 export const searchReducer = searchSlice.reducer;
+export const { getNewState } = searchSlice.actions;
