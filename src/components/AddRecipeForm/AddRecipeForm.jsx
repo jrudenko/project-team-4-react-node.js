@@ -88,7 +88,6 @@ export const AddRecipeForm = props => {
     formData.append('category', category);
     formData.append('description', about);
     formData.append('instructions', instructions);
-    // formData.append('favorite', false);
     formData.append('preview', preview);
     formData.append('time', time);
     formData.append('ingredients', JSON.stringify(ingredientsList));
