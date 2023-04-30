@@ -11,6 +11,9 @@ import {
   getRecipeByIdPendingReducer,
   getRecipeByIdFulfilledReducer,
   getRecipeByIdRejectedReducer,
+  getOwnRecipeByIdPendingReducer,
+  getOwnRecipeByIdFulfilledReducer,
+  getOwnRecipeByIdRejectedReducer,
   favoritePendingReducer,
   favoriteRejectedReducer,
   addRecipeToFavoriteFulfilledReducer,
@@ -49,9 +52,9 @@ const recipeSlice = createSlice({
       .addCase(getRecipeById.fulfilled, getRecipeByIdFulfilledReducer)
       .addCase(getRecipeById.rejected, getRecipeByIdRejectedReducer)
 
-      .addCase(getOwnRecipeById.pending, getRecipeByIdPendingReducer)
-      .addCase(getOwnRecipeById.fulfilled, getRecipeByIdFulfilledReducer)
-      .addCase(getOwnRecipeById.rejected, getRecipeByIdRejectedReducer)
+      .addCase(getOwnRecipeById.pending, getOwnRecipeByIdPendingReducer)
+      .addCase(getOwnRecipeById.fulfilled, getOwnRecipeByIdFulfilledReducer)
+      .addCase(getOwnRecipeById.rejected, getOwnRecipeByIdRejectedReducer)
 
       .addCase(addRecipeToFavorite.pending, favoritePendingReducer)
       .addCase(
