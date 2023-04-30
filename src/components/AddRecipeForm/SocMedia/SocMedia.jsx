@@ -1,23 +1,37 @@
-import {Conteiner, Facebook, Youtube, Twitter, Instagram} from './SocMedia.styled';
+import {Conteiner,LinkItem } from './SocMedia.styled';
+import { SiFacebook, SiYoutube, SiTwitter, SiInstagram } from "react-icons/si";
+
 
 const SocMedia = () => {
 
   return (
     <Conteiner>
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Facebook">
-        <Facebook/>
+      <LinkItem>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Facebook" >
+       <SiFacebook size="26" />
+      </a></LinkItem>
+
+      <LinkItem>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Youtube" >
+        <SiYoutube size="28" />
       </a>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Youtube">
-        <Youtube/>
+      </LinkItem>
+
+      <LinkItem>
+      <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Twitter" >
+        <SiTwitter size="25" />
       </a>
-      <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="link to Twitter">
-        <Twitter/>
-      </a>
+      </LinkItem>
+
+      <LinkItem>
       <a href="https://www.instagram.com/"  target="_blank" rel="noopener noreferrer" aria-label="link to Instagram">
-        <Instagram/>
+      <SiInstagram size="24" />
       </a>
+      </LinkItem>
+
     </Conteiner>
   )
 };
 
 export default SocMedia;
+
