@@ -1,3 +1,11 @@
+import '@fontsource/poppins/300.css';
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+
+
+
 import { Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -24,6 +32,8 @@ const FavoritePage = lazy(() => import('pages/FavoritePage'));
 const AddRecipePage = lazy(() => import('pages/AddRecipePage'));
 const CategoriesPage = lazy(() => import('pages/Categories/CategoriesPage'));
 const MainPage = lazy(() => import('pages/Main/MainSection'));
+
+
 
 const getTheme = mode =>
   merge({}, theme, {
