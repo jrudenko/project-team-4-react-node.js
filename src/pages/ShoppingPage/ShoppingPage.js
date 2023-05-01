@@ -5,7 +5,7 @@ import { useMedia } from 'hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { getList } from '../../redux/shoppingList/shoppingListOperations';
 import { Loader } from 'components/Loader/Loader';
-import {ShoppingList} from '../../components/ShoppingList/ShoppingList'
+import { ShoppingList } from '../../components/ShoppingList/ShoppingList';
 
 const ShoppingPage = () => {
   const { screenType } = useMedia();
@@ -16,7 +16,7 @@ const ShoppingPage = () => {
     dispatch(getList());
   }, [dispatch]);
 
-  const titles = ['Product', 'Number', 'Remove'];
+  const titles = ['Products', 'Number', 'Remove'];
 
   return (
     <main>
