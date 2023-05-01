@@ -42,8 +42,13 @@ const RecipePage = () => {
   }, [recipeId, dispatch, location?.state?.from.pathname]);
 
   useEffect(() => {
-    setCurrentRecipe(recipe ?? ownRecipe);
-  }, [recipe, ownRecipe]);
+    if(location?.state?.from.pathname === '/my') {
+      setCurrentRecipe(ownRecipe);
+    } else if (recipe) {
+      setCurrentRecipe(recipe[0]);
+    }
+    
+  }, [recipe, ownRecipe, location?.state?.from.pathname]);
 
   useEffect(() => {
     if (currentRecipe !== null) {

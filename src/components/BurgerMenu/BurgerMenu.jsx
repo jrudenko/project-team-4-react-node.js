@@ -21,9 +21,10 @@ const BurgerMenu = ({ onClose }) => {
       <Navigation mr="0px" fd="column" onClick={onClose} />
       <ThemeTogglerWrapper>
         <ThemeToggler />
-      </ThemeTogglerWrapper>
-      <Scroll />
-    </WrapperBurger>
+        </ThemeTogglerWrapper>
+    <Scroll />
+    </WrapperBurger>  
+
   );
 };
 
