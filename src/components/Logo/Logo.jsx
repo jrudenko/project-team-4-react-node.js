@@ -3,7 +3,7 @@ import { ReactComponent as LogoSvg } from '../../images/SVG/Logo/logo.svg';
 
 const Logo = () => {
   return (
-    <LogoLink to="/" >
+    <LogoLink to="/main" >
       <LogoSvg />
     </LogoLink>
   );

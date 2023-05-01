@@ -9,9 +9,11 @@ import BurgerButton from 'components/BurgerButtonMenu';
 import BurgerMenu from 'components/BurgerMenu';
 import UserLogo from '../UserLogo/UserLogo'
 
+
 const Header = () => {
   const [isBurgerMenuShow, setIsBurgerMenuShow] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 1439 });
+ 
   
   const handleMenuOnClose = () => {
     setIsBurgerMenuShow(false);
@@ -25,7 +27,6 @@ const Header = () => {
       
       {isMobile ? (
         <StyledContainer>
-       
           {!isBurgerMenuShow && (
             <>
               <Logo />

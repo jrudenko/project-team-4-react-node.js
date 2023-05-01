@@ -14,7 +14,7 @@ const SharedLayout = () => {
   return (
     // стилізувати дів
     <Wrapper>
-      {isLoggedIn && location.pathname === '/' && <Navigate to="/main" />}
+      {isLoggedIn && location.pathname === '/' && <Navigate to="/main" /> }
       <Header />
       <LayoutContainer>
         <Outlet />
