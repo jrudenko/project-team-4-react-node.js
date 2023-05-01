@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as envelope } from '../../images/SVG/envelope.svg';
-import { Field } from 'formik';
+// import { Field } from 'formik';
 
 
 export const SubForm = styled.form`
@@ -82,7 +82,7 @@ export const InputBox = styled.div`
     height: 59px;
   }
 `;
-export const SubInput = styled(Field)`
+export const SubInput = styled.input`
   border: none;
   width: 100%;
   height: 36px;
@@ -91,11 +91,24 @@ export const SubInput = styled(Field)`
   :focus{
     outline:none;
   }
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
   @media (min-width: 768px) {
     height: 48px;
+   font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
   }
   @media (min-width: 1440px) {
     height: 56px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+
   }
   &::placeholder {
     font-size: 10px;
@@ -124,3 +137,122 @@ export const InputIcon = styled(envelope)`
   }
 `;
 
+
+export const FormBtn = styled.button`
+width: 204px;
+height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${({ width }) => width && width};
+  height: ${({ height }) => height && height};
+
+  transition: 5s;
+
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: ${p => p.theme.fontWeights.body};
+  font-size: ${({ fsize }) => (fsize ? fsize : '16px')};
+  line-height: ${({ lineheight }) => (lineheight ? lineheight : '21px')};
+  cursor: pointer;
+  color: ${({ look, theme }) =>
+    look === 'cancel' || look === 'rounded_other'
+      ? `${theme.colors.roundedOtherBtnColor}`
+      : '#FAFAFA'};
+  background-color: ${({ look, theme }) => {
+    switch (look) {
+      case 'subscribe':
+        return `${theme.colors.subscribeBgColor}`;
+      case 'subscribe_dark':
+        return '#1E1F28';
+      case 'rounded':
+        return `${theme.colors.roundedBgColor}`;
+      case 'rounded_dark':
+        return `#8BAA36`;
+      case 'rounded_transparent':
+        return 'transparent';
+      case 'rounded_other':
+        return 'transparent';
+      case 'logout':
+        return `${theme.colors.colorAccent}`;
+      case 'cancel':
+        return '#D9D9D9';
+      default:
+        return '#22252a';
+    }
+  }};
+
+  border-radius: ${({ look }) => {
+    switch (look) {
+      case 'rounded':
+        return '24px 44px';
+      case 'rounded_dark':
+        return '24px 44px';
+      case 'rounded_transparent':
+        return '24px 44px';
+      case 'rounded_other':
+        return '24px 44px';
+      default:
+        return '6px';
+    }
+  }};
+
+  transition: color 250ms ease, background-color 250ms ease, border 250ms ease;
+
+  @media screen and (min-width: 768px) {
+
+    width: 171px;
+    height: 50px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 339px;
+     height: 60px;
+
+  }
+  :hover,
+  :focus {
+    background-color: ${({ look, theme }) => {
+      switch (look) {
+        case 'subscribe':
+          return `${theme.colors.subscribeBgColor}`;
+        case 'subscribe_dark':
+          return '#1E1F28';
+        case 'rounded':
+          return `${theme.colors.roundedBgHoverColor}`;
+        case 'rounded_dark':
+          return '#22252a';
+        case 'rounded_transparent':
+          return 'transparent';
+        case 'rounded_other':
+          return '#8baa36';
+        case 'logout':
+          return '#22252a';
+        case 'cancel':
+          return '#ffffff';
+        default:
+          return '#22252a';
+      }
+    }};
+    color: ${({ look, theme }) => {
+      switch (look) {
+        case 'subscribe':
+          return `${theme.colors.subscribeBtnColor}`;
+        case 'rounded':
+          return '#fafafa';
+        case 'rounded_dark':
+          return '#fafafa';
+        case 'rounded_transparent':
+          return '#8baa36';
+        case 'rounded_other':
+          return '#fafafa';
+        case 'logout':
+          return '#fafafa';
+        case 'subscribe_dark':
+          return '#8baa36';
+        default:
+          return '#22252a';
+      }
+    }};
+  }
+`;
