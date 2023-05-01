@@ -31,6 +31,7 @@ const RecipePage = () => {
   const [listIngredients, setListIngredients] = useState(null);
   const [isOwnRecipe, setOwnRecipe] = useState(null);
 
+
   useEffect(() => {
     if (location?.state?.from.pathname === '/my') {
       setOwnRecipe(true);
@@ -42,8 +43,13 @@ const RecipePage = () => {
   }, [recipeId, dispatch, location?.state?.from.pathname]);
 
   useEffect(() => {
-    setCurrentRecipe(recipe ?? ownRecipe);
-  }, [recipe, ownRecipe]);
+    if(location?.state?.from.pathname === '/my') {
+      setCurrentRecipe(ownRecipe);
+    } else if (recipe) {
+      setCurrentRecipe(recipe[0]);
+    }
+    
+  }, [recipe, ownRecipe, location?.state?.from.pathname]);
 
   useEffect(() => {
     if (currentRecipe !== null) {

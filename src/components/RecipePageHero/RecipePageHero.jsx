@@ -21,7 +21,7 @@ import {
 
 import { selectFavoriteIsLoading } from 'redux/recipe/recipeSelectors';
 
-const RecipePageHero = ({ recipe = null, isOwnRecipe }) => {
+const RecipePageHero = ({ recipe = [], isOwnRecipe }) => {
   const [loading, setLoading] = useState(false);
   const [allRecipes, setAllRecipes] = useState({});
   const { recipeId } = useParams();
