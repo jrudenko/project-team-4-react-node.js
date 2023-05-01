@@ -4,14 +4,19 @@ import ThemeToggler from '../ThemeToggler';
 import { WrapperBurger, CloseBtn, LogoWrapper, ThemeTogglerWrapper, } from './BurgerMenu.styled';
 import { useSelector } from 'react-redux';
 import Scroll from '../../utils/scroll';
-
+import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ onClose }) => {
   const darkMode = useSelector(state => state.theme);
+  const handleClickLogo = () => {
+    onClose();
+  };
   return (
     <WrapperBurger>
       <LogoWrapper>
-        <Logo mr="0px" />
+         <Link to="/" onClick={handleClickLogo}>
+          <Logo mr="0px" />
+        </Link>
       </LogoWrapper>
       <CloseBtn onClose={onClose} dark={darkMode.darkMode} />
       <Navigation mr="0px" fd="column" onClick={onClose} />

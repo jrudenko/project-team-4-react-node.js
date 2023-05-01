@@ -8,13 +8,14 @@ import {
 } from './SharedLayout.styled';
 import { useSelector } from 'react-redux';
 
+
 const SharedLayout = () => {
   const location = useLocation();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   return (
     // стилізувати дів
     <Wrapper>
-      {isLoggedIn && location.pathname === '/' && <Navigate to="/main" /> }
+      {isLoggedIn && location.pathname === '/' && <Navigate to="/main" />}
       <Header />
       <LayoutContainer>
         <Outlet />
