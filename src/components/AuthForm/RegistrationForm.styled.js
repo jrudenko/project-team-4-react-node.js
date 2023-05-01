@@ -17,7 +17,7 @@ export const FormWrapper = styled.div`
   background-color: ${p => p.theme.colors.form.formBackground};
   border-radius: 30px;
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
- 
+
   @media screen and (min-width: 768px) {
     width: 500px;
     height: auto;
@@ -113,6 +113,8 @@ export const IconEmail = styled(HiOutlineMail)`
         return 0.4;
     }
   }};
+
+
   transform: translate(13px, -50%);
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -161,7 +163,7 @@ export const ErrorIcon = styled(IoIosCloseCircle)`
   right: 0;
   width: 20px;
   height: 20px;
-  color: ${p => p.theme.colors.form.inputError};
+  color: ${p => p.theme.colors.form.inpError};
   transform: translate(-13px, -50%);
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -174,7 +176,7 @@ export const WarningIcon = styled(RiErrorWarningFill)`
   right: 0;
   width: 20px;
   height: 20px;
-  color: ${p => p.theme.colors.form.inputWarning};
+  color: ${p => p.theme.colors.form.inpWarning};
   transform: translate(-13px, -50%);
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -188,7 +190,7 @@ export const CheckIcon = styled(IoIosCheckmarkCircle)`
   right: 0;
   width: 20px;
   height: 20px;
-  color: ${p => p.theme.colors.form.inputConfirm};
+  color: ${p => p.theme.colors.form.inpConfirm};
   transform: translate(-13px, -50%);
   @media screen and (min-width: 768px) {
     width: 24px;
