@@ -72,12 +72,36 @@ const CategoriesPage = () => {
     setCurrentCategory(category);
   };
 
+  function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "grey" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "grey" }}
+      onClick={onClick}
+    />
+  );
+}
+
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 11,
     slidesToScroll: 1,
+     nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
     responsive: [ 
       {
         breakpoint: 768,
