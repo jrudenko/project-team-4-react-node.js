@@ -25,6 +25,7 @@ export default function BtnScrollToTop() {
       id="BtnScrollToTop"
       onClick={onClickBtn}
       type="button"
+      alt="Button to go to the top of the page"
       className={ScrollToTop}>
       <ScrollToTop/>
     </BtnScr>
