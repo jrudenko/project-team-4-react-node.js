@@ -13,7 +13,7 @@ function WellcomePage() {
   return (
     <Wrapper>
       <LogoWrapper>
-        <img src={logosvg} alt="My SVG" />
+        <img src={logosvg} width="68" height="68" alt="Logo for the site, which, when pressed, turns on the main page" />
       </LogoWrapper>
       <Title>Welcome to the app!</Title>
       <Content>
