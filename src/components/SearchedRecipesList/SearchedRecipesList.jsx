@@ -14,7 +14,7 @@ import {
   getSearchByTitle,
   getSearchByIngredients,
 } from 'redux/search/searchOperations';
-import { getNewState } from 'redux/search/searchSlice';
+// import { getNewState } from 'redux/search/searchSlice';
 import { NoSearchText } from './SearchedRecipesList.styled';
 import { Loader } from 'components/Loader/Loader';
 import { Paginator } from 'components/Paginator/Paginator';
@@ -48,9 +48,9 @@ export default function SearchedRecipesList() {
     }
   }, [dispatch, page, perPage, query, type]);
 
-  useEffect(() => {
-    dispatch(getNewState());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getNewState());
+  // }, [dispatch]);
 
   return (
     <>
