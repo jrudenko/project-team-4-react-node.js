@@ -1,21 +1,37 @@
-import { useMediaQuery } from 'react-responsive';
-import { ButtonBurger, MenuIcon } from './BurgerButton.styled.jsx';
-import { useLocation, useParams } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { ScrollToTop, BtnScr } from './BtnScrollToTop.styled';
 
-const BurgerButton = ({ onClick }) => {
-    const { pathname } = useLocation();
-    const recipe = useParams();
-    const isMobileOrTablet = useMediaQuery({ maxWidth: 1439 });
-    
-    return (
-        <ButtonBurger type="button" onClick={onClick} >
-            {isMobileOrTablet && <MenuIcon pathname={pathname} recipe={recipe} />}
-        </ButtonBurger>
-    );
+export default function BtnScrollToTop() {
+  const buttonScrollToTop = useRef();
+  window.onscroll = () => scrollToTopFunction();
+
+  function scrollToTopFunction() {
+    if (
+      document.body.scrollTop > 100 ||
+      document.documentElement.scrollTop > 100
+    ) {
+      buttonScrollToTop.current.style.display = 'flex';
+    } else {
+      buttonScrollToTop.current.style.display = 'none';
+    }
+  }
+
+  const onClickBtn = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <BtnScr ref={buttonScrollToTop}
+      id="BtnScrollToTop"
+      onClick={onClickBtn}
+      type="button"
+      alt="Button to go to the top of the page"
+      aria-label="Button to go to the top of the page"
+      className={ScrollToTop}>
+      <ScrollToTop/>
+    </BtnScr>
+  );
 };
-
-export default BurgerButton;
-
 
 
 

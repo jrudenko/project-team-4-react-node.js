@@ -1,29 +1,37 @@
 import styled from 'styled-components';
-import { HiMenuAlt2 } from 'react-icons/hi';
+import { AiOutlineArrowUp } from 'react-icons/ai';
 
-export const ButtonBurger = styled.button`
-   
+export const BtnScr = styled.button`
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 40px;
+	height: 40px;
+	border: 2px solid #8BAA36;
+	border-radius: 50%;
+	background-color: ${p => p.theme.colors.secondaryBg};
+	cursor: pointer;
+	z-index: 99;
+	transition: ${p => p.theme.transitions.main};
+	@media screen and (min-width: 768px) {
+	  width: 50px;
+	  height: 50px;
+	  border: 2px solid #8BAA36;
+  }
+   @media screen and (min-width: 1440px) {
+	  width: 60px;
+	  height: 60px;
+	  border: 3px solid #8BAA36;
+  }
 `;
-
-export const MenuIcon = styled(HiMenuAlt2)`
-  width: 28px;
-  height: 28px;
-  color: ${p => (p.recipe?.recipeId ? '#23262A' : p.theme.colors.headerText)};
-  transition: all 250ms ease-in-out;
-  &:hover,
-  &:focus {
+export const ScrollToTop = styled(AiOutlineArrowUp)` {
     color: ${p => p.theme.colors.colorAccent};
+  	width: 20px;
+	height: 20px;
+    @media screen and (min-width: 768px) {
+		width: 30px;
+	    height: 30px;
   }
-
-  @media screen and (min-width: 768px) {
-    width: 32px;
-    height: 32px;
-    color: ${p =>
-      p.pathname === '/main' || p.recipe?.recipeId
-        ? '#23262A'
-        : p.theme.colors.headerText};
-  }
-  @media screen and (min-width: 1440px) {
-    display: none;
-  }
-`;
+}`;
