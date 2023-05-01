@@ -24,7 +24,7 @@ const BurgerMenu = ({ onClose }) => {
       <ThemeTogglerWrapper>
         <ThemeToggler />
         </ThemeTogglerWrapper>
-        <Scroll />
+    <Scroll />
     </WrapperBurger>  
   );
 };
