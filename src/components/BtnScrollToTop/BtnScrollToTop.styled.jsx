@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
 export const BtnScr = styled.button`
+	display: none;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
