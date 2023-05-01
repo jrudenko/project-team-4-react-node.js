@@ -26,6 +26,7 @@ export default function BtnScrollToTop() {
       onClick={onClickBtn}
       type="button"
       alt="Button to go to the top of the page"
+      aria-label="Button to go to the top of the page"
       className={ScrollToTop}>
       <ScrollToTop/>
     </BtnScr>
