@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import fetchCategoryListFromAPI from './Axios/AxiosGetCategories';
 import fetchRecipesFromCategory from './Axios/AxiosGetResieptsFromCategory';
 import { CategoriesList } from './Styled/CategoriesList.styled';
@@ -12,6 +17,9 @@ import {
 import ProductCard from '../../components/RecipeCard/Recipecard';
 import Title from 'components/Title';
 import { Loader } from 'components/Loader/Loader';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const CategoriesPage = () => {
   const { categoryName } = useParams();
@@ -64,23 +72,48 @@ const CategoriesPage = () => {
     setCurrentCategory(category);
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 11,
+    slidesToScroll: 1,
+    responsive: [ 
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <div>
         <Title>Categories</Title>
+       
         <CategoriesList>
           {isLoading ? (
             <div>Loading...</div>
           ) : (
-            categories.map(category => (
-              <StyledNavLink
+            <Slider {...settings}>
+              {categories.map((category, index) => (
+                <StyledNavLink
                 to={`/categories/${category}`}
-                key={category}
+                key={index}
                 onClick={() => handleCategoryClick(category)}
               >
                 {category}
               </StyledNavLink>
-            ))
+              ))}
+            </Slider>
           )}
         </CategoriesList>
       </div>
