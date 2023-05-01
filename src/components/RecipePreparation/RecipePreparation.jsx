@@ -14,7 +14,7 @@ import noPhotoImg from '../../images/defaultImage/defaultImage.jpg';
 export default function RecipePreparation({ recipe }) {
   const { instructions, preview, title } = recipe;
   const instructionsArray = instructions.split('. ');
- 
+
   return (
     <Wrapper>
       <Title>Recipe Preparation</Title>

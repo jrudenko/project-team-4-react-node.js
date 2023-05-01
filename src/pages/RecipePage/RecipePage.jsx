@@ -31,7 +31,6 @@ const RecipePage = () => {
   const [listIngredients, setListIngredients] = useState(null);
   const [isOwnRecipe, setOwnRecipe] = useState(null);
 
-
   useEffect(() => {
     if (location?.state?.from.pathname === '/my') {
       setOwnRecipe(true);
