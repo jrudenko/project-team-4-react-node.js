@@ -1,48 +1,47 @@
-import Button from 'components/Button/Button';
-import { Formik } from 'formik';
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
-  SubInput,
-  InputIcon,
-  InputBox,
-  SubForm,
-  FormFrame,
-  SubTitle,
-  SubText,
-  TextFrame,
-} from './SubscribeForm.styled';
-
-import { useMedia } from 'hooks';
-import { updateSubscribe } from 'service/API/serviseApi';
-import { useSelector } from 'react-redux';
-import * as yup from 'yup';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const schema = yup.object().shape({
-  subscribe: yup.string().min(4).email().required(),
-});
-function showToast() {
-  toast.info('You have successfully subscribed to the newsletter!');
-}
+    SubInput,
+    InputIcon,
+    InputBox,
+    SubForm,
+    FormFrame,
+    SubTitle,
+    SubText,
+    TextFrame,
+    FormBtn,
+  } from './SubscribeForm.styled';
+  import { useMedia } from 'hooks';
 
 const SubscribeForm = () => {
   const { screenType } = useMedia();
+  const [email, setEmail] = useState("");
 
-  const userEmail = useSelector(state => state.auth.user.email);
+  const isValidEmail = (email) => {
+    const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return regex.test(email);
+  };
 
-  const handleSubmit = async (values, { resetForm }) => {
-    const { subscribe } = values;
-    if (userEmail !== subscribe) {
-      return;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const subscribedEmail = localStorage.getItem("subscribedEmail");
+
+    if (email === "") {
+      toast.error("Please enter your email");
+    } else if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email");
+    } else if (subscribedEmail === email) {
+      toast.error("You have already subscribed with this email");
+    } else {
+      localStorage.setItem("subscribedEmail", email);
+      toast.success("You have successfully subscribed!");
     }
-    await updateSubscribe();
-    resetForm();
-
   };
 
   return (
     <SubForm>
-      {screenType === 'desktop' ? (
+       {screenType === 'desktop' ? (
         <TextFrame>
           <SubTitle>Subscribe to our Newsletter</SubTitle>
           <SubText>
@@ -51,51 +50,26 @@ const SubscribeForm = () => {
           </SubText>
         </TextFrame>
       ) : null}
-      <Formik
-        initialValues={{ subscribe: '' }}
-        validationSchema={schema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, handleSubmit, resetForm }) => {
-          return (
-            <FormFrame>
-              <InputBox>
-                <InputIcon></InputIcon>
+      <FormFrame onSubmit={handleSubmit}>
+        <InputBox >
+        <InputIcon/>
+        <SubInput
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="Enter your current email"
+        />
+        </InputBox>
 
-                <SubInput
-                  state={errors.subscribe ? 'error' : 'undefined'}
-                  type="email"
-                  name="subscribe"
-                  placeholder="Enter your current email"
-                />
-              </InputBox>
-              <Button
-                type="submit"
+        <FormBtn type="submit"
                 look="subscribe"
-                width="204px"
-                heigth="38px"
-                widthTablet="171px"
-                heigthTablet="50px"
-                widthDesktop="339px"
-                heigthDesktop="60px"
-                fontSize="14px"
-                fontSizeTablet="16px"
-                fontSizeDesktop="16px"
-                lineHeight="16px"
-                lineHeightTablet="18px"
-                lineHeightDesktop="18px"
                 onClick={event => {
-                  handleSubmit(event);
-                  resetForm();
-                  showToast();
-                }}
-              >
-                Subcribe
-              </Button>
-            </FormFrame>
-          );
-        }}
-      </Formik>
+                          handleSubmit(event);
+                        }}
+        >Subscribe</FormBtn>
+      </FormFrame>
     </SubForm>
   );
 };
