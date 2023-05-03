@@ -8,8 +8,6 @@ import { Loader } from 'components/Loader/Loader';
 import { Paginator } from 'components/Paginator/Paginator';
 import EmptyPage from '../EmptyPage';
 
-
-
 export default function MyRecipesList() {
   const [myRecipes, setMyRecipes] = useState([]);
   const [isloading, setIsLoading] = useState(false);
@@ -36,14 +34,16 @@ export default function MyRecipesList() {
 
   const handleDelete = async id => {
     try {
+      setIsLoading(true);
       await deleteMyRecipe(id);
-
-      const { recipes, pagination } = await getMyRecipes(pageSize);
+      setPage(1);
+      const { recipes, pagination } = await getMyRecipes(page, pageSize);
       setMyRecipes(recipes);
       setTotalItems(Number(pagination.totalResults));
-
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,6 +77,5 @@ export default function MyRecipesList() {
         />
       )}
     </List>
-        
   );
 }
