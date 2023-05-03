@@ -6,7 +6,7 @@ import { SearchBarWrapper } from './SearchBar.styled';
 
 export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchType = searchParams.get('type') || 'ingredients';
+  const searchType = searchParams.get('type') || 'title';
 
   const [type, setType] = useState({
     type: searchType,
