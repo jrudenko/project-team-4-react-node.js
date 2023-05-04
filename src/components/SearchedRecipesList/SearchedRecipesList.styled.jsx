@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NoSearchText = styled.p`
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 100px;
   font-family: Poppins, sans-serif;
   font-weight: ${p => p.theme.fontWeights.subtitle};
