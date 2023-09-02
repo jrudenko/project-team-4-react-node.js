@@ -2,7 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+// axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+axios.defaults.baseURL = 'https://yummy-rest-api-t74o.onrender.com/api';
 
 export const getSearchByTitle = createAsyncThunk(
   'search/byTitle',
