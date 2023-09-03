@@ -13,7 +13,8 @@ export const SigninPage = () => {
   const params = useParams();
 
   useEffect(() => {
-    const url = 'https://yummy-rest-api.yurgo.fun/api/auth/verify/';
+    // const url = 'https://yummy-rest-api.yurgo.fun/api/auth/verify/';
+    const url = 'https://yummy-rest-api-t74o.onrender.com/api/auth/verify';
 
     if (params.verificationToken) {
       axios.get(url.concat(params.verificationToken));

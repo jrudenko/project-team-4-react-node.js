@@ -2,7 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+// axios.defaults.baseURL = 'https://yummy-rest-api.yurgo.fun/api';
+axios.defaults.baseURL = 'https://yummy-rest-api-t74o.onrender.com/api';
 
 const setAuthToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
